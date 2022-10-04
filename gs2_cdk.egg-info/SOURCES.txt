@@ -42,6 +42,11 @@ src/gs2_cdk/lottery/model.py
 src/gs2_cdk/lottery/ref.py
 src/gs2_cdk/lottery/resource.py
 src/gs2_cdk/lottery/stamp_sheet.py
+src/gs2_cdk/serial_key/__init__.py
+src/gs2_cdk/serial_key/model.py
+src/gs2_cdk/serial_key/ref.py
+src/gs2_cdk/serial_key/resource.py
+src/gs2_cdk/serial_key/stamp_sheet.py
 src/gs2_cdk/showcase/__init__.py
 src/gs2_cdk/showcase/model.py
 src/gs2_cdk/showcase/ref.py
