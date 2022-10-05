@@ -283,6 +283,14 @@ class Identifier(CdkResource):
     def alternate_keys(self) -> str:
         return ''
 
+    @staticmethod
+    def AdministratorAccessGrn() -> str:
+        return "grn:gs2::system:identifier:securityPolicy:AdministratorAccess"
+
+    @staticmethod
+    def ApplicationAccessGrn() -> str:
+        return "grn:gs2::system:identifier:securityPolicy:ApplicationAccess"
+
     def get_attr_identifier_id(self) -> GetAttr:
         return GetAttr(
             self,
