@@ -111,9 +111,9 @@ class DisplayItemMaster:
 
     @staticmethod
     def sales_item(
-        displayItemId: str,
-        salesItemName: str,
-        salesPeriodEventId: str = None,
+        display_item_id: str,
+        sales_item_name: str,
+        sales_period_event_id: str = None,
     ) -> DisplayItemMaster:
         return DisplayItemMaster(
             type=DisplayItemMaster.Type.SALES_ITEM,
@@ -124,9 +124,9 @@ class DisplayItemMaster:
 
     @staticmethod
     def sales_item_group(
-        displayItemId: str,
-        salesItemGroupName: str,
-        salesPeriodEventId: str = None,
+        display_item_id: str,
+        sales_item_group_name: str,
+        sales_period_event_id: str = None,
     ) -> DisplayItemMaster:
         return DisplayItemMaster(
             type=DisplayItemMaster.Type.SALES_ITEM_GROUP,

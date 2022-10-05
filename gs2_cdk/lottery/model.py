@@ -72,11 +72,11 @@ class Prize:
 
     @staticmethod
     def action(
+        prize_id: str,
         acquire_actions: List[AcquireAction],
-        prize_id: str = None,
+        weight: int,
         drawn_limit: int = None,
         limit_fail_over_prize_id: str = None,
-        weight: int = None,
     ) -> Prize:
         return Prize(
             type=Prize.Type.ACTION,
@@ -89,10 +89,11 @@ class Prize:
 
     @staticmethod
     def prize_table(
+        prize_id: str,
+        acquire_actions: List[AcquireAction],
         prize_table_name: str,
-        prize_id: str = None,
+        weight: int,
         drawn_limit: int = None,
-        weight: int = None,
     ) -> Prize:
         return Prize(
             type=Prize.Type.PRIZE_TABLE,
