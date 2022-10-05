@@ -9,6 +9,11 @@ src/gs2_cdk/account/model.py
 src/gs2_cdk/account/ref.py
 src/gs2_cdk/account/resource.py
 src/gs2_cdk/account/stamp_sheet.py
+src/gs2_cdk/auth/__init__.py
+src/gs2_cdk/auth/model.py
+src/gs2_cdk/auth/ref.py
+src/gs2_cdk/auth/resource.py
+src/gs2_cdk/auth/stamp_sheet.py
 src/gs2_cdk/chat/__init__.py
 src/gs2_cdk/chat/model.py
 src/gs2_cdk/chat/ref.py
@@ -22,6 +27,11 @@ src/gs2_cdk/datastore/model.py
 src/gs2_cdk/datastore/ref.py
 src/gs2_cdk/datastore/resource.py
 src/gs2_cdk/datastore/stamp_sheet.py
+src/gs2_cdk/deploy/__init__.py
+src/gs2_cdk/deploy/model.py
+src/gs2_cdk/deploy/ref.py
+src/gs2_cdk/deploy/resource.py
+src/gs2_cdk/deploy/stamp_sheet.py
 src/gs2_cdk/dictionary/__init__.py
 src/gs2_cdk/dictionary/model.py
 src/gs2_cdk/dictionary/ref.py
