@@ -107,6 +107,7 @@ class Namespace(CdkResource):
     complete_matchmaking_trigger_type: str
     complete_matchmaking_trigger_realtime_namespace_id: str
     complete_matchmaking_trigger_script_id: str
+    change_rating_script: ScriptSetting
     join_notification: NotificationSetting
     leave_notification: NotificationSetting
     complete_notification: NotificationSetting
@@ -124,6 +125,7 @@ class Namespace(CdkResource):
             complete_matchmaking_trigger_realtime_namespace_id: str,
             complete_matchmaking_trigger_script_id: str,
             description: str = None,
+            change_rating_script: ScriptSetting = None,
             join_notification: NotificationSetting = None,
             leave_notification: NotificationSetting = None,
             complete_notification: NotificationSetting = None,
@@ -140,6 +142,7 @@ class Namespace(CdkResource):
         self.complete_matchmaking_trigger_type = complete_matchmaking_trigger_type
         self.complete_matchmaking_trigger_realtime_namespace_id = complete_matchmaking_trigger_realtime_namespace_id
         self.complete_matchmaking_trigger_script_id = complete_matchmaking_trigger_script_id
+        self.change_rating_script = change_rating_script
         self.join_notification = join_notification
         self.leave_notification = leave_notification
         self.complete_notification = complete_notification
@@ -174,6 +177,8 @@ class Namespace(CdkResource):
             properties["CompleteMatchmakingTriggerRealtimeNamespaceId"] = self.complete_matchmaking_trigger_realtime_namespace_id
         if self.complete_matchmaking_trigger_script_id:
             properties["CompleteMatchmakingTriggerScriptId"] = self.complete_matchmaking_trigger_script_id
+        if self.change_rating_script:
+            properties["ChangeRatingScript"] = self.change_rating_script.properties()
         if self.join_notification:
             properties["JoinNotification"] = self.join_notification.properties()
         if self.leave_notification:
