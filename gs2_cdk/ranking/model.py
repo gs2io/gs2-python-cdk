@@ -21,6 +21,7 @@ from ..core import *
 class Ranking:
     rank: int
     index: int
+    category_name: str
     user_id: str
     score: int
     metadata: str
@@ -30,6 +31,7 @@ class Ranking:
             self,
             rank: int = None,
             index: int = None,
+            category_name: str = None,
             user_id: str = None,
             score: int = None,
             metadata: str = None,
@@ -37,6 +39,7 @@ class Ranking:
     ):
         self.rank = rank
         self.index = index
+        self.category_name = category_name
         self.user_id = user_id
         self.score = score
         self.metadata = metadata
@@ -48,6 +51,8 @@ class Ranking:
             properties["Rank"] = self.rank
         if self.index:
             properties["Index"] = self.index
+        if self.category_name:
+            properties["CategoryName"] = self.category_name
         if self.user_id:
             properties["UserId"] = self.user_id
         if self.score:
