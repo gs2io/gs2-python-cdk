@@ -12,7 +12,7 @@ class GetAttr(Func):
 
     def __init__(
             self,
-            resource: '.model.CdkResource' = None,
+            resource: 'gs2_cdk.CdkResource' = None,
             path: str = None,
             key: str = None
     ):

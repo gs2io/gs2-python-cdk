@@ -1,4 +1,4 @@
-# Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+# Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
 # Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,6 +13,5 @@
 # permissions and limitations under the License.
 
 from .model import *
-from .resource import *
 from .ref import *
 from .stamp_sheet import *

@@ -1,4 +1,4 @@
-# Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+# Copyright 2016- Game Server Services, Inc. or its affiliates. All Rights
 # Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,22 +13,21 @@
 # permissions and limitations under the License.
 
 from .model import *
-from .resource import *
 from .ref import *
 from .stamp_sheet import *
 
 
 def user(
-        user_name: str
+    user_name: str,
 ) -> UserRef:
     return UserRef(
-        user_name=user_name,
+        user_name,
     )
 
 
 def security_policy(
-        security_policy_name: str
+    security_policy_name: str,
 ) -> SecurityPolicyRef:
     return SecurityPolicyRef(
-        security_policy_name=security_policy_name,
+        security_policy_name,
     )
