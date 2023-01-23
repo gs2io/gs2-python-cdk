@@ -25,8 +25,8 @@ class AcquireItemSetByUserId(AcquireAction):
         inventory_name: str,
         item_name: str,
         acquire_count: int,
-        expires_at: int,
-        create_new_item_set: bool,
+        expires_at: Optional[int] = None,
+        create_new_item_set: Optional[bool] = None,
         item_set_name: Optional[str] = None,
         user_id: Optional[str] = "#{userId}",
     ):

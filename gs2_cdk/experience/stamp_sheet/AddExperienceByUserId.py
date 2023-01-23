@@ -24,7 +24,7 @@ class AddExperienceByUserId(AcquireAction):
         namespace_name: str,
         experience_name: str,
         property_id: str,
-        experience_value: int,
+        experience_value: Optional[int] = None,
         user_id: Optional[str] = "#{userId}",
     ):
         properties: Dict[str, Any] = {}

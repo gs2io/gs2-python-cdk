@@ -23,6 +23,7 @@ from ....core.model import LogSetting
 
 class NamespaceOptions:
     description: Optional[str]
+    enable_rating: Optional[bool]
     create_gathering_trigger_realtime_namespace_id: Optional[str]
     create_gathering_trigger_script_id: Optional[str]
     complete_matchmaking_trigger_realtime_namespace_id: Optional[str]
@@ -36,6 +37,7 @@ class NamespaceOptions:
     def __init__(
         self,
         description: Optional[str] = None,
+        enable_rating: Optional[bool] = None,
         create_gathering_trigger_realtime_namespace_id: Optional[str] = None,
         create_gathering_trigger_script_id: Optional[str] = None,
         complete_matchmaking_trigger_realtime_namespace_id: Optional[str] = None,
@@ -47,6 +49,7 @@ class NamespaceOptions:
         log_setting: Optional[LogSetting] = None,
     ):
         self.description = description
+        self.enable_rating = enable_rating
         self.create_gathering_trigger_realtime_namespace_id = create_gathering_trigger_realtime_namespace_id
         self.create_gathering_trigger_script_id = create_gathering_trigger_script_id
         self.complete_matchmaking_trigger_realtime_namespace_id = complete_matchmaking_trigger_realtime_namespace_id

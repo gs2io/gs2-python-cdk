@@ -23,7 +23,7 @@ class DeleteAwaitByUserId(ConsumeAction):
         self,
         namespace_name: str,
         rate_name: str,
-        await_name: str,
+        await_name: Optional[str] = None,
         user_id: Optional[str] = "#{userId}",
     ):
         properties: Dict[str, Any] = {}

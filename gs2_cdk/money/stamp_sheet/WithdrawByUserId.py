@@ -24,7 +24,7 @@ class WithdrawByUserId(ConsumeAction):
         namespace_name: str,
         slot: int,
         count: int,
-        paid_only: bool,
+        paid_only: Optional[bool] = None,
         user_id: Optional[str] = "#{userId}",
     ):
         properties: Dict[str, Any] = {}

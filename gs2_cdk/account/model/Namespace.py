@@ -27,9 +27,9 @@ from .options.NamespaceOptions import NamespaceOptions
 class Namespace(CdkResource):
     stack: Stack
     name: str
-    change_password_if_take_over: bool
-    different_user_id_for_login_and_data_retention: bool
     description: Optional[str] = None
+    change_password_if_take_over: Optional[bool] = None
+    different_user_id_for_login_and_data_retention: Optional[bool] = None
     create_account_script: Optional[ScriptSetting] = None
     authentication_script: Optional[ScriptSetting] = None
     create_take_over_script: Optional[ScriptSetting] = None
@@ -40,8 +40,6 @@ class Namespace(CdkResource):
         self,
         stack: Stack,
         name: str,
-        change_password_if_take_over: bool,
-        different_user_id_for_login_and_data_retention: bool,
         options: Optional[NamespaceOptions] = NamespaceOptions(),
     ):
         super().__init__(
@@ -50,9 +48,9 @@ class Namespace(CdkResource):
 
         self.stack = stack
         self.name = name
-        self.change_password_if_take_over = change_password_if_take_over
-        self.different_user_id_for_login_and_data_retention = different_user_id_for_login_and_data_retention
         self.description = options.description if options.description else None
+        self.change_password_if_take_over = options.change_password_if_take_over if options.change_password_if_take_over else None
+        self.different_user_id_for_login_and_data_retention = options.different_user_id_for_login_and_data_retention if options.different_user_id_for_login_and_data_retention else None
         self.create_account_script = options.create_account_script if options.create_account_script else None
         self.authentication_script = options.authentication_script if options.authentication_script else None
         self.create_take_over_script = options.create_take_over_script if options.create_take_over_script else None

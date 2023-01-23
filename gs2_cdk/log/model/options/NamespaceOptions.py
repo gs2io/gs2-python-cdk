@@ -20,6 +20,7 @@ from ....core.func import GetAttr
 
 class NamespaceOptions:
     description: Optional[str]
+    type: Optional[NamespaceType]
     gcp_credential_json: Optional[str]
     big_query_dataset_name: Optional[str]
     log_expire_days: Optional[int]
@@ -31,6 +32,7 @@ class NamespaceOptions:
     def __init__(
         self,
         description: Optional[str] = None,
+        type: Optional[NamespaceType] = None,
         gcp_credential_json: Optional[str] = None,
         big_query_dataset_name: Optional[str] = None,
         log_expire_days: Optional[int] = None,
@@ -40,6 +42,7 @@ class NamespaceOptions:
         firehose_stream_name: Optional[str] = None,
     ):
         self.description = description
+        self.type = type
         self.gcp_credential_json = gcp_credential_json
         self.big_query_dataset_name = big_query_dataset_name
         self.log_expire_days = log_expire_days

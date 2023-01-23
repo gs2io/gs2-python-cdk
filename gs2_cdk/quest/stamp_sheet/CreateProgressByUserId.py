@@ -24,7 +24,7 @@ class CreateProgressByUserId(AcquireAction):
         self,
         namespace_name: str,
         quest_model_id: str,
-        force: bool,
+        force: Optional[bool] = None,
         config: Optional[List[Config]] = None,
         user_id: Optional[str] = "#{userId}",
     ):

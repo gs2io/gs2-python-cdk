@@ -24,6 +24,7 @@ class NamespaceOptions:
     description: Optional[str]
     apple_key: Optional[str]
     google_key: Optional[str]
+    enable_fake_receipt: Optional[bool]
     create_wallet_script: Optional[ScriptSetting]
     deposit_script: Optional[ScriptSetting]
     withdraw_script: Optional[ScriptSetting]
@@ -34,6 +35,7 @@ class NamespaceOptions:
         description: Optional[str] = None,
         apple_key: Optional[str] = None,
         google_key: Optional[str] = None,
+        enable_fake_receipt: Optional[bool] = None,
         create_wallet_script: Optional[ScriptSetting] = None,
         deposit_script: Optional[ScriptSetting] = None,
         withdraw_script: Optional[ScriptSetting] = None,
@@ -42,6 +44,7 @@ class NamespaceOptions:
         self.description = description
         self.apple_key = apple_key
         self.google_key = google_key
+        self.enable_fake_receipt = enable_fake_receipt
         self.create_wallet_script = create_wallet_script
         self.deposit_script = deposit_script
         self.withdraw_script = withdraw_script

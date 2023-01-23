@@ -22,7 +22,7 @@ class OpenMessageByUserId(ConsumeAction):
     def __init__(
         self,
         namespace_name: str,
-        message_name: str,
+        message_name: Optional[str] = None,
         user_id: Optional[str] = "#{userId}",
     ):
         properties: Dict[str, Any] = {}

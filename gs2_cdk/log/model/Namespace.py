@@ -26,8 +26,8 @@ from .options.NamespaceOptions import NamespaceOptions
 class Namespace(CdkResource):
     stack: Stack
     name: str
-    type: NamespaceType
     description: Optional[str] = None
+    type: Optional[NamespaceType] = None
     gcp_credential_json: Optional[str] = None
     big_query_dataset_name: Optional[str] = None
     log_expire_days: Optional[int] = None
@@ -40,7 +40,6 @@ class Namespace(CdkResource):
         self,
         stack: Stack,
         name: str,
-        type: NamespaceType,
         options: Optional[NamespaceOptions] = NamespaceOptions(),
     ):
         super().__init__(
@@ -49,8 +48,8 @@ class Namespace(CdkResource):
 
         self.stack = stack
         self.name = name
-        self.type = type
         self.description = options.description if options.description else None
+        self.type = options.type if options.type else None
         self.gcp_credential_json = options.gcp_credential_json if options.gcp_credential_json else None
         self.big_query_dataset_name = options.big_query_dataset_name if options.big_query_dataset_name else None
         self.log_expire_days = options.log_expire_days if options.log_expire_days else None

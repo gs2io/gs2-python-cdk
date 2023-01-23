@@ -32,10 +32,10 @@ from .options.NamespaceOptions import NamespaceOptions
 class Namespace(CdkResource):
     stack: Stack
     name: str
-    enable_rating: bool
     create_gathering_trigger_type: NamespaceCreateGatheringTriggerType
     complete_matchmaking_trigger_type: NamespaceCompleteMatchmakingTriggerType
     description: Optional[str] = None
+    enable_rating: Optional[bool] = None
     create_gathering_trigger_realtime_namespace_id: Optional[str] = None
     create_gathering_trigger_script_id: Optional[str] = None
     complete_matchmaking_trigger_realtime_namespace_id: Optional[str] = None
@@ -50,7 +50,6 @@ class Namespace(CdkResource):
         self,
         stack: Stack,
         name: str,
-        enable_rating: bool,
         create_gathering_trigger_type: NamespaceCreateGatheringTriggerType,
         complete_matchmaking_trigger_type: NamespaceCompleteMatchmakingTriggerType,
         options: Optional[NamespaceOptions] = NamespaceOptions(),
@@ -61,10 +60,10 @@ class Namespace(CdkResource):
 
         self.stack = stack
         self.name = name
-        self.enable_rating = enable_rating
         self.create_gathering_trigger_type = create_gathering_trigger_type
         self.complete_matchmaking_trigger_type = complete_matchmaking_trigger_type
         self.description = options.description if options.description else None
+        self.enable_rating = options.enable_rating if options.enable_rating else None
         self.create_gathering_trigger_realtime_namespace_id = options.create_gathering_trigger_realtime_namespace_id if options.create_gathering_trigger_realtime_namespace_id else None
         self.create_gathering_trigger_script_id = options.create_gathering_trigger_script_id if options.create_gathering_trigger_script_id else None
         self.complete_matchmaking_trigger_realtime_namespace_id = options.complete_matchmaking_trigger_realtime_namespace_id if options.complete_matchmaking_trigger_realtime_namespace_id else None

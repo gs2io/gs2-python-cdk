@@ -22,6 +22,8 @@ from ....core.model import LogSetting
 
 class NamespaceOptions:
     description: Optional[str]
+    change_password_if_take_over: Optional[bool]
+    different_user_id_for_login_and_data_retention: Optional[bool]
     create_account_script: Optional[ScriptSetting]
     authentication_script: Optional[ScriptSetting]
     create_take_over_script: Optional[ScriptSetting]
@@ -31,6 +33,8 @@ class NamespaceOptions:
     def __init__(
         self,
         description: Optional[str] = None,
+        change_password_if_take_over: Optional[bool] = None,
+        different_user_id_for_login_and_data_retention: Optional[bool] = None,
         create_account_script: Optional[ScriptSetting] = None,
         authentication_script: Optional[ScriptSetting] = None,
         create_take_over_script: Optional[ScriptSetting] = None,
@@ -38,6 +42,8 @@ class NamespaceOptions:
         log_setting: Optional[LogSetting] = None,
     ):
         self.description = description
+        self.change_password_if_take_over = change_password_if_take_over
+        self.different_user_id_for_login_and_data_retention = different_user_id_for_login_and_data_retention
         self.create_account_script = create_account_script
         self.authentication_script = authentication_script
         self.create_take_over_script = create_take_over_script

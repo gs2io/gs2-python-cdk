@@ -32,10 +32,10 @@ class Namespace(CdkResource):
     priority: NamespacePriority
     share_free: bool
     currency: NamespaceCurrency
-    enable_fake_receipt: bool
     description: Optional[str] = None
     apple_key: Optional[str] = None
     google_key: Optional[str] = None
+    enable_fake_receipt: Optional[bool] = None
     create_wallet_script: Optional[ScriptSetting] = None
     deposit_script: Optional[ScriptSetting] = None
     withdraw_script: Optional[ScriptSetting] = None
@@ -48,7 +48,6 @@ class Namespace(CdkResource):
         priority: NamespacePriority,
         share_free: bool,
         currency: NamespaceCurrency,
-        enable_fake_receipt: bool,
         options: Optional[NamespaceOptions] = NamespaceOptions(),
     ):
         super().__init__(
@@ -60,10 +59,10 @@ class Namespace(CdkResource):
         self.priority = priority
         self.share_free = share_free
         self.currency = currency
-        self.enable_fake_receipt = enable_fake_receipt
         self.description = options.description if options.description else None
         self.apple_key = options.apple_key if options.apple_key else None
         self.google_key = options.google_key if options.google_key else None
+        self.enable_fake_receipt = options.enable_fake_receipt if options.enable_fake_receipt else None
         self.create_wallet_script = options.create_wallet_script if options.create_wallet_script else None
         self.deposit_script = options.deposit_script if options.deposit_script else None
         self.withdraw_script = options.withdraw_script if options.withdraw_script else None

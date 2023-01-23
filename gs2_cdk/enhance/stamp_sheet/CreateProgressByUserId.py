@@ -25,8 +25,8 @@ class CreateProgressByUserId(AcquireAction):
         namespace_name: str,
         rate_name: str,
         target_item_set_id: str,
-        force: bool,
         materials: Optional[List[Material]] = None,
+        force: Optional[bool] = None,
         user_id: Optional[str] = "#{userId}",
     ):
         properties: Dict[str, Any] = {}
@@ -34,8 +34,8 @@ class CreateProgressByUserId(AcquireAction):
         properties["namespaceName"] = namespace_name
         properties["rateName"] = rate_name
         properties["targetItemSetId"] = target_item_set_id
-        properties["force"] = force
         properties["materials"] = materials
+        properties["force"] = force
         properties["userId"] = user_id
 
         super().__init__(

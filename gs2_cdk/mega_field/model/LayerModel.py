@@ -17,17 +17,14 @@ from .options.LayerModelOptions import LayerModelOptions
 
 
 class LayerModel:
-    area_model_name: str
     name: str
     metadata: Optional[str] = None
 
     def __init__(
         self,
-        area_model_name: str,
         name: str,
         options: Optional[LayerModelOptions] = LayerModelOptions(),
     ):
-        self.area_model_name = area_model_name
         self.name = name
         self.metadata = options.metadata if options.metadata else None
 
@@ -36,8 +33,6 @@ class LayerModel:
     ) -> Dict[str, Any]:
         properties: Dict[str, Any] = {}
 
-        if self.area_model_name is not None:
-            properties["areaModelName"] = self.area_model_name
         if self.name is not None:
             properties["name"] = self.name
         if self.metadata is not None:

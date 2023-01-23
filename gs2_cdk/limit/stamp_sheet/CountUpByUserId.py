@@ -24,7 +24,7 @@ class CountUpByUserId(ConsumeAction):
         namespace_name: str,
         limit_name: str,
         counter_name: str,
-        count_up_value: int,
+        count_up_value: Optional[int] = None,
         max_value: Optional[int] = None,
         user_id: Optional[str] = "#{userId}",
     ):

@@ -23,6 +23,7 @@ from ....core.model import LogSetting
 
 class NamespaceOptions:
     description: Optional[str]
+    allow_create_room: Optional[bool]
     post_message_script: Optional[ScriptSetting]
     create_room_script: Optional[ScriptSetting]
     delete_room_script: Optional[ScriptSetting]
@@ -34,6 +35,7 @@ class NamespaceOptions:
     def __init__(
         self,
         description: Optional[str] = None,
+        allow_create_room: Optional[bool] = None,
         post_message_script: Optional[ScriptSetting] = None,
         create_room_script: Optional[ScriptSetting] = None,
         delete_room_script: Optional[ScriptSetting] = None,
@@ -43,6 +45,7 @@ class NamespaceOptions:
         log_setting: Optional[LogSetting] = None,
     ):
         self.description = description
+        self.allow_create_room = allow_create_room
         self.post_message_script = post_message_script
         self.create_room_script = create_room_script
         self.delete_room_script = delete_room_script

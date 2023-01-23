@@ -24,8 +24,8 @@ class AddReferenceOfByUserId(AcquireAction):
         namespace_name: str,
         inventory_name: str,
         item_name: str,
-        item_set_name: str,
         reference_of: str,
+        item_set_name: Optional[str] = None,
         user_id: Optional[str] = "#{userId}",
     ):
         properties: Dict[str, Any] = {}
@@ -33,8 +33,8 @@ class AddReferenceOfByUserId(AcquireAction):
         properties["namespaceName"] = namespace_name
         properties["inventoryName"] = inventory_name
         properties["itemName"] = item_name
-        properties["itemSetName"] = item_set_name
         properties["referenceOf"] = reference_of
+        properties["itemSetName"] = item_set_name
         properties["userId"] = user_id
 
         super().__init__(

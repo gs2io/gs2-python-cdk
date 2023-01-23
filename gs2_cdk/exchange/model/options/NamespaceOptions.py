@@ -23,6 +23,8 @@ from ....core.model import LogSetting
 
 class NamespaceOptions:
     description: Optional[str]
+    enable_await_exchange: Optional[bool]
+    enable_direct_exchange: Optional[bool]
     exchange_script: Optional[ScriptSetting]
     log_setting: Optional[LogSetting]
     queue_namespace_id: Optional[str]
@@ -31,12 +33,16 @@ class NamespaceOptions:
     def __init__(
         self,
         description: Optional[str] = None,
+        enable_await_exchange: Optional[bool] = None,
+        enable_direct_exchange: Optional[bool] = None,
         exchange_script: Optional[ScriptSetting] = None,
         log_setting: Optional[LogSetting] = None,
         queue_namespace_id: Optional[str] = None,
         key_id: Optional[str] = None,
     ):
         self.description = description
+        self.enable_await_exchange = enable_await_exchange
+        self.enable_direct_exchange = enable_direct_exchange
         self.exchange_script = exchange_script
         self.log_setting = log_setting
         self.queue_namespace_id = queue_namespace_id

@@ -23,7 +23,7 @@ class CreateAwaitByUserId(AcquireAction):
         self,
         namespace_name: str,
         rate_name: str,
-        count: int,
+        count: Optional[int] = None,
         user_id: Optional[str] = "#{userId}",
     ):
         properties: Dict[str, Any] = {}

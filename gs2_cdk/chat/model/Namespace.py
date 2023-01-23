@@ -28,8 +28,8 @@ from .options.NamespaceOptions import NamespaceOptions
 class Namespace(CdkResource):
     stack: Stack
     name: str
-    allow_create_room: bool
     description: Optional[str] = None
+    allow_create_room: Optional[bool] = None
     post_message_script: Optional[ScriptSetting] = None
     create_room_script: Optional[ScriptSetting] = None
     delete_room_script: Optional[ScriptSetting] = None
@@ -42,7 +42,6 @@ class Namespace(CdkResource):
         self,
         stack: Stack,
         name: str,
-        allow_create_room: bool,
         options: Optional[NamespaceOptions] = NamespaceOptions(),
     ):
         super().__init__(
@@ -51,8 +50,8 @@ class Namespace(CdkResource):
 
         self.stack = stack
         self.name = name
-        self.allow_create_room = allow_create_room
         self.description = options.description if options.description else None
+        self.allow_create_room = options.allow_create_room if options.allow_create_room else None
         self.post_message_script = options.post_message_script if options.post_message_script else None
         self.create_room_script = options.create_room_script if options.create_room_script else None
         self.delete_room_script = options.delete_room_script if options.delete_room_script else None
