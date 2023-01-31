@@ -16,7 +16,6 @@ from typing import *
 
 from ...core.func import GetAttr, Join
 from .CampaignModelRef import CampaignModelRef
-from .SerialKeyRef import SerialKeyRef
 from ..stamp_sheet.UseByUserId import UseByUserId
 
 

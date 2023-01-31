@@ -13,5 +13,4 @@
 # permissions and limitations under the License.
 from .NamespaceRef import NamespaceRef
 from .IssueJobRef import IssueJobRef
-from .SerialKeyRef import SerialKeyRef
 from .CampaignModelRef import CampaignModelRef

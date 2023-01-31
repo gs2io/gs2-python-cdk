@@ -30,6 +30,16 @@ class AreaModelRef:
         self.namespace_name = namespace_name
         self.area_model_name = area_model_name
 
+    def layer_model(
+        self,
+        layer_model_name: str,
+    ) -> LayerModelRef:
+        return LayerModelRef(
+            self.namespace_name,
+            self.area_model_name,
+            layer_model_name,
+        )
+
     def grn(
         self,
     ) -> str:
