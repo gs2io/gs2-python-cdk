@@ -22,14 +22,12 @@ class DeleteAwaitByUserId(ConsumeAction):
     def __init__(
         self,
         namespace_name: str,
-        rate_name: str,
         await_name: Optional[str] = None,
         user_id: Optional[str] = "#{userId}",
     ):
         properties: Dict[str, Any] = {}
 
         properties["namespaceName"] = namespace_name
-        properties["rateName"] = rate_name
         properties["awaitName"] = await_name
         properties["userId"] = user_id
 

@@ -70,13 +70,11 @@ class NamespaceRef:
 
     def delete_await(
         self,
-        rate_name: str,
         await_name: str,
         user_id: Optional[str] = "#{userId}",
     ) -> DeleteAwaitByUserId:
         return DeleteAwaitByUserId(
             self.namespace_name,
-            rate_name,
             await_name,
             user_id,
         )

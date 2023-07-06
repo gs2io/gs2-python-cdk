@@ -15,7 +15,6 @@ from __future__ import annotations
 from typing import *
 
 from ...core.func import GetAttr, Join
-from .FormModelRef import FormModelRef
 from .MoldModelRef import MoldModelRef
 from ..stamp_sheet.AddMoldCapacityByUserId import AddMoldCapacityByUserId
 from ..stamp_sheet.SetMoldCapacityByUserId import SetMoldCapacityByUserId
@@ -33,15 +32,6 @@ class NamespaceRef:
         namespace_name: str,
     ):
         self.namespace_name = namespace_name
-
-    def form_model(
-        self,
-        form_model_name: str,
-    ) -> FormModelRef:
-        return FormModelRef(
-            self.namespace_name,
-            form_model_name,
-        )
 
     def mold_model(
         self,
