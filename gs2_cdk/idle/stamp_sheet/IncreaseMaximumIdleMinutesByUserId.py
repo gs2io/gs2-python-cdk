@@ -11,20 +11,29 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-#
-# deny overwrite
 from __future__ import annotations
 from typing import *
 
+from ...core.model import AcquireAction, ConsumeAction
 
-class LotteryModelMethodIsScriptOptions:
-    metadata: Optional[str]
-    choice_prize_table_script_id: Optional[str]
-    
+
+class IncreaseMaximumIdleMinutesByUserId(AcquireAction):
+
     def __init__(
         self,
-        metadata: Optional[str] = None,
-        choice_prize_table_script_id: Optional[str] = None,
+        namespace_name: str,
+        category_name: str,
+        increase_minutes: Optional[int] = None,
+        user_id: Optional[str] = "#{userId}",
     ):
-        self.metadata = metadata
-        self.choice_prize_table_script_id = choice_prize_table_script_id
+        properties: Dict[str, Any] = {}
+
+        properties["namespaceName"] = namespace_name
+        properties["categoryName"] = category_name
+        properties["increaseMinutes"] = increase_minutes
+        properties["userId"] = user_id
+
+        super().__init__(
+            "Gs2Idle:IncreaseMaximumIdleMinutesByUserId",
+            properties,
+        )

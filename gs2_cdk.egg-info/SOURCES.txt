@@ -144,6 +144,17 @@ src/gs2_cdk/identifier/ref/SecurityPolicyRef.py
 src/gs2_cdk/identifier/ref/UserRef.py
 src/gs2_cdk/identifier/ref/__init__.py
 src/gs2_cdk/identifier/stamp_sheet/__init__.py
+src/gs2_cdk/idle/__init__.py
+src/gs2_cdk/idle/model/AcquireActionList.py
+src/gs2_cdk/idle/model/CategoryModel.py
+src/gs2_cdk/idle/model/CurrentMasterData.py
+src/gs2_cdk/idle/model/Namespace.py
+src/gs2_cdk/idle/model/__init__.py
+src/gs2_cdk/idle/ref/CategoryModelRef.py
+src/gs2_cdk/idle/ref/NamespaceRef.py
+src/gs2_cdk/idle/ref/__init__.py
+src/gs2_cdk/idle/stamp_sheet/IncreaseMaximumIdleMinutesByUserId.py
+src/gs2_cdk/idle/stamp_sheet/__init__.py
 src/gs2_cdk/inbox/__init__.py
 src/gs2_cdk/inbox/model/CurrentMasterData.py
 src/gs2_cdk/inbox/model/GlobalMessage.py

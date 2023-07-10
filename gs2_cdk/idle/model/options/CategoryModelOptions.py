@@ -11,23 +11,24 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
+from __future__ import annotations
+from typing import *
+from ....core.model import AcquireAction
+from ..AcquireActionList import AcquireActionList
 
 
-
-
-class SlotWithSignaturePropertyType:
-    value: str
-    GS2_INVENTORY: 'SlotWithSignaturePropertyType'
-    GS2_SIMPLE_INVENTORY: 'SlotWithSignaturePropertyType'
-    GS2_DICTIONARY: 'SlotWithSignaturePropertyType'
-
+class CategoryModelOptions:
+    metadata: Optional[str]
+    idle_period_schedule_id: Optional[str]
+    receive_period_schedule_id: Optional[str]
+    
     def __init__(
         self,
-        value: str,
+        metadata: Optional[str] = None,
+        idle_period_schedule_id: Optional[str] = None,
+        receive_period_schedule_id: Optional[str] = None,
     ):
-        self.value = value
+        self.metadata = metadata
+        self.idle_period_schedule_id = idle_period_schedule_id
+        self.receive_period_schedule_id = receive_period_schedule_id
 
-
-SlotWithSignaturePropertyType.GS2_INVENTORY = SlotWithSignaturePropertyType("gs2_inventory")
-SlotWithSignaturePropertyType.GS2_SIMPLE_INVENTORY = SlotWithSignaturePropertyType("gs2_simple_inventory")
-SlotWithSignaturePropertyType.GS2_DICTIONARY = SlotWithSignaturePropertyType("gs2_dictionary")

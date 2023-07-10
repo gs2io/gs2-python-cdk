@@ -11,20 +11,28 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-#
-# deny overwrite
 from __future__ import annotations
 from typing import *
 
+from ....core.model import CdkResource, Stack
+from ....core.func import GetAttr
+from ....core.model import TransactionSetting
+from ....core.model import ScriptSetting
+from ....core.model import LogSetting
 
-class LotteryModelMethodIsScriptOptions:
-    metadata: Optional[str]
-    choice_prize_table_script_id: Optional[str]
+
+class NamespaceOptions:
+    description: Optional[str]
+    receive_script: Optional[ScriptSetting]
+    log_setting: Optional[LogSetting]
     
     def __init__(
         self,
-        metadata: Optional[str] = None,
-        choice_prize_table_script_id: Optional[str] = None,
+        description: Optional[str] = None,
+        receive_script: Optional[ScriptSetting] = None,
+        log_setting: Optional[LogSetting] = None,
     ):
-        self.metadata = metadata
-        self.choice_prize_table_script_id = choice_prize_table_script_id
+        self.description = description
+        self.receive_script = receive_script
+        self.log_setting = log_setting
+

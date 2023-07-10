@@ -11,23 +11,17 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
+from __future__ import annotations
+from typing import *
+from ....core.model import AcquireAction
 
 
-
-
-class SlotWithSignaturePropertyType:
-    value: str
-    GS2_INVENTORY: 'SlotWithSignaturePropertyType'
-    GS2_SIMPLE_INVENTORY: 'SlotWithSignaturePropertyType'
-    GS2_DICTIONARY: 'SlotWithSignaturePropertyType'
-
+class AcquireActionListOptions:
+    acquire_actions: Optional[List[AcquireAction]]
+    
     def __init__(
         self,
-        value: str,
+        acquire_actions: Optional[List[AcquireAction]] = None,
     ):
-        self.value = value
+        self.acquire_actions = acquire_actions
 
-
-SlotWithSignaturePropertyType.GS2_INVENTORY = SlotWithSignaturePropertyType("gs2_inventory")
-SlotWithSignaturePropertyType.GS2_SIMPLE_INVENTORY = SlotWithSignaturePropertyType("gs2_simple_inventory")
-SlotWithSignaturePropertyType.GS2_DICTIONARY = SlotWithSignaturePropertyType("gs2_dictionary")
