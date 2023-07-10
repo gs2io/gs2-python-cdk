@@ -16,18 +16,21 @@ from typing import *
 
 from ...core.model import CdkResource, Stack
 from .RateModel import RateModel
+from .IncrementalRateModel import IncrementalRateModel
 
 
 class CurrentMasterData(CdkResource):
     version: str= "2019-08-19"
     namespace_name: str
     rate_models: List[RateModel]
+    incremental_rate_models: List[IncrementalRateModel]
 
     def __init__(
         self,
         stack: Stack,
         namespace_name: str,
         rate_models: List[RateModel],
+        incremental_rate_models: List[IncrementalRateModel],
     ):
         super().__init__(
             "Exchange_CurrentRateMaster_" + namespace_name
@@ -35,6 +38,7 @@ class CurrentMasterData(CdkResource):
 
         self.namespace_name = namespace_name
         self.rate_models = rate_models
+        self.incremental_rate_models = incremental_rate_models
         stack.add_resource(
             self,
         )
@@ -61,6 +65,12 @@ class CurrentMasterData(CdkResource):
                 v.properties(
                 )
                 for v in self.rate_models
+            ]
+        if self.incremental_rate_models is not None:
+            settings["incrementalRateModels"] = [
+                v.properties(
+                )
+                for v in self.incremental_rate_models
             ]
 
         if self.namespace_name is not None:

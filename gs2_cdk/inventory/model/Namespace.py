@@ -22,6 +22,7 @@ from ...core.model import LogSetting
 from ..ref.NamespaceRef import NamespaceRef
 from .CurrentMasterData import CurrentMasterData
 from .InventoryModel import InventoryModel
+from .SimpleInventoryModel import SimpleInventoryModel
 
 from .options.NamespaceOptions import NamespaceOptions
 
@@ -110,11 +111,13 @@ class Namespace(CdkResource):
     def master_data(
         self,
         inventory_models: List[InventoryModel],
+        simple_inventory_models: List[SimpleInventoryModel],
     ) -> Namespace:
         CurrentMasterData(
             self.stack,
             self.name,
             inventory_models,
+            simple_inventory_models,
         ).add_depends_on(
             self,
         )

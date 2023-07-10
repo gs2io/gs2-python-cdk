@@ -19,9 +19,12 @@ from ..enum.LotteryModelMethod import LotteryModelMethod
 
 class LotteryModelMethodIsPrizeTableOptions:
     metadata: Optional[str]
-    
+    prize_table_name: Optional[str]
+
     def __init__(
         self,
         metadata: Optional[str] = None,
+        prize_table_name: Optional[str] = None,
     ):
         self.metadata = metadata
+        self.prize_table_name = prize_table_name

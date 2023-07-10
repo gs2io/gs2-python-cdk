@@ -26,6 +26,7 @@ class NamespaceCreateGatheringTriggerTypeIsGs2ScriptOptions:
     join_notification: Optional[NotificationSetting]
     leave_notification: Optional[NotificationSetting]
     complete_notification: Optional[NotificationSetting]
+    change_rating_notification: Optional[NotificationSetting]
     log_setting: Optional[LogSetting]
     
     def __init__(
@@ -35,6 +36,7 @@ class NamespaceCreateGatheringTriggerTypeIsGs2ScriptOptions:
         join_notification: Optional[NotificationSetting] = None,
         leave_notification: Optional[NotificationSetting] = None,
         complete_notification: Optional[NotificationSetting] = None,
+        change_rating_notification: Optional[NotificationSetting] = None,
         log_setting: Optional[LogSetting] = None,
     ):
         self.description = description
@@ -42,4 +44,5 @@ class NamespaceCreateGatheringTriggerTypeIsGs2ScriptOptions:
         self.join_notification = join_notification
         self.leave_notification = leave_notification
         self.complete_notification = complete_notification
+        self.change_rating_notification = change_rating_notification
         self.log_setting = log_setting

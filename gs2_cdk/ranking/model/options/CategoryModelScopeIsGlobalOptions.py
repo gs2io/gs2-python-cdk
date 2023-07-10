@@ -25,6 +25,7 @@ class CategoryModelScopeIsGlobalOptions:
     calculate_fixed_timing_minute: Optional[int]
     entry_period_event_id: Optional[str]
     access_period_event_id: Optional[str]
+    ignore_user_ids: Optional[List[str]]
     generation: Optional[str]
     
     def __init__(
@@ -36,6 +37,7 @@ class CategoryModelScopeIsGlobalOptions:
         calculate_fixed_timing_minute: Optional[int] = None,
         entry_period_event_id: Optional[str] = None,
         access_period_event_id: Optional[str] = None,
+        ignore_user_ids: Optional[List[str]] = None,
         generation: Optional[str] = None,
     ):
         self.metadata = metadata
@@ -45,4 +47,5 @@ class CategoryModelScopeIsGlobalOptions:
         self.calculate_fixed_timing_minute = calculate_fixed_timing_minute
         self.entry_period_event_id = entry_period_event_id
         self.access_period_event_id = access_period_event_id
+        self.ignore_user_ids = ignore_user_ids
         self.generation = generation

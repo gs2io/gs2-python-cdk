@@ -12,5 +12,7 @@
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
 from .ExchangeByUserId import ExchangeByUserId
+from .IncrementalExchangeByUserId import IncrementalExchangeByUserId
+from .UnlockIncrementalExchangeByUserId import UnlockIncrementalExchangeByUserId
 from .CreateAwaitByUserId import CreateAwaitByUserId
 from .DeleteAwaitByUserId import DeleteAwaitByUserId

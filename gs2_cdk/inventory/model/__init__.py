@@ -17,4 +17,12 @@ from .InventoryModel import InventoryModel
 from .options.InventoryModelOptions import InventoryModelOptions
 from .ItemModel import ItemModel
 from .options.ItemModelOptions import ItemModelOptions
+from .SimpleInventoryModel import SimpleInventoryModel
+from .options.SimpleInventoryModelOptions import SimpleInventoryModelOptions
+from .SimpleItemModel import SimpleItemModel
+from .options.SimpleItemModelOptions import SimpleItemModelOptions
+from .AcquireCount import AcquireCount
+from .options.AcquireCountOptions import AcquireCountOptions
+from .ConsumeCount import ConsumeCount
+from .options.ConsumeCountOptions import ConsumeCountOptions
 from .CurrentMasterData import CurrentMasterData

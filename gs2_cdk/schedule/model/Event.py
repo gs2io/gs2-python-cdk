@@ -29,8 +29,8 @@ from .enum.EventRepeatEndDayOfWeek import EventRepeatEndDayOfWeek
 class Event:
     name: str
     schedule_type: EventScheduleType
+    repeat_type: EventRepeatType
     metadata: Optional[str] = None
-    repeat_type: Optional[EventRepeatType] = None
     absolute_begin: Optional[int] = None
     absolute_end: Optional[int] = None
     repeat_begin_day_of_month: Optional[int] = None
@@ -40,18 +40,18 @@ class Event:
     repeat_begin_hour: Optional[int] = None
     repeat_end_hour: Optional[int] = None
     relative_trigger_name: Optional[str] = None
-    relative_duration: Optional[int] = None
 
     def __init__(
         self,
         name: str,
         schedule_type: EventScheduleType,
+        repeat_type: EventRepeatType,
         options: Optional[EventOptions] = EventOptions(),
     ):
         self.name = name
         self.schedule_type = schedule_type
+        self.repeat_type = repeat_type
         self.metadata = options.metadata if options.metadata else None
-        self.repeat_type = options.repeat_type if options.repeat_type else None
         self.absolute_begin = options.absolute_begin if options.absolute_begin else None
         self.absolute_end = options.absolute_end if options.absolute_end else None
         self.repeat_begin_day_of_month = options.repeat_begin_day_of_month if options.repeat_begin_day_of_month else None
@@ -61,7 +61,6 @@ class Event:
         self.repeat_begin_hour = options.repeat_begin_hour if options.repeat_begin_hour else None
         self.repeat_end_hour = options.repeat_end_hour if options.repeat_end_hour else None
         self.relative_trigger_name = options.relative_trigger_name if options.relative_trigger_name else None
-        self.relative_duration = options.relative_duration if options.relative_duration else None
 
     @staticmethod
     def schedule_type_is_absolute(
@@ -74,8 +73,8 @@ class Event:
         return Event(
             name,
             EventScheduleType.ABSOLUTE,
+            repeat_type,
             EventOptions(
-                repeat_type,
                 absolute_begin,
                 absolute_end,
                 options.metadata,
@@ -85,16 +84,16 @@ class Event:
     @staticmethod
     def schedule_type_is_relative(
         name: str,
+        repeat_type: EventRepeatType,
         relative_trigger_name: str,
-        relative_duration: int,
         options: Optional[EventScheduleTypeIsRelativeOptions] = EventScheduleTypeIsRelativeOptions(),
     ) -> Event:
         return Event(
             name,
             EventScheduleType.RELATIVE,
+            repeat_type,
             EventOptions(
                 relative_trigger_name,
-                relative_duration,
                 options.metadata,
             ),
         )
@@ -108,6 +107,7 @@ class Event:
         return Event(
             name,
             schedule_type,
+            EventRepeatType.ALWAYS,
             EventOptions(
                 options.metadata,
             ),
@@ -124,6 +124,7 @@ class Event:
         return Event(
             name,
             schedule_type,
+            EventRepeatType.DAILY,
             EventOptions(
                 repeat_begin_hour,
                 repeat_end_hour,
@@ -144,6 +145,7 @@ class Event:
         return Event(
             name,
             schedule_type,
+            EventRepeatType.WEEKLY,
             EventOptions(
                 repeat_begin_day_of_week,
                 repeat_end_day_of_week,
@@ -166,6 +168,7 @@ class Event:
         return Event(
             name,
             schedule_type,
+            EventRepeatType.MONTHLY,
             EventOptions(
                 repeat_begin_day_of_month,
                 repeat_end_day_of_month,
@@ -206,7 +209,5 @@ class Event:
             properties["repeatEndHour"] = self.repeat_end_hour
         if self.relative_trigger_name is not None:
             properties["relativeTriggerName"] = self.relative_trigger_name
-        if self.relative_duration is not None:
-            properties["relativeDuration"] = self.relative_duration
 
         return properties

@@ -16,18 +16,21 @@ from typing import *
 
 from ...core.model import CdkResource, Stack
 from .InventoryModel import InventoryModel
+from .SimpleInventoryModel import SimpleInventoryModel
 
 
 class CurrentMasterData(CdkResource):
     version: str= "2019-02-05"
     namespace_name: str
     inventory_models: List[InventoryModel]
+    simple_inventory_models: List[SimpleInventoryModel]
 
     def __init__(
         self,
         stack: Stack,
         namespace_name: str,
         inventory_models: List[InventoryModel],
+        simple_inventory_models: List[SimpleInventoryModel],
     ):
         super().__init__(
             "Inventory_CurrentItemModelMaster_" + namespace_name
@@ -35,6 +38,7 @@ class CurrentMasterData(CdkResource):
 
         self.namespace_name = namespace_name
         self.inventory_models = inventory_models
+        self.simple_inventory_models = simple_inventory_models
         stack.add_resource(
             self,
         )
@@ -61,6 +65,12 @@ class CurrentMasterData(CdkResource):
                 v.properties(
                 )
                 for v in self.inventory_models
+            ]
+        if self.simple_inventory_models is not None:
+            settings["simpleInventoryModels"] = [
+                v.properties(
+                )
+                for v in self.simple_inventory_models
             ]
 
         if self.namespace_name is not None:

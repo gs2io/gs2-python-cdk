@@ -16,5 +16,7 @@ from .SetCapacityByUserId import SetCapacityByUserId
 from .AcquireItemSetByUserId import AcquireItemSetByUserId
 from .AddReferenceOfByUserId import AddReferenceOfByUserId
 from .DeleteReferenceOfByUserId import DeleteReferenceOfByUserId
+from .AcquireSimpleItemsByUserId import AcquireSimpleItemsByUserId
 from .ConsumeItemSetByUserId import ConsumeItemSetByUserId
 from .VerifyReferenceOfByUserId import VerifyReferenceOfByUserId
+from .ConsumeSimpleItemsByUserId import ConsumeSimpleItemsByUserId

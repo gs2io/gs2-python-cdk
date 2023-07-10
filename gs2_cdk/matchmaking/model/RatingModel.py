@@ -18,16 +18,19 @@ from .options.RatingModelOptions import RatingModelOptions
 
 class RatingModel:
     name: str
+    initial_value: int
     volatility: int
     metadata: Optional[str] = None
 
     def __init__(
         self,
         name: str,
+        initial_value: int,
         volatility: int,
         options: Optional[RatingModelOptions] = RatingModelOptions(),
     ):
         self.name = name
+        self.initial_value = initial_value
         self.volatility = volatility
         self.metadata = options.metadata if options.metadata else None
 
@@ -40,6 +43,8 @@ class RatingModel:
             properties["name"] = self.name
         if self.metadata is not None:
             properties["metadata"] = self.metadata
+        if self.initial_value is not None:
+            properties["initialValue"] = self.initial_value
         if self.volatility is not None:
             properties["volatility"] = self.volatility
 

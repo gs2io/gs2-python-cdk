@@ -35,7 +35,7 @@ class AcquireActionConfig:
         properties: Dict[str, Any] = {}
 
         if self.name is not None:
-            properties["name"] = self.name
+            properties["name"] = self.name.value
         if self.config is not None:
             properties["config"] = [
                 v.properties(

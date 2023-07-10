@@ -14,3 +14,5 @@
 from .NamespaceRef import NamespaceRef
 from .InventoryModelRef import InventoryModelRef
 from .ItemModelRef import ItemModelRef
+from .SimpleInventoryModelRef import SimpleInventoryModelRef
+from .SimpleItemModelRef import SimpleItemModelRef

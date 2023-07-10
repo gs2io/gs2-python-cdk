@@ -21,11 +21,13 @@ class CategoryModelOptions:
     metadata: Optional[str]
     minimum_value: Optional[int]
     maximum_value: Optional[int]
+    sum: Optional[bool]
     calculate_fixed_timing_hour: Optional[int]
     calculate_fixed_timing_minute: Optional[int]
     calculate_interval_minutes: Optional[int]
     entry_period_event_id: Optional[str]
     access_period_event_id: Optional[str]
+    ignore_user_ids: Optional[List[str]]
     generation: Optional[str]
     
     def __init__(
@@ -33,20 +35,24 @@ class CategoryModelOptions:
         metadata: Optional[str] = None,
         minimum_value: Optional[int] = None,
         maximum_value: Optional[int] = None,
+        sum: Optional[bool] = None,
         calculate_fixed_timing_hour: Optional[int] = None,
         calculate_fixed_timing_minute: Optional[int] = None,
         calculate_interval_minutes: Optional[int] = None,
         entry_period_event_id: Optional[str] = None,
         access_period_event_id: Optional[str] = None,
+        ignore_user_ids: Optional[List[str]] = None,
         generation: Optional[str] = None,
     ):
         self.metadata = metadata
         self.minimum_value = minimum_value
         self.maximum_value = maximum_value
+        self.sum = sum
         self.calculate_fixed_timing_hour = calculate_fixed_timing_hour
         self.calculate_fixed_timing_minute = calculate_fixed_timing_minute
         self.calculate_interval_minutes = calculate_interval_minutes
         self.entry_period_event_id = entry_period_event_id
         self.access_period_event_id = access_period_event_id
+        self.ignore_user_ids = ignore_user_ids
         self.generation = generation
 

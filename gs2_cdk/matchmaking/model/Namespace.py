@@ -44,6 +44,7 @@ class Namespace(CdkResource):
     join_notification: Optional[NotificationSetting] = None
     leave_notification: Optional[NotificationSetting] = None
     complete_notification: Optional[NotificationSetting] = None
+    change_rating_notification: Optional[NotificationSetting] = None
     log_setting: Optional[LogSetting] = None
 
     def __init__(
@@ -72,6 +73,7 @@ class Namespace(CdkResource):
         self.join_notification = options.join_notification if options.join_notification else None
         self.leave_notification = options.leave_notification if options.leave_notification else None
         self.complete_notification = options.complete_notification if options.complete_notification else None
+        self.change_rating_notification = options.change_rating_notification if options.change_rating_notification else None
         self.log_setting = options.log_setting if options.log_setting else None
         stack.add_resource(
             self,
@@ -122,6 +124,9 @@ class Namespace(CdkResource):
             )
         if self.complete_notification is not None:
             properties["CompleteNotification"] = self.complete_notification.properties(
+            )
+        if self.change_rating_notification is not None:
+            properties["ChangeRatingNotification"] = self.change_rating_notification.properties(
             )
         if self.log_setting is not None:
             properties["LogSetting"] = self.log_setting.properties(

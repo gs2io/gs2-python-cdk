@@ -25,4 +25,6 @@ from .options.EventRepeatTypeIsAlwaysOptions import EventRepeatTypeIsAlwaysOptio
 from .options.EventRepeatTypeIsDailyOptions import EventRepeatTypeIsDailyOptions
 from .options.EventRepeatTypeIsWeeklyOptions import EventRepeatTypeIsWeeklyOptions
 from .options.EventRepeatTypeIsMonthlyOptions import EventRepeatTypeIsMonthlyOptions
+from .RepeatSchedule import RepeatSchedule
+from .options.RepeatScheduleOptions import RepeatScheduleOptions
 from .CurrentMasterData import CurrentMasterData

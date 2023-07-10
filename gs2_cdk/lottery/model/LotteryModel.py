@@ -11,6 +11,8 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
+#
+# deny overwrite
 from __future__ import annotations
 from typing import *
 from .options.LotteryModelOptions import LotteryModelOptions
@@ -46,7 +48,6 @@ class LotteryModel:
     def method_is_prize_table(
         name: str,
         mode: LotteryModelMode,
-        prize_table_name: str,
         options: Optional[LotteryModelMethodIsPrizeTableOptions] = LotteryModelMethodIsPrizeTableOptions(),
     ) -> LotteryModel:
         return LotteryModel(
@@ -54,8 +55,8 @@ class LotteryModel:
             mode,
             LotteryModelMethod.PRIZE_TABLE,
             LotteryModelOptions(
-                prize_table_name,
                 options.metadata,
+                options.prize_table_name,
             ),
         )
 
@@ -63,7 +64,6 @@ class LotteryModel:
     def method_is_script(
         name: str,
         mode: LotteryModelMode,
-        choice_prize_table_script_id: str,
         options: Optional[LotteryModelMethodIsScriptOptions] = LotteryModelMethodIsScriptOptions(),
     ) -> LotteryModel:
         return LotteryModel(
@@ -71,7 +71,6 @@ class LotteryModel:
             mode,
             LotteryModelMethod.SCRIPT,
             LotteryModelOptions(
-                choice_prize_table_script_id,
                 options.metadata,
             ),
         )

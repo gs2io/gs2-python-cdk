@@ -11,6 +11,8 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
+#
+# deny overwrite
 from __future__ import annotations
 from typing import *
 from ..enum.LotteryModelMode import LotteryModelMode
@@ -19,9 +21,12 @@ from ..enum.LotteryModelMethod import LotteryModelMethod
 
 class LotteryModelMethodIsScriptOptions:
     metadata: Optional[str]
+    choice_prize_table_script_id: Optional[str]
     
     def __init__(
         self,
         metadata: Optional[str] = None,
+        choice_prize_table_script_id: Optional[str] = None,
     ):
         self.metadata = metadata
+        self.choice_prize_table_script_id = choice_prize_table_script_id

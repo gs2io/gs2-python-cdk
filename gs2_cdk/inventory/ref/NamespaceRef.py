@@ -16,13 +16,17 @@ from typing import *
 
 from ...core.func import GetAttr, Join
 from .InventoryModelRef import InventoryModelRef
+from .SimpleInventoryModelRef import SimpleInventoryModelRef
 from ..stamp_sheet.AddCapacityByUserId import AddCapacityByUserId
 from ..stamp_sheet.SetCapacityByUserId import SetCapacityByUserId
 from ..stamp_sheet.AcquireItemSetByUserId import AcquireItemSetByUserId
 from ..stamp_sheet.AddReferenceOfByUserId import AddReferenceOfByUserId
 from ..stamp_sheet.DeleteReferenceOfByUserId import DeleteReferenceOfByUserId
+from ..stamp_sheet.AcquireSimpleItemsByUserId import AcquireSimpleItemsByUserId
+from ..model.AcquireCount import AcquireCount
 from ..stamp_sheet.ConsumeItemSetByUserId import ConsumeItemSetByUserId
 from ..stamp_sheet.VerifyReferenceOfByUserId import VerifyReferenceOfByUserId
+from ..stamp_sheet.ConsumeSimpleItemsByUserId import ConsumeSimpleItemsByUserId
 
 
 class NamespaceRef:
@@ -39,6 +43,15 @@ class NamespaceRef:
         inventory_name: str,
     ) -> InventoryModelRef:
         return InventoryModelRef(
+            self.namespace_name,
+            inventory_name,
+        )
+
+    def simple_inventory_model(
+        self,
+        inventory_name: str,
+    ) -> SimpleInventoryModelRef:
+        return SimpleInventoryModelRef(
             self.namespace_name,
             inventory_name,
         )
@@ -124,6 +137,19 @@ class NamespaceRef:
             user_id,
         )
 
+    def acquire_simple_items(
+        self,
+        inventory_name: str,
+        acquire_counts: List[AcquireCount],
+        user_id: Optional[str] = "#{userId}",
+    ) -> AcquireSimpleItemsByUserId:
+        return AcquireSimpleItemsByUserId(
+            self.namespace_name,
+            inventory_name,
+            acquire_counts,
+            user_id,
+        )
+
     def consume_item_set(
         self,
         inventory_name: str,
@@ -157,6 +183,19 @@ class NamespaceRef:
             item_set_name,
             reference_of,
             verify_type,
+            user_id,
+        )
+
+    def consume_simple_items(
+        self,
+        inventory_name: str,
+        consume_counts: List[ConsumeCount],
+        user_id: Optional[str] = "#{userId}",
+    ) -> ConsumeSimpleItemsByUserId:
+        return ConsumeSimpleItemsByUserId(
+            self.namespace_name,
+            inventory_name,
+            consume_counts,
             user_id,
         )
 

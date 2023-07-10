@@ -15,7 +15,6 @@ from __future__ import annotations
 from typing import *
 
 from ...core.func import GetAttr, Join
-from .DisplayItemRef import DisplayItemRef
 
 
 class NamespaceRef:
@@ -26,15 +25,6 @@ class NamespaceRef:
         namespace_name: str,
     ):
         self.namespace_name = namespace_name
-
-    def display_item(
-        self,
-        display_item_id: str,
-    ) -> DisplayItemRef:
-        return DisplayItemRef(
-            self.namespace_name,
-            display_item_id,
-        )
 
     def grn(
         self,

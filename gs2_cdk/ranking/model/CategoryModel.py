@@ -28,11 +28,13 @@ class CategoryModel:
     metadata: Optional[str] = None
     minimum_value: Optional[int] = None
     maximum_value: Optional[int] = None
+    sum: Optional[bool] = None
     calculate_fixed_timing_hour: Optional[int] = None
     calculate_fixed_timing_minute: Optional[int] = None
     calculate_interval_minutes: Optional[int] = None
     entry_period_event_id: Optional[str] = None
     access_period_event_id: Optional[str] = None
+    ignore_user_ids: Optional[List[str]] = None
     generation: Optional[str] = None
 
     def __init__(
@@ -50,11 +52,13 @@ class CategoryModel:
         self.metadata = options.metadata if options.metadata else None
         self.minimum_value = options.minimum_value if options.minimum_value else None
         self.maximum_value = options.maximum_value if options.maximum_value else None
+        self.sum = options.sum if options.sum else None
         self.calculate_fixed_timing_hour = options.calculate_fixed_timing_hour if options.calculate_fixed_timing_hour else None
         self.calculate_fixed_timing_minute = options.calculate_fixed_timing_minute if options.calculate_fixed_timing_minute else None
         self.calculate_interval_minutes = options.calculate_interval_minutes if options.calculate_interval_minutes else None
         self.entry_period_event_id = options.entry_period_event_id if options.entry_period_event_id else None
         self.access_period_event_id = options.access_period_event_id if options.access_period_event_id else None
+        self.ignore_user_ids = options.ignore_user_ids if options.ignore_user_ids else None
         self.generation = options.generation if options.generation else None
 
     @staticmethod
@@ -79,6 +83,7 @@ class CategoryModel:
                 options.calculate_fixed_timing_minute,
                 options.entry_period_event_id,
                 options.access_period_event_id,
+                options.ignore_user_ids,
                 options.generation,
             ),
         )
@@ -103,6 +108,7 @@ class CategoryModel:
                 options.calculate_fixed_timing_minute,
                 options.entry_period_event_id,
                 options.access_period_event_id,
+                options.ignore_user_ids,
                 options.generation,
             ),
         )
@@ -126,6 +132,8 @@ class CategoryModel:
             properties["scope"] = self.scope.value
         if self.unique_by_user_id is not None:
             properties["uniqueByUserId"] = self.unique_by_user_id
+        if self.sum is not None:
+            properties["sum"] = self.sum
         if self.calculate_fixed_timing_hour is not None:
             properties["calculateFixedTimingHour"] = self.calculate_fixed_timing_hour
         if self.calculate_fixed_timing_minute is not None:
@@ -136,6 +144,8 @@ class CategoryModel:
             properties["entryPeriodEventId"] = self.entry_period_event_id
         if self.access_period_event_id is not None:
             properties["accessPeriodEventId"] = self.access_period_event_id
+        if self.ignore_user_ids is not None:
+            properties["ignoreUserIds"] = self.ignore_user_ids
         if self.generation is not None:
             properties["generation"] = self.generation
 
