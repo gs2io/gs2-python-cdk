@@ -99,7 +99,16 @@ class Stack:
                     return dumper.represent_scalar(tag, value)
             return dumper.represent_scalar('tag:yaml.org,2002:str', data)
 
+        def represent_str(dumper, instance):
+            import re
+            if "\n" in instance:
+                instance = re.sub(' +\n| +$', '\n', instance)
+                return dumper.represent_scalar('tag:yaml.org,2002:str', instance, style='|')
+            else:
+                return dumper.represent_scalar('tag:yaml.org,2002:str', instance)
+
         yaml.add_representer(str, quoted_presenter)
+        yaml.add_representer(str, represent_str)
 
         return yaml.dump(self.template(), indent=2)
 
