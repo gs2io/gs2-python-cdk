@@ -20,19 +20,16 @@ from .enum.ScopedValueResetType import ScopedValueResetType
 class ScopedValue:
     reset_type: ScopedValueResetType
     value: int
-    updated_at: int
     next_reset_at: Optional[int] = None
 
     def __init__(
         self,
         reset_type: ScopedValueResetType,
         value: int,
-        updated_at: int,
         options: Optional[ScopedValueOptions] = ScopedValueOptions(),
     ):
         self.reset_type = reset_type
         self.value = value
-        self.updated_at = updated_at
         self.next_reset_at = options.next_reset_at if options.next_reset_at else None
 
     def properties(
@@ -46,7 +43,5 @@ class ScopedValue:
             properties["value"] = self.value
         if self.next_reset_at is not None:
             properties["nextResetAt"] = self.next_reset_at
-        if self.updated_at is not None:
-            properties["updatedAt"] = self.updated_at
 
         return properties
