@@ -501,7 +501,7 @@ class PassTask(BaseTask):
 
     def mermaid(self):
         output = ""
-        output += "{{stateMachineName}}_{name}[\{name}/]\n".format(
+        output += "{{stateMachineName}}_{name}[\\{name}/]\n".format(
             name=self.name,
         )
         return output

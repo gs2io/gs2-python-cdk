@@ -76,9 +76,9 @@ class Identifier(CdkResource):
         self,
     ) -> GetAttr:
         return GetAttr(
-            None,
-            None,
+            self,
             "Item.ClientId",
+            None,
         )
 
 
@@ -86,7 +86,7 @@ class Identifier(CdkResource):
         self,
     ) -> GetAttr:
         return GetAttr(
-            None,
-            None,
+            self,
             "ClientSecret",
+            None,
         )

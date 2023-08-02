@@ -23,6 +23,7 @@ from ...core.model import LogSetting
 from ..ref.NamespaceRef import NamespaceRef
 from .CurrentMasterData import CurrentMasterData
 from .Showcase import Showcase
+from .RandomShowcase import RandomShowcase
 
 from .options.NamespaceOptions import NamespaceOptions
 
@@ -99,19 +100,21 @@ class Namespace(CdkResource):
         self,
     ) -> GetAttr:
         return GetAttr(
-            None,
-            None,
+            self,
             "Item.NamespaceId",
+            None,
         )
 
     def master_data(
         self,
         showcases: List[Showcase],
+        random_showcases: List[RandomShowcase],
     ) -> Namespace:
         CurrentMasterData(
             self.stack,
             self.name,
             showcases,
+            random_showcases,
         ).add_depends_on(
             self,
         )

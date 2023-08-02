@@ -24,4 +24,10 @@ from .options.DisplayItemOptions import DisplayItemOptions
 from .enum.DisplayItemType import DisplayItemType
 from .options.DisplayItemTypeIsSalesItemOptions import DisplayItemTypeIsSalesItemOptions
 from .options.DisplayItemTypeIsSalesItemGroupOptions import DisplayItemTypeIsSalesItemGroupOptions
+from .RandomShowcase import RandomShowcase
+from .options.RandomShowcaseOptions import RandomShowcaseOptions
+from .PurchaseCount import PurchaseCount
+from .options.PurchaseCountOptions import PurchaseCountOptions
+from .RandomDisplayItemModel import RandomDisplayItemModel
+from .options.RandomDisplayItemModelOptions import RandomDisplayItemModelOptions
 from .CurrentMasterData import CurrentMasterData

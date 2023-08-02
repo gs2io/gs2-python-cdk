@@ -20,23 +20,17 @@ class Progress:
     upload_token: str
     generated: int
     pattern_count: int
-    created_at: int
-    updated_at: int
 
     def __init__(
         self,
         upload_token: str,
         generated: int,
         pattern_count: int,
-        created_at: int,
-        updated_at: int,
         options: Optional[ProgressOptions] = ProgressOptions(),
     ):
         self.upload_token = upload_token
         self.generated = generated
         self.pattern_count = pattern_count
-        self.created_at = created_at
-        self.updated_at = updated_at
 
     def properties(
         self,
@@ -49,9 +43,5 @@ class Progress:
             properties["generated"] = self.generated
         if self.pattern_count is not None:
             properties["patternCount"] = self.pattern_count
-        if self.created_at is not None:
-            properties["createdAt"] = self.created_at
-        if self.updated_at is not None:
-            properties["updatedAt"] = self.updated_at
 
         return properties

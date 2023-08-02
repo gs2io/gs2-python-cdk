@@ -19,6 +19,8 @@ from .ExperienceModelRef import ExperienceModelRef
 from ..stamp_sheet.AddExperienceByUserId import AddExperienceByUserId
 from ..stamp_sheet.AddRankCapByUserId import AddRankCapByUserId
 from ..stamp_sheet.SetRankCapByUserId import SetRankCapByUserId
+from ..stamp_sheet.MultiplyAcquireActionsByUserId import MultiplyAcquireActionsByUserId
+from ...core.model import AcquireAction
 
 
 class NamespaceRef:
@@ -81,6 +83,23 @@ class NamespaceRef:
             experience_name,
             property_id,
             rank_cap_value,
+            user_id,
+        )
+
+    def multiply_acquire_actions(
+        self,
+        experience_name: str,
+        property_id: str,
+        rate_name: str,
+        acquire_actions: Optional[List[AcquireAction]] = None,
+        user_id: Optional[str] = "#{userId}",
+    ) -> MultiplyAcquireActionsByUserId:
+        return MultiplyAcquireActionsByUserId(
+            self.namespace_name,
+            experience_name,
+            property_id,
+            rate_name,
+            acquire_actions,
             user_id,
         )
 

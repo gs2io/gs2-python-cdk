@@ -14,14 +14,18 @@
 from __future__ import annotations
 from typing import *
 from ..Threshold import Threshold
+from ..AcquireActionRate import AcquireActionRate
 
 
 class ExperienceModelOptions:
     metadata: Optional[str]
+    acquire_action_rates: Optional[List[AcquireActionRate]]
     
     def __init__(
         self,
         metadata: Optional[str] = None,
+        acquire_action_rates: Optional[List[AcquireActionRate]] = None,
     ):
         self.metadata = metadata
+        self.acquire_action_rates = acquire_action_rates
 

@@ -22,8 +22,6 @@ class StampSheetResult:
     user_id: str
     transaction_id: str
     sheet_request: AcquireAction
-    created_at: int
-    ttl_at: int
     task_requests: Optional[List[ConsumeAction]] = None
     task_results: Optional[List[str]] = None
     sheet_result: Optional[str] = None
@@ -34,15 +32,11 @@ class StampSheetResult:
         user_id: str,
         transaction_id: str,
         sheet_request: AcquireAction,
-        created_at: int,
-        ttl_at: int,
         options: Optional[StampSheetResultOptions] = StampSheetResultOptions(),
     ):
         self.user_id = user_id
         self.transaction_id = transaction_id
         self.sheet_request = sheet_request
-        self.created_at = created_at
-        self.ttl_at = ttl_at
         self.task_requests = options.task_requests if options.task_requests else None
         self.task_results = options.task_results if options.task_results else None
         self.sheet_result = options.sheet_result if options.sheet_result else None
@@ -72,9 +66,5 @@ class StampSheetResult:
             properties["sheetResult"] = self.sheet_result
         if self.next_transaction_id is not None:
             properties["nextTransactionId"] = self.next_transaction_id
-        if self.created_at is not None:
-            properties["createdAt"] = self.created_at
-        if self.ttl_at is not None:
-            properties["ttlAt"] = self.ttl_at
 
         return properties

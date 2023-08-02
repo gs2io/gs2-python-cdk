@@ -13,25 +13,30 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
-from .options.OutputOptions import OutputOptions
+from .options.PurchaseCountOptions import PurchaseCountOptions
 
 
-class Output:
-    text: str
+class PurchaseCount:
+    name: str
+    count: int
 
     def __init__(
         self,
-        text: str,
-        options: Optional[OutputOptions] = OutputOptions(),
+        name: str,
+        count: int,
+        options: Optional[PurchaseCountOptions] = PurchaseCountOptions(),
     ):
-        self.text = text
+        self.name = name
+        self.count = count
 
     def properties(
         self,
     ) -> Dict[str, Any]:
         properties: Dict[str, Any] = {}
 
-        if self.text is not None:
-            properties["text"] = self.text
+        if self.name is not None:
+            properties["name"] = self.name
+        if self.count is not None:
+            properties["count"] = self.count
 
         return properties

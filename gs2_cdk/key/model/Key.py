@@ -84,7 +84,7 @@ class Key(CdkResource):
         self,
     ) -> GetAttr:
         return GetAttr(
-            None,
-            None,
+            self,
             "Item.KeyId",
+            None,
         )

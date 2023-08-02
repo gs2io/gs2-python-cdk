@@ -13,25 +13,19 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
-from .options.OutputOptions import OutputOptions
+from ....core.model import ConsumeAction
+from ....core.model import AcquireAction
 
 
-class Output:
-    text: str
-
+class RandomDisplayItemModelOptions:
+    metadata: Optional[str]
+    consume_actions: Optional[List[ConsumeAction]]
+    
     def __init__(
         self,
-        text: str,
-        options: Optional[OutputOptions] = OutputOptions(),
+        metadata: Optional[str] = None,
+        consume_actions: Optional[List[ConsumeAction]] = None,
     ):
-        self.text = text
+        self.metadata = metadata
+        self.consume_actions = consume_actions
 
-    def properties(
-        self,
-    ) -> Dict[str, Any]:
-        properties: Dict[str, Any] = {}
-
-        if self.text is not None:
-            properties["text"] = self.text
-
-        return properties

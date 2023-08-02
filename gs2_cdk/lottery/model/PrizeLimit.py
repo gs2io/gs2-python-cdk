@@ -19,21 +19,15 @@ from .options.PrizeLimitOptions import PrizeLimitOptions
 class PrizeLimit:
     prize_id: str
     drawn_count: int
-    created_at: int
-    updated_at: int
 
     def __init__(
         self,
         prize_id: str,
         drawn_count: int,
-        created_at: int,
-        updated_at: int,
         options: Optional[PrizeLimitOptions] = PrizeLimitOptions(),
     ):
         self.prize_id = prize_id
         self.drawn_count = drawn_count
-        self.created_at = created_at
-        self.updated_at = updated_at
 
     def properties(
         self,
@@ -44,9 +38,5 @@ class PrizeLimit:
             properties["prizeId"] = self.prize_id
         if self.drawn_count is not None:
             properties["drawnCount"] = self.drawn_count
-        if self.created_at is not None:
-            properties["createdAt"] = self.created_at
-        if self.updated_at is not None:
-            properties["updatedAt"] = self.updated_at
 
         return properties

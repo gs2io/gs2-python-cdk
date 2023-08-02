@@ -16,18 +16,21 @@ from typing import *
 
 from ...core.model import CdkResource, Stack
 from .Showcase import Showcase
+from .RandomShowcase import RandomShowcase
 
 
 class CurrentMasterData(CdkResource):
     version: str= "2019-04-04"
     namespace_name: str
     showcases: List[Showcase]
+    random_showcases: List[RandomShowcase]
 
     def __init__(
         self,
         stack: Stack,
         namespace_name: str,
         showcases: List[Showcase],
+        random_showcases: List[RandomShowcase],
     ):
         super().__init__(
             "Showcase_CurrentShowcaseMaster_" + namespace_name
@@ -35,6 +38,7 @@ class CurrentMasterData(CdkResource):
 
         self.namespace_name = namespace_name
         self.showcases = showcases
+        self.random_showcases = random_showcases
         stack.add_resource(
             self,
         )
@@ -61,6 +65,12 @@ class CurrentMasterData(CdkResource):
                 v.properties(
                 )
                 for v in self.showcases
+            ]
+        if self.random_showcases is not None:
+            settings["randomShowcases"] = [
+                v.properties(
+                )
+                for v in self.random_showcases
             ]
 
         if self.namespace_name is not None:

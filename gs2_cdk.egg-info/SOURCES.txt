@@ -103,6 +103,7 @@ src/gs2_cdk/exchange/stamp_sheet/IncrementalExchangeByUserId.py
 src/gs2_cdk/exchange/stamp_sheet/UnlockIncrementalExchangeByUserId.py
 src/gs2_cdk/exchange/stamp_sheet/__init__.py
 src/gs2_cdk/experience/__init__.py
+src/gs2_cdk/experience/model/AcquireActionRate.py
 src/gs2_cdk/experience/model/CurrentMasterData.py
 src/gs2_cdk/experience/model/ExperienceModel.py
 src/gs2_cdk/experience/model/Namespace.py
@@ -114,6 +115,7 @@ src/gs2_cdk/experience/ref/ThresholdRef.py
 src/gs2_cdk/experience/ref/__init__.py
 src/gs2_cdk/experience/stamp_sheet/AddExperienceByUserId.py
 src/gs2_cdk/experience/stamp_sheet/AddRankCapByUserId.py
+src/gs2_cdk/experience/stamp_sheet/MultiplyAcquireActionsByUserId.py
 src/gs2_cdk/experience/stamp_sheet/SetRankCapByUserId.py
 src/gs2_cdk/experience/stamp_sheet/__init__.py
 src/gs2_cdk/formation/__init__.py
@@ -433,6 +435,9 @@ src/gs2_cdk/showcase/__init__.py
 src/gs2_cdk/showcase/model/CurrentMasterData.py
 src/gs2_cdk/showcase/model/DisplayItem.py
 src/gs2_cdk/showcase/model/Namespace.py
+src/gs2_cdk/showcase/model/PurchaseCount.py
+src/gs2_cdk/showcase/model/RandomDisplayItemModel.py
+src/gs2_cdk/showcase/model/RandomShowcase.py
 src/gs2_cdk/showcase/model/SalesItem.py
 src/gs2_cdk/showcase/model/SalesItemGroup.py
 src/gs2_cdk/showcase/model/Showcase.py
@@ -442,6 +447,8 @@ src/gs2_cdk/showcase/ref/NamespaceRef.py
 src/gs2_cdk/showcase/ref/SalesItemGroupRef.py
 src/gs2_cdk/showcase/ref/SalesItemRef.py
 src/gs2_cdk/showcase/ref/__init__.py
+src/gs2_cdk/showcase/stamp_sheet/ForceReDrawByUserId.py
+src/gs2_cdk/showcase/stamp_sheet/IncrementPurchaseCountByUserId.py
 src/gs2_cdk/showcase/stamp_sheet/__init__.py
 src/gs2_cdk/stamina/__init__.py
 src/gs2_cdk/stamina/model/CurrentMasterData.py

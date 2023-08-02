@@ -120,7 +120,7 @@ class Namespace(CdkResource):
         self,
     ) -> GetAttr:
         return GetAttr(
-            None,
-            None,
+            self,
             "Item.NamespaceId",
+            None,
         )

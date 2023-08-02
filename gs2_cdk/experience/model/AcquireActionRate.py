@@ -13,25 +13,30 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
-from .options.OutputOptions import OutputOptions
+from .options.AcquireActionRateOptions import AcquireActionRateOptions
 
 
-class Output:
-    text: str
+class AcquireActionRate:
+    name: str
+    rates: List[float]
 
     def __init__(
         self,
-        text: str,
-        options: Optional[OutputOptions] = OutputOptions(),
+        name: str,
+        rates: List[float],
+        options: Optional[AcquireActionRateOptions] = AcquireActionRateOptions(),
     ):
-        self.text = text
+        self.name = name
+        self.rates = rates
 
     def properties(
         self,
     ) -> Dict[str, Any]:
         properties: Dict[str, Any] = {}
 
-        if self.text is not None:
-            properties["text"] = self.text
+        if self.name is not None:
+            properties["name"] = self.name
+        if self.rates is not None:
+            properties["rates"] = self.rates
 
         return properties

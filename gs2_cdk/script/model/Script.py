@@ -89,7 +89,7 @@ class Script(CdkResource):
         self,
     ) -> GetAttr:
         return GetAttr(
-            None,
-            None,
+            self,
             "Item.ScriptId",
+            None,
         )

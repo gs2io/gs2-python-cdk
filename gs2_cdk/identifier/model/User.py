@@ -127,7 +127,7 @@ class User(CdkResource):
         self,
     ) -> GetAttr:
         return GetAttr(
-            None,
-            None,
+            self,
             "Item.UserId",
+            None,
         )

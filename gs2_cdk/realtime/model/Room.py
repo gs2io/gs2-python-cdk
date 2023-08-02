@@ -97,7 +97,7 @@ class Room(CdkResource):
         self,
     ) -> GetAttr:
         return GetAttr(
-            None,
-            None,
+            self,
             "Item.RoomId",
+            None,
         )

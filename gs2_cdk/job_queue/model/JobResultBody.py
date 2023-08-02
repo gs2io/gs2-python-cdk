@@ -20,20 +20,17 @@ class JobResultBody:
     try_number: int
     status_code: int
     result: str
-    try_at: int
 
     def __init__(
         self,
         try_number: int,
         status_code: int,
         result: str,
-        try_at: int,
         options: Optional[JobResultBodyOptions] = JobResultBodyOptions(),
     ):
         self.try_number = try_number
         self.status_code = status_code
         self.result = result
-        self.try_at = try_at
 
     def properties(
         self,
@@ -46,7 +43,5 @@ class JobResultBody:
             properties["statusCode"] = self.status_code
         if self.result is not None:
             properties["result"] = self.result
-        if self.try_at is not None:
-            properties["tryAt"] = self.try_at
 
         return properties

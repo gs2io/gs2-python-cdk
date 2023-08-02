@@ -14,6 +14,7 @@
 from __future__ import annotations
 from typing import *
 from .Threshold import Threshold
+from .AcquireActionRate import AcquireActionRate
 from .options.ExperienceModelOptions import ExperienceModelOptions
 
 
@@ -24,6 +25,7 @@ class ExperienceModel:
     max_rank_cap: int
     rank_threshold: Threshold
     metadata: Optional[str] = None
+    acquire_action_rates: Optional[List[AcquireActionRate]] = None
 
     def __init__(
         self,
@@ -40,6 +42,7 @@ class ExperienceModel:
         self.max_rank_cap = max_rank_cap
         self.rank_threshold = rank_threshold
         self.metadata = options.metadata if options.metadata else None
+        self.acquire_action_rates = options.acquire_action_rates if options.acquire_action_rates else None
 
     def properties(
         self,
@@ -59,5 +62,11 @@ class ExperienceModel:
         if self.rank_threshold is not None:
             properties["rankThreshold"] = self.rank_threshold.properties(
             )
+        if self.acquire_action_rates is not None:
+            properties["acquireActionRates"] = [
+                v.properties(
+                )
+                for v in self.acquire_action_rates
+            ]
 
         return properties

@@ -20,8 +20,6 @@ class GitHubApiKey:
     name: str
     api_key: str
     encryption_key_name: str
-    created_at: int
-    updated_at: int
     description: Optional[str] = None
 
     def __init__(
@@ -29,15 +27,11 @@ class GitHubApiKey:
         name: str,
         api_key: str,
         encryption_key_name: str,
-        created_at: int,
-        updated_at: int,
         options: Optional[GitHubApiKeyOptions] = GitHubApiKeyOptions(),
     ):
         self.name = name
         self.api_key = api_key
         self.encryption_key_name = encryption_key_name
-        self.created_at = created_at
-        self.updated_at = updated_at
         self.description = options.description if options.description else None
 
     def properties(
@@ -53,9 +47,5 @@ class GitHubApiKey:
             properties["apiKey"] = self.api_key
         if self.encryption_key_name is not None:
             properties["encryptionKeyName"] = self.encryption_key_name
-        if self.created_at is not None:
-            properties["createdAt"] = self.created_at
-        if self.updated_at is not None:
-            properties["updatedAt"] = self.updated_at
 
         return properties

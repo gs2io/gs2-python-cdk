@@ -22,7 +22,6 @@ class IssueJob:
     issued_count: int
     issue_request_count: int
     status: IssueJobStatus
-    created_at: int
     metadata: Optional[str] = None
 
     def __init__(
@@ -31,14 +30,12 @@ class IssueJob:
         issued_count: int,
         issue_request_count: int,
         status: IssueJobStatus,
-        created_at: int,
         options: Optional[IssueJobOptions] = IssueJobOptions(),
     ):
         self.name = name
         self.issued_count = issued_count
         self.issue_request_count = issue_request_count
         self.status = status
-        self.created_at = created_at
         self.metadata = options.metadata if options.metadata else None
 
     def properties(
@@ -56,7 +53,5 @@ class IssueJob:
             properties["issueRequestCount"] = self.issue_request_count
         if self.status is not None:
             properties["status"] = self.status.value
-        if self.created_at is not None:
-            properties["createdAt"] = self.created_at
 
         return properties

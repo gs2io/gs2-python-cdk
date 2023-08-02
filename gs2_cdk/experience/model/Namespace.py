@@ -16,6 +16,7 @@ from typing import *
 
 from ...core.model import CdkResource, Stack
 from ...core.func import GetAttr
+from ...core.model import TransactionSetting
 from ...core.model import ScriptSetting
 from ...core.model import LogSetting
 
@@ -30,6 +31,7 @@ class Namespace(CdkResource):
     stack: Stack
     name: str
     description: Optional[str] = None
+    transaction_setting: Optional[TransactionSetting] = None
     experience_cap_script_id: Optional[str] = None
     change_experience_script: Optional[ScriptSetting] = None
     change_rank_script: Optional[ScriptSetting] = None
@@ -50,6 +52,7 @@ class Namespace(CdkResource):
         self.stack = stack
         self.name = name
         self.description = options.description if options.description else None
+        self.transaction_setting = options.transaction_setting if options.transaction_setting else None
         self.experience_cap_script_id = options.experience_cap_script_id if options.experience_cap_script_id else None
         self.change_experience_script = options.change_experience_script if options.change_experience_script else None
         self.change_rank_script = options.change_rank_script if options.change_rank_script else None
@@ -80,6 +83,9 @@ class Namespace(CdkResource):
             properties["Name"] = self.name
         if self.description is not None:
             properties["Description"] = self.description
+        if self.transaction_setting is not None:
+            properties["TransactionSetting"] = self.transaction_setting.properties(
+            )
         if self.experience_cap_script_id is not None:
             properties["ExperienceCapScriptId"] = self.experience_cap_script_id
         if self.change_experience_script is not None:
@@ -111,9 +117,9 @@ class Namespace(CdkResource):
         self,
     ) -> GetAttr:
         return GetAttr(
-            None,
-            None,
+            self,
             "Item.NamespaceId",
+            None,
         )
 
     def master_data(

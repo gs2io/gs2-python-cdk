@@ -13,25 +13,29 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
-from .options.OutputOptions import OutputOptions
+
+from ...core.model import AcquireAction, ConsumeAction
 
 
-class Output:
-    text: str
+class IncrementPurchaseCountByUserId(ConsumeAction):
 
     def __init__(
         self,
-        text: str,
-        options: Optional[OutputOptions] = OutputOptions(),
+        namespace_name: str,
+        showcase_name: str,
+        display_item_name: str,
+        count: int,
+        user_id: Optional[str] = "#{userId}",
     ):
-        self.text = text
-
-    def properties(
-        self,
-    ) -> Dict[str, Any]:
         properties: Dict[str, Any] = {}
 
-        if self.text is not None:
-            properties["text"] = self.text
+        properties["namespaceName"] = namespace_name
+        properties["showcaseName"] = showcase_name
+        properties["displayItemName"] = display_item_name
+        properties["count"] = count
+        properties["userId"] = user_id
 
-        return properties
+        super().__init__(
+            "Gs2Showcase:IncrementPurchaseCountByUserId",
+            properties,
+        )

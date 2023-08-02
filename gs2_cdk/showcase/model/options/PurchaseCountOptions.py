@@ -13,25 +13,12 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
-from .options.OutputOptions import OutputOptions
 
 
-class Output:
-    text: str
-
+class PurchaseCountOptions:
+    
     def __init__(
         self,
-        text: str,
-        options: Optional[OutputOptions] = OutputOptions(),
     ):
-        self.text = text
+        pass
 
-    def properties(
-        self,
-    ) -> Dict[str, Any]:
-        properties: Dict[str, Any] = {}
-
-        if self.text is not None:
-            properties["text"] = self.text
-
-        return properties

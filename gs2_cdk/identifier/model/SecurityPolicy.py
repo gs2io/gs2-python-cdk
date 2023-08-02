@@ -89,7 +89,7 @@ class SecurityPolicy(CdkResource):
         self,
     ) -> GetAttr:
         return GetAttr(
-            None,
-            None,
+            self,
             "Item.SecurityPolicyId",
+            None,
         )

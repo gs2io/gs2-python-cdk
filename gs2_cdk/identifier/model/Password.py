@@ -79,7 +79,7 @@ class Password(CdkResource):
         self,
     ) -> GetAttr:
         return GetAttr(
-            None,
-            None,
+            self,
             "Item.PasswordId",
+            None,
         )

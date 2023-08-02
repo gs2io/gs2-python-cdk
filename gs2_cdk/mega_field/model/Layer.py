@@ -22,7 +22,6 @@ class Layer:
     number_of_min_entries: int
     number_of_max_entries: int
     height: int
-    created_at: int
     root: Optional[str] = None
 
     def __init__(
@@ -32,7 +31,6 @@ class Layer:
         number_of_min_entries: int,
         number_of_max_entries: int,
         height: int,
-        created_at: int,
         options: Optional[LayerOptions] = LayerOptions(),
     ):
         self.area_model_name = area_model_name
@@ -40,7 +38,6 @@ class Layer:
         self.number_of_min_entries = number_of_min_entries
         self.number_of_max_entries = number_of_max_entries
         self.height = height
-        self.created_at = created_at
         self.root = options.root if options.root else None
 
     def properties(
@@ -60,7 +57,5 @@ class Layer:
             properties["numberOfMaxEntries"] = self.number_of_max_entries
         if self.height is not None:
             properties["height"] = self.height
-        if self.created_at is not None:
-            properties["createdAt"] = self.created_at
 
         return properties

@@ -17,4 +17,6 @@ from .ExperienceModel import ExperienceModel
 from .options.ExperienceModelOptions import ExperienceModelOptions
 from .Threshold import Threshold
 from .options.ThresholdOptions import ThresholdOptions
+from .AcquireActionRate import AcquireActionRate
+from .options.AcquireActionRateOptions import AcquireActionRateOptions
 from .CurrentMasterData import CurrentMasterData
