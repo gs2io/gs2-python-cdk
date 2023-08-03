@@ -22,23 +22,23 @@ from .CounterModel import CounterModel
 class CurrentMasterData(CdkResource):
     version: str= "2019-05-28"
     namespace_name: str
-    mission_group_models: List[MissionGroupModel]
-    counter_models: List[CounterModel]
+    groups: List[MissionGroupModel]
+    counters: List[CounterModel]
 
     def __init__(
         self,
         stack: Stack,
         namespace_name: str,
-        mission_group_models: List[MissionGroupModel],
-        counter_models: List[CounterModel],
+        groups: List[MissionGroupModel],
+        counters: List[CounterModel],
     ):
         super().__init__(
             "Mission_CurrentMissionMaster_" + namespace_name
         )
 
         self.namespace_name = namespace_name
-        self.mission_group_models = mission_group_models
-        self.counter_models = counter_models
+        self.groups = groups
+        self.counters = counters
         stack.add_resource(
             self,
         )
@@ -60,17 +60,17 @@ class CurrentMasterData(CdkResource):
         settings: Dict[str, Any] = {}
 
         settings["version"] = self.version
-        if self.mission_group_models is not None:
-            settings["missionGroupModels"] = [
+        if self.groups is not None:
+            settings["groups"] = [
                 v.properties(
                 )
-                for v in self.mission_group_models
+                for v in self.groups
             ]
-        if self.counter_models is not None:
-            settings["counterModels"] = [
+        if self.counters is not None:
+            settings["counters"] = [
                 v.properties(
                 )
-                for v in self.counter_models
+                for v in self.counters
             ]
 
         if self.namespace_name is not None:

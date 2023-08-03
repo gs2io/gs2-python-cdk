@@ -15,6 +15,7 @@ from __future__ import annotations
 from typing import *
 from ...core.model import AcquireAction
 from .options.MissionTaskModelOptions import MissionTaskModelOptions
+from .enum.MissionTaskModelTargetResetType import MissionTaskModelTargetResetType
 
 
 class MissionTaskModel:
@@ -22,6 +23,7 @@ class MissionTaskModel:
     counter_name: str
     target_value: int
     metadata: Optional[str] = None
+    target_reset_type: Optional[MissionTaskModelTargetResetType] = None
     complete_acquire_actions: Optional[List[AcquireAction]] = None
     challenge_period_event_id: Optional[str] = None
     premise_mission_task_name: Optional[str] = None
@@ -37,6 +39,7 @@ class MissionTaskModel:
         self.counter_name = counter_name
         self.target_value = target_value
         self.metadata = options.metadata if options.metadata else None
+        self.target_reset_type = options.target_reset_type if options.target_reset_type else None
         self.complete_acquire_actions = options.complete_acquire_actions if options.complete_acquire_actions else None
         self.challenge_period_event_id = options.challenge_period_event_id if options.challenge_period_event_id else None
         self.premise_mission_task_name = options.premise_mission_task_name if options.premise_mission_task_name else None
@@ -52,6 +55,8 @@ class MissionTaskModel:
             properties["metadata"] = self.metadata
         if self.counter_name is not None:
             properties["counterName"] = self.counter_name
+        if self.target_reset_type is not None:
+            properties["targetResetType"] = self.target_reset_type.value
         if self.target_value is not None:
             properties["targetValue"] = self.target_value
         if self.complete_acquire_actions is not None:

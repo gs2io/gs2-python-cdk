@@ -14,10 +14,12 @@
 from __future__ import annotations
 from typing import *
 from ....core.model import AcquireAction
+from ..enum.MissionTaskModelTargetResetType import MissionTaskModelTargetResetType
 
 
 class MissionTaskModelOptions:
     metadata: Optional[str]
+    target_reset_type: Optional[MissionTaskModelTargetResetType]
     complete_acquire_actions: Optional[List[AcquireAction]]
     challenge_period_event_id: Optional[str]
     premise_mission_task_name: Optional[str]
@@ -25,11 +27,13 @@ class MissionTaskModelOptions:
     def __init__(
         self,
         metadata: Optional[str] = None,
+        target_reset_type: Optional[MissionTaskModelTargetResetType] = None,
         complete_acquire_actions: Optional[List[AcquireAction]] = None,
         challenge_period_event_id: Optional[str] = None,
         premise_mission_task_name: Optional[str] = None,
     ):
         self.metadata = metadata
+        self.target_reset_type = target_reset_type
         self.complete_acquire_actions = complete_acquire_actions
         self.challenge_period_event_id = challenge_period_event_id
         self.premise_mission_task_name = premise_mission_task_name

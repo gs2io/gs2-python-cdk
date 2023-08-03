@@ -123,14 +123,14 @@ class Namespace(CdkResource):
 
     def master_data(
         self,
-        mission_group_models: List[MissionGroupModel],
-        counter_models: List[CounterModel],
+        groups: List[MissionGroupModel],
+        counters: List[CounterModel],
     ) -> Namespace:
         CurrentMasterData(
             self.stack,
             self.name,
-            mission_group_models,
-            counter_models,
+            groups,
+            counters,
         ).add_depends_on(
             self,
         )

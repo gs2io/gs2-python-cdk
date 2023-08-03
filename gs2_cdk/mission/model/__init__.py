@@ -33,6 +33,7 @@ from .options.MissionGroupModelResetTypeIsWeeklyOptions import MissionGroupModel
 from .options.MissionGroupModelResetTypeIsMonthlyOptions import MissionGroupModelResetTypeIsMonthlyOptions
 from .MissionTaskModel import MissionTaskModel
 from .options.MissionTaskModelOptions import MissionTaskModelOptions
+from .enum.MissionTaskModelTargetResetType import MissionTaskModelTargetResetType
 from .ScopedValue import ScopedValue
 from .options.ScopedValueOptions import ScopedValueOptions
 from .enum.ScopedValueResetType import ScopedValueResetType
