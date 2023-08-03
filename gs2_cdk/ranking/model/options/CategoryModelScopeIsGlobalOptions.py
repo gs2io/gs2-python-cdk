@@ -13,6 +13,7 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from ..Scope import Scope
 from ..enum.CategoryModelOrderDirection import CategoryModelOrderDirection
 from ..enum.CategoryModelScope import CategoryModelScope
 
@@ -23,6 +24,7 @@ class CategoryModelScopeIsGlobalOptions:
     maximum_value: Optional[int]
     calculate_fixed_timing_hour: Optional[int]
     calculate_fixed_timing_minute: Optional[int]
+    additional_scopes: Optional[List[Scope]]
     entry_period_event_id: Optional[str]
     access_period_event_id: Optional[str]
     ignore_user_ids: Optional[List[str]]
@@ -35,6 +37,7 @@ class CategoryModelScopeIsGlobalOptions:
         maximum_value: Optional[int] = None,
         calculate_fixed_timing_hour: Optional[int] = None,
         calculate_fixed_timing_minute: Optional[int] = None,
+        additional_scopes: Optional[List[Scope]] = None,
         entry_period_event_id: Optional[str] = None,
         access_period_event_id: Optional[str] = None,
         ignore_user_ids: Optional[List[str]] = None,
@@ -45,6 +48,7 @@ class CategoryModelScopeIsGlobalOptions:
         self.maximum_value = maximum_value
         self.calculate_fixed_timing_hour = calculate_fixed_timing_hour
         self.calculate_fixed_timing_minute = calculate_fixed_timing_minute
+        self.additional_scopes = additional_scopes
         self.entry_period_event_id = entry_period_event_id
         self.access_period_event_id = access_period_event_id
         self.ignore_user_ids = ignore_user_ids

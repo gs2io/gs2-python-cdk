@@ -13,6 +13,7 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from .Scope import Scope
 from .options.CategoryModelOptions import CategoryModelOptions
 from .options.CategoryModelScopeIsGlobalOptions import CategoryModelScopeIsGlobalOptions
 from .options.CategoryModelScopeIsScopedOptions import CategoryModelScopeIsScopedOptions
@@ -32,6 +33,7 @@ class CategoryModel:
     calculate_fixed_timing_hour: Optional[int] = None
     calculate_fixed_timing_minute: Optional[int] = None
     calculate_interval_minutes: Optional[int] = None
+    additional_scopes: Optional[List[Scope]] = None
     entry_period_event_id: Optional[str] = None
     access_period_event_id: Optional[str] = None
     ignore_user_ids: Optional[List[str]] = None
@@ -56,6 +58,7 @@ class CategoryModel:
         self.calculate_fixed_timing_hour = options.calculate_fixed_timing_hour if options.calculate_fixed_timing_hour else None
         self.calculate_fixed_timing_minute = options.calculate_fixed_timing_minute if options.calculate_fixed_timing_minute else None
         self.calculate_interval_minutes = options.calculate_interval_minutes if options.calculate_interval_minutes else None
+        self.additional_scopes = options.additional_scopes if options.additional_scopes else None
         self.entry_period_event_id = options.entry_period_event_id if options.entry_period_event_id else None
         self.access_period_event_id = options.access_period_event_id if options.access_period_event_id else None
         self.ignore_user_ids = options.ignore_user_ids if options.ignore_user_ids else None
@@ -81,6 +84,7 @@ class CategoryModel:
                 options.maximum_value,
                 options.calculate_fixed_timing_hour,
                 options.calculate_fixed_timing_minute,
+                options.additional_scopes,
                 options.entry_period_event_id,
                 options.access_period_event_id,
                 options.ignore_user_ids,
@@ -106,6 +110,7 @@ class CategoryModel:
                 options.maximum_value,
                 options.calculate_fixed_timing_hour,
                 options.calculate_fixed_timing_minute,
+                options.additional_scopes,
                 options.entry_period_event_id,
                 options.access_period_event_id,
                 options.ignore_user_ids,
@@ -140,6 +145,12 @@ class CategoryModel:
             properties["calculateFixedTimingMinute"] = self.calculate_fixed_timing_minute
         if self.calculate_interval_minutes is not None:
             properties["calculateIntervalMinutes"] = self.calculate_interval_minutes
+        if self.additional_scopes is not None:
+            properties["additionalScopes"] = [
+                v.properties(
+                )
+                for v in self.additional_scopes
+            ]
         if self.entry_period_event_id is not None:
             properties["entryPeriodEventId"] = self.entry_period_event_id
         if self.access_period_event_id is not None:

@@ -70,6 +70,8 @@ src/gs2_cdk/enchant/ref/__init__.py
 src/gs2_cdk/enchant/stamp_sheet/AddRarityParameterStatusByUserId.py
 src/gs2_cdk/enchant/stamp_sheet/ReDrawBalanceParameterStatusByUserId.py
 src/gs2_cdk/enchant/stamp_sheet/ReDrawRarityParameterStatusByUserId.py
+src/gs2_cdk/enchant/stamp_sheet/SetBalanceParameterStatusByUserId.py
+src/gs2_cdk/enchant/stamp_sheet/SetRarityParameterStatusByUserId.py
 src/gs2_cdk/enchant/stamp_sheet/VerifyRarityParameterStatusByUserId.py
 src/gs2_cdk/enchant/stamp_sheet/__init__.py
 src/gs2_cdk/enhance/__init__.py
@@ -387,6 +389,7 @@ src/gs2_cdk/ranking/model/CalculatedAt.py
 src/gs2_cdk/ranking/model/CategoryModel.py
 src/gs2_cdk/ranking/model/CurrentMasterData.py
 src/gs2_cdk/ranking/model/Namespace.py
+src/gs2_cdk/ranking/model/Scope.py
 src/gs2_cdk/ranking/model/__init__.py
 src/gs2_cdk/ranking/ref/CategoryModelRef.py
 src/gs2_cdk/ranking/ref/NamespaceRef.py

@@ -18,8 +18,10 @@ from ...core.func import GetAttr, Join
 from .BalanceParameterModelRef import BalanceParameterModelRef
 from .RarityParameterModelRef import RarityParameterModelRef
 from ..stamp_sheet.ReDrawBalanceParameterStatusByUserId import ReDrawBalanceParameterStatusByUserId
+from ..stamp_sheet.SetBalanceParameterStatusByUserId import SetBalanceParameterStatusByUserId
 from ..stamp_sheet.ReDrawRarityParameterStatusByUserId import ReDrawRarityParameterStatusByUserId
 from ..stamp_sheet.AddRarityParameterStatusByUserId import AddRarityParameterStatusByUserId
+from ..stamp_sheet.SetRarityParameterStatusByUserId import SetRarityParameterStatusByUserId
 from ..stamp_sheet.VerifyRarityParameterStatusByUserId import VerifyRarityParameterStatusByUserId
 
 
@@ -65,6 +67,21 @@ class NamespaceRef:
             user_id,
         )
 
+    def set_balance_parameter_status(
+        self,
+        parameter_name: str,
+        property_id: str,
+        parameter_values: List[BalanceParameterValue],
+        user_id: Optional[str] = "#{userId}",
+    ) -> SetBalanceParameterStatusByUserId:
+        return SetBalanceParameterStatusByUserId(
+            self.namespace_name,
+            parameter_name,
+            property_id,
+            parameter_values,
+            user_id,
+        )
+
     def re_draw_rarity_parameter_status(
         self,
         parameter_name: str,
@@ -92,6 +109,21 @@ class NamespaceRef:
             parameter_name,
             property_id,
             count,
+            user_id,
+        )
+
+    def set_rarity_parameter_status(
+        self,
+        parameter_name: str,
+        property_id: str,
+        parameter_values: Optional[List[RarityParameterValue]] = None,
+        user_id: Optional[str] = "#{userId}",
+    ) -> SetRarityParameterStatusByUserId:
+        return SetRarityParameterStatusByUserId(
+            self.namespace_name,
+            parameter_name,
+            property_id,
+            parameter_values,
             user_id,
         )
 

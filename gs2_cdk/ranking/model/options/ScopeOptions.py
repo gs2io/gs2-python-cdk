@@ -11,9 +11,14 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-from .ReDrawBalanceParameterStatusByUserId import ReDrawBalanceParameterStatusByUserId
-from .SetBalanceParameterStatusByUserId import SetBalanceParameterStatusByUserId
-from .ReDrawRarityParameterStatusByUserId import ReDrawRarityParameterStatusByUserId
-from .AddRarityParameterStatusByUserId import AddRarityParameterStatusByUserId
-from .SetRarityParameterStatusByUserId import SetRarityParameterStatusByUserId
-from .VerifyRarityParameterStatusByUserId import VerifyRarityParameterStatusByUserId
+from __future__ import annotations
+from typing import *
+
+
+class ScopeOptions:
+    
+    def __init__(
+        self,
+    ):
+        pass
+

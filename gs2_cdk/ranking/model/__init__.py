@@ -19,6 +19,8 @@ from .enum.CategoryModelOrderDirection import CategoryModelOrderDirection
 from .enum.CategoryModelScope import CategoryModelScope
 from .options.CategoryModelScopeIsGlobalOptions import CategoryModelScopeIsGlobalOptions
 from .options.CategoryModelScopeIsScopedOptions import CategoryModelScopeIsScopedOptions
+from .Scope import Scope
+from .options.ScopeOptions import ScopeOptions
 from .CalculatedAt import CalculatedAt
 from .options.CalculatedAtOptions import CalculatedAtOptions
 from .CurrentMasterData import CurrentMasterData
