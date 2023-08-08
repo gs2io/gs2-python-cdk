@@ -18,35 +18,8 @@ from ...core.func import GetAttr, Join
 
 
 class RecoverIntervalTableRef:
-    namespace_name: str
-    recover_interval_table_name: str
 
     def __init__(
         self,
-        namespace_name: str,
-        recover_interval_table_name: str,
     ):
-        self.namespace_name = namespace_name
-        self.recover_interval_table_name = recover_interval_table_name
-
-    def grn(
-        self,
-    ) -> str:
-        return Join(
-            ":",
-            [
-                "grn",
-                "gs2",
-                GetAttr.region(
-                ).str(
-                ),
-                GetAttr.owner_id(
-                ).str(
-                ),
-                "stamina",
-                self.namespace_name,
-                "recoverIntervalTable",
-                self.recover_interval_table_name,
-            ],
-        ).str(
-        )
+        pass

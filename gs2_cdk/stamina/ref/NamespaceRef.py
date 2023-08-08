@@ -15,9 +15,6 @@ from __future__ import annotations
 from typing import *
 
 from ...core.func import GetAttr, Join
-from .MaxStaminaTableRef import MaxStaminaTableRef
-from .RecoverIntervalTableRef import RecoverIntervalTableRef
-from .RecoverValueTableRef import RecoverValueTableRef
 from .StaminaModelRef import StaminaModelRef
 from ..stamp_sheet.RecoverStaminaByUserId import RecoverStaminaByUserId
 from ..stamp_sheet.RaiseMaxValueByUserId import RaiseMaxValueByUserId
@@ -35,33 +32,6 @@ class NamespaceRef:
         namespace_name: str,
     ):
         self.namespace_name = namespace_name
-
-    def max_stamina_table(
-        self,
-        max_stamina_table_name: str,
-    ) -> MaxStaminaTableRef:
-        return MaxStaminaTableRef(
-            self.namespace_name,
-            max_stamina_table_name,
-        )
-
-    def recover_interval_table(
-        self,
-        recover_interval_table_name: str,
-    ) -> RecoverIntervalTableRef:
-        return RecoverIntervalTableRef(
-            self.namespace_name,
-            recover_interval_table_name,
-        )
-
-    def recover_value_table(
-        self,
-        recover_value_table_name: str,
-    ) -> RecoverValueTableRef:
-        return RecoverValueTableRef(
-            self.namespace_name,
-            recover_value_table_name,
-        )
 
     def stamina_model(
         self,
