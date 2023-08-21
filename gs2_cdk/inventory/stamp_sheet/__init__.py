@@ -17,6 +17,8 @@ from .AcquireItemSetByUserId import AcquireItemSetByUserId
 from .AddReferenceOfByUserId import AddReferenceOfByUserId
 from .DeleteReferenceOfByUserId import DeleteReferenceOfByUserId
 from .AcquireSimpleItemsByUserId import AcquireSimpleItemsByUserId
+from .AcquireBigItemByUserId import AcquireBigItemByUserId
 from .ConsumeItemSetByUserId import ConsumeItemSetByUserId
 from .VerifyReferenceOfByUserId import VerifyReferenceOfByUserId
 from .ConsumeSimpleItemsByUserId import ConsumeSimpleItemsByUserId
+from .ConsumeBigItemByUserId import ConsumeBigItemByUserId

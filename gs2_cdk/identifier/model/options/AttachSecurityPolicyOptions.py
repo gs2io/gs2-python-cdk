@@ -17,10 +17,13 @@ from typing import *
 
 class AttachSecurityPolicyOptions:
     security_policy_ids: Optional[List[str]]
+    revision: Optional[int]
     
     def __init__(
         self,
         security_policy_ids: Optional[List[str]] = None,
+        revision: Optional[int] = None,
     ):
         self.security_policy_ids = security_policy_ids
+        self.revision = revision
 

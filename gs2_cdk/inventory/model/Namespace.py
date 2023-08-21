@@ -23,6 +23,7 @@ from ..ref.NamespaceRef import NamespaceRef
 from .CurrentMasterData import CurrentMasterData
 from .InventoryModel import InventoryModel
 from .SimpleInventoryModel import SimpleInventoryModel
+from .BigInventoryModel import BigInventoryModel
 
 from .options.NamespaceOptions import NamespaceOptions
 
@@ -112,12 +113,14 @@ class Namespace(CdkResource):
         self,
         inventory_models: List[InventoryModel],
         simple_inventory_models: List[SimpleInventoryModel],
+        big_inventory_models: List[BigInventoryModel],
     ) -> Namespace:
         CurrentMasterData(
             self.stack,
             self.name,
             inventory_models,
             simple_inventory_models,
+            big_inventory_models,
         ).add_depends_on(
             self,
         )

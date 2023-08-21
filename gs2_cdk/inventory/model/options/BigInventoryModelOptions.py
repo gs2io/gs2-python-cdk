@@ -13,14 +13,15 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from ..BigItemModel import BigItemModel
 
 
-class PrizeLimitOptions:
-    revision: Optional[int]
+class BigInventoryModelOptions:
+    metadata: Optional[str]
     
     def __init__(
         self,
-        revision: Optional[int] = None,
+        metadata: Optional[str] = None,
     ):
-        self.revision = revision
+        self.metadata = metadata
 

@@ -18,6 +18,7 @@ from .options.OutputOptions import OutputOptions
 
 class Output:
     text: str
+    revision: Optional[int] = None
 
     def __init__(
         self,
@@ -25,6 +26,7 @@ class Output:
         options: Optional[OutputOptions] = OutputOptions(),
     ):
         self.text = text
+        self.revision = options.revision if options.revision else None
 
     def properties(
         self,

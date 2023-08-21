@@ -14,13 +14,28 @@
 from __future__ import annotations
 from typing import *
 
+from ...core.model import AcquireAction, ConsumeAction
 
-class PrizeLimitOptions:
-    revision: Optional[int]
-    
+
+class AcquireBigItemByUserId(AcquireAction):
+
     def __init__(
         self,
-        revision: Optional[int] = None,
+        namespace_name: str,
+        inventory_name: str,
+        item_name: str,
+        acquire_count: str,
+        user_id: Optional[str] = "#{userId}",
     ):
-        self.revision = revision
+        properties: Dict[str, Any] = {}
 
+        properties["namespaceName"] = namespace_name
+        properties["inventoryName"] = inventory_name
+        properties["itemName"] = item_name
+        properties["acquireCount"] = acquire_count
+        properties["userId"] = user_id
+
+        super().__init__(
+            "Gs2Inventory:AcquireBigItemByUserId",
+            properties,
+        )

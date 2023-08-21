@@ -18,10 +18,13 @@ from ..enum.IssueJobStatus import IssueJobStatus
 
 class IssueJobOptions:
     metadata: Optional[str]
+    revision: Optional[int]
     
     def __init__(
         self,
         metadata: Optional[str] = None,
+        revision: Optional[int] = None,
     ):
         self.metadata = metadata
+        self.revision = revision
 

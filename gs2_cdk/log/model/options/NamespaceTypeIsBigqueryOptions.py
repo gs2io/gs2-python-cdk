@@ -19,11 +19,14 @@ from ..enum.NamespaceType import NamespaceType
 class NamespaceTypeIsBigqueryOptions:
     description: Optional[str]
     status: Optional[str]
+    revision: Optional[int]
     
     def __init__(
         self,
         description: Optional[str] = None,
         status: Optional[str] = None,
+        revision: Optional[int] = None,
     ):
         self.description = description
         self.status = status
+        self.revision = revision

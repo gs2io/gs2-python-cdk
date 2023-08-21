@@ -16,9 +16,11 @@ from typing import *
 
 
 class OutputOptions:
+    revision: Optional[int]
     
     def __init__(
         self,
+        revision: Optional[int] = None,
     ):
-        pass
+        self.revision = revision
 

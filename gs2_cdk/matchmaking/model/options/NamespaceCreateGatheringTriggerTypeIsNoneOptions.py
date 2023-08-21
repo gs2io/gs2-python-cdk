@@ -28,6 +28,7 @@ class NamespaceCreateGatheringTriggerTypeIsNoneOptions:
     complete_notification: Optional[NotificationSetting]
     change_rating_notification: Optional[NotificationSetting]
     log_setting: Optional[LogSetting]
+    revision: Optional[int]
     
     def __init__(
         self,
@@ -38,6 +39,7 @@ class NamespaceCreateGatheringTriggerTypeIsNoneOptions:
         complete_notification: Optional[NotificationSetting] = None,
         change_rating_notification: Optional[NotificationSetting] = None,
         log_setting: Optional[LogSetting] = None,
+        revision: Optional[int] = None,
     ):
         self.description = description
         self.change_rating_script = change_rating_script
@@ -46,3 +48,4 @@ class NamespaceCreateGatheringTriggerTypeIsNoneOptions:
         self.complete_notification = complete_notification
         self.change_rating_notification = change_rating_notification
         self.log_setting = log_setting
+        self.revision = revision

@@ -19,6 +19,7 @@ from .options.PrizeLimitOptions import PrizeLimitOptions
 class PrizeLimit:
     prize_id: str
     drawn_count: int
+    revision: Optional[int] = None
 
     def __init__(
         self,
@@ -28,6 +29,7 @@ class PrizeLimit:
     ):
         self.prize_id = prize_id
         self.drawn_count = drawn_count
+        self.revision = options.revision if options.revision else None
 
     def properties(
         self,

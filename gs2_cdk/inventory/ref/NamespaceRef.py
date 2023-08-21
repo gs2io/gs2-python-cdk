@@ -17,6 +17,7 @@ from typing import *
 from ...core.func import GetAttr, Join
 from .InventoryModelRef import InventoryModelRef
 from .SimpleInventoryModelRef import SimpleInventoryModelRef
+from .BigInventoryModelRef import BigInventoryModelRef
 from ..stamp_sheet.AddCapacityByUserId import AddCapacityByUserId
 from ..stamp_sheet.SetCapacityByUserId import SetCapacityByUserId
 from ..stamp_sheet.AcquireItemSetByUserId import AcquireItemSetByUserId
@@ -24,9 +25,11 @@ from ..stamp_sheet.AddReferenceOfByUserId import AddReferenceOfByUserId
 from ..stamp_sheet.DeleteReferenceOfByUserId import DeleteReferenceOfByUserId
 from ..stamp_sheet.AcquireSimpleItemsByUserId import AcquireSimpleItemsByUserId
 from ..model.AcquireCount import AcquireCount
+from ..stamp_sheet.AcquireBigItemByUserId import AcquireBigItemByUserId
 from ..stamp_sheet.ConsumeItemSetByUserId import ConsumeItemSetByUserId
 from ..stamp_sheet.VerifyReferenceOfByUserId import VerifyReferenceOfByUserId
 from ..stamp_sheet.ConsumeSimpleItemsByUserId import ConsumeSimpleItemsByUserId
+from ..stamp_sheet.ConsumeBigItemByUserId import ConsumeBigItemByUserId
 
 
 class NamespaceRef:
@@ -52,6 +55,15 @@ class NamespaceRef:
         inventory_name: str,
     ) -> SimpleInventoryModelRef:
         return SimpleInventoryModelRef(
+            self.namespace_name,
+            inventory_name,
+        )
+
+    def big_inventory_model(
+        self,
+        inventory_name: str,
+    ) -> BigInventoryModelRef:
+        return BigInventoryModelRef(
             self.namespace_name,
             inventory_name,
         )
@@ -150,6 +162,21 @@ class NamespaceRef:
             user_id,
         )
 
+    def acquire_big_item(
+        self,
+        inventory_name: str,
+        item_name: str,
+        acquire_count: str,
+        user_id: Optional[str] = "#{userId}",
+    ) -> AcquireBigItemByUserId:
+        return AcquireBigItemByUserId(
+            self.namespace_name,
+            inventory_name,
+            item_name,
+            acquire_count,
+            user_id,
+        )
+
     def consume_item_set(
         self,
         inventory_name: str,
@@ -196,6 +223,21 @@ class NamespaceRef:
             self.namespace_name,
             inventory_name,
             consume_counts,
+            user_id,
+        )
+
+    def consume_big_item(
+        self,
+        inventory_name: str,
+        item_name: str,
+        consume_count: str,
+        user_id: Optional[str] = "#{userId}",
+    ) -> ConsumeBigItemByUserId:
+        return ConsumeBigItemByUserId(
+            self.namespace_name,
+            inventory_name,
+            item_name,
+            consume_count,
             user_id,
         )
 

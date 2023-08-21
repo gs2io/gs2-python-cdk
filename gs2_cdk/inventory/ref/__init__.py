@@ -16,3 +16,5 @@ from .InventoryModelRef import InventoryModelRef
 from .ItemModelRef import ItemModelRef
 from .SimpleInventoryModelRef import SimpleInventoryModelRef
 from .SimpleItemModelRef import SimpleItemModelRef
+from .BigInventoryModelRef import BigInventoryModelRef
+from .BigItemModelRef import BigItemModelRef

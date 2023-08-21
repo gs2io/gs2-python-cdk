@@ -13,28 +13,24 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
-from .options.GitHubApiKeyOptions import GitHubApiKeyOptions
+from .BigItemModel import BigItemModel
+from .options.BigInventoryModelOptions import BigInventoryModelOptions
 
 
-class GitHubApiKey:
+class BigInventoryModel:
     name: str
-    api_key: str
-    encryption_key_name: str
-    description: Optional[str] = None
-    revision: Optional[int] = None
+    big_item_models: List[BigItemModel]
+    metadata: Optional[str] = None
 
     def __init__(
         self,
         name: str,
-        api_key: str,
-        encryption_key_name: str,
-        options: Optional[GitHubApiKeyOptions] = GitHubApiKeyOptions(),
+        big_item_models: List[BigItemModel],
+        options: Optional[BigInventoryModelOptions] = BigInventoryModelOptions(),
     ):
         self.name = name
-        self.api_key = api_key
-        self.encryption_key_name = encryption_key_name
-        self.description = options.description if options.description else None
-        self.revision = options.revision if options.revision else None
+        self.big_item_models = big_item_models
+        self.metadata = options.metadata if options.metadata else None
 
     def properties(
         self,
@@ -43,11 +39,13 @@ class GitHubApiKey:
 
         if self.name is not None:
             properties["name"] = self.name
-        if self.description is not None:
-            properties["description"] = self.description
-        if self.api_key is not None:
-            properties["apiKey"] = self.api_key
-        if self.encryption_key_name is not None:
-            properties["encryptionKeyName"] = self.encryption_key_name
+        if self.metadata is not None:
+            properties["metadata"] = self.metadata
+        if self.big_item_models is not None:
+            properties["bigItemModels"] = [
+                v.properties(
+                )
+                for v in self.big_item_models
+            ]
 
         return properties

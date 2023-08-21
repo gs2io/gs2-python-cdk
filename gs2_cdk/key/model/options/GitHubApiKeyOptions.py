@@ -17,10 +17,13 @@ from typing import *
 
 class GitHubApiKeyOptions:
     description: Optional[str]
+    revision: Optional[int]
     
     def __init__(
         self,
         description: Optional[str] = None,
+        revision: Optional[int] = None,
     ):
         self.description = description
+        self.revision = revision
 

@@ -22,6 +22,7 @@ class StampSheetResultOptions:
     task_results: Optional[List[str]]
     sheet_result: Optional[str]
     next_transaction_id: Optional[str]
+    revision: Optional[int]
     
     def __init__(
         self,
@@ -29,9 +30,11 @@ class StampSheetResultOptions:
         task_results: Optional[List[str]] = None,
         sheet_result: Optional[str] = None,
         next_transaction_id: Optional[str] = None,
+        revision: Optional[int] = None,
     ):
         self.task_requests = task_requests
         self.task_results = task_results
         self.sheet_result = sheet_result
         self.next_transaction_id = next_transaction_id
+        self.revision = revision
 

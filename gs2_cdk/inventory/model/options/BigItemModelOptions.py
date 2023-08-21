@@ -15,12 +15,12 @@ from __future__ import annotations
 from typing import *
 
 
-class PrizeLimitOptions:
-    revision: Optional[int]
+class BigItemModelOptions:
+    metadata: Optional[str]
     
     def __init__(
         self,
-        revision: Optional[int] = None,
+        metadata: Optional[str] = None,
     ):
-        self.revision = revision
+        self.metadata = metadata
 

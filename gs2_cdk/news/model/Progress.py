@@ -20,6 +20,7 @@ class Progress:
     upload_token: str
     generated: int
     pattern_count: int
+    revision: Optional[int] = None
 
     def __init__(
         self,
@@ -31,6 +32,7 @@ class Progress:
         self.upload_token = upload_token
         self.generated = generated
         self.pattern_count = pattern_count
+        self.revision = options.revision if options.revision else None
 
     def properties(
         self,

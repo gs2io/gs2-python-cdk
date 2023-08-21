@@ -21,6 +21,10 @@ from .SimpleInventoryModel import SimpleInventoryModel
 from .options.SimpleInventoryModelOptions import SimpleInventoryModelOptions
 from .SimpleItemModel import SimpleItemModel
 from .options.SimpleItemModelOptions import SimpleItemModelOptions
+from .BigInventoryModel import BigInventoryModel
+from .options.BigInventoryModelOptions import BigInventoryModelOptions
+from .BigItemModel import BigItemModel
+from .options.BigItemModelOptions import BigItemModelOptions
 from .AcquireCount import AcquireCount
 from .options.AcquireCountOptions import AcquireCountOptions
 from .ConsumeCount import ConsumeCount

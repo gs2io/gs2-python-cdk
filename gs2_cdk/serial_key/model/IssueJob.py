@@ -23,6 +23,7 @@ class IssueJob:
     issue_request_count: int
     status: IssueJobStatus
     metadata: Optional[str] = None
+    revision: Optional[int] = None
 
     def __init__(
         self,
@@ -37,6 +38,7 @@ class IssueJob:
         self.issue_request_count = issue_request_count
         self.status = status
         self.metadata = options.metadata if options.metadata else None
+        self.revision = options.revision if options.revision else None
 
     def properties(
         self,

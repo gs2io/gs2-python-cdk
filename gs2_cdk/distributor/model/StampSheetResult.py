@@ -26,6 +26,7 @@ class StampSheetResult:
     task_results: Optional[List[str]] = None
     sheet_result: Optional[str] = None
     next_transaction_id: Optional[str] = None
+    revision: Optional[int] = None
 
     def __init__(
         self,
@@ -41,6 +42,7 @@ class StampSheetResult:
         self.task_results = options.task_results if options.task_results else None
         self.sheet_result = options.sheet_result if options.sheet_result else None
         self.next_transaction_id = options.next_transaction_id if options.next_transaction_id else None
+        self.revision = options.revision if options.revision else None
 
     def properties(
         self,
