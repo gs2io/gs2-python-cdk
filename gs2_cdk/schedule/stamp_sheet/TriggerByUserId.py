@@ -14,50 +14,28 @@
 from __future__ import annotations
 from typing import *
 
-from ...core.func import GetAttr, Join
-from ..stamp_sheet.TriggerByUserId import TriggerByUserId
+from ...core.model import AcquireAction, ConsumeAction
 
 
-class NamespaceRef:
-    namespace_name: str
+class TriggerByUserId(AcquireAction):
 
     def __init__(
         self,
         namespace_name: str,
-    ):
-        self.namespace_name = namespace_name
-
-    def trigger(
-        self,
         trigger_name: str,
         trigger_strategy: str,
         ttl: int,
         user_id: Optional[str] = "#{userId}",
-    ) -> TriggerByUserId:
-        return TriggerByUserId(
-            self.namespace_name,
-            trigger_name,
-            trigger_strategy,
-            ttl,
-            user_id,
-        )
+    ):
+        properties: Dict[str, Any] = {}
 
-    def grn(
-        self,
-    ) -> str:
-        return Join(
-            ":",
-            [
-                "grn",
-                "gs2",
-                GetAttr.region(
-                ).str(
-                ),
-                GetAttr.owner_id(
-                ).str(
-                ),
-                "schedule",
-                self.namespace_name,
-            ],
-        ).str(
+        properties["namespaceName"] = namespace_name
+        properties["triggerName"] = trigger_name
+        properties["triggerStrategy"] = trigger_strategy
+        properties["ttl"] = ttl
+        properties["userId"] = user_id
+
+        super().__init__(
+            "Gs2Schedule:TriggerByUserId",
+            properties,
         )
