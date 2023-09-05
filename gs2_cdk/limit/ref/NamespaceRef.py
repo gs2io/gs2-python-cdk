@@ -16,6 +16,7 @@ from typing import *
 
 from ...core.func import GetAttr, Join
 from .LimitModelRef import LimitModelRef
+from ..stamp_sheet.CountDownByUserId import CountDownByUserId
 from ..stamp_sheet.DeleteCounterByUserId import DeleteCounterByUserId
 from ..stamp_sheet.CountUpByUserId import CountUpByUserId
 
@@ -36,6 +37,21 @@ class NamespaceRef:
         return LimitModelRef(
             self.namespace_name,
             limit_name,
+        )
+
+    def count_down(
+        self,
+        limit_name: str,
+        counter_name: str,
+        count_down_value: int,
+        user_id: Optional[str] = "#{userId}",
+    ) -> CountDownByUserId:
+        return CountDownByUserId(
+            self.namespace_name,
+            limit_name,
+            counter_name,
+            count_down_value,
+            user_id,
         )
 
     def delete_counter(

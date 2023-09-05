@@ -21,6 +21,7 @@ from ..stamp_sheet.RaiseMaxValueByUserId import RaiseMaxValueByUserId
 from ..stamp_sheet.SetMaxValueByUserId import SetMaxValueByUserId
 from ..stamp_sheet.SetRecoverIntervalByUserId import SetRecoverIntervalByUserId
 from ..stamp_sheet.SetRecoverValueByUserId import SetRecoverValueByUserId
+from ..stamp_sheet.DecreaseMaxValueByUserId import DecreaseMaxValueByUserId
 from ..stamp_sheet.ConsumeStaminaByUserId import ConsumeStaminaByUserId
 
 
@@ -104,6 +105,19 @@ class NamespaceRef:
             self.namespace_name,
             stamina_name,
             recover_value,
+            user_id,
+        )
+
+    def decrease_max_value(
+        self,
+        stamina_name: str,
+        decrease_value: int,
+        user_id: Optional[str] = "#{userId}",
+    ) -> DecreaseMaxValueByUserId:
+        return DecreaseMaxValueByUserId(
+            self.namespace_name,
+            stamina_name,
+            decrease_value,
             user_id,
         )
 

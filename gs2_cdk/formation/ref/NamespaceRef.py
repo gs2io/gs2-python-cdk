@@ -23,6 +23,7 @@ from ..stamp_sheet.AcquireActionsToFormProperties import AcquireActionsToFormPro
 from ...core.model import AcquireAction
 from ..model.AcquireActionConfig import AcquireActionConfig
 from ..stamp_sheet.AcquireActionsToPropertyFormProperties import AcquireActionsToPropertyFormProperties
+from ..stamp_sheet.SubMoldCapacityByUserId import SubMoldCapacityByUserId
 
 
 class NamespaceRef:
@@ -109,6 +110,19 @@ class NamespaceRef:
             property_id,
             acquire_action,
             config,
+            user_id,
+        )
+
+    def sub_mold_capacity(
+        self,
+        mold_name: str,
+        capacity: int,
+        user_id: Optional[str] = "#{userId}",
+    ) -> SubMoldCapacityByUserId:
+        return SubMoldCapacityByUserId(
+            self.namespace_name,
+            mold_name,
+            capacity,
             user_id,
         )
 

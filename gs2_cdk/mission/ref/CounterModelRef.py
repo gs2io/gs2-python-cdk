@@ -16,6 +16,7 @@ from typing import *
 
 from ...core.func import GetAttr, Join
 from ..stamp_sheet.IncreaseCounterByUserId import IncreaseCounterByUserId
+from ..stamp_sheet.DecreaseCounterByUserId import DecreaseCounterByUserId
 
 
 class CounterModelRef:
@@ -36,6 +37,18 @@ class CounterModelRef:
         user_id: Optional[str] = "#{userId}",
     ) -> IncreaseCounterByUserId:
         return IncreaseCounterByUserId(
+            self.namespace_name,
+            self.counter_name,
+            value,
+            user_id,
+        )
+
+    def decrease_counter(
+        self,
+        value: int,
+        user_id: Optional[str] = "#{userId}",
+    ) -> DecreaseCounterByUserId:
+        return DecreaseCounterByUserId(
             self.namespace_name,
             self.counter_name,
             value,

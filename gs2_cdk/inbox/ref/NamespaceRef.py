@@ -20,6 +20,7 @@ from ..stamp_sheet.SendMessageByUserId import SendMessageByUserId
 from ...core.model import AcquireAction
 from ..model.TimeSpan import TimeSpan
 from ..stamp_sheet.OpenMessageByUserId import OpenMessageByUserId
+from ..stamp_sheet.DeleteMessageByUserId import DeleteMessageByUserId
 
 
 class NamespaceRef:
@@ -63,6 +64,17 @@ class NamespaceRef:
         user_id: Optional[str] = "#{userId}",
     ) -> OpenMessageByUserId:
         return OpenMessageByUserId(
+            self.namespace_name,
+            message_name,
+            user_id,
+        )
+
+    def delete_message(
+        self,
+        message_name: str,
+        user_id: Optional[str] = "#{userId}",
+    ) -> DeleteMessageByUserId:
+        return DeleteMessageByUserId(
             self.namespace_name,
             message_name,
             user_id,

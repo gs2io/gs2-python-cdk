@@ -11,6 +11,27 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-from .DeleteReceiveStatusByUserId import DeleteReceiveStatusByUserId
-from .UnmarkReceivedByUserId import UnmarkReceivedByUserId
-from .MarkReceivedByUserId import MarkReceivedByUserId
+from __future__ import annotations
+from typing import *
+
+from ...core.model import AcquireAction, ConsumeAction
+
+
+class RevertUseByUserId(AcquireAction):
+
+    def __init__(
+        self,
+        namespace_name: str,
+        code: str,
+        user_id: Optional[str] = "#{userId}",
+    ):
+        properties: Dict[str, Any] = {}
+
+        properties["namespaceName"] = namespace_name
+        properties["code"] = code
+        properties["userId"] = user_id
+
+        super().__init__(
+            "Gs2SerialKey:RevertUseByUserId",
+            properties,
+        )

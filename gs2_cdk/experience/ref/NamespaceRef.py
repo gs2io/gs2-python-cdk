@@ -21,6 +21,8 @@ from ..stamp_sheet.AddRankCapByUserId import AddRankCapByUserId
 from ..stamp_sheet.SetRankCapByUserId import SetRankCapByUserId
 from ..stamp_sheet.MultiplyAcquireActionsByUserId import MultiplyAcquireActionsByUserId
 from ...core.model import AcquireAction
+from ..stamp_sheet.SubExperienceByUserId import SubExperienceByUserId
+from ..stamp_sheet.SubRankCapByUserId import SubRankCapByUserId
 
 
 class NamespaceRef:
@@ -100,6 +102,36 @@ class NamespaceRef:
             property_id,
             rate_name,
             acquire_actions,
+            user_id,
+        )
+
+    def sub_experience(
+        self,
+        experience_name: str,
+        property_id: str,
+        experience_value: int,
+        user_id: Optional[str] = "#{userId}",
+    ) -> SubExperienceByUserId:
+        return SubExperienceByUserId(
+            self.namespace_name,
+            experience_name,
+            property_id,
+            experience_value,
+            user_id,
+        )
+
+    def sub_rank_cap(
+        self,
+        experience_name: str,
+        property_id: str,
+        rank_cap_value: int,
+        user_id: Optional[str] = "#{userId}",
+    ) -> SubRankCapByUserId:
+        return SubRankCapByUserId(
+            self.namespace_name,
+            experience_name,
+            property_id,
+            rank_cap_value,
             user_id,
         )
 

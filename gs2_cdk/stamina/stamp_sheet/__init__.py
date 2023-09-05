@@ -16,4 +16,5 @@ from .RaiseMaxValueByUserId import RaiseMaxValueByUserId
 from .SetMaxValueByUserId import SetMaxValueByUserId
 from .SetRecoverIntervalByUserId import SetRecoverIntervalByUserId
 from .SetRecoverValueByUserId import SetRecoverValueByUserId
+from .DecreaseMaxValueByUserId import DecreaseMaxValueByUserId
 from .ConsumeStaminaByUserId import ConsumeStaminaByUserId

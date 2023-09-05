@@ -16,6 +16,7 @@ from typing import *
 
 from ...core.func import GetAttr, Join
 from ..stamp_sheet.AddEntriesByUserId import AddEntriesByUserId
+from ..stamp_sheet.DeleteEntriesByUserId import DeleteEntriesByUserId
 
 
 class EntryModelRef:
@@ -36,6 +37,17 @@ class EntryModelRef:
         user_id: Optional[str] = "#{userId}",
     ) -> AddEntriesByUserId:
         return AddEntriesByUserId(
+            self.namespace_name,
+            entry_model_names,
+            user_id,
+        )
+
+    def delete_entries(
+        self,
+        entry_model_names: Optional[List[str]] = None,
+        user_id: Optional[str] = "#{userId}",
+    ) -> DeleteEntriesByUserId:
+        return DeleteEntriesByUserId(
             self.namespace_name,
             entry_model_names,
             user_id,

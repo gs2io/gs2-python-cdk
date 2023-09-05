@@ -16,6 +16,7 @@ from typing import *
 
 from ...core.func import GetAttr, Join
 from ..stamp_sheet.TriggerByUserId import TriggerByUserId
+from ..stamp_sheet.DeleteTriggerByUserId import DeleteTriggerByUserId
 
 
 class NamespaceRef:
@@ -39,6 +40,17 @@ class NamespaceRef:
             trigger_name,
             trigger_strategy,
             ttl,
+            user_id,
+        )
+
+    def delete_trigger(
+        self,
+        trigger_name: str,
+        user_id: Optional[str] = "#{userId}",
+    ) -> DeleteTriggerByUserId:
+        return DeleteTriggerByUserId(
+            self.namespace_name,
+            trigger_name,
             user_id,
         )
 

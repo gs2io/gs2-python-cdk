@@ -17,6 +17,7 @@ from typing import *
 from ...core.func import GetAttr, Join
 from .BonusModelRef import BonusModelRef
 from ..stamp_sheet.DeleteReceiveStatusByUserId import DeleteReceiveStatusByUserId
+from ..stamp_sheet.UnmarkReceivedByUserId import UnmarkReceivedByUserId
 from ..stamp_sheet.MarkReceivedByUserId import MarkReceivedByUserId
 
 
@@ -46,6 +47,19 @@ class NamespaceRef:
         return DeleteReceiveStatusByUserId(
             self.namespace_name,
             bonus_model_name,
+            user_id,
+        )
+
+    def unmark_received(
+        self,
+        bonus_model_name: str,
+        step_number: int,
+        user_id: Optional[str] = "#{userId}",
+    ) -> UnmarkReceivedByUserId:
+        return UnmarkReceivedByUserId(
+            self.namespace_name,
+            bonus_model_name,
+            step_number,
             user_id,
         )
 

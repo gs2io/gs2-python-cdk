@@ -16,6 +16,7 @@ from typing import *
 
 from ...core.func import GetAttr, Join
 from .CampaignModelRef import CampaignModelRef
+from ..stamp_sheet.RevertUseByUserId import RevertUseByUserId
 from ..stamp_sheet.UseByUserId import UseByUserId
 
 
@@ -35,6 +36,17 @@ class NamespaceRef:
         return CampaignModelRef(
             self.namespace_name,
             campaign_model_name,
+        )
+
+    def revert_use(
+        self,
+        code: str,
+        user_id: Optional[str] = "#{userId}",
+    ) -> RevertUseByUserId:
+        return RevertUseByUserId(
+            self.namespace_name,
+            code,
+            user_id,
         )
 
     def use(

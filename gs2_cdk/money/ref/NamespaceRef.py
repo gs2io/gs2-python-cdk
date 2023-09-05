@@ -16,6 +16,7 @@ from typing import *
 
 from ...core.func import GetAttr, Join
 from ..stamp_sheet.DepositByUserId import DepositByUserId
+from ..stamp_sheet.RevertRecordReceipt import RevertRecordReceipt
 from ..stamp_sheet.WithdrawByUserId import WithdrawByUserId
 from ..stamp_sheet.RecordReceipt import RecordReceipt
 
@@ -41,6 +42,17 @@ class NamespaceRef:
             slot,
             price,
             count,
+            user_id,
+        )
+
+    def revert_record_receipt(
+        self,
+        receipt: str,
+        user_id: Optional[str] = "#{userId}",
+    ) -> RevertRecordReceipt:
+        return RevertRecordReceipt(
+            self.namespace_name,
+            receipt,
             user_id,
         )
 

@@ -17,8 +17,10 @@ from typing import *
 from ...core.func import GetAttr, Join
 from .MissionGroupModelRef import MissionGroupModelRef
 from .CounterModelRef import CounterModelRef
+from ..stamp_sheet.RevertReceiveByUserId import RevertReceiveByUserId
 from ..stamp_sheet.IncreaseCounterByUserId import IncreaseCounterByUserId
 from ..stamp_sheet.ReceiveByUserId import ReceiveByUserId
+from ..stamp_sheet.DecreaseCounterByUserId import DecreaseCounterByUserId
 
 
 class NamespaceRef:
@@ -48,6 +50,19 @@ class NamespaceRef:
             counter_name,
         )
 
+    def revert_receive(
+        self,
+        mission_group_name: str,
+        mission_task_name: str,
+        user_id: Optional[str] = "#{userId}",
+    ) -> RevertReceiveByUserId:
+        return RevertReceiveByUserId(
+            self.namespace_name,
+            mission_group_name,
+            mission_task_name,
+            user_id,
+        )
+
     def increase_counter(
         self,
         counter_name: str,
@@ -71,6 +86,19 @@ class NamespaceRef:
             self.namespace_name,
             mission_group_name,
             mission_task_name,
+            user_id,
+        )
+
+    def decrease_counter(
+        self,
+        counter_name: str,
+        value: int,
+        user_id: Optional[str] = "#{userId}",
+    ) -> DecreaseCounterByUserId:
+        return DecreaseCounterByUserId(
+            self.namespace_name,
+            counter_name,
+            value,
             user_id,
         )
 

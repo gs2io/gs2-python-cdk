@@ -17,6 +17,7 @@ from typing import *
 from ...core.func import GetAttr, Join
 from ..stamp_sheet.PushByUserId import PushByUserId
 from ..model.JobEntry import JobEntry
+from ..stamp_sheet.DeleteJobByUserId import DeleteJobByUserId
 
 
 class NamespaceRef:
@@ -36,6 +37,17 @@ class NamespaceRef:
         return PushByUserId(
             self.namespace_name,
             jobs,
+            user_id,
+        )
+
+    def delete_job(
+        self,
+        job_name: str,
+        user_id: Optional[str] = "#{userId}",
+    ) -> DeleteJobByUserId:
+        return DeleteJobByUserId(
+            self.namespace_name,
+            job_name,
             user_id,
         )
 

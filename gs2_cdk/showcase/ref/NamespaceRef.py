@@ -15,6 +15,7 @@ from __future__ import annotations
 from typing import *
 
 from ...core.func import GetAttr, Join
+from ..stamp_sheet.DecrementPurchaseCountByUserId import DecrementPurchaseCountByUserId
 from ..stamp_sheet.ForceReDrawByUserId import ForceReDrawByUserId
 from ..stamp_sheet.IncrementPurchaseCountByUserId import IncrementPurchaseCountByUserId
 
@@ -27,6 +28,21 @@ class NamespaceRef:
         namespace_name: str,
     ):
         self.namespace_name = namespace_name
+
+    def decrement_purchase_count(
+        self,
+        showcase_name: str,
+        display_item_name: str,
+        count: int,
+        user_id: Optional[str] = "#{userId}",
+    ) -> DecrementPurchaseCountByUserId:
+        return DecrementPurchaseCountByUserId(
+            self.namespace_name,
+            showcase_name,
+            display_item_name,
+            count,
+            user_id,
+        )
 
     def force_re_draw(
         self,

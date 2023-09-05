@@ -13,3 +13,4 @@
 # permissions and limitations under the License.
 from .SendMessageByUserId import SendMessageByUserId
 from .OpenMessageByUserId import OpenMessageByUserId
+from .DeleteMessageByUserId import DeleteMessageByUserId
