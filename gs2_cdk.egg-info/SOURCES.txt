@@ -129,6 +129,7 @@ src/gs2_cdk/formation/model/CurrentMasterData.py
 src/gs2_cdk/formation/model/FormModel.py
 src/gs2_cdk/formation/model/MoldModel.py
 src/gs2_cdk/formation/model/Namespace.py
+src/gs2_cdk/formation/model/PropertyFormModel.py
 src/gs2_cdk/formation/model/Slot.py
 src/gs2_cdk/formation/model/SlotModel.py
 src/gs2_cdk/formation/model/SlotWithSignature.py
@@ -136,6 +137,7 @@ src/gs2_cdk/formation/model/__init__.py
 src/gs2_cdk/formation/ref/FormModelRef.py
 src/gs2_cdk/formation/ref/MoldModelRef.py
 src/gs2_cdk/formation/ref/NamespaceRef.py
+src/gs2_cdk/formation/ref/PropertyFormModelRef.py
 src/gs2_cdk/formation/ref/__init__.py
 src/gs2_cdk/formation/stamp_sheet/AcquireActionsToFormProperties.py
 src/gs2_cdk/formation/stamp_sheet/AcquireActionsToPropertyFormProperties.py

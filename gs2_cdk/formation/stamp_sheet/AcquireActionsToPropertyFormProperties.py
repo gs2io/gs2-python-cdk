@@ -23,7 +23,7 @@ class AcquireActionsToPropertyFormProperties(AcquireAction):
     def __init__(
         self,
         namespace_name: str,
-        form_model_name: str,
+        property_form_model_name: str,
         property_id: str,
         acquire_action: AcquireAction,
         config: Optional[List[AcquireActionConfig]] = None,
@@ -32,7 +32,7 @@ class AcquireActionsToPropertyFormProperties(AcquireAction):
         properties: Dict[str, Any] = {}
 
         properties["namespaceName"] = namespace_name
-        properties["formModelName"] = form_model_name
+        properties["propertyFormModelName"] = property_form_model_name
         properties["propertyId"] = property_id
         properties["acquireAction"] = acquire_action
         properties["config"] = config

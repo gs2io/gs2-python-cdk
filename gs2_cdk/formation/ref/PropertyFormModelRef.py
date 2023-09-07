@@ -15,38 +15,34 @@ from __future__ import annotations
 from typing import *
 
 from ...core.func import GetAttr, Join
-from ..stamp_sheet.AcquireActionsToFormProperties import AcquireActionsToFormProperties
+from ..stamp_sheet.AcquireActionsToPropertyFormProperties import AcquireActionsToPropertyFormProperties
 from ...core.model import AcquireAction
 from ..model.AcquireActionConfig import AcquireActionConfig
 
 
-class FormModelRef:
+class PropertyFormModelRef:
     namespace_name: str
-    mold_model_name: str
-    form_model_name: str
+    property_form_model_name: str
 
     def __init__(
         self,
         namespace_name: str,
-        mold_model_name: str,
-        form_model_name: str,
+        property_form_model_name: str,
     ):
         self.namespace_name = namespace_name
-        self.mold_model_name = mold_model_name
-        self.form_model_name = form_model_name
+        self.property_form_model_name = property_form_model_name
 
-    def acquire_actions_to_form_properties(
+    def acquire_actions_to_property_form_properties(
         self,
-        mold_name: str,
-        index: int,
+        property_id: str,
         acquire_action: AcquireAction,
         config: Optional[List[AcquireActionConfig]] = None,
         user_id: Optional[str] = "#{userId}",
-    ) -> AcquireActionsToFormProperties:
-        return AcquireActionsToFormProperties(
+    ) -> AcquireActionsToPropertyFormProperties:
+        return AcquireActionsToPropertyFormProperties(
             self.namespace_name,
-            mold_name,
-            index,
+            self.property_form_model_name,
+            property_id,
             acquire_action,
             config,
             user_id,
@@ -69,11 +65,8 @@ class FormModelRef:
                 "formation",
                 self.namespace_name,
                 "model",
-                "mold",
-                self.mold_model_name,
-                "model",
-                "form",
-                self.form_model_name,
+                "propertyForm",
+                self.property_form_model_name,
             ],
         ).str(
         )

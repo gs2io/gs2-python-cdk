@@ -23,7 +23,7 @@ from ...core.model import LogSetting
 from ..ref.NamespaceRef import NamespaceRef
 from .CurrentMasterData import CurrentMasterData
 from .MoldModel import MoldModel
-from .FormModel import FormModel
+from .PropertyFormModel import PropertyFormModel
 
 from .options.NamespaceOptions import NamespaceOptions
 
@@ -112,13 +112,13 @@ class Namespace(CdkResource):
     def master_data(
         self,
         mold_models: List[MoldModel],
-        form_models: List[FormModel],
+        property_form_models: List[PropertyFormModel],
     ) -> Namespace:
         CurrentMasterData(
             self.stack,
             self.name,
             mold_models,
-            form_models,
+            property_form_models,
         ).add_depends_on(
             self,
         )

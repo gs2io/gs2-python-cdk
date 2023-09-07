@@ -16,7 +16,7 @@ from typing import *
 
 from ...core.func import GetAttr, Join
 from .MoldModelRef import MoldModelRef
-from .FormModelRef import FormModelRef
+from .PropertyFormModelRef import PropertyFormModelRef
 from ..stamp_sheet.AddMoldCapacityByUserId import AddMoldCapacityByUserId
 from ..stamp_sheet.SetMoldCapacityByUserId import SetMoldCapacityByUserId
 from ..stamp_sheet.AcquireActionsToFormProperties import AcquireActionsToFormProperties
@@ -37,20 +37,20 @@ class NamespaceRef:
 
     def mold_model(
         self,
-        mold_name: str,
+        mold_model_name: str,
     ) -> MoldModelRef:
         return MoldModelRef(
             self.namespace_name,
-            mold_name,
+            mold_model_name,
         )
 
-    def form_model(
+    def property_form_model(
         self,
-        form_model_name: str,
-    ) -> FormModelRef:
-        return FormModelRef(
+        property_form_model_name: str,
+    ) -> PropertyFormModelRef:
+        return PropertyFormModelRef(
             self.namespace_name,
-            form_model_name,
+            property_form_model_name,
         )
 
     def add_mold_capacity(
@@ -98,7 +98,7 @@ class NamespaceRef:
 
     def acquire_actions_to_property_form_properties(
         self,
-        form_model_name: str,
+        property_form_model_name: str,
         property_id: str,
         acquire_action: AcquireAction,
         config: Optional[List[AcquireActionConfig]] = None,
@@ -106,7 +106,7 @@ class NamespaceRef:
     ) -> AcquireActionsToPropertyFormProperties:
         return AcquireActionsToPropertyFormProperties(
             self.namespace_name,
-            form_model_name,
+            property_form_model_name,
             property_id,
             acquire_action,
             config,

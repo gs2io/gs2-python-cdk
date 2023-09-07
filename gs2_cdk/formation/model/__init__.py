@@ -17,6 +17,8 @@ from .FormModel import FormModel
 from .options.FormModelOptions import FormModelOptions
 from .MoldModel import MoldModel
 from .options.MoldModelOptions import MoldModelOptions
+from .PropertyFormModel import PropertyFormModel
+from .options.PropertyFormModelOptions import PropertyFormModelOptions
 from .Slot import Slot
 from .options.SlotOptions import SlotOptions
 from .SlotModel import SlotModel

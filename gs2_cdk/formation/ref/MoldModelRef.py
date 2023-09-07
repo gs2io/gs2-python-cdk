@@ -15,6 +15,7 @@ from __future__ import annotations
 from typing import *
 
 from ...core.func import GetAttr, Join
+from .FormModelRef import FormModelRef
 from ..stamp_sheet.AddMoldCapacityByUserId import AddMoldCapacityByUserId
 from ..stamp_sheet.SetMoldCapacityByUserId import SetMoldCapacityByUserId
 from ..stamp_sheet.AcquireActionsToFormProperties import AcquireActionsToFormProperties
@@ -25,42 +26,55 @@ from ..stamp_sheet.SubMoldCapacityByUserId import SubMoldCapacityByUserId
 
 class MoldModelRef:
     namespace_name: str
-    mold_name: str
+    mold_model_name: str
 
     def __init__(
         self,
         namespace_name: str,
-        mold_name: str,
+        mold_model_name: str,
     ):
         self.namespace_name = namespace_name
-        self.mold_name = mold_name
+        self.mold_model_name = mold_model_name
+
+    def form_model(
+        self,
+        form_model_name: str,
+    ) -> FormModelRef:
+        return FormModelRef(
+            self.namespace_name,
+            self.mold_model_name,
+            form_model_name,
+        )
 
     def add_mold_capacity(
         self,
+        mold_name: str,
         capacity: int,
         user_id: Optional[str] = "#{userId}",
     ) -> AddMoldCapacityByUserId:
         return AddMoldCapacityByUserId(
             self.namespace_name,
-            self.mold_name,
+            mold_name,
             capacity,
             user_id,
         )
 
     def set_mold_capacity(
         self,
+        mold_name: str,
         capacity: int,
         user_id: Optional[str] = "#{userId}",
     ) -> SetMoldCapacityByUserId:
         return SetMoldCapacityByUserId(
             self.namespace_name,
-            self.mold_name,
+            mold_name,
             capacity,
             user_id,
         )
 
     def acquire_actions_to_form_properties(
         self,
+        mold_name: str,
         index: int,
         acquire_action: AcquireAction,
         config: Optional[List[AcquireActionConfig]] = None,
@@ -68,7 +82,7 @@ class MoldModelRef:
     ) -> AcquireActionsToFormProperties:
         return AcquireActionsToFormProperties(
             self.namespace_name,
-            self.mold_name,
+            mold_name,
             index,
             acquire_action,
             config,
@@ -77,12 +91,13 @@ class MoldModelRef:
 
     def sub_mold_capacity(
         self,
+        mold_name: str,
         capacity: int,
         user_id: Optional[str] = "#{userId}",
     ) -> SubMoldCapacityByUserId:
         return SubMoldCapacityByUserId(
             self.namespace_name,
-            self.mold_name,
+            mold_name,
             capacity,
             user_id,
         )
@@ -105,7 +120,7 @@ class MoldModelRef:
                 self.namespace_name,
                 "model",
                 "mold",
-                self.mold_name,
+                self.mold_model_name,
             ],
         ).str(
         )

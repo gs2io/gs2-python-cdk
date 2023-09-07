@@ -16,21 +16,21 @@ from typing import *
 
 from ...core.model import CdkResource, Stack
 from .MoldModel import MoldModel
-from .FormModel import FormModel
+from .PropertyFormModel import PropertyFormModel
 
 
 class CurrentMasterData(CdkResource):
     version: str= "2019-09-09"
     namespace_name: str
     mold_models: List[MoldModel]
-    form_models: List[FormModel]
+    property_form_models: List[PropertyFormModel]
 
     def __init__(
         self,
         stack: Stack,
         namespace_name: str,
         mold_models: List[MoldModel],
-        form_models: List[FormModel],
+        property_form_models: List[PropertyFormModel],
     ):
         super().__init__(
             "Formation_CurrentFormMaster_" + namespace_name
@@ -38,7 +38,7 @@ class CurrentMasterData(CdkResource):
 
         self.namespace_name = namespace_name
         self.mold_models = mold_models
-        self.form_models = form_models
+        self.property_form_models = property_form_models
         stack.add_resource(
             self,
         )
@@ -66,11 +66,11 @@ class CurrentMasterData(CdkResource):
                 )
                 for v in self.mold_models
             ]
-        if self.form_models is not None:
-            settings["formModels"] = [
+        if self.property_form_models is not None:
+            settings["propertyFormModels"] = [
                 v.properties(
                 )
-                for v in self.form_models
+                for v in self.property_form_models
             ]
 
         if self.namespace_name is not None:
