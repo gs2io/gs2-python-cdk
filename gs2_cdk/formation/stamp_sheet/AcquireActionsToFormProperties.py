@@ -23,7 +23,7 @@ class AcquireActionsToFormProperties(AcquireAction):
     def __init__(
         self,
         namespace_name: str,
-        mold_name: str,
+        mold_model_name: str,
         index: int,
         acquire_action: AcquireAction,
         config: Optional[List[AcquireActionConfig]] = None,
@@ -32,7 +32,7 @@ class AcquireActionsToFormProperties(AcquireAction):
         properties: Dict[str, Any] = {}
 
         properties["namespaceName"] = namespace_name
-        properties["moldName"] = mold_name
+        properties["moldModelName"] = mold_model_name
         properties["index"] = index
         properties["acquireAction"] = acquire_action
         properties["config"] = config

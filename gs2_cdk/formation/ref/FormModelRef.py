@@ -37,7 +37,6 @@ class FormModelRef:
 
     def acquire_actions_to_form_properties(
         self,
-        mold_name: str,
         index: int,
         acquire_action: AcquireAction,
         config: Optional[List[AcquireActionConfig]] = None,
@@ -45,7 +44,7 @@ class FormModelRef:
     ) -> AcquireActionsToFormProperties:
         return AcquireActionsToFormProperties(
             self.namespace_name,
-            mold_name,
+            self.mold_model_name,
             index,
             acquire_action,
             config,

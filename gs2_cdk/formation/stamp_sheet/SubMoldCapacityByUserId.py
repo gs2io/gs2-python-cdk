@@ -22,14 +22,14 @@ class SubMoldCapacityByUserId(ConsumeAction):
     def __init__(
         self,
         namespace_name: str,
-        mold_name: str,
+        mold_model_name: str,
         capacity: int,
         user_id: Optional[str] = "#{userId}",
     ):
         properties: Dict[str, Any] = {}
 
         properties["namespaceName"] = namespace_name
-        properties["moldName"] = mold_name
+        properties["moldModelName"] = mold_model_name
         properties["capacity"] = capacity
         properties["userId"] = user_id
 

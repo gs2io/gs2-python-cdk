@@ -48,33 +48,30 @@ class MoldModelRef:
 
     def add_mold_capacity(
         self,
-        mold_name: str,
         capacity: int,
         user_id: Optional[str] = "#{userId}",
     ) -> AddMoldCapacityByUserId:
         return AddMoldCapacityByUserId(
             self.namespace_name,
-            mold_name,
+            self.mold_model_name,
             capacity,
             user_id,
         )
 
     def set_mold_capacity(
         self,
-        mold_name: str,
         capacity: int,
         user_id: Optional[str] = "#{userId}",
     ) -> SetMoldCapacityByUserId:
         return SetMoldCapacityByUserId(
             self.namespace_name,
-            mold_name,
+            self.mold_model_name,
             capacity,
             user_id,
         )
 
     def acquire_actions_to_form_properties(
         self,
-        mold_name: str,
         index: int,
         acquire_action: AcquireAction,
         config: Optional[List[AcquireActionConfig]] = None,
@@ -82,7 +79,7 @@ class MoldModelRef:
     ) -> AcquireActionsToFormProperties:
         return AcquireActionsToFormProperties(
             self.namespace_name,
-            mold_name,
+            self.mold_model_name,
             index,
             acquire_action,
             config,
@@ -91,13 +88,12 @@ class MoldModelRef:
 
     def sub_mold_capacity(
         self,
-        mold_name: str,
         capacity: int,
         user_id: Optional[str] = "#{userId}",
     ) -> SubMoldCapacityByUserId:
         return SubMoldCapacityByUserId(
             self.namespace_name,
-            mold_name,
+            self.mold_model_name,
             capacity,
             user_id,
         )
