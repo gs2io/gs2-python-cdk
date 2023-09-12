@@ -477,6 +477,17 @@ src/gs2_cdk/showcase/stamp_sheet/DecrementPurchaseCountByUserId.py
 src/gs2_cdk/showcase/stamp_sheet/ForceReDrawByUserId.py
 src/gs2_cdk/showcase/stamp_sheet/IncrementPurchaseCountByUserId.py
 src/gs2_cdk/showcase/stamp_sheet/__init__.py
+src/gs2_cdk/skill_tree/__init__.py
+src/gs2_cdk/skill_tree/model/CurrentMasterData.py
+src/gs2_cdk/skill_tree/model/Namespace.py
+src/gs2_cdk/skill_tree/model/NodeModel.py
+src/gs2_cdk/skill_tree/model/__init__.py
+src/gs2_cdk/skill_tree/ref/NamespaceRef.py
+src/gs2_cdk/skill_tree/ref/NodeModelRef.py
+src/gs2_cdk/skill_tree/ref/__init__.py
+src/gs2_cdk/skill_tree/stamp_sheet/MarkReleaseByUserId.py
+src/gs2_cdk/skill_tree/stamp_sheet/MarkRestrainByUserId.py
+src/gs2_cdk/skill_tree/stamp_sheet/__init__.py
 src/gs2_cdk/stamina/__init__.py
 src/gs2_cdk/stamina/model/CurrentMasterData.py
 src/gs2_cdk/stamina/model/MaxStaminaTable.py
