@@ -10,6 +10,16 @@ src/gs2_cdk/account/model/__init__.py
 src/gs2_cdk/account/ref/NamespaceRef.py
 src/gs2_cdk/account/ref/__init__.py
 src/gs2_cdk/account/stamp_sheet/__init__.py
+src/gs2_cdk/ad_reward/__init__.py
+src/gs2_cdk/ad_reward/model/AdMob.py
+src/gs2_cdk/ad_reward/model/Namespace.py
+src/gs2_cdk/ad_reward/model/UnityAd.py
+src/gs2_cdk/ad_reward/model/__init__.py
+src/gs2_cdk/ad_reward/ref/NamespaceRef.py
+src/gs2_cdk/ad_reward/ref/__init__.py
+src/gs2_cdk/ad_reward/stamp_sheet/AcquirePointByUserId.py
+src/gs2_cdk/ad_reward/stamp_sheet/ConsumePointByUserId.py
+src/gs2_cdk/ad_reward/stamp_sheet/__init__.py
 src/gs2_cdk/auth/__init__.py
 src/gs2_cdk/auth/model/AccessToken.py
 src/gs2_cdk/auth/model/__init__.py
