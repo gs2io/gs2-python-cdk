@@ -536,6 +536,7 @@ src/gs2_cdk/state_machine/stamp_sheet/__init__.py
 src/gs2_cdk/version/__init__.py
 src/gs2_cdk/version/model/CurrentMasterData.py
 src/gs2_cdk/version/model/Namespace.py
+src/gs2_cdk/version/model/ScheduleVersion.py
 src/gs2_cdk/version/model/SignTargetVersion.py
 src/gs2_cdk/version/model/Status.py
 src/gs2_cdk/version/model/TargetVersion.py

@@ -11,19 +11,21 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-from __future__ import annotations
-from typing import *
-from ..Version import Version
-from ..ScheduleVersion import ScheduleVersion
-from ..VersionModel import VersionModel
 
 
-class StatusOptions:
-    current_version: Optional[Version]
-    
+
+
+class VersionModelType:
+    value: str
+    SIMPLE: 'VersionModelType'
+    SCHEDULE: 'VersionModelType'
+
     def __init__(
         self,
-        current_version: Optional[Version] = None,
+        value: str,
     ):
-        self.current_version = current_version
+        self.value = value
 
+
+VersionModelType.SIMPLE = VersionModelType("simple")
+VersionModelType.SCHEDULE = VersionModelType("schedule")

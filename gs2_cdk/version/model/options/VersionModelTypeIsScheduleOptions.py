@@ -19,30 +19,14 @@ from ..enum.VersionModelScope import VersionModelScope
 from ..enum.VersionModelType import VersionModelType
 
 
-class VersionModelOptions:
+class VersionModelTypeIsScheduleOptions:
     metadata: Optional[str]
-    current_version: Optional[Version]
-    warning_version: Optional[Version]
-    error_version: Optional[Version]
     schedule_versions: Optional[List[ScheduleVersion]]
-    need_signature: Optional[bool]
-    signature_key_id: Optional[str]
     
     def __init__(
         self,
         metadata: Optional[str] = None,
-        current_version: Optional[Version] = None,
-        warning_version: Optional[Version] = None,
-        error_version: Optional[Version] = None,
         schedule_versions: Optional[List[ScheduleVersion]] = None,
-        need_signature: Optional[bool] = None,
-        signature_key_id: Optional[str] = None,
     ):
         self.metadata = metadata
-        self.current_version = current_version
-        self.warning_version = warning_version
-        self.error_version = error_version
         self.schedule_versions = schedule_versions
-        self.need_signature = need_signature
-        self.signature_key_id = signature_key_id
-

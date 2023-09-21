@@ -19,12 +19,15 @@ from ..Version import Version
 class TargetVersionOptions:
     body: Optional[str]
     signature: Optional[str]
+    version: Optional[Version]
     
     def __init__(
         self,
         body: Optional[str] = None,
         signature: Optional[str] = None,
+        version: Optional[Version] = None,
     ):
         self.body = body
         self.signature = signature
+        self.version = version
 

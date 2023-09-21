@@ -14,74 +14,113 @@
 from __future__ import annotations
 from typing import *
 from .Version import Version
+from .ScheduleVersion import ScheduleVersion
 from .options.VersionModelOptions import VersionModelOptions
+from .options.VersionModelTypeIsSimpleOptions import VersionModelTypeIsSimpleOptions
+from .options.VersionModelTypeIsScheduleOptions import VersionModelTypeIsScheduleOptions
 from .options.VersionModelScopeIsPassiveOptions import VersionModelScopeIsPassiveOptions
 from .options.VersionModelScopeIsActiveOptions import VersionModelScopeIsActiveOptions
 from .enum.VersionModelScope import VersionModelScope
+from .enum.VersionModelType import VersionModelType
 
 
 class VersionModel:
     name: str
-    warning_version: Version
-    error_version: Version
     scope: VersionModelScope
+    type: VersionModelType
     metadata: Optional[str] = None
     current_version: Optional[Version] = None
+    warning_version: Optional[Version] = None
+    error_version: Optional[Version] = None
+    schedule_versions: Optional[List[ScheduleVersion]] = None
     need_signature: Optional[bool] = None
     signature_key_id: Optional[str] = None
 
     def __init__(
         self,
         name: str,
-        warning_version: Version,
-        error_version: Version,
         scope: VersionModelScope,
+        type: VersionModelType,
         options: Optional[VersionModelOptions] = VersionModelOptions(),
     ):
         self.name = name
-        self.warning_version = warning_version
-        self.error_version = error_version
         self.scope = scope
+        self.type = type
         self.metadata = options.metadata if options.metadata else None
         self.current_version = options.current_version if options.current_version else None
+        self.warning_version = options.warning_version if options.warning_version else None
+        self.error_version = options.error_version if options.error_version else None
+        self.schedule_versions = options.schedule_versions if options.schedule_versions else None
         self.need_signature = options.need_signature if options.need_signature else None
         self.signature_key_id = options.signature_key_id if options.signature_key_id else None
 
     @staticmethod
-    def scope_is_passive(
+    def type_is_simple(
         name: str,
+        scope: VersionModelScope,
         warning_version: Version,
         error_version: Version,
+        options: Optional[VersionModelTypeIsSimpleOptions] = VersionModelTypeIsSimpleOptions(),
+    ) -> VersionModel:
+        return VersionModel(
+            name,
+            scope,
+            VersionModelType.SIMPLE,
+            VersionModelOptions(
+                warning_version,
+                error_version,
+                options.metadata,
+                options.schedule_versions,
+            ),
+        )
+
+    @staticmethod
+    def type_is_schedule(
+        name: str,
+        scope: VersionModelScope,
+        options: Optional[VersionModelTypeIsScheduleOptions] = VersionModelTypeIsScheduleOptions(),
+    ) -> VersionModel:
+        return VersionModel(
+            name,
+            scope,
+            VersionModelType.SCHEDULE,
+            VersionModelOptions(
+                options.metadata,
+                options.schedule_versions,
+            ),
+        )
+
+    @staticmethod
+    def scope_is_passive(
+        name: str,
+        type: VersionModelType,
         need_signature: bool,
         options: Optional[VersionModelScopeIsPassiveOptions] = VersionModelScopeIsPassiveOptions(),
     ) -> VersionModel:
         return VersionModel(
             name,
-            warning_version,
-            error_version,
             VersionModelScope.PASSIVE,
+            type,
             VersionModelOptions(
                 need_signature,
                 options.metadata,
+                options.schedule_versions,
             ),
         )
 
     @staticmethod
     def scope_is_active(
         name: str,
-        warning_version: Version,
-        error_version: Version,
-        current_version: Version,
+        type: VersionModelType,
         options: Optional[VersionModelScopeIsActiveOptions] = VersionModelScopeIsActiveOptions(),
     ) -> VersionModel:
         return VersionModel(
             name,
-            warning_version,
-            error_version,
             VersionModelScope.ACTIVE,
+            type,
             VersionModelOptions(
-                current_version,
                 options.metadata,
+                options.schedule_versions,
             ),
         )
 
@@ -94,17 +133,25 @@ class VersionModel:
             properties["name"] = self.name
         if self.metadata is not None:
             properties["metadata"] = self.metadata
+        if self.scope is not None:
+            properties["scope"] = self.scope.value
+        if self.type is not None:
+            properties["type"] = self.type.value
+        if self.current_version is not None:
+            properties["currentVersion"] = self.current_version.properties(
+            )
         if self.warning_version is not None:
             properties["warningVersion"] = self.warning_version.properties(
             )
         if self.error_version is not None:
             properties["errorVersion"] = self.error_version.properties(
             )
-        if self.scope is not None:
-            properties["scope"] = self.scope.value
-        if self.current_version is not None:
-            properties["currentVersion"] = self.current_version.properties(
-            )
+        if self.schedule_versions is not None:
+            properties["scheduleVersions"] = [
+                v.properties(
+                )
+                for v in self.schedule_versions
+            ]
         if self.need_signature is not None:
             properties["needSignature"] = self.need_signature
         if self.signature_key_id is not None:

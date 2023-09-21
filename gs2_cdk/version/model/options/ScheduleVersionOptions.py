@@ -14,16 +14,14 @@
 from __future__ import annotations
 from typing import *
 from ..Version import Version
-from ..ScheduleVersion import ScheduleVersion
-from ..VersionModel import VersionModel
 
 
-class StatusOptions:
-    current_version: Optional[Version]
+class ScheduleVersionOptions:
+    schedule_event_id: Optional[str]
     
     def __init__(
         self,
-        current_version: Optional[Version] = None,
+        schedule_event_id: Optional[str] = None,
     ):
-        self.current_version = current_version
+        self.schedule_event_id = schedule_event_id
 

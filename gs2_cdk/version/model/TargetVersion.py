@@ -19,20 +19,19 @@ from .options.TargetVersionOptions import TargetVersionOptions
 
 class TargetVersion:
     version_name: str
-    version: Version
     body: Optional[str] = None
     signature: Optional[str] = None
+    version: Optional[Version] = None
 
     def __init__(
         self,
         version_name: str,
-        version: Version,
         options: Optional[TargetVersionOptions] = TargetVersionOptions(),
     ):
         self.version_name = version_name
-        self.version = version
         self.body = options.body if options.body else None
         self.signature = options.signature if options.signature else None
+        self.version = options.version if options.version else None
 
     def properties(
         self,
@@ -41,12 +40,12 @@ class TargetVersion:
 
         if self.version_name is not None:
             properties["versionName"] = self.version_name
-        if self.version is not None:
-            properties["version"] = self.version.properties(
-            )
         if self.body is not None:
             properties["body"] = self.body
         if self.signature is not None:
             properties["signature"] = self.signature
+        if self.version is not None:
+            properties["version"] = self.version.properties(
+            )
 
         return properties

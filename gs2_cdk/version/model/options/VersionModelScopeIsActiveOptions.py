@@ -14,14 +14,19 @@
 from __future__ import annotations
 from typing import *
 from ..Version import Version
+from ..ScheduleVersion import ScheduleVersion
 from ..enum.VersionModelScope import VersionModelScope
+from ..enum.VersionModelType import VersionModelType
 
 
 class VersionModelScopeIsActiveOptions:
     metadata: Optional[str]
+    schedule_versions: Optional[List[ScheduleVersion]]
     
     def __init__(
         self,
         metadata: Optional[str] = None,
+        schedule_versions: Optional[List[ScheduleVersion]] = None,
     ):
         self.metadata = metadata
+        self.schedule_versions = schedule_versions

@@ -14,6 +14,7 @@
 from __future__ import annotations
 from typing import *
 from .Version import Version
+from .ScheduleVersion import ScheduleVersion
 from .VersionModel import VersionModel
 from .options.StatusOptions import StatusOptions
 

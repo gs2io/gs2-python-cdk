@@ -13,11 +13,12 @@
 # permissions and limitations under the License.
 from .Namespace import Namespace
 from .options.NamespaceOptions import NamespaceOptions
-from .Version import Version
-from .options.VersionOptions import VersionOptions
 from .VersionModel import VersionModel
 from .options.VersionModelOptions import VersionModelOptions
 from .enum.VersionModelScope import VersionModelScope
+from .enum.VersionModelType import VersionModelType
+from .options.VersionModelTypeIsSimpleOptions import VersionModelTypeIsSimpleOptions
+from .options.VersionModelTypeIsScheduleOptions import VersionModelTypeIsScheduleOptions
 from .options.VersionModelScopeIsPassiveOptions import VersionModelScopeIsPassiveOptions
 from .options.VersionModelScopeIsActiveOptions import VersionModelScopeIsActiveOptions
 from .Status import Status
@@ -26,4 +27,8 @@ from .TargetVersion import TargetVersion
 from .options.TargetVersionOptions import TargetVersionOptions
 from .SignTargetVersion import SignTargetVersion
 from .options.SignTargetVersionOptions import SignTargetVersionOptions
+from .Version import Version
+from .options.VersionOptions import VersionOptions
+from .ScheduleVersion import ScheduleVersion
+from .options.ScheduleVersionOptions import ScheduleVersionOptions
 from .CurrentMasterData import CurrentMasterData
