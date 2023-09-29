@@ -23,17 +23,14 @@ from ..model.AcquireActionConfig import AcquireActionConfig
 class FormModelRef:
     namespace_name: str
     mold_model_name: str
-    form_model_name: str
 
     def __init__(
         self,
         namespace_name: str,
         mold_model_name: str,
-        form_model_name: str,
     ):
         self.namespace_name = namespace_name
         self.mold_model_name = mold_model_name
-        self.form_model_name = form_model_name
 
     def acquire_actions_to_form_properties(
         self,
@@ -70,9 +67,7 @@ class FormModelRef:
                 "model",
                 "mold",
                 self.mold_model_name,
-                "model",
                 "form",
-                self.form_model_name,
             ],
         ).str(
         )

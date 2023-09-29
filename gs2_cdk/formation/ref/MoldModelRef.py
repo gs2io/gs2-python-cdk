@@ -38,12 +38,10 @@ class MoldModelRef:
 
     def form_model(
         self,
-        form_model_name: str,
     ) -> FormModelRef:
         return FormModelRef(
             self.namespace_name,
             self.mold_model_name,
-            form_model_name,
         )
 
     def add_mold_capacity(

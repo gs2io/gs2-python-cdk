@@ -18,16 +18,19 @@ from .options.BoxItemOptions import BoxItemOptions
 
 
 class BoxItem:
+    prize_id: str
     remaining: int
     initial: int
     acquire_actions: Optional[List[AcquireAction]] = None
 
     def __init__(
         self,
+        prize_id: str,
         remaining: int,
         initial: int,
         options: Optional[BoxItemOptions] = BoxItemOptions(),
     ):
+        self.prize_id = prize_id
         self.remaining = remaining
         self.initial = initial
         self.acquire_actions = options.acquire_actions if options.acquire_actions else None
@@ -37,6 +40,8 @@ class BoxItem:
     ) -> Dict[str, Any]:
         properties: Dict[str, Any] = {}
 
+        if self.prize_id is not None:
+            properties["prizeId"] = self.prize_id
         if self.acquire_actions is not None:
             properties["acquireActions"] = [
                 v.properties(
