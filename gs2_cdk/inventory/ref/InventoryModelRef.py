@@ -21,7 +21,9 @@ from ..stamp_sheet.SetCapacityByUserId import SetCapacityByUserId
 from ..stamp_sheet.AcquireItemSetByUserId import AcquireItemSetByUserId
 from ..stamp_sheet.AddReferenceOfByUserId import AddReferenceOfByUserId
 from ..stamp_sheet.DeleteReferenceOfByUserId import DeleteReferenceOfByUserId
+from ..stamp_sheet.VerifyInventoryCurrentMaxCapacityByUserId import VerifyInventoryCurrentMaxCapacityByUserId
 from ..stamp_sheet.ConsumeItemSetByUserId import ConsumeItemSetByUserId
+from ..stamp_sheet.VerifyItemSetByUserId import VerifyItemSetByUserId
 from ..stamp_sheet.VerifyReferenceOfByUserId import VerifyReferenceOfByUserId
 
 
@@ -75,8 +77,8 @@ class InventoryModelRef:
         self,
         item_name: str,
         acquire_count: int,
-        expires_at: int,
-        create_new_item_set: bool,
+        expires_at: Optional[int] = None,
+        create_new_item_set: Optional[bool] = None,
         item_set_name: Optional[str] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> AcquireItemSetByUserId:
@@ -94,32 +96,46 @@ class InventoryModelRef:
     def add_reference_of(
         self,
         item_name: str,
-        item_set_name: str,
         reference_of: str,
+        item_set_name: Optional[str] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> AddReferenceOfByUserId:
         return AddReferenceOfByUserId(
             self.namespace_name,
             self.inventory_name,
             item_name,
-            item_set_name,
             reference_of,
+            item_set_name,
             user_id,
         )
 
     def delete_reference_of(
         self,
         item_name: str,
-        item_set_name: str,
         reference_of: str,
+        item_set_name: Optional[str] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> DeleteReferenceOfByUserId:
         return DeleteReferenceOfByUserId(
             self.namespace_name,
             self.inventory_name,
             item_name,
-            item_set_name,
             reference_of,
+            item_set_name,
+            user_id,
+        )
+
+    def verify_inventory_current_max_capacity(
+        self,
+        verify_type: str,
+        current_inventory_max_capacity: int,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifyInventoryCurrentMaxCapacityByUserId:
+        return VerifyInventoryCurrentMaxCapacityByUserId(
+            self.namespace_name,
+            self.inventory_name,
+            verify_type,
+            current_inventory_max_capacity,
             user_id,
         )
 
@@ -139,21 +155,39 @@ class InventoryModelRef:
             user_id,
         )
 
+    def verify_item_set(
+        self,
+        item_name: str,
+        verify_type: str,
+        count: int,
+        item_set_name: Optional[str] = None,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifyItemSetByUserId:
+        return VerifyItemSetByUserId(
+            self.namespace_name,
+            self.inventory_name,
+            item_name,
+            verify_type,
+            count,
+            item_set_name,
+            user_id,
+        )
+
     def verify_reference_of(
         self,
         item_name: str,
-        item_set_name: str,
         reference_of: str,
         verify_type: str,
+        item_set_name: Optional[str] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> VerifyReferenceOfByUserId:
         return VerifyReferenceOfByUserId(
             self.namespace_name,
             self.inventory_name,
             item_name,
-            item_set_name,
             reference_of,
             verify_type,
+            item_set_name,
             user_id,
         )
 

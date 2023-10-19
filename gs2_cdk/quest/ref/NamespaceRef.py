@@ -42,7 +42,7 @@ class NamespaceRef:
     def create_progress(
         self,
         quest_model_id: str,
-        force: bool,
+        force: Optional[bool] = None,
         config: Optional[List[Config]] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> CreateProgressByUserId:

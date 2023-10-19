@@ -23,6 +23,8 @@ from ..stamp_sheet.MultiplyAcquireActionsByUserId import MultiplyAcquireActionsB
 from ...core.model import AcquireAction
 from ..stamp_sheet.SubExperienceByUserId import SubExperienceByUserId
 from ..stamp_sheet.SubRankCapByUserId import SubRankCapByUserId
+from ..stamp_sheet.VerifyRankByUserId import VerifyRankByUserId
+from ..stamp_sheet.VerifyRankCapByUserId import VerifyRankCapByUserId
 
 
 class NamespaceRef:
@@ -47,7 +49,7 @@ class NamespaceRef:
         self,
         experience_name: str,
         property_id: str,
-        experience_value: int,
+        experience_value: Optional[int] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> AddExperienceByUserId:
         return AddExperienceByUserId(
@@ -109,7 +111,7 @@ class NamespaceRef:
         self,
         experience_name: str,
         property_id: str,
-        experience_value: int,
+        experience_value: Optional[int] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> SubExperienceByUserId:
         return SubExperienceByUserId(
@@ -130,6 +132,40 @@ class NamespaceRef:
         return SubRankCapByUserId(
             self.namespace_name,
             experience_name,
+            property_id,
+            rank_cap_value,
+            user_id,
+        )
+
+    def verify_rank(
+        self,
+        experience_name: str,
+        verify_type: str,
+        property_id: str,
+        rank_value: Optional[int] = None,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifyRankByUserId:
+        return VerifyRankByUserId(
+            self.namespace_name,
+            experience_name,
+            verify_type,
+            property_id,
+            rank_value,
+            user_id,
+        )
+
+    def verify_rank_cap(
+        self,
+        experience_name: str,
+        verify_type: str,
+        property_id: str,
+        rank_cap_value: int,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifyRankCapByUserId:
+        return VerifyRankCapByUserId(
+            self.namespace_name,
+            experience_name,
+            verify_type,
             property_id,
             rank_cap_value,
             user_id,

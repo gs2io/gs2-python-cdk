@@ -24,7 +24,7 @@ from ....core.model import LogSetting
 class NamespaceOptions:
     description: Optional[str]
     transaction_setting: Optional[TransactionSetting]
-    experience_cap_script_id: Optional[str]
+    rank_cap_script_id: Optional[str]
     change_experience_script: Optional[ScriptSetting]
     change_rank_script: Optional[ScriptSetting]
     change_rank_cap_script: Optional[ScriptSetting]
@@ -35,7 +35,7 @@ class NamespaceOptions:
         self,
         description: Optional[str] = None,
         transaction_setting: Optional[TransactionSetting] = None,
-        experience_cap_script_id: Optional[str] = None,
+        rank_cap_script_id: Optional[str] = None,
         change_experience_script: Optional[ScriptSetting] = None,
         change_rank_script: Optional[ScriptSetting] = None,
         change_rank_cap_script: Optional[ScriptSetting] = None,
@@ -44,7 +44,7 @@ class NamespaceOptions:
     ):
         self.description = description
         self.transaction_setting = transaction_setting
-        self.experience_cap_script_id = experience_cap_script_id
+        self.rank_cap_script_id = rank_cap_script_id
         self.change_experience_script = change_experience_script
         self.change_rank_script = change_rank_script
         self.change_rank_cap_script = change_rank_cap_script

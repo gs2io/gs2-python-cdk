@@ -101,7 +101,7 @@ class NamespaceRef:
         self,
         parameter_name: str,
         property_id: str,
-        count: int,
+        count: Optional[int] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> AddRarityParameterStatusByUserId:
         return AddRarityParameterStatusByUserId(
@@ -132,8 +132,8 @@ class NamespaceRef:
         parameter_name: str,
         property_id: str,
         verify_type: str,
-        parameter_value_name: str,
-        parameter_count: int,
+        parameter_value_name: Optional[str] = None,
+        parameter_count: Optional[int] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> VerifyRarityParameterStatusByUserId:
         return VerifyRarityParameterStatusByUserId(

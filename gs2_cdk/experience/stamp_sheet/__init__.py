@@ -17,3 +17,5 @@ from .SetRankCapByUserId import SetRankCapByUserId
 from .MultiplyAcquireActionsByUserId import MultiplyAcquireActionsByUserId
 from .SubExperienceByUserId import SubExperienceByUserId
 from .SubRankCapByUserId import SubRankCapByUserId
+from .VerifyRankByUserId import VerifyRankByUserId
+from .VerifyRankCapByUserId import VerifyRankCapByUserId

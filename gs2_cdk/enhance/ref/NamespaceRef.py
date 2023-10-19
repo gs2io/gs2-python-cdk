@@ -43,16 +43,16 @@ class NamespaceRef:
         self,
         rate_name: str,
         target_item_set_id: str,
-        force: bool,
         materials: Optional[List[Material]] = None,
+        force: Optional[bool] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> CreateProgressByUserId:
         return CreateProgressByUserId(
             self.namespace_name,
             rate_name,
             target_item_set_id,
-            force,
             materials,
+            force,
             user_id,
         )
 

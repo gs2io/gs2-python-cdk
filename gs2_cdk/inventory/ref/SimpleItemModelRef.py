@@ -18,6 +18,7 @@ from ...core.func import GetAttr, Join
 from ..stamp_sheet.AcquireSimpleItemsByUserId import AcquireSimpleItemsByUserId
 from ..model.AcquireCount import AcquireCount
 from ..stamp_sheet.ConsumeSimpleItemsByUserId import ConsumeSimpleItemsByUserId
+from ..stamp_sheet.VerifySimpleItemByUserId import VerifySimpleItemByUserId
 
 
 class SimpleItemModelRef:
@@ -56,6 +57,21 @@ class SimpleItemModelRef:
             self.namespace_name,
             self.inventory_name,
             consume_counts,
+            user_id,
+        )
+
+    def verify_simple_item(
+        self,
+        verify_type: str,
+        count: int,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifySimpleItemByUserId:
+        return VerifySimpleItemByUserId(
+            self.namespace_name,
+            self.inventory_name,
+            self.item_name,
+            verify_type,
+            count,
             user_id,
         )
 

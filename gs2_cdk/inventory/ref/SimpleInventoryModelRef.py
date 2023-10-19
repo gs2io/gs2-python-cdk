@@ -19,6 +19,7 @@ from .SimpleItemModelRef import SimpleItemModelRef
 from ..stamp_sheet.AcquireSimpleItemsByUserId import AcquireSimpleItemsByUserId
 from ..model.AcquireCount import AcquireCount
 from ..stamp_sheet.ConsumeSimpleItemsByUserId import ConsumeSimpleItemsByUserId
+from ..stamp_sheet.VerifySimpleItemByUserId import VerifySimpleItemByUserId
 
 
 class SimpleInventoryModelRef:
@@ -64,6 +65,22 @@ class SimpleInventoryModelRef:
             self.namespace_name,
             self.inventory_name,
             consume_counts,
+            user_id,
+        )
+
+    def verify_simple_item(
+        self,
+        item_name: str,
+        verify_type: str,
+        count: int,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifySimpleItemByUserId:
+        return VerifySimpleItemByUserId(
+            self.namespace_name,
+            self.inventory_name,
+            item_name,
+            verify_type,
+            count,
             user_id,
         )
 

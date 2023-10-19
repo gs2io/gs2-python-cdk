@@ -29,7 +29,7 @@ class NamespaceRef:
 
     def start_state_machine(
         self,
-        args: str,
+        args: Optional[str] = None,
         ttl: Optional[int] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> StartStateMachineByUserId:

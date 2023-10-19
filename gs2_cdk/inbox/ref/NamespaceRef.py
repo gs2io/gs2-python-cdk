@@ -60,7 +60,7 @@ class NamespaceRef:
 
     def open_message(
         self,
-        message_name: str,
+        message_name: Optional[str] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> OpenMessageByUserId:
         return OpenMessageByUserId(
@@ -71,7 +71,7 @@ class NamespaceRef:
 
     def delete_message(
         self,
-        message_name: str,
+        message_name: Optional[str] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> DeleteMessageByUserId:
         return DeleteMessageByUserId(

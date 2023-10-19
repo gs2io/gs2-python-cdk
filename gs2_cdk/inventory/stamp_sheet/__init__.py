@@ -18,7 +18,11 @@ from .AddReferenceOfByUserId import AddReferenceOfByUserId
 from .DeleteReferenceOfByUserId import DeleteReferenceOfByUserId
 from .AcquireSimpleItemsByUserId import AcquireSimpleItemsByUserId
 from .AcquireBigItemByUserId import AcquireBigItemByUserId
+from .VerifyInventoryCurrentMaxCapacityByUserId import VerifyInventoryCurrentMaxCapacityByUserId
 from .ConsumeItemSetByUserId import ConsumeItemSetByUserId
+from .VerifyItemSetByUserId import VerifyItemSetByUserId
 from .VerifyReferenceOfByUserId import VerifyReferenceOfByUserId
 from .ConsumeSimpleItemsByUserId import ConsumeSimpleItemsByUserId
+from .VerifySimpleItemByUserId import VerifySimpleItemByUserId
 from .ConsumeBigItemByUserId import ConsumeBigItemByUserId
+from .VerifyBigItemByUserId import VerifyBigItemByUserId

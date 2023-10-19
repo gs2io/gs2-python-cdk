@@ -18,6 +18,7 @@ from ...core.func import GetAttr, Join
 from .BigItemModelRef import BigItemModelRef
 from ..stamp_sheet.AcquireBigItemByUserId import AcquireBigItemByUserId
 from ..stamp_sheet.ConsumeBigItemByUserId import ConsumeBigItemByUserId
+from ..stamp_sheet.VerifyBigItemByUserId import VerifyBigItemByUserId
 
 
 class BigInventoryModelRef:
@@ -67,6 +68,22 @@ class BigInventoryModelRef:
             self.inventory_name,
             item_name,
             consume_count,
+            user_id,
+        )
+
+    def verify_big_item(
+        self,
+        item_name: str,
+        verify_type: str,
+        count: str,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifyBigItemByUserId:
+        return VerifyBigItemByUserId(
+            self.namespace_name,
+            self.inventory_name,
+            item_name,
+            verify_type,
+            count,
             user_id,
         )
 

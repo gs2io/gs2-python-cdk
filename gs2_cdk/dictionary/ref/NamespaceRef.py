@@ -18,6 +18,7 @@ from ...core.func import GetAttr, Join
 from .EntryModelRef import EntryModelRef
 from ..stamp_sheet.AddEntriesByUserId import AddEntriesByUserId
 from ..stamp_sheet.DeleteEntriesByUserId import DeleteEntriesByUserId
+from ..stamp_sheet.VerifyEntryByUserId import VerifyEntryByUserId
 
 
 class NamespaceRef:
@@ -57,6 +58,19 @@ class NamespaceRef:
         return DeleteEntriesByUserId(
             self.namespace_name,
             entry_model_names,
+            user_id,
+        )
+
+    def verify_entry(
+        self,
+        entry_model_name: str,
+        verify_type: str,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifyEntryByUserId:
+        return VerifyEntryByUserId(
+            self.namespace_name,
+            entry_model_name,
+            verify_type,
             user_id,
         )
 

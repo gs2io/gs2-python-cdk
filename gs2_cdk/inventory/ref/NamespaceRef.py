@@ -26,10 +26,14 @@ from ..stamp_sheet.DeleteReferenceOfByUserId import DeleteReferenceOfByUserId
 from ..stamp_sheet.AcquireSimpleItemsByUserId import AcquireSimpleItemsByUserId
 from ..model.AcquireCount import AcquireCount
 from ..stamp_sheet.AcquireBigItemByUserId import AcquireBigItemByUserId
+from ..stamp_sheet.VerifyInventoryCurrentMaxCapacityByUserId import VerifyInventoryCurrentMaxCapacityByUserId
 from ..stamp_sheet.ConsumeItemSetByUserId import ConsumeItemSetByUserId
+from ..stamp_sheet.VerifyItemSetByUserId import VerifyItemSetByUserId
 from ..stamp_sheet.VerifyReferenceOfByUserId import VerifyReferenceOfByUserId
 from ..stamp_sheet.ConsumeSimpleItemsByUserId import ConsumeSimpleItemsByUserId
+from ..stamp_sheet.VerifySimpleItemByUserId import VerifySimpleItemByUserId
 from ..stamp_sheet.ConsumeBigItemByUserId import ConsumeBigItemByUserId
+from ..stamp_sheet.VerifyBigItemByUserId import VerifyBigItemByUserId
 
 
 class NamespaceRef:
@@ -99,8 +103,8 @@ class NamespaceRef:
         inventory_name: str,
         item_name: str,
         acquire_count: int,
-        expires_at: int,
-        create_new_item_set: bool,
+        expires_at: Optional[int] = None,
+        create_new_item_set: Optional[bool] = None,
         item_set_name: Optional[str] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> AcquireItemSetByUserId:
@@ -119,16 +123,16 @@ class NamespaceRef:
         self,
         inventory_name: str,
         item_name: str,
-        item_set_name: str,
         reference_of: str,
+        item_set_name: Optional[str] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> AddReferenceOfByUserId:
         return AddReferenceOfByUserId(
             self.namespace_name,
             inventory_name,
             item_name,
-            item_set_name,
             reference_of,
+            item_set_name,
             user_id,
         )
 
@@ -136,16 +140,16 @@ class NamespaceRef:
         self,
         inventory_name: str,
         item_name: str,
-        item_set_name: str,
         reference_of: str,
+        item_set_name: Optional[str] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> DeleteReferenceOfByUserId:
         return DeleteReferenceOfByUserId(
             self.namespace_name,
             inventory_name,
             item_name,
-            item_set_name,
             reference_of,
+            item_set_name,
             user_id,
         )
 
@@ -177,6 +181,21 @@ class NamespaceRef:
             user_id,
         )
 
+    def verify_inventory_current_max_capacity(
+        self,
+        inventory_name: str,
+        verify_type: str,
+        current_inventory_max_capacity: int,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifyInventoryCurrentMaxCapacityByUserId:
+        return VerifyInventoryCurrentMaxCapacityByUserId(
+            self.namespace_name,
+            inventory_name,
+            verify_type,
+            current_inventory_max_capacity,
+            user_id,
+        )
+
     def consume_item_set(
         self,
         inventory_name: str,
@@ -194,22 +213,41 @@ class NamespaceRef:
             user_id,
         )
 
+    def verify_item_set(
+        self,
+        inventory_name: str,
+        item_name: str,
+        verify_type: str,
+        count: int,
+        item_set_name: Optional[str] = None,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifyItemSetByUserId:
+        return VerifyItemSetByUserId(
+            self.namespace_name,
+            inventory_name,
+            item_name,
+            verify_type,
+            count,
+            item_set_name,
+            user_id,
+        )
+
     def verify_reference_of(
         self,
         inventory_name: str,
         item_name: str,
-        item_set_name: str,
         reference_of: str,
         verify_type: str,
+        item_set_name: Optional[str] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> VerifyReferenceOfByUserId:
         return VerifyReferenceOfByUserId(
             self.namespace_name,
             inventory_name,
             item_name,
-            item_set_name,
             reference_of,
             verify_type,
+            item_set_name,
             user_id,
         )
 
@@ -226,6 +264,23 @@ class NamespaceRef:
             user_id,
         )
 
+    def verify_simple_item(
+        self,
+        inventory_name: str,
+        item_name: str,
+        verify_type: str,
+        count: int,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifySimpleItemByUserId:
+        return VerifySimpleItemByUserId(
+            self.namespace_name,
+            inventory_name,
+            item_name,
+            verify_type,
+            count,
+            user_id,
+        )
+
     def consume_big_item(
         self,
         inventory_name: str,
@@ -238,6 +293,23 @@ class NamespaceRef:
             inventory_name,
             item_name,
             consume_count,
+            user_id,
+        )
+
+    def verify_big_item(
+        self,
+        inventory_name: str,
+        item_name: str,
+        verify_type: str,
+        count: str,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifyBigItemByUserId:
+        return VerifyBigItemByUserId(
+            self.namespace_name,
+            inventory_name,
+            item_name,
+            verify_type,
+            count,
             user_id,
         )
 

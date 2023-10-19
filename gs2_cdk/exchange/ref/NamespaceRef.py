@@ -98,7 +98,7 @@ class NamespaceRef:
     def create_await(
         self,
         rate_name: str,
-        count: int,
+        count: Optional[int] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> CreateAwaitByUserId:
         return CreateAwaitByUserId(
@@ -110,7 +110,7 @@ class NamespaceRef:
 
     def delete_await(
         self,
-        await_name: str,
+        await_name: Optional[str] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> DeleteAwaitByUserId:
         return DeleteAwaitByUserId(

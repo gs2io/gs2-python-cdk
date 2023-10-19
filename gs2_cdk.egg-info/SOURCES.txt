@@ -52,6 +52,7 @@ src/gs2_cdk/dictionary/ref/NamespaceRef.py
 src/gs2_cdk/dictionary/ref/__init__.py
 src/gs2_cdk/dictionary/stamp_sheet/AddEntriesByUserId.py
 src/gs2_cdk/dictionary/stamp_sheet/DeleteEntriesByUserId.py
+src/gs2_cdk/dictionary/stamp_sheet/VerifyEntryByUserId.py
 src/gs2_cdk/dictionary/stamp_sheet/__init__.py
 src/gs2_cdk/distributor/__init__.py
 src/gs2_cdk/distributor/model/CurrentMasterData.py
@@ -133,6 +134,8 @@ src/gs2_cdk/experience/stamp_sheet/MultiplyAcquireActionsByUserId.py
 src/gs2_cdk/experience/stamp_sheet/SetRankCapByUserId.py
 src/gs2_cdk/experience/stamp_sheet/SubExperienceByUserId.py
 src/gs2_cdk/experience/stamp_sheet/SubRankCapByUserId.py
+src/gs2_cdk/experience/stamp_sheet/VerifyRankByUserId.py
+src/gs2_cdk/experience/stamp_sheet/VerifyRankCapByUserId.py
 src/gs2_cdk/experience/stamp_sheet/__init__.py
 src/gs2_cdk/formation/__init__.py
 src/gs2_cdk/formation/model/AcquireActionConfig.py
@@ -240,7 +243,11 @@ src/gs2_cdk/inventory/stamp_sheet/ConsumeItemSetByUserId.py
 src/gs2_cdk/inventory/stamp_sheet/ConsumeSimpleItemsByUserId.py
 src/gs2_cdk/inventory/stamp_sheet/DeleteReferenceOfByUserId.py
 src/gs2_cdk/inventory/stamp_sheet/SetCapacityByUserId.py
+src/gs2_cdk/inventory/stamp_sheet/VerifyBigItemByUserId.py
+src/gs2_cdk/inventory/stamp_sheet/VerifyInventoryCurrentMaxCapacityByUserId.py
+src/gs2_cdk/inventory/stamp_sheet/VerifyItemSetByUserId.py
 src/gs2_cdk/inventory/stamp_sheet/VerifyReferenceOfByUserId.py
+src/gs2_cdk/inventory/stamp_sheet/VerifySimpleItemByUserId.py
 src/gs2_cdk/inventory/stamp_sheet/__init__.py
 src/gs2_cdk/job_queue/__init__.py
 src/gs2_cdk/job_queue/model/JobEntry.py
@@ -273,6 +280,7 @@ src/gs2_cdk/limit/ref/__init__.py
 src/gs2_cdk/limit/stamp_sheet/CountDownByUserId.py
 src/gs2_cdk/limit/stamp_sheet/CountUpByUserId.py
 src/gs2_cdk/limit/stamp_sheet/DeleteCounterByUserId.py
+src/gs2_cdk/limit/stamp_sheet/VerifyCounterByUserId.py
 src/gs2_cdk/limit/stamp_sheet/__init__.py
 src/gs2_cdk/lock/__init__.py
 src/gs2_cdk/lock/model/Namespace.py

@@ -19,6 +19,7 @@ from ..stamp_sheet.AcquireItemSetByUserId import AcquireItemSetByUserId
 from ..stamp_sheet.AddReferenceOfByUserId import AddReferenceOfByUserId
 from ..stamp_sheet.DeleteReferenceOfByUserId import DeleteReferenceOfByUserId
 from ..stamp_sheet.ConsumeItemSetByUserId import ConsumeItemSetByUserId
+from ..stamp_sheet.VerifyItemSetByUserId import VerifyItemSetByUserId
 from ..stamp_sheet.VerifyReferenceOfByUserId import VerifyReferenceOfByUserId
 
 
@@ -40,8 +41,8 @@ class ItemModelRef:
     def acquire_item_set(
         self,
         acquire_count: int,
-        expires_at: int,
-        create_new_item_set: bool,
+        expires_at: Optional[int] = None,
+        create_new_item_set: Optional[bool] = None,
         item_set_name: Optional[str] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> AcquireItemSetByUserId:
@@ -58,31 +59,31 @@ class ItemModelRef:
 
     def add_reference_of(
         self,
-        item_set_name: str,
         reference_of: str,
+        item_set_name: Optional[str] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> AddReferenceOfByUserId:
         return AddReferenceOfByUserId(
             self.namespace_name,
             self.inventory_name,
             self.item_name,
-            item_set_name,
             reference_of,
+            item_set_name,
             user_id,
         )
 
     def delete_reference_of(
         self,
-        item_set_name: str,
         reference_of: str,
+        item_set_name: Optional[str] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> DeleteReferenceOfByUserId:
         return DeleteReferenceOfByUserId(
             self.namespace_name,
             self.inventory_name,
             self.item_name,
-            item_set_name,
             reference_of,
+            item_set_name,
             user_id,
         )
 
@@ -101,20 +102,37 @@ class ItemModelRef:
             user_id,
         )
 
+    def verify_item_set(
+        self,
+        verify_type: str,
+        count: int,
+        item_set_name: Optional[str] = None,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifyItemSetByUserId:
+        return VerifyItemSetByUserId(
+            self.namespace_name,
+            self.inventory_name,
+            self.item_name,
+            verify_type,
+            count,
+            item_set_name,
+            user_id,
+        )
+
     def verify_reference_of(
         self,
-        item_set_name: str,
         reference_of: str,
         verify_type: str,
+        item_set_name: Optional[str] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> VerifyReferenceOfByUserId:
         return VerifyReferenceOfByUserId(
             self.namespace_name,
             self.inventory_name,
             self.item_name,
-            item_set_name,
             reference_of,
             verify_type,
+            item_set_name,
             user_id,
         )
 

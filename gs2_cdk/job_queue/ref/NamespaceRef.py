@@ -42,7 +42,7 @@ class NamespaceRef:
 
     def delete_job(
         self,
-        job_name: str,
+        job_name: Optional[str] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> DeleteJobByUserId:
         return DeleteJobByUserId(

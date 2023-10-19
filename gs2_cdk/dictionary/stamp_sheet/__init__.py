@@ -13,3 +13,4 @@
 # permissions and limitations under the License.
 from .AddEntriesByUserId import AddEntriesByUserId
 from .DeleteEntriesByUserId import DeleteEntriesByUserId
+from .VerifyEntryByUserId import VerifyEntryByUserId

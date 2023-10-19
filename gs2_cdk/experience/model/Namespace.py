@@ -32,7 +32,7 @@ class Namespace(CdkResource):
     name: str
     description: Optional[str] = None
     transaction_setting: Optional[TransactionSetting] = None
-    experience_cap_script_id: Optional[str] = None
+    rank_cap_script_id: Optional[str] = None
     change_experience_script: Optional[ScriptSetting] = None
     change_rank_script: Optional[ScriptSetting] = None
     change_rank_cap_script: Optional[ScriptSetting] = None
@@ -53,7 +53,7 @@ class Namespace(CdkResource):
         self.name = name
         self.description = options.description if options.description else None
         self.transaction_setting = options.transaction_setting if options.transaction_setting else None
-        self.experience_cap_script_id = options.experience_cap_script_id if options.experience_cap_script_id else None
+        self.rank_cap_script_id = options.rank_cap_script_id if options.rank_cap_script_id else None
         self.change_experience_script = options.change_experience_script if options.change_experience_script else None
         self.change_rank_script = options.change_rank_script if options.change_rank_script else None
         self.change_rank_cap_script = options.change_rank_cap_script if options.change_rank_cap_script else None
@@ -86,8 +86,8 @@ class Namespace(CdkResource):
         if self.transaction_setting is not None:
             properties["TransactionSetting"] = self.transaction_setting.properties(
             )
-        if self.experience_cap_script_id is not None:
-            properties["ExperienceCapScriptId"] = self.experience_cap_script_id
+        if self.rank_cap_script_id is not None:
+            properties["RankCapScriptId"] = self.rank_cap_script_id
         if self.change_experience_script is not None:
             properties["ChangeExperienceScript"] = self.change_experience_script.properties(
             )

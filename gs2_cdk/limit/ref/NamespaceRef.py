@@ -19,6 +19,7 @@ from .LimitModelRef import LimitModelRef
 from ..stamp_sheet.CountDownByUserId import CountDownByUserId
 from ..stamp_sheet.DeleteCounterByUserId import DeleteCounterByUserId
 from ..stamp_sheet.CountUpByUserId import CountUpByUserId
+from ..stamp_sheet.VerifyCounterByUserId import VerifyCounterByUserId
 
 
 class NamespaceRef:
@@ -43,7 +44,7 @@ class NamespaceRef:
         self,
         limit_name: str,
         counter_name: str,
-        count_down_value: int,
+        count_down_value: Optional[int] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> CountDownByUserId:
         return CountDownByUserId(
@@ -71,7 +72,7 @@ class NamespaceRef:
         self,
         limit_name: str,
         counter_name: str,
-        count_up_value: int,
+        count_up_value: Optional[int] = None,
         max_value: Optional[int] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> CountUpByUserId:
@@ -81,6 +82,23 @@ class NamespaceRef:
             counter_name,
             count_up_value,
             max_value,
+            user_id,
+        )
+
+    def verify_counter(
+        self,
+        limit_name: str,
+        counter_name: str,
+        verify_type: str,
+        count: Optional[int] = None,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifyCounterByUserId:
+        return VerifyCounterByUserId(
+            self.namespace_name,
+            limit_name,
+            counter_name,
+            verify_type,
+            count,
             user_id,
         )
 
