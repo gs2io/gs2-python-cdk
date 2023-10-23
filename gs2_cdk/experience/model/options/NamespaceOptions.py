@@ -28,7 +28,7 @@ class NamespaceOptions:
     change_experience_script: Optional[ScriptSetting]
     change_rank_script: Optional[ScriptSetting]
     change_rank_cap_script: Optional[ScriptSetting]
-    overflow_experience_script: Optional[ScriptSetting]
+    overflow_experience_script: Optional[str]
     log_setting: Optional[LogSetting]
     
     def __init__(
@@ -39,7 +39,7 @@ class NamespaceOptions:
         change_experience_script: Optional[ScriptSetting] = None,
         change_rank_script: Optional[ScriptSetting] = None,
         change_rank_cap_script: Optional[ScriptSetting] = None,
-        overflow_experience_script: Optional[ScriptSetting] = None,
+        overflow_experience_script: Optional[str] = None,
         log_setting: Optional[LogSetting] = None,
     ):
         self.description = description

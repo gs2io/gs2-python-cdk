@@ -36,7 +36,7 @@ class Namespace(CdkResource):
     change_experience_script: Optional[ScriptSetting] = None
     change_rank_script: Optional[ScriptSetting] = None
     change_rank_cap_script: Optional[ScriptSetting] = None
-    overflow_experience_script: Optional[ScriptSetting] = None
+    overflow_experience_script: Optional[str] = None
     log_setting: Optional[LogSetting] = None
 
     def __init__(
@@ -98,8 +98,7 @@ class Namespace(CdkResource):
             properties["ChangeRankCapScript"] = self.change_rank_cap_script.properties(
             )
         if self.overflow_experience_script is not None:
-            properties["OverflowExperienceScript"] = self.overflow_experience_script.properties(
-            )
+            properties["OverflowExperienceScript"] = self.overflow_experience_script
         if self.log_setting is not None:
             properties["LogSetting"] = self.log_setting.properties(
             )
