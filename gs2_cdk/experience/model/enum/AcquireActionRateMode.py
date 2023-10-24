@@ -11,20 +11,21 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-from __future__ import annotations
-from typing import *
-from ..enum.AcquireActionRateMode import AcquireActionRateMode
 
 
-class AcquireActionRateOptions:
-    rates: Optional[List[float]]
-    big_rates: Optional[List[str]]
-    
+
+
+class AcquireActionRateMode:
+    value: str
+    DOUBLE: 'AcquireActionRateMode'
+    BIG: 'AcquireActionRateMode'
+
     def __init__(
         self,
-        rates: Optional[List[float]] = None,
-        big_rates: Optional[List[str]] = None,
+        value: str,
     ):
-        self.rates = rates
-        self.big_rates = big_rates
+        self.value = value
 
+
+AcquireActionRateMode.DOUBLE = AcquireActionRateMode("double")
+AcquireActionRateMode.BIG = AcquireActionRateMode("big")

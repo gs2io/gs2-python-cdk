@@ -14,20 +14,55 @@
 from __future__ import annotations
 from typing import *
 from .options.AcquireActionRateOptions import AcquireActionRateOptions
+from .options.AcquireActionRateModeIsDoubleOptions import AcquireActionRateModeIsDoubleOptions
+from .options.AcquireActionRateModeIsBigOptions import AcquireActionRateModeIsBigOptions
+from .enum.AcquireActionRateMode import AcquireActionRateMode
 
 
 class AcquireActionRate:
     name: str
-    rates: List[float]
+    mode: AcquireActionRateMode
+    rates: Optional[List[float]] = None
+    big_rates: Optional[List[str]] = None
 
     def __init__(
         self,
         name: str,
-        rates: List[float],
+        mode: AcquireActionRateMode,
         options: Optional[AcquireActionRateOptions] = AcquireActionRateOptions(),
     ):
         self.name = name
-        self.rates = rates
+        self.mode = mode
+        self.rates = options.rates if options.rates else None
+        self.big_rates = options.big_rates if options.big_rates else None
+
+    @staticmethod
+    def mode_is_double(
+        name: str,
+        rates: List[float],
+        options: Optional[AcquireActionRateModeIsDoubleOptions] = AcquireActionRateModeIsDoubleOptions(),
+    ) -> AcquireActionRate:
+        return AcquireActionRate(
+            name,
+            AcquireActionRateMode.DOUBLE,
+            AcquireActionRateOptions(
+                rates,
+            ),
+        )
+
+    @staticmethod
+    def mode_is_big(
+        name: str,
+        big_rates: List[str],
+        options: Optional[AcquireActionRateModeIsBigOptions] = AcquireActionRateModeIsBigOptions(),
+    ) -> AcquireActionRate:
+        return AcquireActionRate(
+            name,
+            AcquireActionRateMode.BIG,
+            AcquireActionRateOptions(
+                big_rates,
+            ),
+        )
 
     def properties(
         self,
@@ -36,7 +71,11 @@ class AcquireActionRate:
 
         if self.name is not None:
             properties["name"] = self.name
+        if self.mode is not None:
+            properties["mode"] = self.mode.value
         if self.rates is not None:
             properties["rates"] = self.rates
+        if self.big_rates is not None:
+            properties["bigRates"] = self.big_rates
 
         return properties

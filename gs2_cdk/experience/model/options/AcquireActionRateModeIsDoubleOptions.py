@@ -16,15 +16,9 @@ from typing import *
 from ..enum.AcquireActionRateMode import AcquireActionRateMode
 
 
-class AcquireActionRateOptions:
-    rates: Optional[List[float]]
-    big_rates: Optional[List[str]]
+class AcquireActionRateModeIsDoubleOptions:
     
     def __init__(
         self,
-        rates: Optional[List[float]] = None,
-        big_rates: Optional[List[str]] = None,
     ):
-        self.rates = rates
-        self.big_rates = big_rates
-
+        pass

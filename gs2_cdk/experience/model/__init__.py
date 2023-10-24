@@ -19,4 +19,7 @@ from .Threshold import Threshold
 from .options.ThresholdOptions import ThresholdOptions
 from .AcquireActionRate import AcquireActionRate
 from .options.AcquireActionRateOptions import AcquireActionRateOptions
+from .enum.AcquireActionRateMode import AcquireActionRateMode
+from .options.AcquireActionRateModeIsDoubleOptions import AcquireActionRateModeIsDoubleOptions
+from .options.AcquireActionRateModeIsBigOptions import AcquireActionRateModeIsBigOptions
 from .CurrentMasterData import CurrentMasterData
