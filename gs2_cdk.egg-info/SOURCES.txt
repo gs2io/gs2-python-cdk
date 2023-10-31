@@ -455,6 +455,8 @@ src/gs2_cdk/schedule/stamp_sheet/TriggerByUserId.py
 src/gs2_cdk/schedule/stamp_sheet/__init__.py
 src/gs2_cdk/script/__init__.py
 src/gs2_cdk/script/model/Namespace.py
+src/gs2_cdk/script/model/RandomStatus.py
+src/gs2_cdk/script/model/RandomUsed.py
 src/gs2_cdk/script/model/Script.py
 src/gs2_cdk/script/model/__init__.py
 src/gs2_cdk/script/ref/NamespaceRef.py
