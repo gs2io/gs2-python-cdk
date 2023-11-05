@@ -17,11 +17,17 @@ from ..enum.SlotWithSignaturePropertyType import SlotWithSignaturePropertyType
 
 
 class SlotWithSignatureOptions:
+    body: Optional[str]
+    signature: Optional[str]
     metadata: Optional[str]
     
     def __init__(
         self,
+        body: Optional[str] = None,
+        signature: Optional[str] = None,
         metadata: Optional[str] = None,
     ):
+        self.body = body
+        self.signature = signature
         self.metadata = metadata
 

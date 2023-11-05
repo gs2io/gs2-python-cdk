@@ -20,22 +20,20 @@ from .enum.SlotWithSignaturePropertyType import SlotWithSignaturePropertyType
 class SlotWithSignature:
     name: str
     property_type: SlotWithSignaturePropertyType
-    body: str
-    signature: str
+    body: Optional[str] = None
+    signature: Optional[str] = None
     metadata: Optional[str] = None
 
     def __init__(
         self,
         name: str,
         property_type: SlotWithSignaturePropertyType,
-        body: str,
-        signature: str,
         options: Optional[SlotWithSignatureOptions] = SlotWithSignatureOptions(),
     ):
         self.name = name
         self.property_type = property_type
-        self.body = body
-        self.signature = signature
+        self.body = options.body if options.body else None
+        self.signature = options.signature if options.signature else None
         self.metadata = options.metadata if options.metadata else None
 
     def properties(
