@@ -16,7 +16,6 @@ from typing import *
 
 from ...core.model import CdkResource, Stack
 from ...core.func import GetAttr
-from ...core.model import ScriptSetting
 from ...core.model import LogSetting
 
 from ..ref.NamespaceRef import NamespaceRef
@@ -30,7 +29,7 @@ class Namespace(CdkResource):
     stack: Stack
     name: str
     description: Optional[str] = None
-    overflow_trigger_script: Optional[ScriptSetting] = None
+    overflow_trigger_script: Optional[str] = None
     log_setting: Optional[LogSetting] = None
 
     def __init__(
@@ -73,8 +72,7 @@ class Namespace(CdkResource):
         if self.description is not None:
             properties["Description"] = self.description
         if self.overflow_trigger_script is not None:
-            properties["OverflowTriggerScript"] = self.overflow_trigger_script.properties(
-            )
+            properties["OverflowTriggerScript"] = self.overflow_trigger_script
         if self.log_setting is not None:
             properties["LogSetting"] = self.log_setting.properties(
             )

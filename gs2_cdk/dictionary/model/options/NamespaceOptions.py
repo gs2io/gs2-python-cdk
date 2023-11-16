@@ -23,14 +23,14 @@ from ....core.model import LogSetting
 class NamespaceOptions:
     description: Optional[str]
     entry_script: Optional[ScriptSetting]
-    duplicate_entry_script: Optional[ScriptSetting]
+    duplicate_entry_script: Optional[str]
     log_setting: Optional[LogSetting]
     
     def __init__(
         self,
         description: Optional[str] = None,
         entry_script: Optional[ScriptSetting] = None,
-        duplicate_entry_script: Optional[ScriptSetting] = None,
+        duplicate_entry_script: Optional[str] = None,
         log_setting: Optional[LogSetting] = None,
     ):
         self.description = description

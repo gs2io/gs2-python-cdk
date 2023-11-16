@@ -31,7 +31,7 @@ class Namespace(CdkResource):
     name: str
     description: Optional[str] = None
     entry_script: Optional[ScriptSetting] = None
-    duplicate_entry_script: Optional[ScriptSetting] = None
+    duplicate_entry_script: Optional[str] = None
     log_setting: Optional[LogSetting] = None
 
     def __init__(
@@ -78,8 +78,7 @@ class Namespace(CdkResource):
             properties["EntryScript"] = self.entry_script.properties(
             )
         if self.duplicate_entry_script is not None:
-            properties["DuplicateEntryScript"] = self.duplicate_entry_script.properties(
-            )
+            properties["DuplicateEntryScript"] = self.duplicate_entry_script
         if self.log_setting is not None:
             properties["LogSetting"] = self.log_setting.properties(
             )

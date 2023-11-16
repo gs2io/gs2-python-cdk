@@ -16,19 +16,18 @@ from typing import *
 
 from ....core.model import CdkResource, Stack
 from ....core.func import GetAttr
-from ....core.model import ScriptSetting
 from ....core.model import LogSetting
 
 
 class NamespaceOptions:
     description: Optional[str]
-    overflow_trigger_script: Optional[ScriptSetting]
+    overflow_trigger_script: Optional[str]
     log_setting: Optional[LogSetting]
     
     def __init__(
         self,
         description: Optional[str] = None,
-        overflow_trigger_script: Optional[ScriptSetting] = None,
+        overflow_trigger_script: Optional[str] = None,
         log_setting: Optional[LogSetting] = None,
     ):
         self.description = description
