@@ -26,6 +26,7 @@ class NamespaceOptions:
     admob: Optional[AdMob]
     unity_ad: Optional[UnityAd]
     description: Optional[str]
+    change_point_notification: Optional[NotificationSetting]
     log_setting: Optional[LogSetting]
     
     def __init__(
@@ -33,10 +34,12 @@ class NamespaceOptions:
         admob: Optional[AdMob] = None,
         unity_ad: Optional[UnityAd] = None,
         description: Optional[str] = None,
+        change_point_notification: Optional[NotificationSetting] = None,
         log_setting: Optional[LogSetting] = None,
     ):
         self.admob = admob
         self.unity_ad = unity_ad
         self.description = description
+        self.change_point_notification = change_point_notification
         self.log_setting = log_setting
 

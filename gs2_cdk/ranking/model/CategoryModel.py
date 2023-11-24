@@ -25,10 +25,10 @@ class CategoryModel:
     name: str
     order_direction: CategoryModelOrderDirection
     scope: CategoryModelScope
-    unique_by_user_id: bool
     metadata: Optional[str] = None
     minimum_value: Optional[int] = None
     maximum_value: Optional[int] = None
+    unique_by_user_id: Optional[bool] = None
     sum: Optional[bool] = None
     calculate_fixed_timing_hour: Optional[int] = None
     calculate_fixed_timing_minute: Optional[int] = None
@@ -44,16 +44,15 @@ class CategoryModel:
         name: str,
         order_direction: CategoryModelOrderDirection,
         scope: CategoryModelScope,
-        unique_by_user_id: bool,
         options: Optional[CategoryModelOptions] = CategoryModelOptions(),
     ):
         self.name = name
         self.order_direction = order_direction
         self.scope = scope
-        self.unique_by_user_id = unique_by_user_id
         self.metadata = options.metadata if options.metadata else None
         self.minimum_value = options.minimum_value if options.minimum_value else None
         self.maximum_value = options.maximum_value if options.maximum_value else None
+        self.unique_by_user_id = options.unique_by_user_id if options.unique_by_user_id else None
         self.sum = options.sum if options.sum else None
         self.calculate_fixed_timing_hour = options.calculate_fixed_timing_hour if options.calculate_fixed_timing_hour else None
         self.calculate_fixed_timing_minute = options.calculate_fixed_timing_minute if options.calculate_fixed_timing_minute else None
@@ -76,8 +75,8 @@ class CategoryModel:
             name,
             order_direction,
             CategoryModelScope.GLOBAL,
-            unique_by_user_id,
             CategoryModelOptions(
+                unique_by_user_id,
                 calculate_interval_minutes,
                 options.metadata,
                 options.minimum_value,
@@ -96,14 +95,12 @@ class CategoryModel:
     def scope_is_scoped(
         name: str,
         order_direction: CategoryModelOrderDirection,
-        unique_by_user_id: bool,
         options: Optional[CategoryModelScopeIsScopedOptions] = CategoryModelScopeIsScopedOptions(),
     ) -> CategoryModel:
         return CategoryModel(
             name,
             order_direction,
             CategoryModelScope.SCOPED,
-            unique_by_user_id,
             CategoryModelOptions(
                 options.metadata,
                 options.minimum_value,

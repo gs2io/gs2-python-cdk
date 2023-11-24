@@ -29,17 +29,16 @@ from .options.NamespaceOptions import NamespaceOptions
 class Namespace(CdkResource):
     stack: Stack
     name: str
-    change_point_notification: NotificationSetting
     admob: Optional[AdMob] = None
     unity_ad: Optional[UnityAd] = None
     description: Optional[str] = None
+    change_point_notification: Optional[NotificationSetting] = None
     log_setting: Optional[LogSetting] = None
 
     def __init__(
         self,
         stack: Stack,
         name: str,
-        change_point_notification: NotificationSetting,
         options: Optional[NamespaceOptions] = NamespaceOptions(),
     ):
         super().__init__(
@@ -48,10 +47,10 @@ class Namespace(CdkResource):
 
         self.stack = stack
         self.name = name
-        self.change_point_notification = change_point_notification
         self.admob = options.admob if options.admob else None
         self.unity_ad = options.unity_ad if options.unity_ad else None
         self.description = options.description if options.description else None
+        self.change_point_notification = options.change_point_notification if options.change_point_notification else None
         self.log_setting = options.log_setting if options.log_setting else None
         stack.add_resource(
             self,

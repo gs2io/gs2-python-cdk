@@ -22,6 +22,7 @@ class CategoryModelOptions:
     metadata: Optional[str]
     minimum_value: Optional[int]
     maximum_value: Optional[int]
+    unique_by_user_id: Optional[bool]
     sum: Optional[bool]
     calculate_fixed_timing_hour: Optional[int]
     calculate_fixed_timing_minute: Optional[int]
@@ -37,6 +38,7 @@ class CategoryModelOptions:
         metadata: Optional[str] = None,
         minimum_value: Optional[int] = None,
         maximum_value: Optional[int] = None,
+        unique_by_user_id: Optional[bool] = None,
         sum: Optional[bool] = None,
         calculate_fixed_timing_hour: Optional[int] = None,
         calculate_fixed_timing_minute: Optional[int] = None,
@@ -50,6 +52,7 @@ class CategoryModelOptions:
         self.metadata = metadata
         self.minimum_value = minimum_value
         self.maximum_value = maximum_value
+        self.unique_by_user_id = unique_by_user_id
         self.sum = sum
         self.calculate_fixed_timing_hour = calculate_fixed_timing_hour
         self.calculate_fixed_timing_minute = calculate_fixed_timing_minute

@@ -115,28 +115,21 @@ class Stack:
 
 class TransactionSetting:
 
-    enable_auto_run: bool
     distributor_namespace_id: str
-    key_id: str
     queue_namespace_id: str
 
     def __init__(
             self,
-            enable_auto_run: bool,
             distributor_namespace_id: str = None,
-            key_id: str | Func = None,
             queue_namespace_id: str = None,
     ):
-        self.enable_auto_run = enable_auto_run
         self.distributor_namespace_id = distributor_namespace_id
-        self.key_id = key_id
         self.queue_namespace_id = queue_namespace_id
 
     def properties(self) -> Dict[str, Any]:
         return {
-            "EnableAutoRun": self.enable_auto_run,
+            "EnableAutoRun": True,
             "DistributorNamespaceId": self.distributor_namespace_id,
-            "KeyId": self.key_id,
             "QueueNamespaceId": self.queue_namespace_id,
         }
 
@@ -177,7 +170,7 @@ class NotificationSetting:
 
     def __init__(
             self,
-            gateway_namespace_id: str,
+            gateway_namespace_id: str = None,
             enable_transfer_mobile_notification: bool = None,
             sound: str = None,
     ):
