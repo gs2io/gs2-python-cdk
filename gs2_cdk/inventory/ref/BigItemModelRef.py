@@ -16,6 +16,7 @@ from typing import *
 
 from ...core.func import GetAttr, Join
 from ..stamp_sheet.AcquireBigItemByUserId import AcquireBigItemByUserId
+from ..stamp_sheet.SetBigItemByUserId import SetBigItemByUserId
 from ..stamp_sheet.ConsumeBigItemByUserId import ConsumeBigItemByUserId
 from ..stamp_sheet.VerifyBigItemByUserId import VerifyBigItemByUserId
 
@@ -45,6 +46,19 @@ class BigItemModelRef:
             self.inventory_name,
             self.item_name,
             acquire_count,
+            user_id,
+        )
+
+    def set_big_item(
+        self,
+        count: str,
+        user_id: Optional[str] = "#{userId}",
+    ) -> SetBigItemByUserId:
+        return SetBigItemByUserId(
+            self.namespace_name,
+            self.inventory_name,
+            self.item_name,
+            count,
             user_id,
         )
 

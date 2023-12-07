@@ -18,6 +18,7 @@ from ...core.func import GetAttr, Join
 from .SimpleItemModelRef import SimpleItemModelRef
 from ..stamp_sheet.AcquireSimpleItemsByUserId import AcquireSimpleItemsByUserId
 from ..model.AcquireCount import AcquireCount
+from ..stamp_sheet.SetSimpleItemsByUserId import SetSimpleItemsByUserId
 from ..stamp_sheet.ConsumeSimpleItemsByUserId import ConsumeSimpleItemsByUserId
 from ..stamp_sheet.VerifySimpleItemByUserId import VerifySimpleItemByUserId
 
@@ -53,6 +54,18 @@ class SimpleInventoryModelRef:
             self.namespace_name,
             self.inventory_name,
             acquire_counts,
+            user_id,
+        )
+
+    def set_simple_items(
+        self,
+        counts: List[HeldCount],
+        user_id: Optional[str] = "#{userId}",
+    ) -> SetSimpleItemsByUserId:
+        return SetSimpleItemsByUserId(
+            self.namespace_name,
+            self.inventory_name,
+            counts,
             user_id,
         )
 

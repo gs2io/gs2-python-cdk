@@ -219,6 +219,7 @@ src/gs2_cdk/inventory/model/BigInventoryModel.py
 src/gs2_cdk/inventory/model/BigItemModel.py
 src/gs2_cdk/inventory/model/ConsumeCount.py
 src/gs2_cdk/inventory/model/CurrentMasterData.py
+src/gs2_cdk/inventory/model/HeldCount.py
 src/gs2_cdk/inventory/model/InventoryModel.py
 src/gs2_cdk/inventory/model/ItemModel.py
 src/gs2_cdk/inventory/model/Namespace.py
@@ -242,7 +243,9 @@ src/gs2_cdk/inventory/stamp_sheet/ConsumeBigItemByUserId.py
 src/gs2_cdk/inventory/stamp_sheet/ConsumeItemSetByUserId.py
 src/gs2_cdk/inventory/stamp_sheet/ConsumeSimpleItemsByUserId.py
 src/gs2_cdk/inventory/stamp_sheet/DeleteReferenceOfByUserId.py
+src/gs2_cdk/inventory/stamp_sheet/SetBigItemByUserId.py
 src/gs2_cdk/inventory/stamp_sheet/SetCapacityByUserId.py
+src/gs2_cdk/inventory/stamp_sheet/SetSimpleItemsByUserId.py
 src/gs2_cdk/inventory/stamp_sheet/VerifyBigItemByUserId.py
 src/gs2_cdk/inventory/stamp_sheet/VerifyInventoryCurrentMaxCapacityByUserId.py
 src/gs2_cdk/inventory/stamp_sheet/VerifyItemSetByUserId.py

@@ -29,4 +29,6 @@ from .AcquireCount import AcquireCount
 from .options.AcquireCountOptions import AcquireCountOptions
 from .ConsumeCount import ConsumeCount
 from .options.ConsumeCountOptions import ConsumeCountOptions
+from .HeldCount import HeldCount
+from .options.HeldCountOptions import HeldCountOptions
 from .CurrentMasterData import CurrentMasterData

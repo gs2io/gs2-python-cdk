@@ -25,7 +25,9 @@ from ..stamp_sheet.AddReferenceOfByUserId import AddReferenceOfByUserId
 from ..stamp_sheet.DeleteReferenceOfByUserId import DeleteReferenceOfByUserId
 from ..stamp_sheet.AcquireSimpleItemsByUserId import AcquireSimpleItemsByUserId
 from ..model.AcquireCount import AcquireCount
+from ..stamp_sheet.SetSimpleItemsByUserId import SetSimpleItemsByUserId
 from ..stamp_sheet.AcquireBigItemByUserId import AcquireBigItemByUserId
+from ..stamp_sheet.SetBigItemByUserId import SetBigItemByUserId
 from ..stamp_sheet.VerifyInventoryCurrentMaxCapacityByUserId import VerifyInventoryCurrentMaxCapacityByUserId
 from ..stamp_sheet.ConsumeItemSetByUserId import ConsumeItemSetByUserId
 from ..stamp_sheet.VerifyItemSetByUserId import VerifyItemSetByUserId
@@ -166,6 +168,19 @@ class NamespaceRef:
             user_id,
         )
 
+    def set_simple_items(
+        self,
+        inventory_name: str,
+        counts: List[HeldCount],
+        user_id: Optional[str] = "#{userId}",
+    ) -> SetSimpleItemsByUserId:
+        return SetSimpleItemsByUserId(
+            self.namespace_name,
+            inventory_name,
+            counts,
+            user_id,
+        )
+
     def acquire_big_item(
         self,
         inventory_name: str,
@@ -178,6 +193,21 @@ class NamespaceRef:
             inventory_name,
             item_name,
             acquire_count,
+            user_id,
+        )
+
+    def set_big_item(
+        self,
+        inventory_name: str,
+        item_name: str,
+        count: str,
+        user_id: Optional[str] = "#{userId}",
+    ) -> SetBigItemByUserId:
+        return SetBigItemByUserId(
+            self.namespace_name,
+            inventory_name,
+            item_name,
+            count,
             user_id,
         )
 
