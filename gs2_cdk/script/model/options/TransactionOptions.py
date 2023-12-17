@@ -11,13 +11,21 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-from .Namespace import Namespace
-from .options.NamespaceOptions import NamespaceOptions
-from .Script import Script
-from .options.ScriptOptions import ScriptOptions
-from .RandomStatus import RandomStatus
-from .options.RandomStatusOptions import RandomStatusOptions
-from .RandomUsed import RandomUsed
-from .options.RandomUsedOptions import RandomUsedOptions
-from .Transaction import Transaction
-from .options.TransactionOptions import TransactionOptions
+from __future__ import annotations
+from typing import *
+from ....core.model import ConsumeAction
+from ....core.model import AcquireAction
+
+
+class TransactionOptions:
+    consume_actions: Optional[List[ConsumeAction]]
+    acquire_actions: Optional[List[AcquireAction]]
+    
+    def __init__(
+        self,
+        consume_actions: Optional[List[ConsumeAction]] = None,
+        acquire_actions: Optional[List[AcquireAction]] = None,
+    ):
+        self.consume_actions = consume_actions
+        self.acquire_actions = acquire_actions
+

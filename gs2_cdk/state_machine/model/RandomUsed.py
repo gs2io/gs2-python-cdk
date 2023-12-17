@@ -13,29 +13,30 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from .options.RandomUsedOptions import RandomUsedOptions
 
-from ...core.model import AcquireAction, ConsumeAction
 
-
-class StartStateMachineByUserId(AcquireAction):
+class RandomUsed:
+    category: int
+    used: int
 
     def __init__(
         self,
-        namespace_name: str,
-        args: Optional[str] = None,
-        enable_speculative_execution: Optional[str] = None,
-        ttl: Optional[int] = None,
-        user_id: Optional[str] = "#{userId}",
+        category: int,
+        used: int,
+        options: Optional[RandomUsedOptions] = RandomUsedOptions(),
     ):
+        self.category = category
+        self.used = used
+
+    def properties(
+        self,
+    ) -> Dict[str, Any]:
         properties: Dict[str, Any] = {}
 
-        properties["namespaceName"] = namespace_name
-        properties["args"] = args
-        properties["enableSpeculativeExecution"] = enable_speculative_execution
-        properties["ttl"] = ttl
-        properties["userId"] = user_id
+        if self.category is not None:
+            properties["category"] = self.category
+        if self.used is not None:
+            properties["used"] = self.used
 
-        super().__init__(
-            "Gs2StateMachine:StartStateMachineByUserId",
-            properties,
-        )
+        return properties

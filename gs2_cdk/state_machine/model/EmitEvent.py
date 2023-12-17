@@ -13,29 +13,35 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from .options.EmitEventOptions import EmitEventOptions
 
-from ...core.model import AcquireAction, ConsumeAction
 
-
-class StartStateMachineByUserId(AcquireAction):
+class EmitEvent:
+    event: str
+    parameters: str
+    timestamp: int
 
     def __init__(
         self,
-        namespace_name: str,
-        args: Optional[str] = None,
-        enable_speculative_execution: Optional[str] = None,
-        ttl: Optional[int] = None,
-        user_id: Optional[str] = "#{userId}",
+        event: str,
+        parameters: str,
+        timestamp: int,
+        options: Optional[EmitEventOptions] = EmitEventOptions(),
     ):
+        self.event = event
+        self.parameters = parameters
+        self.timestamp = timestamp
+
+    def properties(
+        self,
+    ) -> Dict[str, Any]:
         properties: Dict[str, Any] = {}
 
-        properties["namespaceName"] = namespace_name
-        properties["args"] = args
-        properties["enableSpeculativeExecution"] = enable_speculative_execution
-        properties["ttl"] = ttl
-        properties["userId"] = user_id
+        if self.event is not None:
+            properties["event"] = self.event
+        if self.parameters is not None:
+            properties["parameters"] = self.parameters
+        if self.timestamp is not None:
+            properties["timestamp"] = self.timestamp
 
-        super().__init__(
-            "Gs2StateMachine:StartStateMachineByUserId",
-            properties,
-        )
+        return properties

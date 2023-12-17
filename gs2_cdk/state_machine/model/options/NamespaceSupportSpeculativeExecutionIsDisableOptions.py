@@ -13,41 +13,38 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
-
-from ....core.model import CdkResource, Stack
-from ....core.func import GetAttr
 from ....core.model import TransactionSetting
 from ....core.model import ScriptSetting
 from ....core.model import LogSetting
+from ..enum.NamespaceSupportSpeculativeExecution import NamespaceSupportSpeculativeExecution
 
 
-class NamespaceOptions:
+class NamespaceSupportSpeculativeExecutionIsDisableOptions:
     description: Optional[str]
-    enable_await_exchange: Optional[bool]
-    enable_direct_exchange: Optional[bool]
     transaction_setting: Optional[TransactionSetting]
-    exchange_script: Optional[ScriptSetting]
+    start_script: Optional[ScriptSetting]
+    pass_script: Optional[ScriptSetting]
+    error_script: Optional[ScriptSetting]
+    lowest_state_machine_version: Optional[int]
     log_setting: Optional[LogSetting]
-    queue_namespace_id: Optional[str]
-    key_id: Optional[str]
+    revision: Optional[int]
     
     def __init__(
         self,
         description: Optional[str] = None,
-        enable_await_exchange: Optional[bool] = None,
-        enable_direct_exchange: Optional[bool] = None,
         transaction_setting: Optional[TransactionSetting] = None,
-        exchange_script: Optional[ScriptSetting] = None,
+        start_script: Optional[ScriptSetting] = None,
+        pass_script: Optional[ScriptSetting] = None,
+        error_script: Optional[ScriptSetting] = None,
+        lowest_state_machine_version: Optional[int] = None,
         log_setting: Optional[LogSetting] = None,
-        queue_namespace_id: Optional[str] = None,
-        key_id: Optional[str] = None,
+        revision: Optional[int] = None,
     ):
         self.description = description
-        self.enable_await_exchange = enable_await_exchange
-        self.enable_direct_exchange = enable_direct_exchange
         self.transaction_setting = transaction_setting
-        self.exchange_script = exchange_script
+        self.start_script = start_script
+        self.pass_script = pass_script
+        self.error_script = error_script
+        self.lowest_state_machine_version = lowest_state_machine_version
         self.log_setting = log_setting
-        self.queue_namespace_id = queue_namespace_id
-        self.key_id = key_id
-
+        self.revision = revision

@@ -461,6 +461,7 @@ src/gs2_cdk/script/model/Namespace.py
 src/gs2_cdk/script/model/RandomStatus.py
 src/gs2_cdk/script/model/RandomUsed.py
 src/gs2_cdk/script/model/Script.py
+src/gs2_cdk/script/model/Transaction.py
 src/gs2_cdk/script/model/__init__.py
 src/gs2_cdk/script/ref/NamespaceRef.py
 src/gs2_cdk/script/ref/ScriptRef.py
@@ -537,7 +538,13 @@ src/gs2_cdk/stamina/stamp_sheet/__init__.py
 src/gs2_cdk/state_machine/__init__.py
 src/gs2_cdk/state_machine/integration/StateMachine.py
 src/gs2_cdk/state_machine/integration/__init__.py
+src/gs2_cdk/state_machine/model/AutoRunTransactionSetting.py
+src/gs2_cdk/state_machine/model/ChangeStateEvent.py
+src/gs2_cdk/state_machine/model/EmitEvent.py
+src/gs2_cdk/state_machine/model/Event.py
 src/gs2_cdk/state_machine/model/Namespace.py
+src/gs2_cdk/state_machine/model/RandomStatus.py
+src/gs2_cdk/state_machine/model/RandomUsed.py
 src/gs2_cdk/state_machine/model/StackEntry.py
 src/gs2_cdk/state_machine/model/StateMachineMaster.py
 src/gs2_cdk/state_machine/model/Variable.py

@@ -30,12 +30,14 @@ class NamespaceRef:
     def start_state_machine(
         self,
         args: Optional[str] = None,
+        enable_speculative_execution: Optional[str] = None,
         ttl: Optional[int] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> StartStateMachineByUserId:
         return StartStateMachineByUserId(
             self.namespace_name,
             args,
+            enable_speculative_execution,
             ttl,
             user_id,
         )

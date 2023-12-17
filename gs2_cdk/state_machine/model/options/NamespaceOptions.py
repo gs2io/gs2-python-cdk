@@ -16,12 +16,15 @@ from typing import *
 
 from ....core.model import CdkResource, Stack
 from ....core.func import GetAttr
+from ....core.model import TransactionSetting
 from ....core.model import ScriptSetting
 from ....core.model import LogSetting
 
 
 class NamespaceOptions:
     description: Optional[str]
+    support_speculative_execution: Optional[NamespaceSupportSpeculativeExecution]
+    transaction_setting: Optional[TransactionSetting]
     start_script: Optional[ScriptSetting]
     pass_script: Optional[ScriptSetting]
     error_script: Optional[ScriptSetting]
@@ -31,6 +34,8 @@ class NamespaceOptions:
     def __init__(
         self,
         description: Optional[str] = None,
+        support_speculative_execution: Optional[NamespaceSupportSpeculativeExecution] = None,
+        transaction_setting: Optional[TransactionSetting] = None,
         start_script: Optional[ScriptSetting] = None,
         pass_script: Optional[ScriptSetting] = None,
         error_script: Optional[ScriptSetting] = None,
@@ -38,6 +43,8 @@ class NamespaceOptions:
         log_setting: Optional[LogSetting] = None,
     ):
         self.description = description
+        self.support_speculative_execution = support_speculative_execution
+        self.transaction_setting = transaction_setting
         self.start_script = start_script
         self.pass_script = pass_script
         self.error_script = error_script
