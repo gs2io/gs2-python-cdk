@@ -11,29 +11,21 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-from __future__ import annotations
-from typing import *
-
-from ...core.model import AcquireAction, ConsumeAction
 
 
-class StartStateMachineByUserId(AcquireAction):
+
+
+class AcquireActionRateMode:
+    value: str
+    DOUBLE: 'AcquireActionRateMode'
+    BIG: 'AcquireActionRateMode'
 
     def __init__(
         self,
-        namespace_name: str,
-        args: Optional[str] = None,
-        ttl: Optional[int] = None,
-        user_id: Optional[str] = "#{userId}",
+        value: str,
     ):
-        properties: Dict[str, Any] = {}
+        self.value = value
 
-        properties["namespaceName"] = namespace_name
-        properties["args"] = args
-        properties["ttl"] = ttl
-        properties["userId"] = user_id
 
-        super().__init__(
-            "Gs2StateMachine:StartStateMachineByUserId",
-            properties,
-        )
+AcquireActionRateMode.DOUBLE = AcquireActionRateMode("double")
+AcquireActionRateMode.BIG = AcquireActionRateMode("big")

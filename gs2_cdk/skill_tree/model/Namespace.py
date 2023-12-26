@@ -30,8 +30,8 @@ from .options.NamespaceOptions import NamespaceOptions
 class Namespace(CdkResource):
     stack: Stack
     name: str
-    transaction_setting: TransactionSetting
     description: Optional[str] = None
+    transaction_setting: Optional[TransactionSetting] = None
     release_script: Optional[ScriptSetting] = None
     restrain_script: Optional[ScriptSetting] = None
     log_setting: Optional[LogSetting] = None
@@ -40,7 +40,6 @@ class Namespace(CdkResource):
         self,
         stack: Stack,
         name: str,
-        transaction_setting: TransactionSetting,
         options: Optional[NamespaceOptions] = NamespaceOptions(),
     ):
         super().__init__(
@@ -49,8 +48,8 @@ class Namespace(CdkResource):
 
         self.stack = stack
         self.name = name
-        self.transaction_setting = transaction_setting
         self.description = options.description if options.description else None
+        self.transaction_setting = options.transaction_setting if options.transaction_setting else None
         self.release_script = options.release_script if options.release_script else None
         self.restrain_script = options.restrain_script if options.restrain_script else None
         self.log_setting = options.log_setting if options.log_setting else None

@@ -13,27 +13,12 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from ..enum.AcquireActionRateMode import AcquireActionRateMode
 
-from ...core.model import AcquireAction, ConsumeAction
 
-
-class StartStateMachineByUserId(AcquireAction):
-
+class AcquireActionRateModeIsDoubleOptions:
+    
     def __init__(
         self,
-        namespace_name: str,
-        args: Optional[str] = None,
-        ttl: Optional[int] = None,
-        user_id: Optional[str] = "#{userId}",
     ):
-        properties: Dict[str, Any] = {}
-
-        properties["namespaceName"] = namespace_name
-        properties["args"] = args
-        properties["ttl"] = ttl
-        properties["userId"] = user_id
-
-        super().__init__(
-            "Gs2StateMachine:StartStateMachineByUserId",
-            properties,
-        )
+        pass

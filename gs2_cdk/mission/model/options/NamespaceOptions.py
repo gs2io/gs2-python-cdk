@@ -24,6 +24,7 @@ from ....core.model import LogSetting
 
 class NamespaceOptions:
     description: Optional[str]
+    transaction_setting: Optional[TransactionSetting]
     mission_complete_script: Optional[ScriptSetting]
     counter_increment_script: Optional[ScriptSetting]
     receive_rewards_script: Optional[ScriptSetting]
@@ -35,6 +36,7 @@ class NamespaceOptions:
     def __init__(
         self,
         description: Optional[str] = None,
+        transaction_setting: Optional[TransactionSetting] = None,
         mission_complete_script: Optional[ScriptSetting] = None,
         counter_increment_script: Optional[ScriptSetting] = None,
         receive_rewards_script: Optional[ScriptSetting] = None,
@@ -44,6 +46,7 @@ class NamespaceOptions:
         key_id: Optional[str] = None,
     ):
         self.description = description
+        self.transaction_setting = transaction_setting
         self.mission_complete_script = mission_complete_script
         self.counter_increment_script = counter_increment_script
         self.receive_rewards_script = receive_rewards_script

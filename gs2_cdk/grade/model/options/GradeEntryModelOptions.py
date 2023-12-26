@@ -14,26 +14,16 @@
 from __future__ import annotations
 from typing import *
 
-from ...core.model import AcquireAction, ConsumeAction
 
-
-class StartStateMachineByUserId(AcquireAction):
-
+class GradeEntryModelOptions:
+    metadata: Optional[str]
+    property_id_regex: Optional[str]
+    
     def __init__(
         self,
-        namespace_name: str,
-        args: Optional[str] = None,
-        ttl: Optional[int] = None,
-        user_id: Optional[str] = "#{userId}",
+        metadata: Optional[str] = None,
+        property_id_regex: Optional[str] = None,
     ):
-        properties: Dict[str, Any] = {}
+        self.metadata = metadata
+        self.property_id_regex = property_id_regex
 
-        properties["namespaceName"] = namespace_name
-        properties["args"] = args
-        properties["ttl"] = ttl
-        properties["userId"] = user_id
-
-        super().__init__(
-            "Gs2StateMachine:StartStateMachineByUserId",
-            properties,
-        )

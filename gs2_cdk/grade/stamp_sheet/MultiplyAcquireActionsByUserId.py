@@ -17,23 +17,27 @@ from typing import *
 from ...core.model import AcquireAction, ConsumeAction
 
 
-class StartStateMachineByUserId(AcquireAction):
+class MultiplyAcquireActionsByUserId(AcquireAction):
 
     def __init__(
         self,
         namespace_name: str,
-        args: Optional[str] = None,
-        ttl: Optional[int] = None,
+        grade_name: str,
+        property_id: str,
+        rate_name: str,
+        acquire_actions: Optional[List[AcquireAction]] = None,
         user_id: Optional[str] = "#{userId}",
     ):
         properties: Dict[str, Any] = {}
 
         properties["namespaceName"] = namespace_name
-        properties["args"] = args
-        properties["ttl"] = ttl
+        properties["gradeName"] = grade_name
+        properties["propertyId"] = property_id
+        properties["rateName"] = rate_name
+        properties["acquireActions"] = acquire_actions
         properties["userId"] = user_id
 
         super().__init__(
-            "Gs2StateMachine:StartStateMachineByUserId",
+            "Gs2Grade:MultiplyAcquireActionsByUserId",
             properties,
         )

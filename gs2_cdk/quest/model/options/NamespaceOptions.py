@@ -23,6 +23,7 @@ from ....core.model import LogSetting
 
 class NamespaceOptions:
     description: Optional[str]
+    transaction_setting: Optional[TransactionSetting]
     start_quest_script: Optional[ScriptSetting]
     complete_quest_script: Optional[ScriptSetting]
     failed_quest_script: Optional[ScriptSetting]
@@ -33,6 +34,7 @@ class NamespaceOptions:
     def __init__(
         self,
         description: Optional[str] = None,
+        transaction_setting: Optional[TransactionSetting] = None,
         start_quest_script: Optional[ScriptSetting] = None,
         complete_quest_script: Optional[ScriptSetting] = None,
         failed_quest_script: Optional[ScriptSetting] = None,
@@ -41,6 +43,7 @@ class NamespaceOptions:
         key_id: Optional[str] = None,
     ):
         self.description = description
+        self.transaction_setting = transaction_setting
         self.start_quest_script = start_quest_script
         self.complete_quest_script = complete_quest_script
         self.failed_quest_script = failed_quest_script

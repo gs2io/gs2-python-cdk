@@ -23,6 +23,7 @@ from ....core.model import LogSetting
 
 class NamespaceOptions:
     description: Optional[str]
+    transaction_setting: Optional[TransactionSetting]
     buy_script: Optional[ScriptSetting]
     queue_namespace_id: Optional[str]
     key_id: Optional[str]
@@ -31,12 +32,14 @@ class NamespaceOptions:
     def __init__(
         self,
         description: Optional[str] = None,
+        transaction_setting: Optional[TransactionSetting] = None,
         buy_script: Optional[ScriptSetting] = None,
         queue_namespace_id: Optional[str] = None,
         key_id: Optional[str] = None,
         log_setting: Optional[LogSetting] = None,
     ):
         self.description = description
+        self.transaction_setting = transaction_setting
         self.buy_script = buy_script
         self.queue_namespace_id = queue_namespace_id
         self.key_id = key_id

@@ -15,30 +15,19 @@ from __future__ import annotations
 from typing import *
 
 from ...core.func import GetAttr, Join
-from ..stamp_sheet.StartStateMachineByUserId import StartStateMachineByUserId
 
 
-class NamespaceRef:
+class GradeModelRef:
     namespace_name: str
+    grade_name: str
 
     def __init__(
         self,
         namespace_name: str,
+        grade_name: str,
     ):
         self.namespace_name = namespace_name
-
-    def start_state_machine(
-        self,
-        args: Optional[str] = None,
-        ttl: Optional[int] = None,
-        user_id: Optional[str] = "#{userId}",
-    ) -> StartStateMachineByUserId:
-        return StartStateMachineByUserId(
-            self.namespace_name,
-            args,
-            ttl,
-            user_id,
-        )
+        self.grade_name = grade_name
 
     def grn(
         self,
@@ -54,8 +43,10 @@ class NamespaceRef:
                 GetAttr.owner_id(
                 ).str(
                 ),
-                "stateMachine",
+                "grade",
                 self.namespace_name,
+                "model",
+                self.grade_name,
             ],
         ).str(
         )

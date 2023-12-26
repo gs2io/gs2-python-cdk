@@ -13,27 +13,23 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from ..DefaultGradeModel import DefaultGradeModel
+from ..GradeEntryModel import GradeEntryModel
+from ..AcquireActionRate import AcquireActionRate
 
-from ...core.model import AcquireAction, ConsumeAction
 
-
-class StartStateMachineByUserId(AcquireAction):
-
+class GradeModelOptions:
+    metadata: Optional[str]
+    default_grades: Optional[List[DefaultGradeModel]]
+    acquire_action_rates: Optional[List[AcquireActionRate]]
+    
     def __init__(
         self,
-        namespace_name: str,
-        args: Optional[str] = None,
-        ttl: Optional[int] = None,
-        user_id: Optional[str] = "#{userId}",
+        metadata: Optional[str] = None,
+        default_grades: Optional[List[DefaultGradeModel]] = None,
+        acquire_action_rates: Optional[List[AcquireActionRate]] = None,
     ):
-        properties: Dict[str, Any] = {}
+        self.metadata = metadata
+        self.default_grades = default_grades
+        self.acquire_action_rates = acquire_action_rates
 
-        properties["namespaceName"] = namespace_name
-        properties["args"] = args
-        properties["ttl"] = ttl
-        properties["userId"] = user_id
-
-        super().__init__(
-            "Gs2StateMachine:StartStateMachineByUserId",
-            properties,
-        )

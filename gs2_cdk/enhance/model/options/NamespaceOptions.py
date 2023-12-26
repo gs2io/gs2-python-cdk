@@ -24,6 +24,7 @@ from ....core.model import LogSetting
 class NamespaceOptions:
     description: Optional[str]
     enable_direct_enhance: Optional[bool]
+    transaction_setting: Optional[TransactionSetting]
     enhance_script: Optional[ScriptSetting]
     log_setting: Optional[LogSetting]
     queue_namespace_id: Optional[str]
@@ -33,6 +34,7 @@ class NamespaceOptions:
         self,
         description: Optional[str] = None,
         enable_direct_enhance: Optional[bool] = None,
+        transaction_setting: Optional[TransactionSetting] = None,
         enhance_script: Optional[ScriptSetting] = None,
         log_setting: Optional[LogSetting] = None,
         queue_namespace_id: Optional[str] = None,
@@ -40,6 +42,7 @@ class NamespaceOptions:
     ):
         self.description = description
         self.enable_direct_enhance = enable_direct_enhance
+        self.transaction_setting = transaction_setting
         self.enhance_script = enhance_script
         self.log_setting = log_setting
         self.queue_namespace_id = queue_namespace_id

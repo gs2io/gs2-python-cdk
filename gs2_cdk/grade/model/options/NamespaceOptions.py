@@ -24,21 +24,18 @@ from ....core.model import LogSetting
 class NamespaceOptions:
     description: Optional[str]
     transaction_setting: Optional[TransactionSetting]
-    release_script: Optional[ScriptSetting]
-    restrain_script: Optional[ScriptSetting]
+    change_grade_script: Optional[ScriptSetting]
     log_setting: Optional[LogSetting]
     
     def __init__(
         self,
         description: Optional[str] = None,
         transaction_setting: Optional[TransactionSetting] = None,
-        release_script: Optional[ScriptSetting] = None,
-        restrain_script: Optional[ScriptSetting] = None,
+        change_grade_script: Optional[ScriptSetting] = None,
         log_setting: Optional[LogSetting] = None,
     ):
         self.description = description
         self.transaction_setting = transaction_setting
-        self.release_script = release_script
-        self.restrain_script = restrain_script
+        self.change_grade_script = change_grade_script
         self.log_setting = log_setting
 

@@ -17,12 +17,12 @@ from typing import *
 from ...core.model import CdkResource, Stack
 from ...core.func import GetAttr
 from ...core.model import TransactionSetting
+from ...core.model import ScriptSetting
 from ...core.model import LogSetting
 
 from ..ref.NamespaceRef import NamespaceRef
 from .CurrentMasterData import CurrentMasterData
-from .BalanceParameterModel import BalanceParameterModel
-from .RarityParameterModel import RarityParameterModel
+from .GradeModel import GradeModel
 
 from .options.NamespaceOptions import NamespaceOptions
 
@@ -32,6 +32,7 @@ class Namespace(CdkResource):
     name: str
     description: Optional[str] = None
     transaction_setting: Optional[TransactionSetting] = None
+    change_grade_script: Optional[ScriptSetting] = None
     log_setting: Optional[LogSetting] = None
 
     def __init__(
@@ -41,13 +42,14 @@ class Namespace(CdkResource):
         options: Optional[NamespaceOptions] = NamespaceOptions(),
     ):
         super().__init__(
-            "Enchant_Namespace_" + name
+            "Grade_Namespace_" + name
         )
 
         self.stack = stack
         self.name = name
         self.description = options.description if options.description else None
         self.transaction_setting = options.transaction_setting if options.transaction_setting else None
+        self.change_grade_script = options.change_grade_script if options.change_grade_script else None
         self.log_setting = options.log_setting if options.log_setting else None
         stack.add_resource(
             self,
@@ -62,7 +64,7 @@ class Namespace(CdkResource):
     def resource_type(
         self,
     ) -> str:
-        return "GS2::Enchant::Namespace"
+        return "GS2::Grade::Namespace"
 
     def properties(
         self,
@@ -75,6 +77,9 @@ class Namespace(CdkResource):
             properties["Description"] = self.description
         if self.transaction_setting is not None:
             properties["TransactionSetting"] = self.transaction_setting.properties(
+            )
+        if self.change_grade_script is not None:
+            properties["ChangeGradeScript"] = self.change_grade_script.properties(
             )
         if self.log_setting is not None:
             properties["LogSetting"] = self.log_setting.properties(
@@ -100,14 +105,12 @@ class Namespace(CdkResource):
 
     def master_data(
         self,
-        balance_parameter_models: List[BalanceParameterModel],
-        rarity_parameter_models: List[RarityParameterModel],
+        grade_models: List[GradeModel],
     ) -> Namespace:
         CurrentMasterData(
             self.stack,
             self.name,
-            balance_parameter_models,
-            rarity_parameter_models,
+            grade_models,
         ).add_depends_on(
             self,
         )

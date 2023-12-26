@@ -22,6 +22,7 @@ from ....core.model import LogSetting
 
 class NamespaceOptions:
     description: Optional[str]
+    transaction_setting: Optional[TransactionSetting]
     lottery_trigger_script_id: Optional[str]
     choice_prize_table_script_id: Optional[str]
     log_setting: Optional[LogSetting]
@@ -31,6 +32,7 @@ class NamespaceOptions:
     def __init__(
         self,
         description: Optional[str] = None,
+        transaction_setting: Optional[TransactionSetting] = None,
         lottery_trigger_script_id: Optional[str] = None,
         choice_prize_table_script_id: Optional[str] = None,
         log_setting: Optional[LogSetting] = None,
@@ -38,6 +40,7 @@ class NamespaceOptions:
         key_id: Optional[str] = None,
     ):
         self.description = description
+        self.transaction_setting = transaction_setting
         self.lottery_trigger_script_id = lottery_trigger_script_id
         self.choice_prize_table_script_id = choice_prize_table_script_id
         self.log_setting = log_setting
