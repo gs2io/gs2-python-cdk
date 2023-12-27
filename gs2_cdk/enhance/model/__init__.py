@@ -15,8 +15,12 @@ from .Namespace import Namespace
 from .options.NamespaceOptions import NamespaceOptions
 from .RateModel import RateModel
 from .options.RateModelOptions import RateModelOptions
+from .UnleashRateModel import UnleashRateModel
+from .options.UnleashRateModelOptions import UnleashRateModelOptions
 from .BonusRate import BonusRate
 from .options.BonusRateOptions import BonusRateOptions
 from .Material import Material
 from .options.MaterialOptions import MaterialOptions
+from .UnleashRateEntryModel import UnleashRateEntryModel
+from .options.UnleashRateEntryModelOptions import UnleashRateEntryModelOptions
 from .CurrentMasterData import CurrentMasterData

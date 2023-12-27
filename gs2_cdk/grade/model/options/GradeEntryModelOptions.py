@@ -17,13 +17,10 @@ from typing import *
 
 class GradeEntryModelOptions:
     metadata: Optional[str]
-    property_id_regex: Optional[str]
     
     def __init__(
         self,
         metadata: Optional[str] = None,
-        property_id_regex: Optional[str] = None,
     ):
         self.metadata = metadata
-        self.property_id_regex = property_id_regex
 

@@ -23,6 +23,7 @@ from ...core.model import LogSetting
 from ..ref.NamespaceRef import NamespaceRef
 from .CurrentMasterData import CurrentMasterData
 from .RateModel import RateModel
+from .UnleashRateModel import UnleashRateModel
 
 from .options.NamespaceOptions import NamespaceOptions
 
@@ -110,11 +111,13 @@ class Namespace(CdkResource):
     def master_data(
         self,
         rate_models: List[RateModel],
+        unleash_rate_models: List[UnleashRateModel],
     ) -> Namespace:
         CurrentMasterData(
             self.stack,
             self.name,
             rate_models,
+            unleash_rate_models,
         ).add_depends_on(
             self,
         )

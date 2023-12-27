@@ -18,20 +18,21 @@ from .options.GradeEntryModelOptions import GradeEntryModelOptions
 
 class GradeEntryModel:
     rank_cap_value: int
+    property_id_regex: str
     grade_up_property_id_regex: str
     metadata: Optional[str] = None
-    property_id_regex: Optional[str] = None
 
     def __init__(
         self,
         rank_cap_value: int,
+        property_id_regex: str,
         grade_up_property_id_regex: str,
         options: Optional[GradeEntryModelOptions] = GradeEntryModelOptions(),
     ):
         self.rank_cap_value = rank_cap_value
+        self.property_id_regex = property_id_regex
         self.grade_up_property_id_regex = grade_up_property_id_regex
         self.metadata = options.metadata if options.metadata else None
-        self.property_id_regex = options.property_id_regex if options.property_id_regex else None
 
     def properties(
         self,

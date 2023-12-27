@@ -93,13 +93,17 @@ src/gs2_cdk/enhance/model/CurrentMasterData.py
 src/gs2_cdk/enhance/model/Material.py
 src/gs2_cdk/enhance/model/Namespace.py
 src/gs2_cdk/enhance/model/RateModel.py
+src/gs2_cdk/enhance/model/UnleashRateEntryModel.py
+src/gs2_cdk/enhance/model/UnleashRateModel.py
 src/gs2_cdk/enhance/model/__init__.py
 src/gs2_cdk/enhance/ref/NamespaceRef.py
 src/gs2_cdk/enhance/ref/RateModelRef.py
+src/gs2_cdk/enhance/ref/UnleashRateModelRef.py
 src/gs2_cdk/enhance/ref/__init__.py
 src/gs2_cdk/enhance/stamp_sheet/CreateProgressByUserId.py
 src/gs2_cdk/enhance/stamp_sheet/DeleteProgressByUserId.py
 src/gs2_cdk/enhance/stamp_sheet/DirectEnhanceByUserId.py
+src/gs2_cdk/enhance/stamp_sheet/UnleashByUserId.py
 src/gs2_cdk/enhance/stamp_sheet/__init__.py
 src/gs2_cdk/exchange/__init__.py
 src/gs2_cdk/exchange/model/CurrentMasterData.py

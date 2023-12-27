@@ -11,6 +11,20 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-from .NamespaceRef import NamespaceRef
-from .RateModelRef import RateModelRef
-from .UnleashRateModelRef import UnleashRateModelRef
+from __future__ import annotations
+from typing import *
+from ..UnleashRateEntryModel import UnleashRateEntryModel
+
+
+class UnleashRateModelOptions:
+    description: Optional[str]
+    metadata: Optional[str]
+    
+    def __init__(
+        self,
+        description: Optional[str] = None,
+        metadata: Optional[str] = None,
+    ):
+        self.description = description
+        self.metadata = metadata
+

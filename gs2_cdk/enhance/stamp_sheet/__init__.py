@@ -12,5 +12,6 @@
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
 from .DirectEnhanceByUserId import DirectEnhanceByUserId
+from .UnleashByUserId import UnleashByUserId
 from .CreateProgressByUserId import CreateProgressByUserId
 from .DeleteProgressByUserId import DeleteProgressByUserId

@@ -15,6 +15,7 @@ from __future__ import annotations
 from typing import *
 
 from ...core.func import GetAttr, Join
+from .UnleashRateModelRef import UnleashRateModelRef
 from .RateModelRef import RateModelRef
 from ..stamp_sheet.CreateProgressByUserId import CreateProgressByUserId
 from ..model.Material import Material
@@ -29,6 +30,15 @@ class NamespaceRef:
         namespace_name: str,
     ):
         self.namespace_name = namespace_name
+
+    def unleash_rate_model(
+        self,
+        rate_name: str,
+    ) -> UnleashRateModelRef:
+        return UnleashRateModelRef(
+            self.namespace_name,
+            rate_name,
+        )
 
     def rate_model(
         self,
