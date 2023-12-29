@@ -19,6 +19,7 @@ from .ItemModelRef import ItemModelRef
 from ..stamp_sheet.AddCapacityByUserId import AddCapacityByUserId
 from ..stamp_sheet.SetCapacityByUserId import SetCapacityByUserId
 from ..stamp_sheet.AcquireItemSetByUserId import AcquireItemSetByUserId
+from ..stamp_sheet.AcquireItemSetWithGradeByUserId import AcquireItemSetWithGradeByUserId
 from ..stamp_sheet.AddReferenceOfByUserId import AddReferenceOfByUserId
 from ..stamp_sheet.DeleteReferenceOfByUserId import DeleteReferenceOfByUserId
 from ..stamp_sheet.VerifyInventoryCurrentMaxCapacityByUserId import VerifyInventoryCurrentMaxCapacityByUserId
@@ -90,6 +91,22 @@ class InventoryModelRef:
             expires_at,
             create_new_item_set,
             item_set_name,
+            user_id,
+        )
+
+    def acquire_item_set_with_grade(
+        self,
+        item_name: str,
+        grade_model_id: str,
+        grade_value: int,
+        user_id: Optional[str] = "#{userId}",
+    ) -> AcquireItemSetWithGradeByUserId:
+        return AcquireItemSetWithGradeByUserId(
+            self.namespace_name,
+            self.inventory_name,
+            item_name,
+            grade_model_id,
+            grade_value,
             user_id,
         )
 

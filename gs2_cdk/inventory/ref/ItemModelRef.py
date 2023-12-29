@@ -16,6 +16,7 @@ from typing import *
 
 from ...core.func import GetAttr, Join
 from ..stamp_sheet.AcquireItemSetByUserId import AcquireItemSetByUserId
+from ..stamp_sheet.AcquireItemSetWithGradeByUserId import AcquireItemSetWithGradeByUserId
 from ..stamp_sheet.AddReferenceOfByUserId import AddReferenceOfByUserId
 from ..stamp_sheet.DeleteReferenceOfByUserId import DeleteReferenceOfByUserId
 from ..stamp_sheet.ConsumeItemSetByUserId import ConsumeItemSetByUserId
@@ -54,6 +55,21 @@ class ItemModelRef:
             expires_at,
             create_new_item_set,
             item_set_name,
+            user_id,
+        )
+
+    def acquire_item_set_with_grade(
+        self,
+        grade_model_id: str,
+        grade_value: int,
+        user_id: Optional[str] = "#{userId}",
+    ) -> AcquireItemSetWithGradeByUserId:
+        return AcquireItemSetWithGradeByUserId(
+            self.namespace_name,
+            self.inventory_name,
+            self.item_name,
+            grade_model_id,
+            grade_value,
             user_id,
         )
 

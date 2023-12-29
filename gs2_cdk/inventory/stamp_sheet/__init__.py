@@ -14,6 +14,7 @@
 from .AddCapacityByUserId import AddCapacityByUserId
 from .SetCapacityByUserId import SetCapacityByUserId
 from .AcquireItemSetByUserId import AcquireItemSetByUserId
+from .AcquireItemSetWithGradeByUserId import AcquireItemSetWithGradeByUserId
 from .AddReferenceOfByUserId import AddReferenceOfByUserId
 from .DeleteReferenceOfByUserId import DeleteReferenceOfByUserId
 from .AcquireSimpleItemsByUserId import AcquireSimpleItemsByUserId

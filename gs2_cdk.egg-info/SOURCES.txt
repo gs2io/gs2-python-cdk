@@ -258,6 +258,7 @@ src/gs2_cdk/inventory/ref/SimpleItemModelRef.py
 src/gs2_cdk/inventory/ref/__init__.py
 src/gs2_cdk/inventory/stamp_sheet/AcquireBigItemByUserId.py
 src/gs2_cdk/inventory/stamp_sheet/AcquireItemSetByUserId.py
+src/gs2_cdk/inventory/stamp_sheet/AcquireItemSetWithGradeByUserId.py
 src/gs2_cdk/inventory/stamp_sheet/AcquireSimpleItemsByUserId.py
 src/gs2_cdk/inventory/stamp_sheet/AddCapacityByUserId.py
 src/gs2_cdk/inventory/stamp_sheet/AddReferenceOfByUserId.py
@@ -356,6 +357,7 @@ src/gs2_cdk/lottery/ref/PrizeLimitRef.py
 src/gs2_cdk/lottery/ref/PrizeTableRef.py
 src/gs2_cdk/lottery/ref/__init__.py
 src/gs2_cdk/lottery/stamp_sheet/DrawByUserId.py
+src/gs2_cdk/lottery/stamp_sheet/ResetBoxByUserId.py
 src/gs2_cdk/lottery/stamp_sheet/__init__.py
 src/gs2_cdk/matchmaking/__init__.py
 src/gs2_cdk/matchmaking/model/Attribute.py

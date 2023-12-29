@@ -17,6 +17,7 @@ from typing import *
 from ...core.func import GetAttr, Join
 from .PrizeTableRef import PrizeTableRef
 from .LotteryModelRef import LotteryModelRef
+from ..stamp_sheet.ResetBoxByUserId import ResetBoxByUserId
 
 
 class NamespaceRef:
@@ -44,6 +45,17 @@ class NamespaceRef:
         return LotteryModelRef(
             self.namespace_name,
             lottery_name,
+        )
+
+    def reset_box(
+        self,
+        prize_table_name: str,
+        user_id: Optional[str] = "#{userId}",
+    ) -> ResetBoxByUserId:
+        return ResetBoxByUserId(
+            self.namespace_name,
+            prize_table_name,
+            user_id,
         )
 
     def grn(
