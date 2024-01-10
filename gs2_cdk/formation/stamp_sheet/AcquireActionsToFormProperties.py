@@ -15,7 +15,7 @@ from __future__ import annotations
 from typing import *
 
 from ...core.model import AcquireAction, ConsumeAction
-from ..model.AcquireActionConfig import AcquireActionConfig
+from ...core.model import Config
 
 
 class AcquireActionsToFormProperties(AcquireAction):
@@ -26,7 +26,7 @@ class AcquireActionsToFormProperties(AcquireAction):
         mold_model_name: str,
         index: int,
         acquire_action: AcquireAction,
-        config: Optional[List[AcquireActionConfig]] = None,
+        config: Optional[List[Config]] = None,
         user_id: Optional[str] = "#{userId}",
     ):
         properties: Dict[str, Any] = {}

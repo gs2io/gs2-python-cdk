@@ -17,7 +17,7 @@ from typing import *
 from ...core.func import GetAttr, Join
 from ..stamp_sheet.AcquireActionsToPropertyFormProperties import AcquireActionsToPropertyFormProperties
 from ...core.model import AcquireAction
-from ..model.AcquireActionConfig import AcquireActionConfig
+from ...core.model import Config
 
 
 class PropertyFormModelRef:
@@ -36,7 +36,7 @@ class PropertyFormModelRef:
         self,
         property_id: str,
         acquire_action: AcquireAction,
-        config: Optional[List[AcquireActionConfig]] = None,
+        config: Optional[List[Config]] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> AcquireActionsToPropertyFormProperties:
         return AcquireActionsToPropertyFormProperties(

@@ -20,7 +20,7 @@ from ..stamp_sheet.AddMoldCapacityByUserId import AddMoldCapacityByUserId
 from ..stamp_sheet.SetMoldCapacityByUserId import SetMoldCapacityByUserId
 from ..stamp_sheet.AcquireActionsToFormProperties import AcquireActionsToFormProperties
 from ...core.model import AcquireAction
-from ..model.AcquireActionConfig import AcquireActionConfig
+from ...core.model import Config
 from ..stamp_sheet.SubMoldCapacityByUserId import SubMoldCapacityByUserId
 
 
@@ -72,7 +72,7 @@ class MoldModelRef:
         self,
         index: int,
         acquire_action: AcquireAction,
-        config: Optional[List[AcquireActionConfig]] = None,
+        config: Optional[List[Config]] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> AcquireActionsToFormProperties:
         return AcquireActionsToFormProperties(
