@@ -18,14 +18,17 @@ from ....core.model import AcquireAction
 
 
 class TransactionOptions:
+    transaction_id: Optional[str]
     consume_actions: Optional[List[ConsumeAction]]
     acquire_actions: Optional[List[AcquireAction]]
     
     def __init__(
         self,
+        transaction_id: Optional[str] = None,
         consume_actions: Optional[List[ConsumeAction]] = None,
         acquire_actions: Optional[List[AcquireAction]] = None,
     ):
+        self.transaction_id = transaction_id
         self.consume_actions = consume_actions
         self.acquire_actions = acquire_actions
 

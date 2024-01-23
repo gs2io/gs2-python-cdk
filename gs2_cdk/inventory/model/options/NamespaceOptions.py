@@ -25,6 +25,8 @@ class NamespaceOptions:
     acquire_script: Optional[ScriptSetting]
     overflow_script: Optional[ScriptSetting]
     consume_script: Optional[ScriptSetting]
+    simple_item_acquire_script: Optional[ScriptSetting]
+    simple_item_consume_script: Optional[ScriptSetting]
     log_setting: Optional[LogSetting]
     
     def __init__(
@@ -33,11 +35,15 @@ class NamespaceOptions:
         acquire_script: Optional[ScriptSetting] = None,
         overflow_script: Optional[ScriptSetting] = None,
         consume_script: Optional[ScriptSetting] = None,
+        simple_item_acquire_script: Optional[ScriptSetting] = None,
+        simple_item_consume_script: Optional[ScriptSetting] = None,
         log_setting: Optional[LogSetting] = None,
     ):
         self.description = description
         self.acquire_script = acquire_script
         self.overflow_script = overflow_script
         self.consume_script = consume_script
+        self.simple_item_acquire_script = simple_item_acquire_script
+        self.simple_item_consume_script = simple_item_consume_script
         self.log_setting = log_setting
 
