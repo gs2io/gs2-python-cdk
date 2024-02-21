@@ -35,6 +35,7 @@ class Namespace(CdkResource):
     transaction_setting: Optional[TransactionSetting] = None
     update_mold_script: Optional[ScriptSetting] = None
     update_form_script: Optional[ScriptSetting] = None
+    update_property_form_script: Optional[ScriptSetting] = None
     log_setting: Optional[LogSetting] = None
 
     def __init__(
@@ -53,6 +54,7 @@ class Namespace(CdkResource):
         self.transaction_setting = options.transaction_setting if options.transaction_setting else None
         self.update_mold_script = options.update_mold_script if options.update_mold_script else None
         self.update_form_script = options.update_form_script if options.update_form_script else None
+        self.update_property_form_script = options.update_property_form_script if options.update_property_form_script else None
         self.log_setting = options.log_setting if options.log_setting else None
         stack.add_resource(
             self,
@@ -86,6 +88,9 @@ class Namespace(CdkResource):
             )
         if self.update_form_script is not None:
             properties["UpdateFormScript"] = self.update_form_script.properties(
+            )
+        if self.update_property_form_script is not None:
+            properties["UpdatePropertyFormScript"] = self.update_property_form_script.properties(
             )
         if self.log_setting is not None:
             properties["LogSetting"] = self.log_setting.properties(

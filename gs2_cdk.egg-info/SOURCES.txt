@@ -221,6 +221,7 @@ src/gs2_cdk/idle/ref/NamespaceRef.py
 src/gs2_cdk/idle/ref/__init__.py
 src/gs2_cdk/idle/stamp_sheet/DecreaseMaximumIdleMinutesByUserId.py
 src/gs2_cdk/idle/stamp_sheet/IncreaseMaximumIdleMinutesByUserId.py
+src/gs2_cdk/idle/stamp_sheet/SetMaximumIdleMinutesByUserId.py
 src/gs2_cdk/idle/stamp_sheet/__init__.py
 src/gs2_cdk/inbox/__init__.py
 src/gs2_cdk/inbox/model/CurrentMasterData.py
@@ -317,6 +318,7 @@ src/gs2_cdk/lock/stamp_sheet/__init__.py
 src/gs2_cdk/log/__init__.py
 src/gs2_cdk/log/model/AccessLog.py
 src/gs2_cdk/log/model/AccessLogCount.py
+src/gs2_cdk/log/model/AccessLogWithTelemetry.py
 src/gs2_cdk/log/model/ExecuteStampSheetLog.py
 src/gs2_cdk/log/model/ExecuteStampSheetLogCount.py
 src/gs2_cdk/log/model/ExecuteStampTaskLog.py
@@ -479,6 +481,7 @@ src/gs2_cdk/schedule/ref/NamespaceRef.py
 src/gs2_cdk/schedule/ref/__init__.py
 src/gs2_cdk/schedule/stamp_sheet/DeleteTriggerByUserId.py
 src/gs2_cdk/schedule/stamp_sheet/TriggerByUserId.py
+src/gs2_cdk/schedule/stamp_sheet/VerifyEventByUserId.py
 src/gs2_cdk/schedule/stamp_sheet/__init__.py
 src/gs2_cdk/script/__init__.py
 src/gs2_cdk/script/model/Namespace.py

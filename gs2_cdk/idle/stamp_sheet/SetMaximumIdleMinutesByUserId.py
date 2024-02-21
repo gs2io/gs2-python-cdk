@@ -17,23 +17,23 @@ from typing import *
 from ...core.model import AcquireAction, ConsumeAction
 
 
-class MarkRestrainByUserId(ConsumeAction):
+class SetMaximumIdleMinutesByUserId(AcquireAction):
 
     def __init__(
         self,
         namespace_name: str,
-        property_id: str,
-        node_model_names: List[str],
+        category_name: str,
+        maximum_idle_minutes: Optional[int] = None,
         user_id: Optional[str] = "#{userId}",
     ):
         properties: Dict[str, Any] = {}
 
         properties["namespaceName"] = namespace_name
-        properties["propertyId"] = property_id
-        properties["nodeModelNames"] = node_model_names
+        properties["categoryName"] = category_name
+        properties["maximumIdleMinutes"] = maximum_idle_minutes
         properties["userId"] = user_id
 
         super().__init__(
-            "Gs2SkillTree:MarkRestrainByUserId",
+            "Gs2Idle:SetMaximumIdleMinutesByUserId",
             properties,
         )

@@ -40,22 +40,26 @@ class NamespaceRef:
 
     def mark_release(
         self,
+        property_id: str,
         node_model_names: List[str],
         user_id: Optional[str] = "#{userId}",
     ) -> MarkReleaseByUserId:
         return MarkReleaseByUserId(
             self.namespace_name,
+            property_id,
             node_model_names,
             user_id,
         )
 
     def mark_restrain(
         self,
+        property_id: str,
         node_model_names: List[str],
         user_id: Optional[str] = "#{userId}",
     ) -> MarkRestrainByUserId:
         return MarkRestrainByUserId(
             self.namespace_name,
+            property_id,
             node_model_names,
             user_id,
         )

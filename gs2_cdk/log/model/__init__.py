@@ -33,3 +33,6 @@ from .ExecuteStampTaskLog import ExecuteStampTaskLog
 from .options.ExecuteStampTaskLogOptions import ExecuteStampTaskLogOptions
 from .ExecuteStampTaskLogCount import ExecuteStampTaskLogCount
 from .options.ExecuteStampTaskLogCountOptions import ExecuteStampTaskLogCountOptions
+from .AccessLogWithTelemetry import AccessLogWithTelemetry
+from .options.AccessLogWithTelemetryOptions import AccessLogWithTelemetryOptions
+from .enum.AccessLogWithTelemetryStatus import AccessLogWithTelemetryStatus

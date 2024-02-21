@@ -11,6 +11,21 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-from .TriggerByUserId import TriggerByUserId
-from .DeleteTriggerByUserId import DeleteTriggerByUserId
-from .VerifyEventByUserId import VerifyEventByUserId
+
+
+
+
+class AccessLogWithTelemetryStatus:
+    value: str
+    OK: 'AccessLogWithTelemetryStatus'
+    ERROR: 'AccessLogWithTelemetryStatus'
+
+    def __init__(
+        self,
+        value: str,
+    ):
+        self.value = value
+
+
+AccessLogWithTelemetryStatus.OK = AccessLogWithTelemetryStatus("ok")
+AccessLogWithTelemetryStatus.ERROR = AccessLogWithTelemetryStatus("error")

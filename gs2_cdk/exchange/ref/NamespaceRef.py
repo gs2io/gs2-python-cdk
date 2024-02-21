@@ -99,12 +99,14 @@ class NamespaceRef:
         self,
         rate_name: str,
         count: Optional[int] = None,
+        config: Optional[List[Config]] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> CreateAwaitByUserId:
         return CreateAwaitByUserId(
             self.namespace_name,
             rate_name,
             count,
+            config,
             user_id,
         )
 

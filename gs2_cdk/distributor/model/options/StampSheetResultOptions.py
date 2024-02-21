@@ -19,7 +19,9 @@ from ....core.model import AcquireAction
 
 class StampSheetResultOptions:
     task_requests: Optional[List[ConsumeAction]]
+    task_result_codes: Optional[List[int]]
     task_results: Optional[List[str]]
+    sheet_result_code: Optional[int]
     sheet_result: Optional[str]
     next_transaction_id: Optional[str]
     revision: Optional[int]
@@ -27,13 +29,17 @@ class StampSheetResultOptions:
     def __init__(
         self,
         task_requests: Optional[List[ConsumeAction]] = None,
+        task_result_codes: Optional[List[int]] = None,
         task_results: Optional[List[str]] = None,
+        sheet_result_code: Optional[int] = None,
         sheet_result: Optional[str] = None,
         next_transaction_id: Optional[str] = None,
         revision: Optional[int] = None,
     ):
         self.task_requests = task_requests
+        self.task_result_codes = task_result_codes
         self.task_results = task_results
+        self.sheet_result_code = sheet_result_code
         self.sheet_result = sheet_result
         self.next_transaction_id = next_transaction_id
         self.revision = revision

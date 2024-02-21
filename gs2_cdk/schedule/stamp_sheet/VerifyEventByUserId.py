@@ -17,23 +17,23 @@ from typing import *
 from ...core.model import AcquireAction, ConsumeAction
 
 
-class MarkRestrainByUserId(ConsumeAction):
+class VerifyEventByUserId(ConsumeAction):
 
     def __init__(
         self,
         namespace_name: str,
-        property_id: str,
-        node_model_names: List[str],
+        event_name: str,
+        verify_type: str,
         user_id: Optional[str] = "#{userId}",
     ):
         properties: Dict[str, Any] = {}
 
         properties["namespaceName"] = namespace_name
-        properties["propertyId"] = property_id
-        properties["nodeModelNames"] = node_model_names
+        properties["eventName"] = event_name
+        properties["verifyType"] = verify_type
         properties["userId"] = user_id
 
         super().__init__(
-            "Gs2SkillTree:MarkRestrainByUserId",
+            "Gs2Schedule:VerifyEventByUserId",
             properties,
         )

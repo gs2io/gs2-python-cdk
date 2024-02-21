@@ -11,6 +11,17 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-from .TriggerByUserId import TriggerByUserId
-from .DeleteTriggerByUserId import DeleteTriggerByUserId
-from .VerifyEventByUserId import VerifyEventByUserId
+from __future__ import annotations
+from typing import *
+from ..enum.AccessLogWithTelemetryStatus import AccessLogWithTelemetryStatus
+
+
+class AccessLogWithTelemetryOptions:
+    user_id: Optional[str]
+    
+    def __init__(
+        self,
+        user_id: Optional[str] = None,
+    ):
+        self.user_id = user_id
+

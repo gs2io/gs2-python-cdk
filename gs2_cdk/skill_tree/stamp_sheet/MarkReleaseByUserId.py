@@ -22,12 +22,14 @@ class MarkReleaseByUserId(AcquireAction):
     def __init__(
         self,
         namespace_name: str,
+        property_id: str,
         node_model_names: List[str],
         user_id: Optional[str] = "#{userId}",
     ):
         properties: Dict[str, Any] = {}
 
         properties["namespaceName"] = namespace_name
+        properties["propertyId"] = property_id
         properties["nodeModelNames"] = node_model_names
         properties["userId"] = user_id
 

@@ -23,7 +23,9 @@ class StampSheetResult:
     transaction_id: str
     sheet_request: AcquireAction
     task_requests: Optional[List[ConsumeAction]] = None
+    task_result_codes: Optional[List[int]] = None
     task_results: Optional[List[str]] = None
+    sheet_result_code: Optional[int] = None
     sheet_result: Optional[str] = None
     next_transaction_id: Optional[str] = None
     revision: Optional[int] = None
@@ -39,7 +41,9 @@ class StampSheetResult:
         self.transaction_id = transaction_id
         self.sheet_request = sheet_request
         self.task_requests = options.task_requests if options.task_requests else None
+        self.task_result_codes = options.task_result_codes if options.task_result_codes else None
         self.task_results = options.task_results if options.task_results else None
+        self.sheet_result_code = options.sheet_result_code if options.sheet_result_code else None
         self.sheet_result = options.sheet_result if options.sheet_result else None
         self.next_transaction_id = options.next_transaction_id if options.next_transaction_id else None
         self.revision = options.revision if options.revision else None
@@ -62,8 +66,12 @@ class StampSheetResult:
         if self.sheet_request is not None:
             properties["sheetRequest"] = self.sheet_request.properties(
             )
+        if self.task_result_codes is not None:
+            properties["taskResultCodes"] = self.task_result_codes
         if self.task_results is not None:
             properties["taskResults"] = self.task_results
+        if self.sheet_result_code is not None:
+            properties["sheetResultCode"] = self.sheet_result_code
         if self.sheet_result is not None:
             properties["sheetResult"] = self.sheet_result
         if self.next_transaction_id is not None:

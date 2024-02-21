@@ -15,6 +15,7 @@ from __future__ import annotations
 from typing import *
 
 from ...core.model import AcquireAction, ConsumeAction
+from ...core.model import Config
 
 
 class CreateAwaitByUserId(AcquireAction):
@@ -24,6 +25,7 @@ class CreateAwaitByUserId(AcquireAction):
         namespace_name: str,
         rate_name: str,
         count: Optional[int] = None,
+        config: Optional[List[Config]] = None,
         user_id: Optional[str] = "#{userId}",
     ):
         properties: Dict[str, Any] = {}
@@ -31,6 +33,7 @@ class CreateAwaitByUserId(AcquireAction):
         properties["namespaceName"] = namespace_name
         properties["rateName"] = rate_name
         properties["count"] = count
+        properties["config"] = config
         properties["userId"] = user_id
 
         super().__init__(

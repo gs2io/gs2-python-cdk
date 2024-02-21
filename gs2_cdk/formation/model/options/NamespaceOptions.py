@@ -26,6 +26,7 @@ class NamespaceOptions:
     transaction_setting: Optional[TransactionSetting]
     update_mold_script: Optional[ScriptSetting]
     update_form_script: Optional[ScriptSetting]
+    update_property_form_script: Optional[ScriptSetting]
     log_setting: Optional[LogSetting]
     
     def __init__(
@@ -34,11 +35,13 @@ class NamespaceOptions:
         transaction_setting: Optional[TransactionSetting] = None,
         update_mold_script: Optional[ScriptSetting] = None,
         update_form_script: Optional[ScriptSetting] = None,
+        update_property_form_script: Optional[ScriptSetting] = None,
         log_setting: Optional[LogSetting] = None,
     ):
         self.description = description
         self.transaction_setting = transaction_setting
         self.update_mold_script = update_mold_script
         self.update_form_script = update_form_script
+        self.update_property_form_script = update_property_form_script
         self.log_setting = log_setting
 

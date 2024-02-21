@@ -17,6 +17,7 @@ from typing import *
 from ...core.func import GetAttr, Join
 from .CategoryModelRef import CategoryModelRef
 from ..stamp_sheet.IncreaseMaximumIdleMinutesByUserId import IncreaseMaximumIdleMinutesByUserId
+from ..stamp_sheet.SetMaximumIdleMinutesByUserId import SetMaximumIdleMinutesByUserId
 from ..stamp_sheet.DecreaseMaximumIdleMinutesByUserId import DecreaseMaximumIdleMinutesByUserId
 
 
@@ -48,6 +49,19 @@ class NamespaceRef:
             self.namespace_name,
             category_name,
             increase_minutes,
+            user_id,
+        )
+
+    def set_maximum_idle_minutes(
+        self,
+        category_name: str,
+        maximum_idle_minutes: Optional[int] = None,
+        user_id: Optional[str] = "#{userId}",
+    ) -> SetMaximumIdleMinutesByUserId:
+        return SetMaximumIdleMinutesByUserId(
+            self.namespace_name,
+            category_name,
+            maximum_idle_minutes,
             user_id,
         )
 
