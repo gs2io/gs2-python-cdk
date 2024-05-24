@@ -16,11 +16,14 @@ from typing import *
 
 
 class SlotOptions:
+    property_id: Optional[str]
     metadata: Optional[str]
     
     def __init__(
         self,
+        property_id: Optional[str] = None,
         metadata: Optional[str] = None,
     ):
+        self.property_id = property_id
         self.metadata = metadata
 

@@ -18,6 +18,7 @@ from ...core.func import GetAttr, Join
 from ..stamp_sheet.AcquireActionsToFormProperties import AcquireActionsToFormProperties
 from ...core.model import AcquireAction
 from ...core.model import Config
+from ..stamp_sheet.SetFormByUserId import SetFormByUserId
 
 
 class FormModelRef:
@@ -45,6 +46,20 @@ class FormModelRef:
             index,
             acquire_action,
             config,
+            user_id,
+        )
+
+    def set_form(
+        self,
+        index: int,
+        slots: List[Slot],
+        user_id: Optional[str] = "#{userId}",
+    ) -> SetFormByUserId:
+        return SetFormByUserId(
+            self.namespace_name,
+            self.mold_model_name,
+            index,
+            slots,
             user_id,
         )
 

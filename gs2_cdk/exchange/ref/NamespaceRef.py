@@ -22,6 +22,7 @@ from ...core.model import Config
 from ..stamp_sheet.IncrementalExchangeByUserId import IncrementalExchangeByUserId
 from ..stamp_sheet.UnlockIncrementalExchangeByUserId import UnlockIncrementalExchangeByUserId
 from ..stamp_sheet.CreateAwaitByUserId import CreateAwaitByUserId
+from ..stamp_sheet.SkipByUserId import SkipByUserId
 from ..stamp_sheet.DeleteAwaitByUserId import DeleteAwaitByUserId
 
 
@@ -107,6 +108,23 @@ class NamespaceRef:
             rate_name,
             count,
             config,
+            user_id,
+        )
+
+    def skip(
+        self,
+        await_name: Optional[str] = None,
+        skip_type: Optional[str] = None,
+        minutes: Optional[int] = None,
+        rate: Optional[float] = None,
+        user_id: Optional[str] = "#{userId}",
+    ) -> SkipByUserId:
+        return SkipByUserId(
+            self.namespace_name,
+            await_name,
+            skip_type,
+            minutes,
+            rate,
             user_id,
         )
 

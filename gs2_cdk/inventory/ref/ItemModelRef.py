@@ -123,6 +123,7 @@ class ItemModelRef:
         verify_type: str,
         count: int,
         item_set_name: Optional[str] = None,
+        multiply_value_specifying_quantity: Optional[bool] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> VerifyItemSetByUserId:
         return VerifyItemSetByUserId(
@@ -132,6 +133,7 @@ class ItemModelRef:
             verify_type,
             count,
             item_set_name,
+            multiply_value_specifying_quantity,
             user_id,
         )
 

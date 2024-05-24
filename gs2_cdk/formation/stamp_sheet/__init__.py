@@ -14,5 +14,6 @@
 from .AddMoldCapacityByUserId import AddMoldCapacityByUserId
 from .SetMoldCapacityByUserId import SetMoldCapacityByUserId
 from .AcquireActionsToFormProperties import AcquireActionsToFormProperties
+from .SetFormByUserId import SetFormByUserId
 from .AcquireActionsToPropertyFormProperties import AcquireActionsToPropertyFormProperties
 from .SubMoldCapacityByUserId import SubMoldCapacityByUserId

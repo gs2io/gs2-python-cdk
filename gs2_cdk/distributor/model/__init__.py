@@ -15,8 +15,6 @@ from .Namespace import Namespace
 from .options.NamespaceOptions import NamespaceOptions
 from .DistributorModel import DistributorModel
 from .options.DistributorModelOptions import DistributorModelOptions
-from .StampSheetResult import StampSheetResult
-from .options.StampSheetResultOptions import StampSheetResultOptions
 from .DistributeResource import DistributeResource
 from .options.DistributeResourceOptions import DistributeResourceOptions
 from .CurrentMasterData import CurrentMasterData

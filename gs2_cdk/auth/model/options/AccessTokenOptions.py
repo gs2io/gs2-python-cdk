@@ -16,9 +16,14 @@ from typing import *
 
 
 class AccessTokenOptions:
+    federation_from_user_id: Optional[str]
+    federation_policy_document: Optional[str]
     
     def __init__(
         self,
+        federation_from_user_id: Optional[str] = None,
+        federation_policy_document: Optional[str] = None,
     ):
-        pass
+        self.federation_from_user_id = federation_from_user_id
+        self.federation_policy_document = federation_policy_document
 

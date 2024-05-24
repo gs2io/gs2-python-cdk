@@ -24,6 +24,7 @@ class GlobalMessage:
     read_acquire_actions: Optional[List[AcquireAction]] = None
     expires_time_span: Optional[TimeSpan] = None
     expires_at: Optional[int] = None
+    message_reception_period_event_id: Optional[str] = None
 
     def __init__(
         self,
@@ -36,6 +37,7 @@ class GlobalMessage:
         self.read_acquire_actions = options.read_acquire_actions if options.read_acquire_actions else None
         self.expires_time_span = options.expires_time_span if options.expires_time_span else None
         self.expires_at = options.expires_at if options.expires_at else None
+        self.message_reception_period_event_id = options.message_reception_period_event_id if options.message_reception_period_event_id else None
 
     def properties(
         self,
@@ -57,5 +59,7 @@ class GlobalMessage:
             )
         if self.expires_at is not None:
             properties["expiresAt"] = self.expires_at
+        if self.message_reception_period_event_id is not None:
+            properties["messageReceptionPeriodEventId"] = self.message_reception_period_event_id
 
         return properties

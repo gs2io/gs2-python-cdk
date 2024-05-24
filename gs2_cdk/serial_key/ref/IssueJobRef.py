@@ -48,7 +48,7 @@ class IssueJobRef:
                 ),
                 "serialKey",
                 self.namespace_name,
-                "master",
+                "model",
                 "campaign",
                 self.campaign_model_name,
                 "issue",

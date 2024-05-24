@@ -234,6 +234,7 @@ class NamespaceRef:
         inventory_name: str,
         verify_type: str,
         current_inventory_max_capacity: int,
+        multiply_value_specifying_quantity: Optional[bool] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> VerifyInventoryCurrentMaxCapacityByUserId:
         return VerifyInventoryCurrentMaxCapacityByUserId(
@@ -241,6 +242,7 @@ class NamespaceRef:
             inventory_name,
             verify_type,
             current_inventory_max_capacity,
+            multiply_value_specifying_quantity,
             user_id,
         )
 
@@ -268,6 +270,7 @@ class NamespaceRef:
         verify_type: str,
         count: int,
         item_set_name: Optional[str] = None,
+        multiply_value_specifying_quantity: Optional[bool] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> VerifyItemSetByUserId:
         return VerifyItemSetByUserId(
@@ -277,6 +280,7 @@ class NamespaceRef:
             verify_type,
             count,
             item_set_name,
+            multiply_value_specifying_quantity,
             user_id,
         )
 
@@ -318,6 +322,7 @@ class NamespaceRef:
         item_name: str,
         verify_type: str,
         count: int,
+        multiply_value_specifying_quantity: Optional[bool] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> VerifySimpleItemByUserId:
         return VerifySimpleItemByUserId(
@@ -326,6 +331,7 @@ class NamespaceRef:
             item_name,
             verify_type,
             count,
+            multiply_value_specifying_quantity,
             user_id,
         )
 
@@ -350,6 +356,7 @@ class NamespaceRef:
         item_name: str,
         verify_type: str,
         count: str,
+        multiply_value_specifying_quantity: Optional[bool] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> VerifyBigItemByUserId:
         return VerifyBigItemByUserId(
@@ -358,6 +365,7 @@ class NamespaceRef:
             item_name,
             verify_type,
             count,
+            multiply_value_specifying_quantity,
             user_id,
         )
 

@@ -79,6 +79,7 @@ class BigItemModelRef:
         self,
         verify_type: str,
         count: str,
+        multiply_value_specifying_quantity: Optional[bool] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> VerifyBigItemByUserId:
         return VerifyBigItemByUserId(
@@ -87,6 +88,7 @@ class BigItemModelRef:
             self.item_name,
             verify_type,
             count,
+            multiply_value_specifying_quantity,
             user_id,
         )
 

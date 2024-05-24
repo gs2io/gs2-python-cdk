@@ -27,6 +27,7 @@ class VerifyRarityParameterStatusByUserId(ConsumeAction):
         verify_type: str,
         parameter_value_name: Optional[str] = None,
         parameter_count: Optional[int] = None,
+        multiply_value_specifying_quantity: Optional[bool] = None,
         user_id: Optional[str] = "#{userId}",
     ):
         properties: Dict[str, Any] = {}
@@ -37,6 +38,7 @@ class VerifyRarityParameterStatusByUserId(ConsumeAction):
         properties["verifyType"] = verify_type
         properties["parameterValueName"] = parameter_value_name
         properties["parameterCount"] = parameter_count
+        properties["multiplyValueSpecifyingQuantity"] = multiply_value_specifying_quantity
         properties["userId"] = user_id
 
         super().__init__(

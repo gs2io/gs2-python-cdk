@@ -27,8 +27,6 @@ class RateModel:
     metadata: Optional[str] = None
     consume_actions: Optional[List[ConsumeAction]] = None
     lock_time: Optional[int] = None
-    enable_skip: Optional[bool] = None
-    skip_consume_actions: Optional[List[ConsumeAction]] = None
     acquire_actions: Optional[List[AcquireAction]] = None
 
     def __init__(
@@ -42,8 +40,6 @@ class RateModel:
         self.metadata = options.metadata if options.metadata else None
         self.consume_actions = options.consume_actions if options.consume_actions else None
         self.lock_time = options.lock_time if options.lock_time else None
-        self.enable_skip = options.enable_skip if options.enable_skip else None
-        self.skip_consume_actions = options.skip_consume_actions if options.skip_consume_actions else None
         self.acquire_actions = options.acquire_actions if options.acquire_actions else None
 
     @staticmethod
@@ -57,7 +53,6 @@ class RateModel:
             RateModelOptions(
                 options.metadata,
                 options.consume_actions,
-                options.skip_consume_actions,
                 options.acquire_actions,
             ),
         )
@@ -66,7 +61,6 @@ class RateModel:
     def timing_type_is_await(
         name: str,
         lock_time: int,
-        enable_skip: bool,
         options: Optional[RateModelTimingTypeIsAwaitOptions] = RateModelTimingTypeIsAwaitOptions(),
     ) -> RateModel:
         return RateModel(
@@ -74,10 +68,8 @@ class RateModel:
             RateModelTimingType.AWAIT,
             RateModelOptions(
                 lock_time,
-                enable_skip,
                 options.metadata,
                 options.consume_actions,
-                options.skip_consume_actions,
                 options.acquire_actions,
             ),
         )
@@ -101,14 +93,6 @@ class RateModel:
             properties["timingType"] = self.timing_type.value
         if self.lock_time is not None:
             properties["lockTime"] = self.lock_time
-        if self.enable_skip is not None:
-            properties["enableSkip"] = self.enable_skip
-        if self.skip_consume_actions is not None:
-            properties["skipConsumeActions"] = [
-                v.properties(
-                )
-                for v in self.skip_consume_actions
-            ]
         if self.acquire_actions is not None:
             properties["acquireActions"] = [
                 v.properties(

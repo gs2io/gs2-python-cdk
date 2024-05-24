@@ -37,6 +37,8 @@ class Namespace(CdkResource):
     consume_script: Optional[ScriptSetting] = None
     simple_item_acquire_script: Optional[ScriptSetting] = None
     simple_item_consume_script: Optional[ScriptSetting] = None
+    big_item_acquire_script: Optional[ScriptSetting] = None
+    big_item_consume_script: Optional[ScriptSetting] = None
     log_setting: Optional[LogSetting] = None
 
     def __init__(
@@ -57,6 +59,8 @@ class Namespace(CdkResource):
         self.consume_script = options.consume_script if options.consume_script else None
         self.simple_item_acquire_script = options.simple_item_acquire_script if options.simple_item_acquire_script else None
         self.simple_item_consume_script = options.simple_item_consume_script if options.simple_item_consume_script else None
+        self.big_item_acquire_script = options.big_item_acquire_script if options.big_item_acquire_script else None
+        self.big_item_consume_script = options.big_item_consume_script if options.big_item_consume_script else None
         self.log_setting = options.log_setting if options.log_setting else None
         stack.add_resource(
             self,
@@ -96,6 +100,12 @@ class Namespace(CdkResource):
             )
         if self.simple_item_consume_script is not None:
             properties["SimpleItemConsumeScript"] = self.simple_item_consume_script.properties(
+            )
+        if self.big_item_acquire_script is not None:
+            properties["BigItemAcquireScript"] = self.big_item_acquire_script.properties(
+            )
+        if self.big_item_consume_script is not None:
+            properties["BigItemConsumeScript"] = self.big_item_consume_script.properties(
             )
         if self.log_setting is not None:
             properties["LogSetting"] = self.log_setting.properties(

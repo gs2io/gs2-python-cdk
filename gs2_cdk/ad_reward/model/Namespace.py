@@ -18,6 +18,8 @@ from ...core.model import CdkResource, Stack
 from ...core.func import GetAttr
 from .AdMob import AdMob
 from .UnityAd import UnityAd
+from .AppLovinMax import AppLovinMax
+from ...core.model import ScriptSetting
 from ...core.model import NotificationSetting
 from ...core.model import LogSetting
 
@@ -31,7 +33,10 @@ class Namespace(CdkResource):
     name: str
     admob: Optional[AdMob] = None
     unity_ad: Optional[UnityAd] = None
+    app_lovin_maxes: Optional[List[AppLovinMax]] = None
     description: Optional[str] = None
+    acquire_point_script: Optional[ScriptSetting] = None
+    consume_point_script: Optional[ScriptSetting] = None
     change_point_notification: Optional[NotificationSetting] = None
     log_setting: Optional[LogSetting] = None
 
@@ -49,7 +54,10 @@ class Namespace(CdkResource):
         self.name = name
         self.admob = options.admob if options.admob else None
         self.unity_ad = options.unity_ad if options.unity_ad else None
+        self.app_lovin_maxes = options.app_lovin_maxes if options.app_lovin_maxes else None
         self.description = options.description if options.description else None
+        self.acquire_point_script = options.acquire_point_script if options.acquire_point_script else None
+        self.consume_point_script = options.consume_point_script if options.consume_point_script else None
         self.change_point_notification = options.change_point_notification if options.change_point_notification else None
         self.log_setting = options.log_setting if options.log_setting else None
         stack.add_resource(
@@ -80,8 +88,20 @@ class Namespace(CdkResource):
         if self.unity_ad is not None:
             properties["UnityAd"] = self.unity_ad.properties(
             )
+        if self.app_lovin_maxes is not None:
+            properties["AppLovinMaxes"] = [
+                v.properties(
+                )
+                for v in self.app_lovin_maxes
+            ]
         if self.description is not None:
             properties["Description"] = self.description
+        if self.acquire_point_script is not None:
+            properties["AcquirePointScript"] = self.acquire_point_script.properties(
+            )
+        if self.consume_point_script is not None:
+            properties["ConsumePointScript"] = self.consume_point_script.properties(
+            )
         if self.change_point_notification is not None:
             properties["ChangePointNotification"] = self.change_point_notification.properties(
             )

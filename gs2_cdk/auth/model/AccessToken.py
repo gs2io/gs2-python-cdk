@@ -19,21 +19,28 @@ from .options.AccessTokenOptions import AccessTokenOptions
 class AccessToken:
     owner_id: str
     user_id: str
+    real_user_id: str
     expire: int
     time_offset: int
+    federation_from_user_id: Optional[str] = None
+    federation_policy_document: Optional[str] = None
 
     def __init__(
         self,
         owner_id: str,
         user_id: str,
+        real_user_id: str,
         expire: int,
         time_offset: int,
         options: Optional[AccessTokenOptions] = AccessTokenOptions(),
     ):
         self.owner_id = owner_id
         self.user_id = user_id
+        self.real_user_id = real_user_id
         self.expire = expire
         self.time_offset = time_offset
+        self.federation_from_user_id = options.federation_from_user_id if options.federation_from_user_id else None
+        self.federation_policy_document = options.federation_policy_document if options.federation_policy_document else None
 
     def properties(
         self,
@@ -44,6 +51,12 @@ class AccessToken:
             properties["ownerId"] = self.owner_id
         if self.user_id is not None:
             properties["userId"] = self.user_id
+        if self.real_user_id is not None:
+            properties["realUserId"] = self.real_user_id
+        if self.federation_from_user_id is not None:
+            properties["federationFromUserId"] = self.federation_from_user_id
+        if self.federation_policy_document is not None:
+            properties["federationPolicyDocument"] = self.federation_policy_document
         if self.expire is not None:
             properties["expire"] = self.expire
         if self.time_offset is not None:

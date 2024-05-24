@@ -22,8 +22,6 @@ class RateModelOptions:
     metadata: Optional[str]
     consume_actions: Optional[List[ConsumeAction]]
     lock_time: Optional[int]
-    enable_skip: Optional[bool]
-    skip_consume_actions: Optional[List[ConsumeAction]]
     acquire_actions: Optional[List[AcquireAction]]
     
     def __init__(
@@ -31,14 +29,10 @@ class RateModelOptions:
         metadata: Optional[str] = None,
         consume_actions: Optional[List[ConsumeAction]] = None,
         lock_time: Optional[int] = None,
-        enable_skip: Optional[bool] = None,
-        skip_consume_actions: Optional[List[ConsumeAction]] = None,
         acquire_actions: Optional[List[AcquireAction]] = None,
     ):
         self.metadata = metadata
         self.consume_actions = consume_actions
         self.lock_time = lock_time
-        self.enable_skip = enable_skip
-        self.skip_consume_actions = skip_consume_actions
         self.acquire_actions = acquire_actions
 

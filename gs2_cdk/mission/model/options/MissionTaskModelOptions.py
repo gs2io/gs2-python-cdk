@@ -13,28 +13,37 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from ..TargetCounterModel import TargetCounterModel
+from ....core.model import ConsumeAction
 from ....core.model import AcquireAction
+from ..enum.MissionTaskModelVerifyCompleteType import MissionTaskModelVerifyCompleteType
 from ..enum.MissionTaskModelTargetResetType import MissionTaskModelTargetResetType
 
 
 class MissionTaskModelOptions:
     metadata: Optional[str]
-    target_reset_type: Optional[MissionTaskModelTargetResetType]
+    target_counter: Optional[TargetCounterModel]
+    verify_complete_consume_actions: Optional[List[ConsumeAction]]
     complete_acquire_actions: Optional[List[AcquireAction]]
     challenge_period_event_id: Optional[str]
     premise_mission_task_name: Optional[str]
+    target_reset_type: Optional[MissionTaskModelTargetResetType]
     
     def __init__(
         self,
         metadata: Optional[str] = None,
-        target_reset_type: Optional[MissionTaskModelTargetResetType] = None,
+        target_counter: Optional[TargetCounterModel] = None,
+        verify_complete_consume_actions: Optional[List[ConsumeAction]] = None,
         complete_acquire_actions: Optional[List[AcquireAction]] = None,
         challenge_period_event_id: Optional[str] = None,
         premise_mission_task_name: Optional[str] = None,
+        target_reset_type: Optional[MissionTaskModelTargetResetType] = None,
     ):
         self.metadata = metadata
-        self.target_reset_type = target_reset_type
+        self.target_counter = target_counter
+        self.verify_complete_consume_actions = verify_complete_consume_actions
         self.complete_acquire_actions = complete_acquire_actions
         self.challenge_period_event_id = challenge_period_event_id
         self.premise_mission_task_name = premise_mission_task_name
+        self.target_reset_type = target_reset_type
 

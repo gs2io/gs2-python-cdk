@@ -22,6 +22,7 @@ class SeasonModel:
     tiers: List[TierModel]
     experience_model_id: str
     metadata: Optional[str] = None
+    challenge_period_event_id: Optional[str] = None
 
     def __init__(
         self,
@@ -34,6 +35,7 @@ class SeasonModel:
         self.tiers = tiers
         self.experience_model_id = experience_model_id
         self.metadata = options.metadata if options.metadata else None
+        self.challenge_period_event_id = options.challenge_period_event_id if options.challenge_period_event_id else None
 
     def properties(
         self,
@@ -52,5 +54,7 @@ class SeasonModel:
             ]
         if self.experience_model_id is not None:
             properties["experienceModelId"] = self.experience_model_id
+        if self.challenge_period_event_id is not None:
+            properties["challengePeriodEventId"] = self.challenge_period_event_id
 
         return properties

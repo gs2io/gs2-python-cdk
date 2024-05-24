@@ -21,17 +21,14 @@ from ..enum.RateModelTimingType import RateModelTimingType
 class RateModelTimingTypeIsAwaitOptions:
     metadata: Optional[str]
     consume_actions: Optional[List[ConsumeAction]]
-    skip_consume_actions: Optional[List[ConsumeAction]]
     acquire_actions: Optional[List[AcquireAction]]
     
     def __init__(
         self,
         metadata: Optional[str] = None,
         consume_actions: Optional[List[ConsumeAction]] = None,
-        skip_consume_actions: Optional[List[ConsumeAction]] = None,
         acquire_actions: Optional[List[AcquireAction]] = None,
     ):
         self.metadata = metadata
         self.consume_actions = consume_actions
-        self.skip_consume_actions = skip_consume_actions
         self.acquire_actions = acquire_actions

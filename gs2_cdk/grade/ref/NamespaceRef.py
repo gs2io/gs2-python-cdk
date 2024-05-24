@@ -109,6 +109,7 @@ class NamespaceRef:
         verify_type: str,
         property_id: str,
         grade_value: Optional[int] = None,
+        multiply_value_specifying_quantity: Optional[bool] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> VerifyGradeByUserId:
         return VerifyGradeByUserId(
@@ -117,6 +118,7 @@ class NamespaceRef:
             verify_type,
             property_id,
             grade_value,
+            multiply_value_specifying_quantity,
             user_id,
         )
 

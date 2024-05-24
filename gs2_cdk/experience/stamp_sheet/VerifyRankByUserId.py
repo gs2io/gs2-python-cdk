@@ -26,6 +26,7 @@ class VerifyRankByUserId(ConsumeAction):
         verify_type: str,
         property_id: str,
         rank_value: Optional[int] = None,
+        multiply_value_specifying_quantity: Optional[bool] = None,
         user_id: Optional[str] = "#{userId}",
     ):
         properties: Dict[str, Any] = {}
@@ -35,6 +36,7 @@ class VerifyRankByUserId(ConsumeAction):
         properties["verifyType"] = verify_type
         properties["propertyId"] = property_id
         properties["rankValue"] = rank_value
+        properties["multiplyValueSpecifyingQuantity"] = multiply_value_specifying_quantity
         properties["userId"] = user_id
 
         super().__init__(

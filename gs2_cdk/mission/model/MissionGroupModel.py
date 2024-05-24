@@ -13,6 +13,8 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from .TargetCounterModel import TargetCounterModel
+from ...core.model import ConsumeAction
 from ...core.model import AcquireAction
 from .MissionTaskModel import MissionTaskModel
 from .options.MissionGroupModelOptions import MissionGroupModelOptions

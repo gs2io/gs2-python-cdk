@@ -25,6 +25,7 @@ class AddExperienceByUserId(AcquireAction):
         experience_name: str,
         property_id: str,
         experience_value: Optional[int] = None,
+        truncate_experience_when_rank_up: Optional[bool] = None,
         user_id: Optional[str] = "#{userId}",
     ):
         properties: Dict[str, Any] = {}
@@ -33,6 +34,7 @@ class AddExperienceByUserId(AcquireAction):
         properties["experienceName"] = experience_name
         properties["propertyId"] = property_id
         properties["experienceValue"] = experience_value
+        properties["truncateExperienceWhenRankUp"] = truncate_experience_when_rank_up
         properties["userId"] = user_id
 
         super().__init__(

@@ -17,3 +17,5 @@ from .AdMob import AdMob
 from .options.AdMobOptions import AdMobOptions
 from .UnityAd import UnityAd
 from .options.UnityAdOptions import UnityAdOptions
+from .AppLovinMax import AppLovinMax
+from .options.AppLovinMaxOptions import AppLovinMaxOptions

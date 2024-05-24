@@ -27,6 +27,7 @@ class VerifyItemSetByUserId(ConsumeAction):
         verify_type: str,
         count: int,
         item_set_name: Optional[str] = None,
+        multiply_value_specifying_quantity: Optional[bool] = None,
         user_id: Optional[str] = "#{userId}",
     ):
         properties: Dict[str, Any] = {}
@@ -37,6 +38,7 @@ class VerifyItemSetByUserId(ConsumeAction):
         properties["verifyType"] = verify_type
         properties["count"] = count
         properties["itemSetName"] = item_set_name
+        properties["multiplyValueSpecifyingQuantity"] = multiply_value_specifying_quantity
         properties["userId"] = user_id
 
         super().__init__(

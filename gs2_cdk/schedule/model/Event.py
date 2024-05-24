@@ -13,6 +13,7 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from .RepeatSetting import RepeatSetting
 from .options.EventOptions import EventOptions
 from .options.EventScheduleTypeIsAbsoluteOptions import EventScheduleTypeIsAbsoluteOptions
 from .options.EventScheduleTypeIsRelativeOptions import EventScheduleTypeIsRelativeOptions
@@ -29,61 +30,65 @@ from .enum.EventRepeatEndDayOfWeek import EventRepeatEndDayOfWeek
 class Event:
     name: str
     schedule_type: EventScheduleType
+    repeat_setting: RepeatSetting
     repeat_type: EventRepeatType
     metadata: Optional[str] = None
     absolute_begin: Optional[int] = None
     absolute_end: Optional[int] = None
+    relative_trigger_name: Optional[str] = None
     repeat_begin_day_of_month: Optional[int] = None
     repeat_end_day_of_month: Optional[int] = None
     repeat_begin_day_of_week: Optional[EventRepeatBeginDayOfWeek] = None
     repeat_end_day_of_week: Optional[EventRepeatEndDayOfWeek] = None
     repeat_begin_hour: Optional[int] = None
     repeat_end_hour: Optional[int] = None
-    relative_trigger_name: Optional[str] = None
 
     def __init__(
         self,
         name: str,
         schedule_type: EventScheduleType,
+        repeat_setting: RepeatSetting,
         repeat_type: EventRepeatType,
         options: Optional[EventOptions] = EventOptions(),
     ):
         self.name = name
         self.schedule_type = schedule_type
+        self.repeat_setting = repeat_setting
         self.repeat_type = repeat_type
         self.metadata = options.metadata if options.metadata else None
         self.absolute_begin = options.absolute_begin if options.absolute_begin else None
         self.absolute_end = options.absolute_end if options.absolute_end else None
+        self.relative_trigger_name = options.relative_trigger_name if options.relative_trigger_name else None
         self.repeat_begin_day_of_month = options.repeat_begin_day_of_month if options.repeat_begin_day_of_month else None
         self.repeat_end_day_of_month = options.repeat_end_day_of_month if options.repeat_end_day_of_month else None
         self.repeat_begin_day_of_week = options.repeat_begin_day_of_week if options.repeat_begin_day_of_week else None
         self.repeat_end_day_of_week = options.repeat_end_day_of_week if options.repeat_end_day_of_week else None
         self.repeat_begin_hour = options.repeat_begin_hour if options.repeat_begin_hour else None
         self.repeat_end_hour = options.repeat_end_hour if options.repeat_end_hour else None
-        self.relative_trigger_name = options.relative_trigger_name if options.relative_trigger_name else None
 
     @staticmethod
     def schedule_type_is_absolute(
         name: str,
+        repeat_setting: RepeatSetting,
         repeat_type: EventRepeatType,
-        absolute_begin: int,
-        absolute_end: int,
         options: Optional[EventScheduleTypeIsAbsoluteOptions] = EventScheduleTypeIsAbsoluteOptions(),
     ) -> Event:
         return Event(
             name,
             EventScheduleType.ABSOLUTE,
+            repeat_setting,
             repeat_type,
             EventOptions(
-                absolute_begin,
-                absolute_end,
                 options.metadata,
+                options.absolute_begin,
+                options.absolute_end,
             ),
         )
 
     @staticmethod
     def schedule_type_is_relative(
         name: str,
+        repeat_setting: RepeatSetting,
         repeat_type: EventRepeatType,
         relative_trigger_name: str,
         options: Optional[EventScheduleTypeIsRelativeOptions] = EventScheduleTypeIsRelativeOptions(),
@@ -91,10 +96,13 @@ class Event:
         return Event(
             name,
             EventScheduleType.RELATIVE,
+            repeat_setting,
             repeat_type,
             EventOptions(
                 relative_trigger_name,
                 options.metadata,
+                options.absolute_begin,
+                options.absolute_end,
             ),
         )
 
@@ -102,14 +110,18 @@ class Event:
     def repeat_type_is_always(
         name: str,
         schedule_type: EventScheduleType,
+        repeat_setting: RepeatSetting,
         options: Optional[EventRepeatTypeIsAlwaysOptions] = EventRepeatTypeIsAlwaysOptions(),
     ) -> Event:
         return Event(
             name,
             schedule_type,
+            repeat_setting,
             EventRepeatType.ALWAYS,
             EventOptions(
                 options.metadata,
+                options.absolute_begin,
+                options.absolute_end,
             ),
         )
 
@@ -117,6 +129,7 @@ class Event:
     def repeat_type_is_daily(
         name: str,
         schedule_type: EventScheduleType,
+        repeat_setting: RepeatSetting,
         repeat_begin_hour: int,
         repeat_end_hour: int,
         options: Optional[EventRepeatTypeIsDailyOptions] = EventRepeatTypeIsDailyOptions(),
@@ -124,11 +137,14 @@ class Event:
         return Event(
             name,
             schedule_type,
+            repeat_setting,
             EventRepeatType.DAILY,
             EventOptions(
                 repeat_begin_hour,
                 repeat_end_hour,
                 options.metadata,
+                options.absolute_begin,
+                options.absolute_end,
             ),
         )
 
@@ -136,6 +152,7 @@ class Event:
     def repeat_type_is_weekly(
         name: str,
         schedule_type: EventScheduleType,
+        repeat_setting: RepeatSetting,
         repeat_begin_day_of_week: EventRepeatBeginDayOfWeek,
         repeat_end_day_of_week: EventRepeatEndDayOfWeek,
         repeat_begin_hour: int,
@@ -145,6 +162,7 @@ class Event:
         return Event(
             name,
             schedule_type,
+            repeat_setting,
             EventRepeatType.WEEKLY,
             EventOptions(
                 repeat_begin_day_of_week,
@@ -152,6 +170,8 @@ class Event:
                 repeat_begin_hour,
                 repeat_end_hour,
                 options.metadata,
+                options.absolute_begin,
+                options.absolute_end,
             ),
         )
 
@@ -159,6 +179,7 @@ class Event:
     def repeat_type_is_monthly(
         name: str,
         schedule_type: EventScheduleType,
+        repeat_setting: RepeatSetting,
         repeat_begin_day_of_month: int,
         repeat_end_day_of_month: int,
         repeat_begin_hour: int,
@@ -168,6 +189,7 @@ class Event:
         return Event(
             name,
             schedule_type,
+            repeat_setting,
             EventRepeatType.MONTHLY,
             EventOptions(
                 repeat_begin_day_of_month,
@@ -175,6 +197,8 @@ class Event:
                 repeat_begin_hour,
                 repeat_end_hour,
                 options.metadata,
+                options.absolute_begin,
+                options.absolute_end,
             ),
         )
 
@@ -189,12 +213,17 @@ class Event:
             properties["metadata"] = self.metadata
         if self.schedule_type is not None:
             properties["scheduleType"] = self.schedule_type.value
-        if self.repeat_type is not None:
-            properties["repeatType"] = self.repeat_type.value
         if self.absolute_begin is not None:
             properties["absoluteBegin"] = self.absolute_begin
         if self.absolute_end is not None:
             properties["absoluteEnd"] = self.absolute_end
+        if self.relative_trigger_name is not None:
+            properties["relativeTriggerName"] = self.relative_trigger_name
+        if self.repeat_setting is not None:
+            properties["repeatSetting"] = self.repeat_setting.properties(
+            )
+        if self.repeat_type is not None:
+            properties["repeatType"] = self.repeat_type.value
         if self.repeat_begin_day_of_month is not None:
             properties["repeatBeginDayOfMonth"] = self.repeat_begin_day_of_month
         if self.repeat_end_day_of_month is not None:
@@ -207,7 +236,5 @@ class Event:
             properties["repeatBeginHour"] = self.repeat_begin_hour
         if self.repeat_end_hour is not None:
             properties["repeatEndHour"] = self.repeat_end_hour
-        if self.relative_trigger_name is not None:
-            properties["relativeTriggerName"] = self.relative_trigger_name
 
         return properties

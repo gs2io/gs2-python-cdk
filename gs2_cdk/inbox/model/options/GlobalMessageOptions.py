@@ -21,14 +21,17 @@ class GlobalMessageOptions:
     read_acquire_actions: Optional[List[AcquireAction]]
     expires_time_span: Optional[TimeSpan]
     expires_at: Optional[int]
+    message_reception_period_event_id: Optional[str]
     
     def __init__(
         self,
         read_acquire_actions: Optional[List[AcquireAction]] = None,
         expires_time_span: Optional[TimeSpan] = None,
         expires_at: Optional[int] = None,
+        message_reception_period_event_id: Optional[str] = None,
     ):
         self.read_acquire_actions = read_acquire_actions
         self.expires_time_span = expires_time_span
         self.expires_at = expires_at
+        self.message_reception_period_event_id = message_reception_period_event_id
 

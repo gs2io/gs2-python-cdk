@@ -36,6 +36,7 @@ class Namespace(CdkResource):
     enable_direct_exchange: Optional[bool] = None
     transaction_setting: Optional[TransactionSetting] = None
     exchange_script: Optional[ScriptSetting] = None
+    incremental_exchange_script: Optional[ScriptSetting] = None
     log_setting: Optional[LogSetting] = None
 
     def __init__(
@@ -55,6 +56,7 @@ class Namespace(CdkResource):
         self.enable_direct_exchange = options.enable_direct_exchange if options.enable_direct_exchange else None
         self.transaction_setting = options.transaction_setting if options.transaction_setting else None
         self.exchange_script = options.exchange_script if options.exchange_script else None
+        self.incremental_exchange_script = options.incremental_exchange_script if options.incremental_exchange_script else None
         self.log_setting = options.log_setting if options.log_setting else None
         stack.add_resource(
             self,
@@ -89,6 +91,9 @@ class Namespace(CdkResource):
             )
         if self.exchange_script is not None:
             properties["ExchangeScript"] = self.exchange_script.properties(
+            )
+        if self.incremental_exchange_script is not None:
+            properties["IncrementalExchangeScript"] = self.incremental_exchange_script.properties(
             )
         if self.log_setting is not None:
             properties["LogSetting"] = self.log_setting.properties(

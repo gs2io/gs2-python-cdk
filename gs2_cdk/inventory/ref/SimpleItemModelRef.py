@@ -77,6 +77,7 @@ class SimpleItemModelRef:
         self,
         verify_type: str,
         count: int,
+        multiply_value_specifying_quantity: Optional[bool] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> VerifySimpleItemByUserId:
         return VerifySimpleItemByUserId(
@@ -85,6 +86,7 @@ class SimpleItemModelRef:
             self.item_name,
             verify_type,
             count,
+            multiply_value_specifying_quantity,
             user_id,
         )
 

@@ -26,6 +26,7 @@ class VerifyBigItemByUserId(ConsumeAction):
         item_name: str,
         verify_type: str,
         count: str,
+        multiply_value_specifying_quantity: Optional[bool] = None,
         user_id: Optional[str] = "#{userId}",
     ):
         properties: Dict[str, Any] = {}
@@ -35,6 +36,7 @@ class VerifyBigItemByUserId(ConsumeAction):
         properties["itemName"] = item_name
         properties["verifyType"] = verify_type
         properties["count"] = count
+        properties["multiplyValueSpecifyingQuantity"] = multiply_value_specifying_quantity
         properties["userId"] = user_id
 
         super().__init__(

@@ -23,8 +23,10 @@ from ...core.model import LogSetting
 from ..ref.NamespaceRef import NamespaceRef
 from .CurrentMasterData import CurrentMasterData
 from .RatingModel import RatingModel
+from .enum.NamespaceEnableDisconnectDetection import NamespaceEnableDisconnectDetection
 from .enum.NamespaceCreateGatheringTriggerType import NamespaceCreateGatheringTriggerType
 from .enum.NamespaceCompleteMatchmakingTriggerType import NamespaceCompleteMatchmakingTriggerType
+from .enum.NamespaceEnableCollaborateSeasonRating import NamespaceEnableCollaborateSeasonRating
 
 from .options.NamespaceOptions import NamespaceOptions
 
@@ -36,10 +38,15 @@ class Namespace(CdkResource):
     complete_matchmaking_trigger_type: NamespaceCompleteMatchmakingTriggerType
     description: Optional[str] = None
     enable_rating: Optional[bool] = None
+    enable_disconnect_detection: Optional[NamespaceEnableDisconnectDetection] = None
+    disconnect_detection_timeout_seconds: Optional[int] = None
     create_gathering_trigger_realtime_namespace_id: Optional[str] = None
     create_gathering_trigger_script_id: Optional[str] = None
     complete_matchmaking_trigger_realtime_namespace_id: Optional[str] = None
     complete_matchmaking_trigger_script_id: Optional[str] = None
+    enable_collaborate_season_rating: Optional[NamespaceEnableCollaborateSeasonRating] = None
+    collaborate_season_rating_namespace_id: Optional[str] = None
+    collaborate_season_rating_ttl: Optional[int] = None
     change_rating_script: Optional[ScriptSetting] = None
     join_notification: Optional[NotificationSetting] = None
     leave_notification: Optional[NotificationSetting] = None
@@ -65,10 +72,15 @@ class Namespace(CdkResource):
         self.complete_matchmaking_trigger_type = complete_matchmaking_trigger_type
         self.description = options.description if options.description else None
         self.enable_rating = options.enable_rating if options.enable_rating else None
+        self.enable_disconnect_detection = options.enable_disconnect_detection if options.enable_disconnect_detection else None
+        self.disconnect_detection_timeout_seconds = options.disconnect_detection_timeout_seconds if options.disconnect_detection_timeout_seconds else None
         self.create_gathering_trigger_realtime_namespace_id = options.create_gathering_trigger_realtime_namespace_id if options.create_gathering_trigger_realtime_namespace_id else None
         self.create_gathering_trigger_script_id = options.create_gathering_trigger_script_id if options.create_gathering_trigger_script_id else None
         self.complete_matchmaking_trigger_realtime_namespace_id = options.complete_matchmaking_trigger_realtime_namespace_id if options.complete_matchmaking_trigger_realtime_namespace_id else None
         self.complete_matchmaking_trigger_script_id = options.complete_matchmaking_trigger_script_id if options.complete_matchmaking_trigger_script_id else None
+        self.enable_collaborate_season_rating = options.enable_collaborate_season_rating if options.enable_collaborate_season_rating else None
+        self.collaborate_season_rating_namespace_id = options.collaborate_season_rating_namespace_id if options.collaborate_season_rating_namespace_id else None
+        self.collaborate_season_rating_ttl = options.collaborate_season_rating_ttl if options.collaborate_season_rating_ttl else None
         self.change_rating_script = options.change_rating_script if options.change_rating_script else None
         self.join_notification = options.join_notification if options.join_notification else None
         self.leave_notification = options.leave_notification if options.leave_notification else None
@@ -101,6 +113,10 @@ class Namespace(CdkResource):
             properties["Description"] = self.description
         if self.enable_rating is not None:
             properties["EnableRating"] = self.enable_rating
+        if self.enable_disconnect_detection is not None:
+            properties["EnableDisconnectDetection"] = self.enable_disconnect_detection
+        if self.disconnect_detection_timeout_seconds is not None:
+            properties["DisconnectDetectionTimeoutSeconds"] = self.disconnect_detection_timeout_seconds
         if self.create_gathering_trigger_type is not None:
             properties["CreateGatheringTriggerType"] = self.create_gathering_trigger_type
         if self.create_gathering_trigger_realtime_namespace_id is not None:
@@ -113,6 +129,12 @@ class Namespace(CdkResource):
             properties["CompleteMatchmakingTriggerRealtimeNamespaceId"] = self.complete_matchmaking_trigger_realtime_namespace_id
         if self.complete_matchmaking_trigger_script_id is not None:
             properties["CompleteMatchmakingTriggerScriptId"] = self.complete_matchmaking_trigger_script_id
+        if self.enable_collaborate_season_rating is not None:
+            properties["EnableCollaborateSeasonRating"] = self.enable_collaborate_season_rating
+        if self.collaborate_season_rating_namespace_id is not None:
+            properties["CollaborateSeasonRatingNamespaceId"] = self.collaborate_season_rating_namespace_id
+        if self.collaborate_season_rating_ttl is not None:
+            properties["CollaborateSeasonRatingTtl"] = self.collaborate_season_rating_ttl
         if self.change_rating_script is not None:
             properties["ChangeRatingScript"] = self.change_rating_script.properties(
             )

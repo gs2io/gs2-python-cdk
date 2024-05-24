@@ -19,8 +19,11 @@ from .MissionGroupModelRef import MissionGroupModelRef
 from .CounterModelRef import CounterModelRef
 from ..stamp_sheet.RevertReceiveByUserId import RevertReceiveByUserId
 from ..stamp_sheet.IncreaseCounterByUserId import IncreaseCounterByUserId
+from ..stamp_sheet.SetCounterByUserId import SetCounterByUserId
+from ..model.ScopedValue import ScopedValue
 from ..stamp_sheet.ReceiveByUserId import ReceiveByUserId
 from ..stamp_sheet.DecreaseCounterByUserId import DecreaseCounterByUserId
+from ..stamp_sheet.VerifyCounterValueByUserId import VerifyCounterValueByUserId
 
 
 class NamespaceRef:
@@ -76,6 +79,19 @@ class NamespaceRef:
             user_id,
         )
 
+    def set_counter(
+        self,
+        counter_name: str,
+        values: Optional[List[ScopedValue]] = None,
+        user_id: Optional[str] = "#{userId}",
+    ) -> SetCounterByUserId:
+        return SetCounterByUserId(
+            self.namespace_name,
+            counter_name,
+            values,
+            user_id,
+        )
+
     def receive(
         self,
         mission_group_name: str,
@@ -99,6 +115,25 @@ class NamespaceRef:
             self.namespace_name,
             counter_name,
             value,
+            user_id,
+        )
+
+    def verify_counter_value(
+        self,
+        counter_name: str,
+        verify_type: str,
+        reset_type: str,
+        value: Optional[int] = None,
+        multiply_value_specifying_quantity: Optional[bool] = None,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifyCounterValueByUserId:
+        return VerifyCounterValueByUserId(
+            self.namespace_name,
+            counter_name,
+            verify_type,
+            reset_type,
+            value,
+            multiply_value_specifying_quantity,
             user_id,
         )
 

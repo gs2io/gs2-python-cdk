@@ -18,10 +18,13 @@ from ..TierModel import TierModel
 
 class SeasonModelOptions:
     metadata: Optional[str]
+    challenge_period_event_id: Optional[str]
     
     def __init__(
         self,
         metadata: Optional[str] = None,
+        challenge_period_event_id: Optional[str] = None,
     ):
         self.metadata = metadata
+        self.challenge_period_event_id = challenge_period_event_id
 

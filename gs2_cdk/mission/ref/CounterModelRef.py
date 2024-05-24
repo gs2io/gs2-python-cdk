@@ -16,7 +16,10 @@ from typing import *
 
 from ...core.func import GetAttr, Join
 from ..stamp_sheet.IncreaseCounterByUserId import IncreaseCounterByUserId
+from ..stamp_sheet.SetCounterByUserId import SetCounterByUserId
+from ..model.ScopedValue import ScopedValue
 from ..stamp_sheet.DecreaseCounterByUserId import DecreaseCounterByUserId
+from ..stamp_sheet.VerifyCounterValueByUserId import VerifyCounterValueByUserId
 
 
 class CounterModelRef:
@@ -43,6 +46,18 @@ class CounterModelRef:
             user_id,
         )
 
+    def set_counter(
+        self,
+        values: Optional[List[ScopedValue]] = None,
+        user_id: Optional[str] = "#{userId}",
+    ) -> SetCounterByUserId:
+        return SetCounterByUserId(
+            self.namespace_name,
+            self.counter_name,
+            values,
+            user_id,
+        )
+
     def decrease_counter(
         self,
         value: int,
@@ -52,6 +67,24 @@ class CounterModelRef:
             self.namespace_name,
             self.counter_name,
             value,
+            user_id,
+        )
+
+    def verify_counter_value(
+        self,
+        verify_type: str,
+        reset_type: str,
+        value: Optional[int] = None,
+        multiply_value_specifying_quantity: Optional[bool] = None,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifyCounterValueByUserId:
+        return VerifyCounterValueByUserId(
+            self.namespace_name,
+            self.counter_name,
+            verify_type,
+            reset_type,
+            value,
+            multiply_value_specifying_quantity,
             user_id,
         )
 

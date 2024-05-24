@@ -17,6 +17,7 @@ from typing import *
 from ...core.func import GetAttr, Join
 from .ExperienceModelRef import ExperienceModelRef
 from ..stamp_sheet.AddExperienceByUserId import AddExperienceByUserId
+from ..stamp_sheet.SetExperienceByUserId import SetExperienceByUserId
 from ..stamp_sheet.AddRankCapByUserId import AddRankCapByUserId
 from ..stamp_sheet.SetRankCapByUserId import SetRankCapByUserId
 from ..stamp_sheet.MultiplyAcquireActionsByUserId import MultiplyAcquireActionsByUserId
@@ -50,9 +51,26 @@ class NamespaceRef:
         experience_name: str,
         property_id: str,
         experience_value: Optional[int] = None,
+        truncate_experience_when_rank_up: Optional[bool] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> AddExperienceByUserId:
         return AddExperienceByUserId(
+            self.namespace_name,
+            experience_name,
+            property_id,
+            experience_value,
+            truncate_experience_when_rank_up,
+            user_id,
+        )
+
+    def set_experience(
+        self,
+        experience_name: str,
+        property_id: str,
+        experience_value: Optional[int] = None,
+        user_id: Optional[str] = "#{userId}",
+    ) -> SetExperienceByUserId:
+        return SetExperienceByUserId(
             self.namespace_name,
             experience_name,
             property_id,
@@ -143,6 +161,7 @@ class NamespaceRef:
         verify_type: str,
         property_id: str,
         rank_value: Optional[int] = None,
+        multiply_value_specifying_quantity: Optional[bool] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> VerifyRankByUserId:
         return VerifyRankByUserId(
@@ -151,6 +170,7 @@ class NamespaceRef:
             verify_type,
             property_id,
             rank_value,
+            multiply_value_specifying_quantity,
             user_id,
         )
 
@@ -160,6 +180,7 @@ class NamespaceRef:
         verify_type: str,
         property_id: str,
         rank_cap_value: int,
+        multiply_value_specifying_quantity: Optional[bool] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> VerifyRankCapByUserId:
         return VerifyRankCapByUserId(
@@ -168,6 +189,7 @@ class NamespaceRef:
             verify_type,
             property_id,
             rank_cap_value,
+            multiply_value_specifying_quantity,
             user_id,
         )
 

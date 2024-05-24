@@ -24,10 +24,15 @@ from ....core.model import LogSetting
 class NamespaceOptions:
     description: Optional[str]
     enable_rating: Optional[bool]
+    enable_disconnect_detection: Optional[NamespaceEnableDisconnectDetection]
+    disconnect_detection_timeout_seconds: Optional[int]
     create_gathering_trigger_realtime_namespace_id: Optional[str]
     create_gathering_trigger_script_id: Optional[str]
     complete_matchmaking_trigger_realtime_namespace_id: Optional[str]
     complete_matchmaking_trigger_script_id: Optional[str]
+    enable_collaborate_season_rating: Optional[NamespaceEnableCollaborateSeasonRating]
+    collaborate_season_rating_namespace_id: Optional[str]
+    collaborate_season_rating_ttl: Optional[int]
     change_rating_script: Optional[ScriptSetting]
     join_notification: Optional[NotificationSetting]
     leave_notification: Optional[NotificationSetting]
@@ -39,10 +44,15 @@ class NamespaceOptions:
         self,
         description: Optional[str] = None,
         enable_rating: Optional[bool] = None,
+        enable_disconnect_detection: Optional[NamespaceEnableDisconnectDetection] = None,
+        disconnect_detection_timeout_seconds: Optional[int] = None,
         create_gathering_trigger_realtime_namespace_id: Optional[str] = None,
         create_gathering_trigger_script_id: Optional[str] = None,
         complete_matchmaking_trigger_realtime_namespace_id: Optional[str] = None,
         complete_matchmaking_trigger_script_id: Optional[str] = None,
+        enable_collaborate_season_rating: Optional[NamespaceEnableCollaborateSeasonRating] = None,
+        collaborate_season_rating_namespace_id: Optional[str] = None,
+        collaborate_season_rating_ttl: Optional[int] = None,
         change_rating_script: Optional[ScriptSetting] = None,
         join_notification: Optional[NotificationSetting] = None,
         leave_notification: Optional[NotificationSetting] = None,
@@ -52,10 +62,15 @@ class NamespaceOptions:
     ):
         self.description = description
         self.enable_rating = enable_rating
+        self.enable_disconnect_detection = enable_disconnect_detection
+        self.disconnect_detection_timeout_seconds = disconnect_detection_timeout_seconds
         self.create_gathering_trigger_realtime_namespace_id = create_gathering_trigger_realtime_namespace_id
         self.create_gathering_trigger_script_id = create_gathering_trigger_script_id
         self.complete_matchmaking_trigger_realtime_namespace_id = complete_matchmaking_trigger_realtime_namespace_id
         self.complete_matchmaking_trigger_script_id = complete_matchmaking_trigger_script_id
+        self.enable_collaborate_season_rating = enable_collaborate_season_rating
+        self.collaborate_season_rating_namespace_id = collaborate_season_rating_namespace_id
+        self.collaborate_season_rating_ttl = collaborate_season_rating_ttl
         self.change_rating_script = change_rating_script
         self.join_notification = join_notification
         self.leave_notification = leave_notification

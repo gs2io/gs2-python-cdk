@@ -18,6 +18,8 @@ from ....core.model import CdkResource, Stack
 from ....core.func import GetAttr
 from ..AdMob import AdMob
 from ..UnityAd import UnityAd
+from ..AppLovinMax import AppLovinMax
+from ....core.model import ScriptSetting
 from ....core.model import NotificationSetting
 from ....core.model import LogSetting
 
@@ -25,7 +27,10 @@ from ....core.model import LogSetting
 class NamespaceOptions:
     admob: Optional[AdMob]
     unity_ad: Optional[UnityAd]
+    app_lovin_maxes: Optional[List[AppLovinMax]]
     description: Optional[str]
+    acquire_point_script: Optional[ScriptSetting]
+    consume_point_script: Optional[ScriptSetting]
     change_point_notification: Optional[NotificationSetting]
     log_setting: Optional[LogSetting]
     
@@ -33,13 +38,19 @@ class NamespaceOptions:
         self,
         admob: Optional[AdMob] = None,
         unity_ad: Optional[UnityAd] = None,
+        app_lovin_maxes: Optional[List[AppLovinMax]] = None,
         description: Optional[str] = None,
+        acquire_point_script: Optional[ScriptSetting] = None,
+        consume_point_script: Optional[ScriptSetting] = None,
         change_point_notification: Optional[NotificationSetting] = None,
         log_setting: Optional[LogSetting] = None,
     ):
         self.admob = admob
         self.unity_ad = unity_ad
+        self.app_lovin_maxes = app_lovin_maxes
         self.description = description
+        self.acquire_point_script = acquire_point_script
+        self.consume_point_script = consume_point_script
         self.change_point_notification = change_point_notification
         self.log_setting = log_setting
 

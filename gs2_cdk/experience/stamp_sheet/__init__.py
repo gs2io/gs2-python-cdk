@@ -12,6 +12,7 @@
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
 from .AddExperienceByUserId import AddExperienceByUserId
+from .SetExperienceByUserId import SetExperienceByUserId
 from .AddRankCapByUserId import AddRankCapByUserId
 from .SetRankCapByUserId import SetRankCapByUserId
 from .MultiplyAcquireActionsByUserId import MultiplyAcquireActionsByUserId

@@ -16,8 +16,10 @@ from typing import *
 from ....core.model import ScriptSetting
 from ....core.model import NotificationSetting
 from ....core.model import LogSetting
+from ..enum.NamespaceEnableDisconnectDetection import NamespaceEnableDisconnectDetection
 from ..enum.NamespaceCreateGatheringTriggerType import NamespaceCreateGatheringTriggerType
 from ..enum.NamespaceCompleteMatchmakingTriggerType import NamespaceCompleteMatchmakingTriggerType
+from ..enum.NamespaceEnableCollaborateSeasonRating import NamespaceEnableCollaborateSeasonRating
 
 
 class NamespaceCreateGatheringTriggerTypeIsGs2ScriptOptions:

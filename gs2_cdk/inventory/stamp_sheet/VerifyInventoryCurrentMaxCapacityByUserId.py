@@ -25,6 +25,7 @@ class VerifyInventoryCurrentMaxCapacityByUserId(ConsumeAction):
         inventory_name: str,
         verify_type: str,
         current_inventory_max_capacity: int,
+        multiply_value_specifying_quantity: Optional[bool] = None,
         user_id: Optional[str] = "#{userId}",
     ):
         properties: Dict[str, Any] = {}
@@ -33,6 +34,7 @@ class VerifyInventoryCurrentMaxCapacityByUserId(ConsumeAction):
         properties["inventoryName"] = inventory_name
         properties["verifyType"] = verify_type
         properties["currentInventoryMaxCapacity"] = current_inventory_max_capacity
+        properties["multiplyValueSpecifyingQuantity"] = multiply_value_specifying_quantity
         properties["userId"] = user_id
 
         super().__init__(

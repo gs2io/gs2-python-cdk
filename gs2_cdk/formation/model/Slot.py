@@ -18,17 +18,16 @@ from .options.SlotOptions import SlotOptions
 
 class Slot:
     name: str
-    property_id: str
+    property_id: Optional[str] = None
     metadata: Optional[str] = None
 
     def __init__(
         self,
         name: str,
-        property_id: str,
         options: Optional[SlotOptions] = SlotOptions(),
     ):
         self.name = name
-        self.property_id = property_id
+        self.property_id = options.property_id if options.property_id else None
         self.metadata = options.metadata if options.metadata else None
 
     def properties(

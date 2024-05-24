@@ -18,13 +18,8 @@ from ...core.func import GetAttr, Join
 
 
 class SalesItemGroupRef:
-    namespace_name: str
-    display_item_id: str
 
     def __init__(
         self,
-        namespace_name: str,
-        display_item_id: str,
     ):
-        self.namespace_name = namespace_name
-        self.display_item_id = display_item_id
+        pass

@@ -91,6 +91,7 @@ class NamespaceRef:
         counter_name: str,
         verify_type: str,
         count: Optional[int] = None,
+        multiply_value_specifying_quantity: Optional[bool] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> VerifyCounterByUserId:
         return VerifyCounterByUserId(
@@ -99,6 +100,7 @@ class NamespaceRef:
             counter_name,
             verify_type,
             count,
+            multiply_value_specifying_quantity,
             user_id,
         )
 

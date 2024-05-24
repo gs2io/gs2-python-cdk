@@ -134,6 +134,7 @@ class NamespaceRef:
         verify_type: str,
         parameter_value_name: Optional[str] = None,
         parameter_count: Optional[int] = None,
+        multiply_value_specifying_quantity: Optional[bool] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> VerifyRarityParameterStatusByUserId:
         return VerifyRarityParameterStatusByUserId(
@@ -143,6 +144,7 @@ class NamespaceRef:
             verify_type,
             parameter_value_name,
             parameter_count,
+            multiply_value_specifying_quantity,
             user_id,
         )
 

@@ -13,6 +13,7 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from ..RepeatSetting import RepeatSetting
 from ..enum.EventScheduleType import EventScheduleType
 from ..enum.EventRepeatType import EventRepeatType
 from ..enum.EventRepeatBeginDayOfWeek import EventRepeatBeginDayOfWeek
@@ -21,9 +22,15 @@ from ..enum.EventRepeatEndDayOfWeek import EventRepeatEndDayOfWeek
 
 class EventRepeatTypeIsAlwaysOptions:
     metadata: Optional[str]
+    absolute_begin: Optional[int]
+    absolute_end: Optional[int]
     
     def __init__(
         self,
         metadata: Optional[str] = None,
+        absolute_begin: Optional[int] = None,
+        absolute_end: Optional[int] = None,
     ):
         self.metadata = metadata
+        self.absolute_begin = absolute_begin
+        self.absolute_end = absolute_end
