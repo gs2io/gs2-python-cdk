@@ -21,6 +21,10 @@ from .options.CategoryModelScopeIsGlobalOptions import CategoryModelScopeIsGloba
 from .options.CategoryModelScopeIsScopedOptions import CategoryModelScopeIsScopedOptions
 from .Scope import Scope
 from .options.ScopeOptions import ScopeOptions
+from .GlobalRankingSetting import GlobalRankingSetting
+from .options.GlobalRankingSettingOptions import GlobalRankingSettingOptions
+from .FixedTiming import FixedTiming
+from .options.FixedTimingOptions import FixedTimingOptions
 from .CalculatedAt import CalculatedAt
 from .options.CalculatedAtOptions import CalculatedAtOptions
 from .CurrentMasterData import CurrentMasterData

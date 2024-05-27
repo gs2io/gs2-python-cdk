@@ -13,7 +13,9 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from ..FixedTiming import FixedTiming
 from ..Scope import Scope
+from ..GlobalRankingSetting import GlobalRankingSetting
 from ..enum.CategoryModelOrderDirection import CategoryModelOrderDirection
 from ..enum.CategoryModelScope import CategoryModelScope
 
@@ -22,11 +24,11 @@ class CategoryModelScopeIsScopedOptions:
     metadata: Optional[str]
     minimum_value: Optional[int]
     maximum_value: Optional[int]
+    entry_period_event_id: Optional[str]
+    access_period_event_id: Optional[str]
     calculate_fixed_timing_hour: Optional[int]
     calculate_fixed_timing_minute: Optional[int]
     additional_scopes: Optional[List[Scope]]
-    entry_period_event_id: Optional[str]
-    access_period_event_id: Optional[str]
     ignore_user_ids: Optional[List[str]]
     generation: Optional[str]
     
@@ -35,21 +37,21 @@ class CategoryModelScopeIsScopedOptions:
         metadata: Optional[str] = None,
         minimum_value: Optional[int] = None,
         maximum_value: Optional[int] = None,
+        entry_period_event_id: Optional[str] = None,
+        access_period_event_id: Optional[str] = None,
         calculate_fixed_timing_hour: Optional[int] = None,
         calculate_fixed_timing_minute: Optional[int] = None,
         additional_scopes: Optional[List[Scope]] = None,
-        entry_period_event_id: Optional[str] = None,
-        access_period_event_id: Optional[str] = None,
         ignore_user_ids: Optional[List[str]] = None,
         generation: Optional[str] = None,
     ):
         self.metadata = metadata
         self.minimum_value = minimum_value
         self.maximum_value = maximum_value
+        self.entry_period_event_id = entry_period_event_id
+        self.access_period_event_id = access_period_event_id
         self.calculate_fixed_timing_hour = calculate_fixed_timing_hour
         self.calculate_fixed_timing_minute = calculate_fixed_timing_minute
         self.additional_scopes = additional_scopes
-        self.entry_period_event_id = entry_period_event_id
-        self.access_period_event_id = access_period_event_id
         self.ignore_user_ids = ignore_user_ids
         self.generation = generation
