@@ -13,25 +13,30 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
-
-from ....core.model import CdkResource, Stack
-from ....core.func import GetAttr
-from ....core.model import ScriptSetting
-from ....core.model import LogSetting
+from .options.OverrideBuffRateOptions import OverrideBuffRateOptions
 
 
-class NamespaceOptions:
-    description: Optional[str]
-    apply_buff_script: Optional[ScriptSetting]
-    log_setting: Optional[LogSetting]
-    
+class OverrideBuffRate:
+    name: str
+    rate: float
+
     def __init__(
         self,
-        description: Optional[str] = None,
-        apply_buff_script: Optional[ScriptSetting] = None,
-        log_setting: Optional[LogSetting] = None,
+        name: str,
+        rate: float,
+        options: Optional[OverrideBuffRateOptions] = OverrideBuffRateOptions(),
     ):
-        self.description = description
-        self.apply_buff_script = apply_buff_script
-        self.log_setting = log_setting
+        self.name = name
+        self.rate = rate
 
+    def properties(
+        self,
+    ) -> Dict[str, Any]:
+        properties: Dict[str, Any] = {}
+
+        if self.name is not None:
+            properties["name"] = self.name
+        if self.rate is not None:
+            properties["rate"] = self.rate
+
+        return properties

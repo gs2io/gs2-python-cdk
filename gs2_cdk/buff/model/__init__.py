@@ -25,4 +25,6 @@ from .enum.BuffEntryModelTargetType import BuffEntryModelTargetType
 from .enum.BuffEntryModelExpression import BuffEntryModelExpression
 from .options.BuffEntryModelTargetTypeIsModelOptions import BuffEntryModelTargetTypeIsModelOptions
 from .options.BuffEntryModelTargetTypeIsActionOptions import BuffEntryModelTargetTypeIsActionOptions
+from .OverrideBuffRate import OverrideBuffRate
+from .options.OverrideBuffRateOptions import OverrideBuffRateOptions
 from .CurrentMasterData import CurrentMasterData

@@ -14,24 +14,11 @@
 from __future__ import annotations
 from typing import *
 
-from ....core.model import CdkResource, Stack
-from ....core.func import GetAttr
-from ....core.model import ScriptSetting
-from ....core.model import LogSetting
 
-
-class NamespaceOptions:
-    description: Optional[str]
-    apply_buff_script: Optional[ScriptSetting]
-    log_setting: Optional[LogSetting]
+class OverrideBuffRateOptions:
     
     def __init__(
         self,
-        description: Optional[str] = None,
-        apply_buff_script: Optional[ScriptSetting] = None,
-        log_setting: Optional[LogSetting] = None,
     ):
-        self.description = description
-        self.apply_buff_script = apply_buff_script
-        self.log_setting = log_setting
+        pass
 

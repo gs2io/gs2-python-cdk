@@ -34,6 +34,7 @@ src/gs2_cdk/buff/model/BuffTargetGrn.py
 src/gs2_cdk/buff/model/BuffTargetModel.py
 src/gs2_cdk/buff/model/CurrentMasterData.py
 src/gs2_cdk/buff/model/Namespace.py
+src/gs2_cdk/buff/model/OverrideBuffRate.py
 src/gs2_cdk/buff/model/__init__.py
 src/gs2_cdk/buff/ref/BuffEntryModelRef.py
 src/gs2_cdk/buff/ref/NamespaceRef.py
