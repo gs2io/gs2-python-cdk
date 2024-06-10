@@ -11,8 +11,21 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-from .IncreaseMaximumCurrentMaximumMemberCountByGuildName import IncreaseMaximumCurrentMaximumMemberCountByGuildName
-from .SetMaximumCurrentMaximumMemberCountByGuildName import SetMaximumCurrentMaximumMemberCountByGuildName
-from .DecreaseMaximumCurrentMaximumMemberCountByGuildName import DecreaseMaximumCurrentMaximumMemberCountByGuildName
-from .VerifyCurrentMaximumMemberCountByGuildName import VerifyCurrentMaximumMemberCountByGuildName
-from .VerifyIncludeMemberByUserId import VerifyIncludeMemberByUserId
+
+
+
+
+class ClusterRankingModelClusterType:
+    value: str
+    RAW: 'ClusterRankingModelClusterType'
+    GS2_GUILD__GUILD: 'ClusterRankingModelClusterType'
+
+    def __init__(
+        self,
+        value: str,
+    ):
+        self.value = value
+
+
+ClusterRankingModelClusterType.RAW = ClusterRankingModelClusterType("Raw")
+ClusterRankingModelClusterType.GS2_GUILD__GUILD = ClusterRankingModelClusterType("Gs2Guild::Guild")

@@ -11,8 +11,11 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-from .IncreaseMaximumCurrentMaximumMemberCountByGuildName import IncreaseMaximumCurrentMaximumMemberCountByGuildName
-from .SetMaximumCurrentMaximumMemberCountByGuildName import SetMaximumCurrentMaximumMemberCountByGuildName
-from .DecreaseMaximumCurrentMaximumMemberCountByGuildName import DecreaseMaximumCurrentMaximumMemberCountByGuildName
-from .VerifyCurrentMaximumMemberCountByGuildName import VerifyCurrentMaximumMemberCountByGuildName
-from .VerifyIncludeMemberByUserId import VerifyIncludeMemberByUserId
+from .NamespaceRef import NamespaceRef
+from .GlobalRankingModelRef import GlobalRankingModelRef
+from .GlobalRankingSeasonRef import GlobalRankingSeasonRef
+from .GlobalRankingBorderRef import GlobalRankingBorderRef
+from .ClusterRankingModelRef import ClusterRankingModelRef
+from .ClusterRankingSeasonRef import ClusterRankingSeasonRef
+from .ClusterRankingBorderRef import ClusterRankingBorderRef
+from .SubscribeRankingModelRef import SubscribeRankingModelRef

@@ -18,6 +18,8 @@ from ...core.func import GetAttr, Join
 from .CategoryModelRef import CategoryModelRef
 from ..stamp_sheet.IncreaseMaximumIdleMinutesByUserId import IncreaseMaximumIdleMinutesByUserId
 from ..stamp_sheet.SetMaximumIdleMinutesByUserId import SetMaximumIdleMinutesByUserId
+from ..stamp_sheet.ReceiveByUserId import ReceiveByUserId
+from ...core.model import Config
 from ..stamp_sheet.DecreaseMaximumIdleMinutesByUserId import DecreaseMaximumIdleMinutesByUserId
 
 
@@ -62,6 +64,19 @@ class NamespaceRef:
             self.namespace_name,
             category_name,
             maximum_idle_minutes,
+            user_id,
+        )
+
+    def receive(
+        self,
+        category_name: str,
+        config: Optional[List[Config]] = None,
+        user_id: Optional[str] = "#{userId}",
+    ) -> ReceiveByUserId:
+        return ReceiveByUserId(
+            self.namespace_name,
+            category_name,
+            config,
             user_id,
         )
 

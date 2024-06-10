@@ -19,6 +19,8 @@ from .RoleModelRef import RoleModelRef
 from ..stamp_sheet.IncreaseMaximumCurrentMaximumMemberCountByGuildName import IncreaseMaximumCurrentMaximumMemberCountByGuildName
 from ..stamp_sheet.SetMaximumCurrentMaximumMemberCountByGuildName import SetMaximumCurrentMaximumMemberCountByGuildName
 from ..stamp_sheet.DecreaseMaximumCurrentMaximumMemberCountByGuildName import DecreaseMaximumCurrentMaximumMemberCountByGuildName
+from ..stamp_sheet.VerifyCurrentMaximumMemberCountByGuildName import VerifyCurrentMaximumMemberCountByGuildName
+from ..stamp_sheet.VerifyIncludeMemberByUserId import VerifyIncludeMemberByUserId
 
 
 class GuildModelRef:
@@ -75,6 +77,36 @@ class GuildModelRef:
             self.guild_model_name,
             guild_name,
             value,
+        )
+
+    def verify_current_maximum_member_count_by_guild_name(
+        self,
+        guild_name: str,
+        verify_type: str,
+        value: Optional[int] = None,
+        multiply_value_specifying_quantity: Optional[bool] = None,
+    ) -> VerifyCurrentMaximumMemberCountByGuildName:
+        return VerifyCurrentMaximumMemberCountByGuildName(
+            self.namespace_name,
+            self.guild_model_name,
+            guild_name,
+            verify_type,
+            value,
+            multiply_value_specifying_quantity,
+        )
+
+    def verify_include_member(
+        self,
+        verify_type: str,
+        guild_name: Optional[str] = None,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifyIncludeMemberByUserId:
+        return VerifyIncludeMemberByUserId(
+            self.namespace_name,
+            self.guild_model_name,
+            verify_type,
+            guild_name,
+            user_id,
         )
 
     def grn(

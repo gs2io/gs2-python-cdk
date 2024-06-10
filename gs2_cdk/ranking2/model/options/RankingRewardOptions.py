@@ -11,8 +11,20 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-from .IncreaseMaximumCurrentMaximumMemberCountByGuildName import IncreaseMaximumCurrentMaximumMemberCountByGuildName
-from .SetMaximumCurrentMaximumMemberCountByGuildName import SetMaximumCurrentMaximumMemberCountByGuildName
-from .DecreaseMaximumCurrentMaximumMemberCountByGuildName import DecreaseMaximumCurrentMaximumMemberCountByGuildName
-from .VerifyCurrentMaximumMemberCountByGuildName import VerifyCurrentMaximumMemberCountByGuildName
-from .VerifyIncludeMemberByUserId import VerifyIncludeMemberByUserId
+from __future__ import annotations
+from typing import *
+from ....core.model import AcquireAction
+
+
+class RankingRewardOptions:
+    metadata: Optional[str]
+    acquire_actions: Optional[List[AcquireAction]]
+    
+    def __init__(
+        self,
+        metadata: Optional[str] = None,
+        acquire_actions: Optional[List[AcquireAction]] = None,
+    ):
+        self.metadata = metadata
+        self.acquire_actions = acquire_actions
+

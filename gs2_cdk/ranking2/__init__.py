@@ -11,8 +11,15 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-from .IncreaseMaximumCurrentMaximumMemberCountByGuildName import IncreaseMaximumCurrentMaximumMemberCountByGuildName
-from .SetMaximumCurrentMaximumMemberCountByGuildName import SetMaximumCurrentMaximumMemberCountByGuildName
-from .DecreaseMaximumCurrentMaximumMemberCountByGuildName import DecreaseMaximumCurrentMaximumMemberCountByGuildName
-from .VerifyCurrentMaximumMemberCountByGuildName import VerifyCurrentMaximumMemberCountByGuildName
-from .VerifyIncludeMemberByUserId import VerifyIncludeMemberByUserId
+
+from .model import *
+from .ref import *
+from .stamp_sheet import *
+
+
+def namespace(
+    namespace_name: str,
+) -> NamespaceRef:
+    return NamespaceRef(
+        namespace_name,
+    )

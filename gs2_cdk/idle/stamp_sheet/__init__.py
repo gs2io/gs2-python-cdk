@@ -13,4 +13,5 @@
 # permissions and limitations under the License.
 from .IncreaseMaximumIdleMinutesByUserId import IncreaseMaximumIdleMinutesByUserId
 from .SetMaximumIdleMinutesByUserId import SetMaximumIdleMinutesByUserId
+from .ReceiveByUserId import ReceiveByUserId
 from .DecreaseMaximumIdleMinutesByUserId import DecreaseMaximumIdleMinutesByUserId
