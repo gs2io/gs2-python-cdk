@@ -455,6 +455,7 @@ src/gs2_cdk/mission/stamp_sheet/IncreaseCounterByUserId.py
 src/gs2_cdk/mission/stamp_sheet/ReceiveByUserId.py
 src/gs2_cdk/mission/stamp_sheet/RevertReceiveByUserId.py
 src/gs2_cdk/mission/stamp_sheet/SetCounterByUserId.py
+src/gs2_cdk/mission/stamp_sheet/VerifyCompleteByUserId.py
 src/gs2_cdk/mission/stamp_sheet/VerifyCounterValueByUserId.py
 src/gs2_cdk/mission/stamp_sheet/__init__.py
 src/gs2_cdk/money/__init__.py

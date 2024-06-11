@@ -15,5 +15,6 @@ from .RevertReceiveByUserId import RevertReceiveByUserId
 from .IncreaseCounterByUserId import IncreaseCounterByUserId
 from .SetCounterByUserId import SetCounterByUserId
 from .ReceiveByUserId import ReceiveByUserId
+from .VerifyCompleteByUserId import VerifyCompleteByUserId
 from .DecreaseCounterByUserId import DecreaseCounterByUserId
 from .VerifyCounterValueByUserId import VerifyCounterValueByUserId
