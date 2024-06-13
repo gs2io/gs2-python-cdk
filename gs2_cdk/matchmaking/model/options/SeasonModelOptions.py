@@ -11,6 +11,19 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-from .NamespaceRef import NamespaceRef
-from .RatingModelRef import RatingModelRef
-from .SeasonModelRef import SeasonModelRef
+from __future__ import annotations
+from typing import *
+
+
+class SeasonModelOptions:
+    metadata: Optional[str]
+    experience_model_id: Optional[str]
+    
+    def __init__(
+        self,
+        metadata: Optional[str] = None,
+        experience_model_id: Optional[str] = None,
+    ):
+        self.metadata = metadata
+        self.experience_model_id = experience_model_id
+

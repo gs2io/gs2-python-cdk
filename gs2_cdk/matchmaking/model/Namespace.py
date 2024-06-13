@@ -23,6 +23,7 @@ from ...core.model import LogSetting
 from ..ref.NamespaceRef import NamespaceRef
 from .CurrentMasterData import CurrentMasterData
 from .RatingModel import RatingModel
+from .SeasonModel import SeasonModel
 from .enum.NamespaceEnableDisconnectDetection import NamespaceEnableDisconnectDetection
 from .enum.NamespaceCreateGatheringTriggerType import NamespaceCreateGatheringTriggerType
 from .enum.NamespaceCompleteMatchmakingTriggerType import NamespaceCompleteMatchmakingTriggerType
@@ -175,11 +176,13 @@ class Namespace(CdkResource):
     def master_data(
         self,
         rating_models: List[RatingModel],
+        season_models: List[SeasonModel],
     ) -> Namespace:
         CurrentMasterData(
             self.stack,
             self.name,
             rating_models,
+            season_models,
         ).add_depends_on(
             self,
         )

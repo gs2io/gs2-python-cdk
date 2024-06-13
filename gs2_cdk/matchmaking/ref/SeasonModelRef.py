@@ -15,36 +15,19 @@ from __future__ import annotations
 from typing import *
 
 from ...core.func import GetAttr, Join
-from .RatingModelRef import RatingModelRef
-from .SeasonModelRef import SeasonModelRef
 
 
-class NamespaceRef:
+class SeasonModelRef:
     namespace_name: str
+    season_name: str
 
     def __init__(
         self,
         namespace_name: str,
+        season_name: str,
     ):
         self.namespace_name = namespace_name
-
-    def rating_model(
-        self,
-        rating_name: str,
-    ) -> RatingModelRef:
-        return RatingModelRef(
-            self.namespace_name,
-            rating_name,
-        )
-
-    def season_model(
-        self,
-        season_name: str,
-    ) -> SeasonModelRef:
-        return SeasonModelRef(
-            self.namespace_name,
-            season_name,
-        )
+        self.season_name = season_name
 
     def grn(
         self,
@@ -62,6 +45,8 @@ class NamespaceRef:
                 ),
                 "matchmaking",
                 self.namespace_name,
+                "model",
+                self.season_name,
             ],
         ).str(
         )

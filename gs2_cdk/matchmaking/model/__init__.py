@@ -29,6 +29,8 @@ from .options.NamespaceEnableCollaborateSeasonRatingIsEnableOptions import Names
 from .options.NamespaceEnableCollaborateSeasonRatingIsDisableOptions import NamespaceEnableCollaborateSeasonRatingIsDisableOptions
 from .RatingModel import RatingModel
 from .options.RatingModelOptions import RatingModelOptions
+from .SeasonModel import SeasonModel
+from .options.SeasonModelOptions import SeasonModelOptions
 from .AttributeRange import AttributeRange
 from .options.AttributeRangeOptions import AttributeRangeOptions
 from .CapacityOfRole import CapacityOfRole

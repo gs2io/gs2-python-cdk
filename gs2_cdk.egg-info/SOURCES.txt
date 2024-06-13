@@ -410,11 +410,13 @@ src/gs2_cdk/matchmaking/model/GameResult.py
 src/gs2_cdk/matchmaking/model/Namespace.py
 src/gs2_cdk/matchmaking/model/Player.py
 src/gs2_cdk/matchmaking/model/RatingModel.py
+src/gs2_cdk/matchmaking/model/SeasonModel.py
 src/gs2_cdk/matchmaking/model/SignedBallot.py
 src/gs2_cdk/matchmaking/model/TimeSpan.py
 src/gs2_cdk/matchmaking/model/__init__.py
 src/gs2_cdk/matchmaking/ref/NamespaceRef.py
 src/gs2_cdk/matchmaking/ref/RatingModelRef.py
+src/gs2_cdk/matchmaking/ref/SeasonModelRef.py
 src/gs2_cdk/matchmaking/ref/__init__.py
 src/gs2_cdk/matchmaking/stamp_sheet/__init__.py
 src/gs2_cdk/mega_field/__init__.py

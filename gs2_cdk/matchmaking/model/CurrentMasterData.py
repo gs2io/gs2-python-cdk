@@ -16,25 +16,29 @@ from typing import *
 
 from ...core.model import CdkResource, Stack
 from .RatingModel import RatingModel
+from .SeasonModel import SeasonModel
 
 
 class CurrentMasterData(CdkResource):
     version: str= "2020-06-24"
     namespace_name: str
     rating_models: List[RatingModel]
+    season_models: List[SeasonModel]
 
     def __init__(
         self,
         stack: Stack,
         namespace_name: str,
         rating_models: List[RatingModel],
+        season_models: List[SeasonModel],
     ):
         super().__init__(
-            "Matchmaking_CurrentRatingModelMaster_" + namespace_name
+            "Matchmaking_CurrentModelMaster_" + namespace_name
         )
 
         self.namespace_name = namespace_name
         self.rating_models = rating_models
+        self.season_models = season_models
         stack.add_resource(
             self,
         )
@@ -47,7 +51,7 @@ class CurrentMasterData(CdkResource):
     def resource_type(
         self,
     ) -> str:
-        return "GS2::Matchmaking::CurrentRatingModelMaster"
+        return "GS2::Matchmaking::CurrentModelMaster"
 
     def properties(
         self,
@@ -61,6 +65,12 @@ class CurrentMasterData(CdkResource):
                 v.properties(
                 )
                 for v in self.rating_models
+            ]
+        if self.season_models is not None:
+            settings["seasonModels"] = [
+                v.properties(
+                )
+                for v in self.season_models
             ]
 
         if self.namespace_name is not None:
