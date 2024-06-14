@@ -17,8 +17,9 @@
 
 class BuffEntryModelExpression:
     value: str
-    ADD: 'BuffEntryModelExpression'
+    RATE_ADD: 'BuffEntryModelExpression'
     MUL: 'BuffEntryModelExpression'
+    VALUE_ADD: 'BuffEntryModelExpression'
 
     def __init__(
         self,
@@ -27,5 +28,6 @@ class BuffEntryModelExpression:
         self.value = value
 
 
-BuffEntryModelExpression.ADD = BuffEntryModelExpression("add")
+BuffEntryModelExpression.RATE_ADD = BuffEntryModelExpression("rate_add")
 BuffEntryModelExpression.MUL = BuffEntryModelExpression("mul")
+BuffEntryModelExpression.VALUE_ADD = BuffEntryModelExpression("value_add")
