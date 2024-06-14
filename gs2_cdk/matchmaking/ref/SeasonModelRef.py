@@ -15,6 +15,7 @@ from __future__ import annotations
 from typing import *
 
 from ...core.func import GetAttr, Join
+from ..stamp_sheet.VerifyIncludeParticipantByUserId import VerifyIncludeParticipantByUserId
 
 
 class SeasonModelRef:
@@ -28,6 +29,24 @@ class SeasonModelRef:
     ):
         self.namespace_name = namespace_name
         self.season_name = season_name
+
+    def verify_include_participant(
+        self,
+        season: int,
+        tier: int,
+        verify_type: str,
+        season_gathering_name: Optional[str] = None,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifyIncludeParticipantByUserId:
+        return VerifyIncludeParticipantByUserId(
+            self.namespace_name,
+            self.season_name,
+            season,
+            tier,
+            verify_type,
+            season_gathering_name,
+            user_id,
+        )
 
     def grn(
         self,

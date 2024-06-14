@@ -418,6 +418,7 @@ src/gs2_cdk/matchmaking/ref/NamespaceRef.py
 src/gs2_cdk/matchmaking/ref/RatingModelRef.py
 src/gs2_cdk/matchmaking/ref/SeasonModelRef.py
 src/gs2_cdk/matchmaking/ref/__init__.py
+src/gs2_cdk/matchmaking/stamp_sheet/VerifyIncludeParticipantByUserId.py
 src/gs2_cdk/matchmaking/stamp_sheet/__init__.py
 src/gs2_cdk/mega_field/__init__.py
 src/gs2_cdk/mega_field/model/AreaModel.py

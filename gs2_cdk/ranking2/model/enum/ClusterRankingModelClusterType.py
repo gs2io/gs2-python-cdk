@@ -19,6 +19,7 @@ class ClusterRankingModelClusterType:
     value: str
     RAW: 'ClusterRankingModelClusterType'
     GS2_GUILD__GUILD: 'ClusterRankingModelClusterType'
+    GS2_MATCHMAKING__SEASON_GATHERING: 'ClusterRankingModelClusterType'
 
     def __init__(
         self,
@@ -29,3 +30,4 @@ class ClusterRankingModelClusterType:
 
 ClusterRankingModelClusterType.RAW = ClusterRankingModelClusterType("Raw")
 ClusterRankingModelClusterType.GS2_GUILD__GUILD = ClusterRankingModelClusterType("Gs2Guild::Guild")
+ClusterRankingModelClusterType.GS2_MATCHMAKING__SEASON_GATHERING = ClusterRankingModelClusterType("Gs2Matchmaking::SeasonGathering")
