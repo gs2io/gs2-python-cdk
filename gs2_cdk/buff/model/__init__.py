@@ -21,8 +21,8 @@ from .BuffTargetGrn import BuffTargetGrn
 from .options.BuffTargetGrnOptions import BuffTargetGrnOptions
 from .BuffEntryModel import BuffEntryModel
 from .options.BuffEntryModelOptions import BuffEntryModelOptions
-from .enum.BuffEntryModelTargetType import BuffEntryModelTargetType
 from .enum.BuffEntryModelExpression import BuffEntryModelExpression
+from .enum.BuffEntryModelTargetType import BuffEntryModelTargetType
 from .options.BuffEntryModelTargetTypeIsModelOptions import BuffEntryModelTargetTypeIsModelOptions
 from .options.BuffEntryModelTargetTypeIsActionOptions import BuffEntryModelTargetTypeIsActionOptions
 from .OverrideBuffRate import OverrideBuffRate

@@ -16,8 +16,8 @@ from typing import *
 from ..BuffTargetGrn import BuffTargetGrn
 from ..BuffTargetModel import BuffTargetModel
 from ..BuffTargetAction import BuffTargetAction
-from ..enum.BuffEntryModelTargetType import BuffEntryModelTargetType
 from ..enum.BuffEntryModelExpression import BuffEntryModelExpression
+from ..enum.BuffEntryModelTargetType import BuffEntryModelTargetType
 
 
 class BuffEntryModelTargetTypeIsModelOptions:

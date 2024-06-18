@@ -19,14 +19,14 @@ from .BuffTargetAction import BuffTargetAction
 from .options.BuffEntryModelOptions import BuffEntryModelOptions
 from .options.BuffEntryModelTargetTypeIsModelOptions import BuffEntryModelTargetTypeIsModelOptions
 from .options.BuffEntryModelTargetTypeIsActionOptions import BuffEntryModelTargetTypeIsActionOptions
-from .enum.BuffEntryModelTargetType import BuffEntryModelTargetType
 from .enum.BuffEntryModelExpression import BuffEntryModelExpression
+from .enum.BuffEntryModelTargetType import BuffEntryModelTargetType
 
 
 class BuffEntryModel:
     name: str
-    target_type: BuffEntryModelTargetType
     expression: BuffEntryModelExpression
+    target_type: BuffEntryModelTargetType
     priority: int
     metadata: Optional[str] = None
     target_model: Optional[BuffTargetModel] = None
@@ -36,14 +36,14 @@ class BuffEntryModel:
     def __init__(
         self,
         name: str,
-        target_type: BuffEntryModelTargetType,
         expression: BuffEntryModelExpression,
+        target_type: BuffEntryModelTargetType,
         priority: int,
         options: Optional[BuffEntryModelOptions] = BuffEntryModelOptions(),
     ):
         self.name = name
-        self.target_type = target_type
         self.expression = expression
+        self.target_type = target_type
         self.priority = priority
         self.metadata = options.metadata if options.metadata else None
         self.target_model = options.target_model if options.target_model else None
@@ -60,8 +60,8 @@ class BuffEntryModel:
     ) -> BuffEntryModel:
         return BuffEntryModel(
             name,
-            BuffEntryModelTargetType.MODEL,
             expression,
+            BuffEntryModelTargetType.MODEL,
             priority,
             BuffEntryModelOptions(
                 target_model,
@@ -80,8 +80,8 @@ class BuffEntryModel:
     ) -> BuffEntryModel:
         return BuffEntryModel(
             name,
-            BuffEntryModelTargetType.ACTION,
             expression,
+            BuffEntryModelTargetType.ACTION,
             priority,
             BuffEntryModelOptions(
                 target_action,
@@ -99,6 +99,8 @@ class BuffEntryModel:
             properties["name"] = self.name
         if self.metadata is not None:
             properties["metadata"] = self.metadata
+        if self.expression is not None:
+            properties["expression"] = self.expression.value
         if self.target_type is not None:
             properties["targetType"] = self.target_type.value
         if self.target_model is not None:
@@ -107,8 +109,6 @@ class BuffEntryModel:
         if self.target_action is not None:
             properties["targetAction"] = self.target_action.properties(
             )
-        if self.expression is not None:
-            properties["expression"] = self.expression.value
         if self.priority is not None:
             properties["priority"] = self.priority
         if self.apply_period_schedule_event_id is not None:
