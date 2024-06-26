@@ -33,6 +33,7 @@ class Namespace(CdkResource):
     description: Optional[str] = None
     transaction_setting: Optional[TransactionSetting] = None
     receive_script: Optional[ScriptSetting] = None
+    override_acquire_actions_script_id: Optional[str] = None
     log_setting: Optional[LogSetting] = None
 
     def __init__(
@@ -50,6 +51,7 @@ class Namespace(CdkResource):
         self.description = options.description if options.description else None
         self.transaction_setting = options.transaction_setting if options.transaction_setting else None
         self.receive_script = options.receive_script if options.receive_script else None
+        self.override_acquire_actions_script_id = options.override_acquire_actions_script_id if options.override_acquire_actions_script_id else None
         self.log_setting = options.log_setting if options.log_setting else None
         stack.add_resource(
             self,
@@ -81,6 +83,8 @@ class Namespace(CdkResource):
         if self.receive_script is not None:
             properties["ReceiveScript"] = self.receive_script.properties(
             )
+        if self.override_acquire_actions_script_id is not None:
+            properties["OverrideAcquireActionsScriptId"] = self.override_acquire_actions_script_id
         if self.log_setting is not None:
             properties["LogSetting"] = self.log_setting.properties(
             )

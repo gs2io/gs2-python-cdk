@@ -11,7 +11,16 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-from .NamespaceRef import NamespaceRef
-from .StoreContentModelRef import StoreContentModelRef
-from .DailyTransactionHistoryRef import DailyTransactionHistoryRef
-from .UnusedBalanceRef import UnusedBalanceRef
+from __future__ import annotations
+from typing import *
+
+
+class UnusedBalanceOptions:
+    revision: Optional[int]
+    
+    def __init__(
+        self,
+        revision: Optional[int] = None,
+    ):
+        self.revision = revision
+

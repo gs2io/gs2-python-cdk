@@ -15,7 +15,9 @@ from __future__ import annotations
 from typing import *
 
 from ...core.func import GetAttr, Join
+from .DailyTransactionHistoryRef import DailyTransactionHistoryRef
 from .StoreContentModelRef import StoreContentModelRef
+from .UnusedBalanceRef import UnusedBalanceRef
 from ..stamp_sheet.DepositByUserId import DepositByUserId
 from ..model.DepositTransaction import DepositTransaction
 from ..stamp_sheet.WithdrawByUserId import WithdrawByUserId

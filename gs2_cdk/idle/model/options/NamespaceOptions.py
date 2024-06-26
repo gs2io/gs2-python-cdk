@@ -25,6 +25,7 @@ class NamespaceOptions:
     description: Optional[str]
     transaction_setting: Optional[TransactionSetting]
     receive_script: Optional[ScriptSetting]
+    override_acquire_actions_script_id: Optional[str]
     log_setting: Optional[LogSetting]
     
     def __init__(
@@ -32,10 +33,12 @@ class NamespaceOptions:
         description: Optional[str] = None,
         transaction_setting: Optional[TransactionSetting] = None,
         receive_script: Optional[ScriptSetting] = None,
+        override_acquire_actions_script_id: Optional[str] = None,
         log_setting: Optional[LogSetting] = None,
     ):
         self.description = description
         self.transaction_setting = transaction_setting
         self.receive_script = receive_script
+        self.override_acquire_actions_script_id = override_acquire_actions_script_id
         self.log_setting = log_setting
 

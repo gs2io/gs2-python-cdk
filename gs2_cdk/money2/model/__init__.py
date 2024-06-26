@@ -48,4 +48,8 @@ from .AppleAppStoreContent import AppleAppStoreContent
 from .options.AppleAppStoreContentOptions import AppleAppStoreContentOptions
 from .GooglePlayContent import GooglePlayContent
 from .options.GooglePlayContentOptions import GooglePlayContentOptions
+from .DailyTransactionHistory import DailyTransactionHistory
+from .options.DailyTransactionHistoryOptions import DailyTransactionHistoryOptions
+from .UnusedBalance import UnusedBalance
+from .options.UnusedBalanceOptions import UnusedBalanceOptions
 from .CurrentMasterData import CurrentMasterData
