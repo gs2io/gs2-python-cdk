@@ -13,5 +13,7 @@
 # permissions and limitations under the License.
 from .Namespace import Namespace
 from .options.NamespaceOptions import NamespaceOptions
+from .PlatformUser import PlatformUser
+from .options.PlatformUserOptions import PlatformUserOptions
 from .BanStatus import BanStatus
 from .options.BanStatusOptions import BanStatusOptions

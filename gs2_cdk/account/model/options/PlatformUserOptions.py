@@ -11,32 +11,14 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-#
-# deny overwrite
 from __future__ import annotations
 from typing import *
 
-from ...core.model import AcquireAction, ConsumeAction
-from ..model.Receipt import Receipt
 
-
-class VerifyReceiptByUserId(ConsumeAction):
-
+class PlatformUserOptions:
+    
     def __init__(
         self,
-        namespace_name: str,
-        content_name: str,
-        receipt: Optional[str] = "#{receipt}",
-        user_id: Optional[str] = "#{userId}",
     ):
-        properties: Dict[str, Any] = {}
+        pass
 
-        properties["namespaceName"] = namespace_name
-        properties["contentName"] = content_name
-        properties["receipt"] = receipt
-        properties["userId"] = user_id
-
-        super().__init__(
-            "Gs2Money2:VerifyReceiptByUserId",
-            properties,
-        )

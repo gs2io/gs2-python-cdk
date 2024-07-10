@@ -7,6 +7,7 @@ src/gs2_cdk.egg-info/top_level.txt
 src/gs2_cdk/account/__init__.py
 src/gs2_cdk/account/model/BanStatus.py
 src/gs2_cdk/account/model/Namespace.py
+src/gs2_cdk/account/model/PlatformUser.py
 src/gs2_cdk/account/model/__init__.py
 src/gs2_cdk/account/ref/NamespaceRef.py
 src/gs2_cdk/account/ref/__init__.py
