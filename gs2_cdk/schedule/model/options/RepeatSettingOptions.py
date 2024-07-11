@@ -25,6 +25,9 @@ class RepeatSettingOptions:
     end_day_of_week: Optional[RepeatSettingEndDayOfWeek]
     begin_hour: Optional[int]
     end_hour: Optional[int]
+    anchor_timestamp: Optional[int]
+    active_days: Optional[int]
+    inactive_days: Optional[int]
     
     def __init__(
         self,
@@ -34,6 +37,9 @@ class RepeatSettingOptions:
         end_day_of_week: Optional[RepeatSettingEndDayOfWeek] = None,
         begin_hour: Optional[int] = None,
         end_hour: Optional[int] = None,
+        anchor_timestamp: Optional[int] = None,
+        active_days: Optional[int] = None,
+        inactive_days: Optional[int] = None,
     ):
         self.begin_day_of_month = begin_day_of_month
         self.end_day_of_month = end_day_of_month
@@ -41,4 +47,7 @@ class RepeatSettingOptions:
         self.end_day_of_week = end_day_of_week
         self.begin_hour = begin_hour
         self.end_hour = end_hour
+        self.anchor_timestamp = anchor_timestamp
+        self.active_days = active_days
+        self.inactive_days = inactive_days
 

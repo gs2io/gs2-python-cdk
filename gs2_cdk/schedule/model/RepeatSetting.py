@@ -18,6 +18,7 @@ from .options.RepeatSettingRepeatTypeIsAlwaysOptions import RepeatSettingRepeatT
 from .options.RepeatSettingRepeatTypeIsDailyOptions import RepeatSettingRepeatTypeIsDailyOptions
 from .options.RepeatSettingRepeatTypeIsWeeklyOptions import RepeatSettingRepeatTypeIsWeeklyOptions
 from .options.RepeatSettingRepeatTypeIsMonthlyOptions import RepeatSettingRepeatTypeIsMonthlyOptions
+from .options.RepeatSettingRepeatTypeIsCustomOptions import RepeatSettingRepeatTypeIsCustomOptions
 from .enum.RepeatSettingRepeatType import RepeatSettingRepeatType
 from .enum.RepeatSettingBeginDayOfWeek import RepeatSettingBeginDayOfWeek
 from .enum.RepeatSettingEndDayOfWeek import RepeatSettingEndDayOfWeek
@@ -31,6 +32,9 @@ class RepeatSetting:
     end_day_of_week: Optional[RepeatSettingEndDayOfWeek] = None
     begin_hour: Optional[int] = None
     end_hour: Optional[int] = None
+    anchor_timestamp: Optional[int] = None
+    active_days: Optional[int] = None
+    inactive_days: Optional[int] = None
 
     def __init__(
         self,
@@ -44,6 +48,9 @@ class RepeatSetting:
         self.end_day_of_week = options.end_day_of_week if options.end_day_of_week else None
         self.begin_hour = options.begin_hour if options.begin_hour else None
         self.end_hour = options.end_hour if options.end_hour else None
+        self.anchor_timestamp = options.anchor_timestamp if options.anchor_timestamp else None
+        self.active_days = options.active_days if options.active_days else None
+        self.inactive_days = options.inactive_days if options.inactive_days else None
 
     @staticmethod
     def repeat_type_is_always(
@@ -105,6 +112,22 @@ class RepeatSetting:
             ),
         )
 
+    @staticmethod
+    def repeat_type_is_custom(
+        anchor_timestamp: int,
+        active_days: int,
+        inactive_days: int,
+        options: Optional[RepeatSettingRepeatTypeIsCustomOptions] = RepeatSettingRepeatTypeIsCustomOptions(),
+    ) -> RepeatSetting:
+        return RepeatSetting(
+            RepeatSettingRepeatType.CUSTOM,
+            RepeatSettingOptions(
+                anchor_timestamp,
+                active_days,
+                inactive_days,
+            ),
+        )
+
     def properties(
         self,
     ) -> Dict[str, Any]:
@@ -124,5 +147,11 @@ class RepeatSetting:
             properties["beginHour"] = self.begin_hour
         if self.end_hour is not None:
             properties["endHour"] = self.end_hour
+        if self.anchor_timestamp is not None:
+            properties["anchorTimestamp"] = self.anchor_timestamp
+        if self.active_days is not None:
+            properties["activeDays"] = self.active_days
+        if self.inactive_days is not None:
+            properties["inactiveDays"] = self.inactive_days
 
         return properties

@@ -21,6 +21,7 @@ class RepeatSettingRepeatType:
     DAILY: 'RepeatSettingRepeatType'
     WEEKLY: 'RepeatSettingRepeatType'
     MONTHLY: 'RepeatSettingRepeatType'
+    CUSTOM: 'RepeatSettingRepeatType'
 
     def __init__(
         self,
@@ -33,3 +34,4 @@ RepeatSettingRepeatType.ALWAYS = RepeatSettingRepeatType("always")
 RepeatSettingRepeatType.DAILY = RepeatSettingRepeatType("daily")
 RepeatSettingRepeatType.WEEKLY = RepeatSettingRepeatType("weekly")
 RepeatSettingRepeatType.MONTHLY = RepeatSettingRepeatType("monthly")
+RepeatSettingRepeatType.CUSTOM = RepeatSettingRepeatType("custom")
