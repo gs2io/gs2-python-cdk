@@ -241,6 +241,7 @@ src/gs2_cdk/identifier/model/Policy.py
 src/gs2_cdk/identifier/model/ProjectToken.py
 src/gs2_cdk/identifier/model/SecurityPolicy.py
 src/gs2_cdk/identifier/model/Statement.py
+src/gs2_cdk/identifier/model/TwoFactorAuthenticationSetting.py
 src/gs2_cdk/identifier/model/User.py
 src/gs2_cdk/identifier/model/__init__.py
 src/gs2_cdk/identifier/ref/AttachSecurityPolicyRef.py

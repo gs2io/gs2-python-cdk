@@ -18,6 +18,7 @@ from ...core.model import CdkResource, Stack
 from ...core.func import GetAttr
 
 from ..ref.PasswordRef import PasswordRef
+from .enum.PasswordEnableTwoFactorAuthentication import PasswordEnableTwoFactorAuthentication
 
 from .options.PasswordOptions import PasswordOptions
 
