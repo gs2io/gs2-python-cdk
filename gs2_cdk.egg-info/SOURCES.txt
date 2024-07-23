@@ -215,6 +215,8 @@ src/gs2_cdk/guild/__init__.py
 src/gs2_cdk/guild/model/CurrentMasterData.py
 src/gs2_cdk/guild/model/Guild.py
 src/gs2_cdk/guild/model/GuildModel.py
+src/gs2_cdk/guild/model/IgnoreUser.py
+src/gs2_cdk/guild/model/IgnoreUsers.py
 src/gs2_cdk/guild/model/Inbox.py
 src/gs2_cdk/guild/model/Member.py
 src/gs2_cdk/guild/model/Namespace.py
@@ -223,6 +225,8 @@ src/gs2_cdk/guild/model/RoleModel.py
 src/gs2_cdk/guild/model/__init__.py
 src/gs2_cdk/guild/ref/GuildModelRef.py
 src/gs2_cdk/guild/ref/GuildRef.py
+src/gs2_cdk/guild/ref/IgnoreUserRef.py
+src/gs2_cdk/guild/ref/IgnoreUsersRef.py
 src/gs2_cdk/guild/ref/InboxRef.py
 src/gs2_cdk/guild/ref/NamespaceRef.py
 src/gs2_cdk/guild/ref/RoleModelRef.py

@@ -11,10 +11,27 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-from .NamespaceRef import NamespaceRef
-from .GuildModelRef import GuildModelRef
-from .InboxRef import InboxRef
-from .GuildRef import GuildRef
-from .IgnoreUsersRef import IgnoreUsersRef
-from .RoleModelRef import RoleModelRef
-from .IgnoreUserRef import IgnoreUserRef
+from __future__ import annotations
+from typing import *
+from .options.IgnoreUserOptions import IgnoreUserOptions
+
+
+class IgnoreUser:
+    user_id: str
+
+    def __init__(
+        self,
+        user_id: str,
+        options: Optional[IgnoreUserOptions] = IgnoreUserOptions(),
+    ):
+        self.user_id = user_id
+
+    def properties(
+        self,
+    ) -> Dict[str, Any]:
+        properties: Dict[str, Any] = {}
+
+        if self.user_id is not None:
+            properties["userId"] = self.user_id
+
+        return properties
