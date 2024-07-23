@@ -20,8 +20,6 @@ from .options.InboxOptions import InboxOptions
 from .Guild import Guild
 from .options.GuildOptions import GuildOptions
 from .enum.GuildJoinPolicy import GuildJoinPolicy
-from .IgnoreUsers import IgnoreUsers
-from .options.IgnoreUsersOptions import IgnoreUsersOptions
 from .RoleModel import RoleModel
 from .options.RoleModelOptions import RoleModelOptions
 from .Member import Member
