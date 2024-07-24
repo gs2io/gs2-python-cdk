@@ -218,6 +218,7 @@ src/gs2_cdk/guild/model/GuildModel.py
 src/gs2_cdk/guild/model/IgnoreUser.py
 src/gs2_cdk/guild/model/IgnoreUsers.py
 src/gs2_cdk/guild/model/Inbox.py
+src/gs2_cdk/guild/model/LastGuildMasterActivity.py
 src/gs2_cdk/guild/model/Member.py
 src/gs2_cdk/guild/model/Namespace.py
 src/gs2_cdk/guild/model/ReceiveMemberRequest.py
@@ -228,6 +229,7 @@ src/gs2_cdk/guild/ref/GuildRef.py
 src/gs2_cdk/guild/ref/IgnoreUserRef.py
 src/gs2_cdk/guild/ref/IgnoreUsersRef.py
 src/gs2_cdk/guild/ref/InboxRef.py
+src/gs2_cdk/guild/ref/LastGuildMasterActivityRef.py
 src/gs2_cdk/guild/ref/NamespaceRef.py
 src/gs2_cdk/guild/ref/RoleModelRef.py
 src/gs2_cdk/guild/ref/__init__.py

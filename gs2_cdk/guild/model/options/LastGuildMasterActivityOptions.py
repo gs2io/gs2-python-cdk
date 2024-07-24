@@ -11,11 +11,14 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-from .NamespaceRef import NamespaceRef
-from .GuildModelRef import GuildModelRef
-from .InboxRef import InboxRef
-from .GuildRef import GuildRef
-from .IgnoreUsersRef import IgnoreUsersRef
-from .LastGuildMasterActivityRef import LastGuildMasterActivityRef
-from .RoleModelRef import RoleModelRef
-from .IgnoreUserRef import IgnoreUserRef
+from __future__ import annotations
+from typing import *
+
+
+class LastGuildMasterActivityOptions:
+    
+    def __init__(
+        self,
+    ):
+        pass
+

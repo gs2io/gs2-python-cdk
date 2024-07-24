@@ -21,6 +21,7 @@ class GuildModel:
     name: str
     default_maximum_member_count: int
     maximum_member_count: int
+    inactivity_period_days: int
     roles: List[RoleModel]
     guild_master_role: str
     guild_member_default_role: str
@@ -32,6 +33,7 @@ class GuildModel:
         name: str,
         default_maximum_member_count: int,
         maximum_member_count: int,
+        inactivity_period_days: int,
         roles: List[RoleModel],
         guild_master_role: str,
         guild_member_default_role: str,
@@ -41,6 +43,7 @@ class GuildModel:
         self.name = name
         self.default_maximum_member_count = default_maximum_member_count
         self.maximum_member_count = maximum_member_count
+        self.inactivity_period_days = inactivity_period_days
         self.roles = roles
         self.guild_master_role = guild_master_role
         self.guild_member_default_role = guild_member_default_role
@@ -60,6 +63,8 @@ class GuildModel:
             properties["defaultMaximumMemberCount"] = self.default_maximum_member_count
         if self.maximum_member_count is not None:
             properties["maximumMemberCount"] = self.maximum_member_count
+        if self.inactivity_period_days is not None:
+            properties["inactivityPeriodDays"] = self.inactivity_period_days
         if self.roles is not None:
             properties["roles"] = [
                 v.properties(

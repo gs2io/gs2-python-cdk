@@ -17,6 +17,7 @@ from typing import *
 from ...core.model import CdkResource, Stack
 from ...core.func import GetAttr
 from ...core.model import NotificationSetting
+from ...core.model import ScriptSetting
 from ...core.model import LogSetting
 
 from ..ref.NamespaceRef import NamespaceRef
@@ -35,6 +36,10 @@ class Namespace(CdkResource):
     change_member_notification: Optional[NotificationSetting] = None
     receive_request_notification: Optional[NotificationSetting] = None
     remove_request_notification: Optional[NotificationSetting] = None
+    create_guild_script: Optional[ScriptSetting] = None
+    join_guild_script: Optional[ScriptSetting] = None
+    leave_guild_script: Optional[ScriptSetting] = None
+    change_role_script: Optional[ScriptSetting] = None
     log_setting: Optional[LogSetting] = None
 
     def __init__(
@@ -55,6 +60,10 @@ class Namespace(CdkResource):
         self.change_member_notification = options.change_member_notification if options.change_member_notification else None
         self.receive_request_notification = options.receive_request_notification if options.receive_request_notification else None
         self.remove_request_notification = options.remove_request_notification if options.remove_request_notification else None
+        self.create_guild_script = options.create_guild_script if options.create_guild_script else None
+        self.join_guild_script = options.join_guild_script if options.join_guild_script else None
+        self.leave_guild_script = options.leave_guild_script if options.leave_guild_script else None
+        self.change_role_script = options.change_role_script if options.change_role_script else None
         self.log_setting = options.log_setting if options.log_setting else None
         stack.add_resource(
             self,
@@ -94,6 +103,18 @@ class Namespace(CdkResource):
             )
         if self.remove_request_notification is not None:
             properties["RemoveRequestNotification"] = self.remove_request_notification.properties(
+            )
+        if self.create_guild_script is not None:
+            properties["CreateGuildScript"] = self.create_guild_script.properties(
+            )
+        if self.join_guild_script is not None:
+            properties["JoinGuildScript"] = self.join_guild_script.properties(
+            )
+        if self.leave_guild_script is not None:
+            properties["LeaveGuildScript"] = self.leave_guild_script.properties(
+            )
+        if self.change_role_script is not None:
+            properties["ChangeRoleScript"] = self.change_role_script.properties(
             )
         if self.log_setting is not None:
             properties["LogSetting"] = self.log_setting.properties(
