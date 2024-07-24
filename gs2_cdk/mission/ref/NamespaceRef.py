@@ -22,8 +22,8 @@ from ..stamp_sheet.IncreaseCounterByUserId import IncreaseCounterByUserId
 from ..stamp_sheet.SetCounterByUserId import SetCounterByUserId
 from ..model.ScopedValue import ScopedValue
 from ..stamp_sheet.ReceiveByUserId import ReceiveByUserId
-from ..stamp_sheet.VerifyCompleteByUserId import VerifyCompleteByUserId
 from ..stamp_sheet.DecreaseCounterByUserId import DecreaseCounterByUserId
+from ..stamp_sheet.VerifyCompleteByUserId import VerifyCompleteByUserId
 from ..stamp_sheet.VerifyCounterValueByUserId import VerifyCounterValueByUserId
 
 
@@ -106,6 +106,19 @@ class NamespaceRef:
             user_id,
         )
 
+    def decrease_counter(
+        self,
+        counter_name: str,
+        value: int,
+        user_id: Optional[str] = "#{userId}",
+    ) -> DecreaseCounterByUserId:
+        return DecreaseCounterByUserId(
+            self.namespace_name,
+            counter_name,
+            value,
+            user_id,
+        )
+
     def verify_complete(
         self,
         mission_group_name: str,
@@ -120,19 +133,6 @@ class NamespaceRef:
             verify_type,
             mission_task_name,
             multiply_value_specifying_quantity,
-            user_id,
-        )
-
-    def decrease_counter(
-        self,
-        counter_name: str,
-        value: int,
-        user_id: Optional[str] = "#{userId}",
-    ) -> DecreaseCounterByUserId:
-        return DecreaseCounterByUserId(
-            self.namespace_name,
-            counter_name,
-            value,
             user_id,
         )
 

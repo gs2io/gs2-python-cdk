@@ -14,7 +14,7 @@
 from __future__ import annotations
 from typing import *
 
-from ...core.model import AcquireAction, ConsumeAction
+from ...core.model import AcquireAction, ConsumeAction, VerifyAction
 
 
 class DeleteEntriesByUserId(ConsumeAction):

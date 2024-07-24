@@ -14,10 +14,10 @@
 from __future__ import annotations
 from typing import *
 
-from ...core.model import AcquireAction, ConsumeAction
+from ...core.model import AcquireAction, ConsumeAction, VerifyAction
 
 
-class VerifyRarityParameterStatusByUserId(ConsumeAction):
+class VerifyRarityParameterStatusByUserId(VerifyAction):
 
     def __init__(
         self,

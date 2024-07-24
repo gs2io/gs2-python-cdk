@@ -29,13 +29,13 @@ from ..model.AcquireCount import AcquireCount
 from ..stamp_sheet.SetSimpleItemsByUserId import SetSimpleItemsByUserId
 from ..stamp_sheet.AcquireBigItemByUserId import AcquireBigItemByUserId
 from ..stamp_sheet.SetBigItemByUserId import SetBigItemByUserId
-from ..stamp_sheet.VerifyInventoryCurrentMaxCapacityByUserId import VerifyInventoryCurrentMaxCapacityByUserId
 from ..stamp_sheet.ConsumeItemSetByUserId import ConsumeItemSetByUserId
+from ..stamp_sheet.ConsumeSimpleItemsByUserId import ConsumeSimpleItemsByUserId
+from ..stamp_sheet.ConsumeBigItemByUserId import ConsumeBigItemByUserId
+from ..stamp_sheet.VerifyInventoryCurrentMaxCapacityByUserId import VerifyInventoryCurrentMaxCapacityByUserId
 from ..stamp_sheet.VerifyItemSetByUserId import VerifyItemSetByUserId
 from ..stamp_sheet.VerifyReferenceOfByUserId import VerifyReferenceOfByUserId
-from ..stamp_sheet.ConsumeSimpleItemsByUserId import ConsumeSimpleItemsByUserId
 from ..stamp_sheet.VerifySimpleItemByUserId import VerifySimpleItemByUserId
-from ..stamp_sheet.ConsumeBigItemByUserId import ConsumeBigItemByUserId
 from ..stamp_sheet.VerifyBigItemByUserId import VerifyBigItemByUserId
 
 
@@ -229,23 +229,6 @@ class NamespaceRef:
             user_id,
         )
 
-    def verify_inventory_current_max_capacity(
-        self,
-        inventory_name: str,
-        verify_type: str,
-        current_inventory_max_capacity: int,
-        multiply_value_specifying_quantity: Optional[bool] = None,
-        user_id: Optional[str] = "#{userId}",
-    ) -> VerifyInventoryCurrentMaxCapacityByUserId:
-        return VerifyInventoryCurrentMaxCapacityByUserId(
-            self.namespace_name,
-            inventory_name,
-            verify_type,
-            current_inventory_max_capacity,
-            multiply_value_specifying_quantity,
-            user_id,
-        )
-
     def consume_item_set(
         self,
         inventory_name: str,
@@ -260,6 +243,51 @@ class NamespaceRef:
             item_name,
             consume_count,
             item_set_name,
+            user_id,
+        )
+
+    def consume_simple_items(
+        self,
+        inventory_name: str,
+        consume_counts: List[ConsumeCount],
+        user_id: Optional[str] = "#{userId}",
+    ) -> ConsumeSimpleItemsByUserId:
+        return ConsumeSimpleItemsByUserId(
+            self.namespace_name,
+            inventory_name,
+            consume_counts,
+            user_id,
+        )
+
+    def consume_big_item(
+        self,
+        inventory_name: str,
+        item_name: str,
+        consume_count: str,
+        user_id: Optional[str] = "#{userId}",
+    ) -> ConsumeBigItemByUserId:
+        return ConsumeBigItemByUserId(
+            self.namespace_name,
+            inventory_name,
+            item_name,
+            consume_count,
+            user_id,
+        )
+
+    def verify_inventory_current_max_capacity(
+        self,
+        inventory_name: str,
+        verify_type: str,
+        current_inventory_max_capacity: int,
+        multiply_value_specifying_quantity: Optional[bool] = None,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifyInventoryCurrentMaxCapacityByUserId:
+        return VerifyInventoryCurrentMaxCapacityByUserId(
+            self.namespace_name,
+            inventory_name,
+            verify_type,
+            current_inventory_max_capacity,
+            multiply_value_specifying_quantity,
             user_id,
         )
 
@@ -303,19 +331,6 @@ class NamespaceRef:
             user_id,
         )
 
-    def consume_simple_items(
-        self,
-        inventory_name: str,
-        consume_counts: List[ConsumeCount],
-        user_id: Optional[str] = "#{userId}",
-    ) -> ConsumeSimpleItemsByUserId:
-        return ConsumeSimpleItemsByUserId(
-            self.namespace_name,
-            inventory_name,
-            consume_counts,
-            user_id,
-        )
-
     def verify_simple_item(
         self,
         inventory_name: str,
@@ -332,21 +347,6 @@ class NamespaceRef:
             verify_type,
             count,
             multiply_value_specifying_quantity,
-            user_id,
-        )
-
-    def consume_big_item(
-        self,
-        inventory_name: str,
-        item_name: str,
-        consume_count: str,
-        user_id: Optional[str] = "#{userId}",
-    ) -> ConsumeBigItemByUserId:
-        return ConsumeBigItemByUserId(
-            self.namespace_name,
-            inventory_name,
-            item_name,
-            consume_count,
             user_id,
         )
 

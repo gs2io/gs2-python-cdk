@@ -14,10 +14,10 @@
 from __future__ import annotations
 from typing import *
 
-from ...core.model import AcquireAction, ConsumeAction
+from ...core.model import AcquireAction, ConsumeAction, VerifyAction
 
 
-class VerifyItemSetByUserId(ConsumeAction):
+class VerifyItemSetByUserId(VerifyAction):
 
     def __init__(
         self,

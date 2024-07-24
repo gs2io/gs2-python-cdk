@@ -266,3 +266,13 @@ class ConsumeAction:
             "action": self.action,
             "request": properties,
         }
+
+
+class VerifyAction(ConsumeAction):
+
+    def __init__(
+            self,
+            action: str,
+            request: Dict[str, Any],
+    ):
+        super().__init__(action, request)

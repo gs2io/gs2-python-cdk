@@ -22,8 +22,8 @@ from ..stamp_sheet.AcquireItemSetByUserId import AcquireItemSetByUserId
 from ..stamp_sheet.AcquireItemSetWithGradeByUserId import AcquireItemSetWithGradeByUserId
 from ..stamp_sheet.AddReferenceOfByUserId import AddReferenceOfByUserId
 from ..stamp_sheet.DeleteReferenceOfByUserId import DeleteReferenceOfByUserId
-from ..stamp_sheet.VerifyInventoryCurrentMaxCapacityByUserId import VerifyInventoryCurrentMaxCapacityByUserId
 from ..stamp_sheet.ConsumeItemSetByUserId import ConsumeItemSetByUserId
+from ..stamp_sheet.VerifyInventoryCurrentMaxCapacityByUserId import VerifyInventoryCurrentMaxCapacityByUserId
 from ..stamp_sheet.VerifyItemSetByUserId import VerifyItemSetByUserId
 from ..stamp_sheet.VerifyReferenceOfByUserId import VerifyReferenceOfByUserId
 
@@ -142,22 +142,6 @@ class InventoryModelRef:
             user_id,
         )
 
-    def verify_inventory_current_max_capacity(
-        self,
-        verify_type: str,
-        current_inventory_max_capacity: int,
-        multiply_value_specifying_quantity: Optional[bool] = None,
-        user_id: Optional[str] = "#{userId}",
-    ) -> VerifyInventoryCurrentMaxCapacityByUserId:
-        return VerifyInventoryCurrentMaxCapacityByUserId(
-            self.namespace_name,
-            self.inventory_name,
-            verify_type,
-            current_inventory_max_capacity,
-            multiply_value_specifying_quantity,
-            user_id,
-        )
-
     def consume_item_set(
         self,
         item_name: str,
@@ -171,6 +155,22 @@ class InventoryModelRef:
             item_name,
             consume_count,
             item_set_name,
+            user_id,
+        )
+
+    def verify_inventory_current_max_capacity(
+        self,
+        verify_type: str,
+        current_inventory_max_capacity: int,
+        multiply_value_specifying_quantity: Optional[bool] = None,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifyInventoryCurrentMaxCapacityByUserId:
+        return VerifyInventoryCurrentMaxCapacityByUserId(
+            self.namespace_name,
+            self.inventory_name,
+            verify_type,
+            current_inventory_max_capacity,
+            multiply_value_specifying_quantity,
             user_id,
         )
 
