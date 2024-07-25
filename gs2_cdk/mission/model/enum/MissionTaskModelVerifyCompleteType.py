@@ -18,7 +18,7 @@
 class MissionTaskModelVerifyCompleteType:
     value: str
     COUNTER: 'MissionTaskModelVerifyCompleteType'
-    CONSUME_ACTIONS: 'MissionTaskModelVerifyCompleteType'
+    VERIFY_ACTIONS: 'MissionTaskModelVerifyCompleteType'
 
     def __init__(
         self,
@@ -28,4 +28,4 @@ class MissionTaskModelVerifyCompleteType:
 
 
 MissionTaskModelVerifyCompleteType.COUNTER = MissionTaskModelVerifyCompleteType("counter")
-MissionTaskModelVerifyCompleteType.CONSUME_ACTIONS = MissionTaskModelVerifyCompleteType("consumeActions")
+MissionTaskModelVerifyCompleteType.VERIFY_ACTIONS = MissionTaskModelVerifyCompleteType("verifyActions")

@@ -15,6 +15,7 @@ from __future__ import annotations
 from typing import *
 from ...core.model import AcquireAction
 from .Contents import Contents
+from ...core.model import VerifyAction
 from ...core.model import ConsumeAction
 from .options.QuestModelOptions import QuestModelOptions
 
@@ -25,6 +26,7 @@ class QuestModel:
     metadata: Optional[str] = None
     challenge_period_event_id: Optional[str] = None
     first_complete_acquire_actions: Optional[List[AcquireAction]] = None
+    verify_actions: Optional[List[VerifyAction]] = None
     consume_actions: Optional[List[ConsumeAction]] = None
     failed_acquire_actions: Optional[List[AcquireAction]] = None
     premise_quest_names: Optional[List[str]] = None
@@ -40,6 +42,7 @@ class QuestModel:
         self.metadata = options.metadata if options.metadata else None
         self.challenge_period_event_id = options.challenge_period_event_id if options.challenge_period_event_id else None
         self.first_complete_acquire_actions = options.first_complete_acquire_actions if options.first_complete_acquire_actions else None
+        self.verify_actions = options.verify_actions if options.verify_actions else None
         self.consume_actions = options.consume_actions if options.consume_actions else None
         self.failed_acquire_actions = options.failed_acquire_actions if options.failed_acquire_actions else None
         self.premise_quest_names = options.premise_quest_names if options.premise_quest_names else None
@@ -66,6 +69,12 @@ class QuestModel:
                 v.properties(
                 )
                 for v in self.first_complete_acquire_actions
+            ]
+        if self.verify_actions is not None:
+            properties["verifyActions"] = [
+                v.properties(
+                )
+                for v in self.verify_actions
             ]
         if self.consume_actions is not None:
             properties["consumeActions"] = [

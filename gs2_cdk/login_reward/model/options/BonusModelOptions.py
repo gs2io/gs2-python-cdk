@@ -15,6 +15,7 @@ from __future__ import annotations
 from typing import *
 from ....core.model import AcquireAction
 from ..Reward import Reward
+from ....core.model import VerifyAction
 from ....core.model import ConsumeAction
 from ..enum.BonusModelMode import BonusModelMode
 from ..enum.BonusModelRepeat import BonusModelRepeat
@@ -27,6 +28,7 @@ class BonusModelOptions:
     reset_hour: Optional[int]
     repeat: Optional[BonusModelRepeat]
     rewards: Optional[List[Reward]]
+    missed_receive_relief_verify_actions: Optional[List[VerifyAction]]
     missed_receive_relief_consume_actions: Optional[List[ConsumeAction]]
     
     def __init__(
@@ -36,6 +38,7 @@ class BonusModelOptions:
         reset_hour: Optional[int] = None,
         repeat: Optional[BonusModelRepeat] = None,
         rewards: Optional[List[Reward]] = None,
+        missed_receive_relief_verify_actions: Optional[List[VerifyAction]] = None,
         missed_receive_relief_consume_actions: Optional[List[ConsumeAction]] = None,
     ):
         self.metadata = metadata
@@ -43,5 +46,6 @@ class BonusModelOptions:
         self.reset_hour = reset_hour
         self.repeat = repeat
         self.rewards = rewards
+        self.missed_receive_relief_verify_actions = missed_receive_relief_verify_actions
         self.missed_receive_relief_consume_actions = missed_receive_relief_consume_actions
 

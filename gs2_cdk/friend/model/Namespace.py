@@ -39,7 +39,10 @@ class Namespace(CdkResource):
     update_profile_script: Optional[ScriptSetting] = None
     follow_notification: Optional[NotificationSetting] = None
     receive_request_notification: Optional[NotificationSetting] = None
+    cancel_request_notification: Optional[NotificationSetting] = None
     accept_request_notification: Optional[NotificationSetting] = None
+    reject_request_notification: Optional[NotificationSetting] = None
+    delete_friend_notification: Optional[NotificationSetting] = None
     log_setting: Optional[LogSetting] = None
 
     def __init__(
@@ -65,7 +68,10 @@ class Namespace(CdkResource):
         self.update_profile_script = options.update_profile_script if options.update_profile_script else None
         self.follow_notification = options.follow_notification if options.follow_notification else None
         self.receive_request_notification = options.receive_request_notification if options.receive_request_notification else None
+        self.cancel_request_notification = options.cancel_request_notification if options.cancel_request_notification else None
         self.accept_request_notification = options.accept_request_notification if options.accept_request_notification else None
+        self.reject_request_notification = options.reject_request_notification if options.reject_request_notification else None
+        self.delete_friend_notification = options.delete_friend_notification if options.delete_friend_notification else None
         self.log_setting = options.log_setting if options.log_setting else None
         stack.add_resource(
             self,
@@ -121,8 +127,17 @@ class Namespace(CdkResource):
         if self.receive_request_notification is not None:
             properties["ReceiveRequestNotification"] = self.receive_request_notification.properties(
             )
+        if self.cancel_request_notification is not None:
+            properties["CancelRequestNotification"] = self.cancel_request_notification.properties(
+            )
         if self.accept_request_notification is not None:
             properties["AcceptRequestNotification"] = self.accept_request_notification.properties(
+            )
+        if self.reject_request_notification is not None:
+            properties["RejectRequestNotification"] = self.reject_request_notification.properties(
+            )
+        if self.delete_friend_notification is not None:
+            properties["DeleteFriendNotification"] = self.delete_friend_notification.properties(
             )
         if self.log_setting is not None:
             properties["LogSetting"] = self.log_setting.properties(

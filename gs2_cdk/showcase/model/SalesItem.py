@@ -13,6 +13,7 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from ...core.model import VerifyAction
 from ...core.model import ConsumeAction
 from ...core.model import AcquireAction
 from .options.SalesItemOptions import SalesItemOptions
@@ -22,6 +23,7 @@ class SalesItem:
     name: str
     acquire_actions: List[AcquireAction]
     metadata: Optional[str] = None
+    verify_actions: Optional[List[VerifyAction]] = None
     consume_actions: Optional[List[ConsumeAction]] = None
 
     def __init__(
@@ -33,6 +35,7 @@ class SalesItem:
         self.name = name
         self.acquire_actions = acquire_actions
         self.metadata = options.metadata if options.metadata else None
+        self.verify_actions = options.verify_actions if options.verify_actions else None
         self.consume_actions = options.consume_actions if options.consume_actions else None
 
     def properties(
@@ -44,6 +47,12 @@ class SalesItem:
             properties["name"] = self.name
         if self.metadata is not None:
             properties["metadata"] = self.metadata
+        if self.verify_actions is not None:
+            properties["verifyActions"] = [
+                v.properties(
+                )
+                for v in self.verify_actions
+            ]
         if self.consume_actions is not None:
             properties["consumeActions"] = [
                 v.properties(

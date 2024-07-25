@@ -13,6 +13,7 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from ...core.model import VerifyAction
 from ...core.model import ConsumeAction
 from ...core.model import AcquireAction
 from .options.NodeModelOptions import NodeModelOptions
@@ -23,6 +24,7 @@ class NodeModel:
     release_consume_actions: List[ConsumeAction]
     restrain_return_rate: float
     metadata: Optional[str] = None
+    release_verify_actions: Optional[List[VerifyAction]] = None
     return_acquire_actions: Optional[List[AcquireAction]] = None
     premise_node_names: Optional[List[str]] = None
 
@@ -37,6 +39,7 @@ class NodeModel:
         self.release_consume_actions = release_consume_actions
         self.restrain_return_rate = restrain_return_rate
         self.metadata = options.metadata if options.metadata else None
+        self.release_verify_actions = options.release_verify_actions if options.release_verify_actions else None
         self.return_acquire_actions = options.return_acquire_actions if options.return_acquire_actions else None
         self.premise_node_names = options.premise_node_names if options.premise_node_names else None
 
@@ -49,6 +52,12 @@ class NodeModel:
             properties["name"] = self.name
         if self.metadata is not None:
             properties["metadata"] = self.metadata
+        if self.release_verify_actions is not None:
+            properties["releaseVerifyActions"] = [
+                v.properties(
+                )
+                for v in self.release_verify_actions
+            ]
         if self.release_consume_actions is not None:
             properties["releaseConsumeActions"] = [
                 v.properties(

@@ -13,22 +13,26 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from ....core.model import VerifyAction
 from ....core.model import ConsumeAction
 from ....core.model import AcquireAction
 
 
 class NodeModelOptions:
     metadata: Optional[str]
+    release_verify_actions: Optional[List[VerifyAction]]
     return_acquire_actions: Optional[List[AcquireAction]]
     premise_node_names: Optional[List[str]]
     
     def __init__(
         self,
         metadata: Optional[str] = None,
+        release_verify_actions: Optional[List[VerifyAction]] = None,
         return_acquire_actions: Optional[List[AcquireAction]] = None,
         premise_node_names: Optional[List[str]] = None,
     ):
         self.metadata = metadata
+        self.release_verify_actions = release_verify_actions
         self.return_acquire_actions = return_acquire_actions
         self.premise_node_names = premise_node_names
 

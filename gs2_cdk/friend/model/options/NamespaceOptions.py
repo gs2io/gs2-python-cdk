@@ -33,7 +33,10 @@ class NamespaceOptions:
     update_profile_script: Optional[ScriptSetting]
     follow_notification: Optional[NotificationSetting]
     receive_request_notification: Optional[NotificationSetting]
+    cancel_request_notification: Optional[NotificationSetting]
     accept_request_notification: Optional[NotificationSetting]
+    reject_request_notification: Optional[NotificationSetting]
+    delete_friend_notification: Optional[NotificationSetting]
     log_setting: Optional[LogSetting]
     
     def __init__(
@@ -49,7 +52,10 @@ class NamespaceOptions:
         update_profile_script: Optional[ScriptSetting] = None,
         follow_notification: Optional[NotificationSetting] = None,
         receive_request_notification: Optional[NotificationSetting] = None,
+        cancel_request_notification: Optional[NotificationSetting] = None,
         accept_request_notification: Optional[NotificationSetting] = None,
+        reject_request_notification: Optional[NotificationSetting] = None,
+        delete_friend_notification: Optional[NotificationSetting] = None,
         log_setting: Optional[LogSetting] = None,
     ):
         self.description = description
@@ -63,6 +69,9 @@ class NamespaceOptions:
         self.update_profile_script = update_profile_script
         self.follow_notification = follow_notification
         self.receive_request_notification = receive_request_notification
+        self.cancel_request_notification = cancel_request_notification
         self.accept_request_notification = accept_request_notification
+        self.reject_request_notification = reject_request_notification
+        self.delete_friend_notification = delete_friend_notification
         self.log_setting = log_setting
 

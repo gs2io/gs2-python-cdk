@@ -15,6 +15,7 @@ from __future__ import annotations
 from typing import *
 from ...core.model import AcquireAction
 from .Contents import Contents
+from ...core.model import VerifyAction
 from ...core.model import ConsumeAction
 from .QuestModel import QuestModel
 from .options.QuestGroupModelOptions import QuestGroupModelOptions

@@ -13,22 +13,26 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from ....core.model import VerifyAction
 from ....core.model import ConsumeAction
 from ....core.model import AcquireAction
 
 
 class TransactionOptions:
     transaction_id: Optional[str]
+    verify_actions: Optional[List[VerifyAction]]
     consume_actions: Optional[List[ConsumeAction]]
     acquire_actions: Optional[List[AcquireAction]]
     
     def __init__(
         self,
         transaction_id: Optional[str] = None,
+        verify_actions: Optional[List[VerifyAction]] = None,
         consume_actions: Optional[List[ConsumeAction]] = None,
         acquire_actions: Optional[List[AcquireAction]] = None,
     ):
         self.transaction_id = transaction_id
+        self.verify_actions = verify_actions
         self.consume_actions = consume_actions
         self.acquire_actions = acquire_actions
 

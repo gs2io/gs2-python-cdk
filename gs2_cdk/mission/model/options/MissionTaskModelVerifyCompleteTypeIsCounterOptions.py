@@ -14,7 +14,7 @@
 from __future__ import annotations
 from typing import *
 from ..TargetCounterModel import TargetCounterModel
-from ....core.model import ConsumeAction
+from ....core.model import VerifyAction
 from ....core.model import AcquireAction
 from ..enum.MissionTaskModelVerifyCompleteType import MissionTaskModelVerifyCompleteType
 from ..enum.MissionTaskModelTargetResetType import MissionTaskModelTargetResetType
@@ -22,7 +22,7 @@ from ..enum.MissionTaskModelTargetResetType import MissionTaskModelTargetResetTy
 
 class MissionTaskModelVerifyCompleteTypeIsCounterOptions:
     metadata: Optional[str]
-    verify_complete_consume_actions: Optional[List[ConsumeAction]]
+    verify_complete_consume_actions: Optional[List[VerifyAction]]
     complete_acquire_actions: Optional[List[AcquireAction]]
     challenge_period_event_id: Optional[str]
     premise_mission_task_name: Optional[str]
@@ -31,7 +31,7 @@ class MissionTaskModelVerifyCompleteTypeIsCounterOptions:
     def __init__(
         self,
         metadata: Optional[str] = None,
-        verify_complete_consume_actions: Optional[List[ConsumeAction]] = None,
+        verify_complete_consume_actions: Optional[List[VerifyAction]] = None,
         complete_acquire_actions: Optional[List[AcquireAction]] = None,
         challenge_period_event_id: Optional[str] = None,
         premise_mission_task_name: Optional[str] = None,

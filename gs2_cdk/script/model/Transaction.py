@@ -13,6 +13,7 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from ...core.model import VerifyAction
 from ...core.model import ConsumeAction
 from ...core.model import AcquireAction
 from .options.TransactionOptions import TransactionOptions
@@ -20,6 +21,7 @@ from .options.TransactionOptions import TransactionOptions
 
 class Transaction:
     transaction_id: Optional[str] = None
+    verify_actions: Optional[List[VerifyAction]] = None
     consume_actions: Optional[List[ConsumeAction]] = None
     acquire_actions: Optional[List[AcquireAction]] = None
 
@@ -28,6 +30,7 @@ class Transaction:
         options: Optional[TransactionOptions] = TransactionOptions(),
     ):
         self.transaction_id = options.transaction_id if options.transaction_id else None
+        self.verify_actions = options.verify_actions if options.verify_actions else None
         self.consume_actions = options.consume_actions if options.consume_actions else None
         self.acquire_actions = options.acquire_actions if options.acquire_actions else None
 
@@ -38,6 +41,12 @@ class Transaction:
 
         if self.transaction_id is not None:
             properties["transactionId"] = self.transaction_id
+        if self.verify_actions is not None:
+            properties["verifyActions"] = [
+                v.properties(
+                )
+                for v in self.verify_actions
+            ]
         if self.consume_actions is not None:
             properties["consumeActions"] = [
                 v.properties(

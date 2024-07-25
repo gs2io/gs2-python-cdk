@@ -13,6 +13,7 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from ....core.model import VerifyAction
 from ....core.model import ConsumeAction
 from ....core.model import AcquireAction
 from ..enum.RateModelTimingType import RateModelTimingType
@@ -20,15 +21,18 @@ from ..enum.RateModelTimingType import RateModelTimingType
 
 class RateModelTimingTypeIsAwaitOptions:
     metadata: Optional[str]
+    verify_actions: Optional[List[VerifyAction]]
     consume_actions: Optional[List[ConsumeAction]]
     acquire_actions: Optional[List[AcquireAction]]
     
     def __init__(
         self,
         metadata: Optional[str] = None,
+        verify_actions: Optional[List[VerifyAction]] = None,
         consume_actions: Optional[List[ConsumeAction]] = None,
         acquire_actions: Optional[List[AcquireAction]] = None,
     ):
         self.metadata = metadata
+        self.verify_actions = verify_actions
         self.consume_actions = consume_actions
         self.acquire_actions = acquire_actions

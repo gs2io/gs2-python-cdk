@@ -15,6 +15,7 @@ from __future__ import annotations
 from typing import *
 from ...core.model import AcquireAction
 from .Reward import Reward
+from ...core.model import VerifyAction
 from ...core.model import ConsumeAction
 from .options.BonusModelOptions import BonusModelOptions
 from .options.BonusModelModeIsScheduleOptions import BonusModelModeIsScheduleOptions
@@ -35,6 +36,7 @@ class BonusModel:
     reset_hour: Optional[int] = None
     repeat: Optional[BonusModelRepeat] = None
     rewards: Optional[List[Reward]] = None
+    missed_receive_relief_verify_actions: Optional[List[VerifyAction]] = None
     missed_receive_relief_consume_actions: Optional[List[ConsumeAction]] = None
 
     def __init__(
@@ -52,6 +54,7 @@ class BonusModel:
         self.reset_hour = options.reset_hour if options.reset_hour else None
         self.repeat = options.repeat if options.repeat else None
         self.rewards = options.rewards if options.rewards else None
+        self.missed_receive_relief_verify_actions = options.missed_receive_relief_verify_actions if options.missed_receive_relief_verify_actions else None
         self.missed_receive_relief_consume_actions = options.missed_receive_relief_consume_actions if options.missed_receive_relief_consume_actions else None
 
     @staticmethod
@@ -68,6 +71,7 @@ class BonusModel:
                 options.metadata,
                 options.period_event_id,
                 options.rewards,
+                options.missed_receive_relief_verify_actions,
                 options.missed_receive_relief_consume_actions,
             ),
         )
@@ -88,6 +92,7 @@ class BonusModel:
                 options.metadata,
                 options.period_event_id,
                 options.rewards,
+                options.missed_receive_relief_verify_actions,
                 options.missed_receive_relief_consume_actions,
             ),
         )
@@ -106,6 +111,7 @@ class BonusModel:
                 options.metadata,
                 options.period_event_id,
                 options.rewards,
+                options.missed_receive_relief_verify_actions,
                 options.missed_receive_relief_consume_actions,
             ),
         )
@@ -124,6 +130,7 @@ class BonusModel:
                 options.metadata,
                 options.period_event_id,
                 options.rewards,
+                options.missed_receive_relief_verify_actions,
                 options.missed_receive_relief_consume_actions,
             ),
         )
@@ -153,6 +160,12 @@ class BonusModel:
             ]
         if self.missed_receive_relief is not None:
             properties["missedReceiveRelief"] = self.missed_receive_relief.value
+        if self.missed_receive_relief_verify_actions is not None:
+            properties["missedReceiveReliefVerifyActions"] = [
+                v.properties(
+                )
+                for v in self.missed_receive_relief_verify_actions
+            ]
         if self.missed_receive_relief_consume_actions is not None:
             properties["missedReceiveReliefConsumeActions"] = [
                 v.properties(

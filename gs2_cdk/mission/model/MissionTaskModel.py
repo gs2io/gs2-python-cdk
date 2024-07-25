@@ -14,11 +14,11 @@
 from __future__ import annotations
 from typing import *
 from .TargetCounterModel import TargetCounterModel
-from ...core.model import ConsumeAction
+from ...core.model import VerifyAction
 from ...core.model import AcquireAction
 from .options.MissionTaskModelOptions import MissionTaskModelOptions
 from .options.MissionTaskModelVerifyCompleteTypeIsCounterOptions import MissionTaskModelVerifyCompleteTypeIsCounterOptions
-from .options.MissionTaskModelVerifyCompleteTypeIsConsumeActionsOptions import MissionTaskModelVerifyCompleteTypeIsConsumeActionsOptions
+from .options.MissionTaskModelVerifyCompleteTypeIsVerifyActionsOptions import MissionTaskModelVerifyCompleteTypeIsVerifyActionsOptions
 from .enum.MissionTaskModelVerifyCompleteType import MissionTaskModelVerifyCompleteType
 from .enum.MissionTaskModelTargetResetType import MissionTaskModelTargetResetType
 
@@ -30,7 +30,7 @@ class MissionTaskModel:
     target_value: int
     metadata: Optional[str] = None
     target_counter: Optional[TargetCounterModel] = None
-    verify_complete_consume_actions: Optional[List[ConsumeAction]] = None
+    verify_complete_consume_actions: Optional[List[VerifyAction]] = None
     complete_acquire_actions: Optional[List[AcquireAction]] = None
     challenge_period_event_id: Optional[str] = None
     premise_mission_task_name: Optional[str] = None
@@ -81,15 +81,15 @@ class MissionTaskModel:
         )
 
     @staticmethod
-    def verify_complete_type_is_consume_actions(
+    def verify_complete_type_is_verify_actions(
         name: str,
         counter_name: str,
         target_value: int,
-        options: Optional[MissionTaskModelVerifyCompleteTypeIsConsumeActionsOptions] = MissionTaskModelVerifyCompleteTypeIsConsumeActionsOptions(),
+        options: Optional[MissionTaskModelVerifyCompleteTypeIsVerifyActionsOptions] = MissionTaskModelVerifyCompleteTypeIsVerifyActionsOptions(),
     ) -> MissionTaskModel:
         return MissionTaskModel(
             name,
-            MissionTaskModelVerifyCompleteType.CONSUME_ACTIONS,
+            MissionTaskModelVerifyCompleteType.VERIFY_ACTIONS,
             counter_name,
             target_value,
             MissionTaskModelOptions(

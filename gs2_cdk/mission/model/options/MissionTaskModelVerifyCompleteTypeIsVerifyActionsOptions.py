@@ -20,9 +20,8 @@ from ..enum.MissionTaskModelVerifyCompleteType import MissionTaskModelVerifyComp
 from ..enum.MissionTaskModelTargetResetType import MissionTaskModelTargetResetType
 
 
-class MissionTaskModelOptions:
+class MissionTaskModelVerifyCompleteTypeIsVerifyActionsOptions:
     metadata: Optional[str]
-    target_counter: Optional[TargetCounterModel]
     verify_complete_consume_actions: Optional[List[VerifyAction]]
     complete_acquire_actions: Optional[List[AcquireAction]]
     challenge_period_event_id: Optional[str]
@@ -32,7 +31,6 @@ class MissionTaskModelOptions:
     def __init__(
         self,
         metadata: Optional[str] = None,
-        target_counter: Optional[TargetCounterModel] = None,
         verify_complete_consume_actions: Optional[List[VerifyAction]] = None,
         complete_acquire_actions: Optional[List[AcquireAction]] = None,
         challenge_period_event_id: Optional[str] = None,
@@ -40,10 +38,8 @@ class MissionTaskModelOptions:
         target_reset_type: Optional[MissionTaskModelTargetResetType] = None,
     ):
         self.metadata = metadata
-        self.target_counter = target_counter
         self.verify_complete_consume_actions = verify_complete_consume_actions
         self.complete_acquire_actions = complete_acquire_actions
         self.challenge_period_event_id = challenge_period_event_id
         self.premise_mission_task_name = premise_mission_task_name
         self.target_reset_type = target_reset_type
-

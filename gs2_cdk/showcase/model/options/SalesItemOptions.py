@@ -13,19 +13,23 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from ....core.model import VerifyAction
 from ....core.model import ConsumeAction
 from ....core.model import AcquireAction
 
 
 class SalesItemOptions:
     metadata: Optional[str]
+    verify_actions: Optional[List[VerifyAction]]
     consume_actions: Optional[List[ConsumeAction]]
     
     def __init__(
         self,
         metadata: Optional[str] = None,
+        verify_actions: Optional[List[VerifyAction]] = None,
         consume_actions: Optional[List[ConsumeAction]] = None,
     ):
         self.metadata = metadata
+        self.verify_actions = verify_actions
         self.consume_actions = consume_actions
 

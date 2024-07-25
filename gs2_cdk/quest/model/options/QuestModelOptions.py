@@ -15,6 +15,7 @@ from __future__ import annotations
 from typing import *
 from ....core.model import AcquireAction
 from ..Contents import Contents
+from ....core.model import VerifyAction
 from ....core.model import ConsumeAction
 
 
@@ -22,6 +23,7 @@ class QuestModelOptions:
     metadata: Optional[str]
     challenge_period_event_id: Optional[str]
     first_complete_acquire_actions: Optional[List[AcquireAction]]
+    verify_actions: Optional[List[VerifyAction]]
     consume_actions: Optional[List[ConsumeAction]]
     failed_acquire_actions: Optional[List[AcquireAction]]
     premise_quest_names: Optional[List[str]]
@@ -31,6 +33,7 @@ class QuestModelOptions:
         metadata: Optional[str] = None,
         challenge_period_event_id: Optional[str] = None,
         first_complete_acquire_actions: Optional[List[AcquireAction]] = None,
+        verify_actions: Optional[List[VerifyAction]] = None,
         consume_actions: Optional[List[ConsumeAction]] = None,
         failed_acquire_actions: Optional[List[AcquireAction]] = None,
         premise_quest_names: Optional[List[str]] = None,
@@ -38,6 +41,7 @@ class QuestModelOptions:
         self.metadata = metadata
         self.challenge_period_event_id = challenge_period_event_id
         self.first_complete_acquire_actions = first_complete_acquire_actions
+        self.verify_actions = verify_actions
         self.consume_actions = consume_actions
         self.failed_acquire_actions = failed_acquire_actions
         self.premise_quest_names = premise_quest_names

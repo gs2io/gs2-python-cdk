@@ -13,6 +13,7 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from ...core.model import VerifyAction
 from ...core.model import ConsumeAction
 from ...core.model import AcquireAction
 from .options.RateModelOptions import RateModelOptions
@@ -25,6 +26,7 @@ class RateModel:
     name: str
     timing_type: RateModelTimingType
     metadata: Optional[str] = None
+    verify_actions: Optional[List[VerifyAction]] = None
     consume_actions: Optional[List[ConsumeAction]] = None
     lock_time: Optional[int] = None
     acquire_actions: Optional[List[AcquireAction]] = None
@@ -38,6 +40,7 @@ class RateModel:
         self.name = name
         self.timing_type = timing_type
         self.metadata = options.metadata if options.metadata else None
+        self.verify_actions = options.verify_actions if options.verify_actions else None
         self.consume_actions = options.consume_actions if options.consume_actions else None
         self.lock_time = options.lock_time if options.lock_time else None
         self.acquire_actions = options.acquire_actions if options.acquire_actions else None
@@ -52,6 +55,7 @@ class RateModel:
             RateModelTimingType.IMMEDIATE,
             RateModelOptions(
                 options.metadata,
+                options.verify_actions,
                 options.consume_actions,
                 options.acquire_actions,
             ),
@@ -69,6 +73,7 @@ class RateModel:
             RateModelOptions(
                 lock_time,
                 options.metadata,
+                options.verify_actions,
                 options.consume_actions,
                 options.acquire_actions,
             ),
@@ -83,6 +88,12 @@ class RateModel:
             properties["name"] = self.name
         if self.metadata is not None:
             properties["metadata"] = self.metadata
+        if self.verify_actions is not None:
+            properties["verifyActions"] = [
+                v.properties(
+                )
+                for v in self.verify_actions
+            ]
         if self.consume_actions is not None:
             properties["consumeActions"] = [
                 v.properties(
