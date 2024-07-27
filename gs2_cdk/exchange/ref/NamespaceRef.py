@@ -20,7 +20,6 @@ from .IncrementalRateModelRef import IncrementalRateModelRef
 from ..stamp_sheet.ExchangeByUserId import ExchangeByUserId
 from ...core.model import Config
 from ..stamp_sheet.IncrementalExchangeByUserId import IncrementalExchangeByUserId
-from ..stamp_sheet.UnlockIncrementalExchangeByUserId import UnlockIncrementalExchangeByUserId
 from ..stamp_sheet.CreateAwaitByUserId import CreateAwaitByUserId
 from ..stamp_sheet.SkipByUserId import SkipByUserId
 from ..stamp_sheet.DeleteAwaitByUserId import DeleteAwaitByUserId
@@ -80,19 +79,6 @@ class NamespaceRef:
             rate_name,
             count,
             config,
-            user_id,
-        )
-
-    def unlock_incremental_exchange(
-        self,
-        rate_name: str,
-        lock_transaction_id: str,
-        user_id: Optional[str] = "#{userId}",
-    ) -> UnlockIncrementalExchangeByUserId:
-        return UnlockIncrementalExchangeByUserId(
-            self.namespace_name,
-            rate_name,
-            lock_transaction_id,
             user_id,
         )
 

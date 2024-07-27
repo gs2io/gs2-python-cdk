@@ -32,7 +32,6 @@ class Namespace(CdkResource):
     stack: Stack
     name: str
     description: Optional[str] = None
-    enable_direct_enhance: Optional[bool] = None
     transaction_setting: Optional[TransactionSetting] = None
     enhance_script: Optional[ScriptSetting] = None
     log_setting: Optional[LogSetting] = None
@@ -50,7 +49,6 @@ class Namespace(CdkResource):
         self.stack = stack
         self.name = name
         self.description = options.description if options.description else None
-        self.enable_direct_enhance = options.enable_direct_enhance if options.enable_direct_enhance else None
         self.transaction_setting = options.transaction_setting if options.transaction_setting else None
         self.enhance_script = options.enhance_script if options.enhance_script else None
         self.log_setting = options.log_setting if options.log_setting else None
@@ -78,8 +76,6 @@ class Namespace(CdkResource):
             properties["Name"] = self.name
         if self.description is not None:
             properties["Description"] = self.description
-        if self.enable_direct_enhance is not None:
-            properties["EnableDirectEnhance"] = self.enable_direct_enhance
         if self.transaction_setting is not None:
             properties["TransactionSetting"] = self.transaction_setting.properties(
             )

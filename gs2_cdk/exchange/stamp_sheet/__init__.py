@@ -13,7 +13,6 @@
 # permissions and limitations under the License.
 from .ExchangeByUserId import ExchangeByUserId
 from .IncrementalExchangeByUserId import IncrementalExchangeByUserId
-from .UnlockIncrementalExchangeByUserId import UnlockIncrementalExchangeByUserId
 from .CreateAwaitByUserId import CreateAwaitByUserId
 from .SkipByUserId import SkipByUserId
 from .DeleteAwaitByUserId import DeleteAwaitByUserId

@@ -23,28 +23,28 @@ from ....core.model import LogSetting
 
 class NamespaceOptions:
     description: Optional[str]
-    enable_direct_enhance: Optional[bool]
     transaction_setting: Optional[TransactionSetting]
     enhance_script: Optional[ScriptSetting]
     log_setting: Optional[LogSetting]
+    enable_direct_enhance: Optional[bool]
     queue_namespace_id: Optional[str]
     key_id: Optional[str]
     
     def __init__(
         self,
         description: Optional[str] = None,
-        enable_direct_enhance: Optional[bool] = None,
         transaction_setting: Optional[TransactionSetting] = None,
         enhance_script: Optional[ScriptSetting] = None,
         log_setting: Optional[LogSetting] = None,
+        enable_direct_enhance: Optional[bool] = None,
         queue_namespace_id: Optional[str] = None,
         key_id: Optional[str] = None,
     ):
         self.description = description
-        self.enable_direct_enhance = enable_direct_enhance
         self.transaction_setting = transaction_setting
         self.enhance_script = enhance_script
         self.log_setting = log_setting
+        self.enable_direct_enhance = enable_direct_enhance
         self.queue_namespace_id = queue_namespace_id
         self.key_id = key_id
 
