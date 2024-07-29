@@ -79,6 +79,9 @@ src/gs2_cdk/distributor/model/__init__.py
 src/gs2_cdk/distributor/ref/DistributorModelRef.py
 src/gs2_cdk/distributor/ref/NamespaceRef.py
 src/gs2_cdk/distributor/ref/__init__.py
+src/gs2_cdk/distributor/stamp_sheet/AndExpressionByUserId.py
+src/gs2_cdk/distributor/stamp_sheet/IfExpressionByUserId.py
+src/gs2_cdk/distributor/stamp_sheet/OrExpressionByUserId.py
 src/gs2_cdk/distributor/stamp_sheet/__init__.py
 src/gs2_cdk/enchant/__init__.py
 src/gs2_cdk/enchant/model/BalanceParameterModel.py
