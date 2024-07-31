@@ -20,6 +20,8 @@ from ...core.model import ScriptSetting
 from ...core.model import LogSetting
 
 from ..ref.NamespaceRef import NamespaceRef
+from .CurrentMasterData import CurrentMasterData
+from .TakeOverTypeModel import TakeOverTypeModel
 
 from .options.NamespaceOptions import NamespaceOptions
 
@@ -117,3 +119,16 @@ class Namespace(CdkResource):
             "Item.NamespaceId",
             None,
         )
+
+    def master_data(
+        self,
+        take_over_type_models: List[TakeOverTypeModel],
+    ) -> Namespace:
+        CurrentMasterData(
+            self.stack,
+            self.name,
+            take_over_type_models,
+        ).add_depends_on(
+            self,
+        )
+        return self

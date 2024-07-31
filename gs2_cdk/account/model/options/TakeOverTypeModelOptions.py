@@ -11,14 +11,17 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-from .Namespace import Namespace
-from .options.NamespaceOptions import NamespaceOptions
-from .TakeOverTypeModel import TakeOverTypeModel
-from .options.TakeOverTypeModelOptions import TakeOverTypeModelOptions
-from .OpenIdConnectSetting import OpenIdConnectSetting
-from .options.OpenIdConnectSettingOptions import OpenIdConnectSettingOptions
-from .PlatformUser import PlatformUser
-from .options.PlatformUserOptions import PlatformUserOptions
-from .BanStatus import BanStatus
-from .options.BanStatusOptions import BanStatusOptions
-from .CurrentMasterData import CurrentMasterData
+from __future__ import annotations
+from typing import *
+from ..OpenIdConnectSetting import OpenIdConnectSetting
+
+
+class TakeOverTypeModelOptions:
+    metadata: Optional[str]
+    
+    def __init__(
+        self,
+        metadata: Optional[str] = None,
+    ):
+        self.metadata = metadata
+

@@ -15,26 +15,19 @@ from __future__ import annotations
 from typing import *
 
 from ...core.func import GetAttr, Join
-from .TakeOverTypeModelRef import TakeOverTypeModelRef
 
 
-class NamespaceRef:
+class TakeOverTypeModelRef:
     namespace_name: str
+    type: int
 
     def __init__(
         self,
         namespace_name: str,
+        type: int,
     ):
         self.namespace_name = namespace_name
-
-    def take_over_type_model(
-        self,
-        type: int,
-    ) -> TakeOverTypeModelRef:
-        return TakeOverTypeModelRef(
-            self.namespace_name,
-            type,
-        )
+        self.type = type
 
     def grn(
         self,
@@ -52,6 +45,9 @@ class NamespaceRef:
                 ),
                 "account",
                 self.namespace_name,
+                "model",
+                "takeOver",
+                self.type,
             ],
         ).str(
         )
