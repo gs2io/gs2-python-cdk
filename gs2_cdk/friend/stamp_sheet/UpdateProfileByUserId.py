@@ -14,50 +14,28 @@
 from __future__ import annotations
 from typing import *
 
-from ...core.func import GetAttr, Join
-from ..stamp_sheet.UpdateProfileByUserId import UpdateProfileByUserId
+from ...core.model import AcquireAction, ConsumeAction, VerifyAction
 
 
-class NamespaceRef:
-    namespace_name: str
+class UpdateProfileByUserId(AcquireAction):
 
     def __init__(
         self,
         namespace_name: str,
-    ):
-        self.namespace_name = namespace_name
-
-    def update_profile(
-        self,
         public_profile: Optional[str] = None,
         follower_profile: Optional[str] = None,
         friend_profile: Optional[str] = None,
         user_id: Optional[str] = "#{userId}",
-    ) -> UpdateProfileByUserId:
-        return UpdateProfileByUserId(
-            self.namespace_name,
-            public_profile,
-            follower_profile,
-            friend_profile,
-            user_id,
-        )
+    ):
+        properties: Dict[str, Any] = {}
 
-    def grn(
-        self,
-    ) -> str:
-        return Join(
-            ":",
-            [
-                "grn",
-                "gs2",
-                GetAttr.region(
-                ).str(
-                ),
-                GetAttr.owner_id(
-                ).str(
-                ),
-                "friend",
-                self.namespace_name,
-            ],
-        ).str(
+        properties["namespaceName"] = namespace_name
+        properties["publicProfile"] = public_profile
+        properties["followerProfile"] = follower_profile
+        properties["friendProfile"] = friend_profile
+        properties["userId"] = user_id
+
+        super().__init__(
+            "Gs2Friend:UpdateProfileByUserId",
+            properties,
         )

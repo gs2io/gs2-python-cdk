@@ -193,6 +193,7 @@ src/gs2_cdk/friend/model/Namespace.py
 src/gs2_cdk/friend/model/__init__.py
 src/gs2_cdk/friend/ref/NamespaceRef.py
 src/gs2_cdk/friend/ref/__init__.py
+src/gs2_cdk/friend/stamp_sheet/UpdateProfileByUserId.py
 src/gs2_cdk/friend/stamp_sheet/__init__.py
 src/gs2_cdk/gateway/__init__.py
 src/gs2_cdk/gateway/model/Namespace.py
@@ -378,6 +379,7 @@ src/gs2_cdk/log/model/ExecuteStampSheetLog.py
 src/gs2_cdk/log/model/ExecuteStampSheetLogCount.py
 src/gs2_cdk/log/model/ExecuteStampTaskLog.py
 src/gs2_cdk/log/model/ExecuteStampTaskLogCount.py
+src/gs2_cdk/log/model/InGameLogTag.py
 src/gs2_cdk/log/model/IssueStampSheetLog.py
 src/gs2_cdk/log/model/IssueStampSheetLogCount.py
 src/gs2_cdk/log/model/Namespace.py

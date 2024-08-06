@@ -36,3 +36,5 @@ from .options.ExecuteStampTaskLogCountOptions import ExecuteStampTaskLogCountOpt
 from .AccessLogWithTelemetry import AccessLogWithTelemetry
 from .options.AccessLogWithTelemetryOptions import AccessLogWithTelemetryOptions
 from .enum.AccessLogWithTelemetryStatus import AccessLogWithTelemetryStatus
+from .InGameLogTag import InGameLogTag
+from .options.InGameLogTagOptions import InGameLogTagOptions
