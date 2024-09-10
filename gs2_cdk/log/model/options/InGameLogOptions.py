@@ -11,23 +11,20 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-
-from .model import *
-from .ref import *
-from .stamp_sheet import *
-
-
-def namespace(
-    namespace_name: str,
-) -> NamespaceRef:
-    return NamespaceRef(
-        namespace_name,
-    )
+from __future__ import annotations
+from typing import *
+from ..InGameLogTag import InGameLogTag
 
 
-def ban_status(
-    name: str,
-) -> BanStatusRef:
-    return BanStatusRef(
-        name,
-    )
+class InGameLogOptions:
+    user_id: Optional[str]
+    tags: Optional[List[InGameLogTag]]
+    
+    def __init__(
+        self,
+        user_id: Optional[str] = None,
+        tags: Optional[List[InGameLogTag]] = None,
+    ):
+        self.user_id = user_id
+        self.tags = tags
+

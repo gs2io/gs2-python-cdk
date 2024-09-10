@@ -23,16 +23,19 @@ from ....core.model import LogSetting
 
 class NamespaceOptions:
     description: Optional[str]
-    change_balance_script: Optional[ScriptSetting]
+    deposit_balance_script: Optional[ScriptSetting]
+    withdraw_balance_script: Optional[ScriptSetting]
     log_setting: Optional[LogSetting]
     
     def __init__(
         self,
         description: Optional[str] = None,
-        change_balance_script: Optional[ScriptSetting] = None,
+        deposit_balance_script: Optional[ScriptSetting] = None,
+        withdraw_balance_script: Optional[ScriptSetting] = None,
         log_setting: Optional[LogSetting] = None,
     ):
         self.description = description
-        self.change_balance_script = change_balance_script
+        self.deposit_balance_script = deposit_balance_script
+        self.withdraw_balance_script = withdraw_balance_script
         self.log_setting = log_setting
 

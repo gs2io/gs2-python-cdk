@@ -12,6 +12,7 @@ src/gs2_cdk/account/model/OpenIdConnectSetting.py
 src/gs2_cdk/account/model/PlatformUser.py
 src/gs2_cdk/account/model/TakeOverTypeModel.py
 src/gs2_cdk/account/model/__init__.py
+src/gs2_cdk/account/ref/BanStatusRef.py
 src/gs2_cdk/account/ref/NamespaceRef.py
 src/gs2_cdk/account/ref/TakeOverTypeModelRef.py
 src/gs2_cdk/account/ref/__init__.py
@@ -379,11 +380,13 @@ src/gs2_cdk/log/model/ExecuteStampSheetLog.py
 src/gs2_cdk/log/model/ExecuteStampSheetLogCount.py
 src/gs2_cdk/log/model/ExecuteStampTaskLog.py
 src/gs2_cdk/log/model/ExecuteStampTaskLogCount.py
+src/gs2_cdk/log/model/InGameLog.py
 src/gs2_cdk/log/model/InGameLogTag.py
 src/gs2_cdk/log/model/IssueStampSheetLog.py
 src/gs2_cdk/log/model/IssueStampSheetLogCount.py
 src/gs2_cdk/log/model/Namespace.py
 src/gs2_cdk/log/model/__init__.py
+src/gs2_cdk/log/ref/InGameLogRef.py
 src/gs2_cdk/log/ref/NamespaceRef.py
 src/gs2_cdk/log/ref/__init__.py
 src/gs2_cdk/log/stamp_sheet/__init__.py

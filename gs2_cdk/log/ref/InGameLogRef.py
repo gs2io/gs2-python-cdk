@@ -11,23 +11,20 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
+from __future__ import annotations
+from typing import *
 
-from .model import *
-from .ref import *
-from .stamp_sheet import *
-
-
-def namespace(
-    namespace_name: str,
-) -> NamespaceRef:
-    return NamespaceRef(
-        namespace_name,
-    )
+from ...core.func import GetAttr, Join
 
 
-def ban_status(
-    name: str,
-) -> BanStatusRef:
-    return BanStatusRef(
-        name,
-    )
+class InGameLogRef:
+    namespace_name: str
+    request_id: str
+
+    def __init__(
+        self,
+        namespace_name: str,
+        request_id: str,
+    ):
+        self.namespace_name = namespace_name
+        self.request_id = request_id

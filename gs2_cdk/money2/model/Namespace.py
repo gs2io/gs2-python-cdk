@@ -35,7 +35,8 @@ class Namespace(CdkResource):
     shared_free_currency: bool
     platform_setting: PlatformSetting
     description: Optional[str] = None
-    change_balance_script: Optional[ScriptSetting] = None
+    deposit_balance_script: Optional[ScriptSetting] = None
+    withdraw_balance_script: Optional[ScriptSetting] = None
     log_setting: Optional[LogSetting] = None
 
     def __init__(
@@ -57,7 +58,8 @@ class Namespace(CdkResource):
         self.shared_free_currency = shared_free_currency
         self.platform_setting = platform_setting
         self.description = options.description if options.description else None
-        self.change_balance_script = options.change_balance_script if options.change_balance_script else None
+        self.deposit_balance_script = options.deposit_balance_script if options.deposit_balance_script else None
+        self.withdraw_balance_script = options.withdraw_balance_script if options.withdraw_balance_script else None
         self.log_setting = options.log_setting if options.log_setting else None
         stack.add_resource(
             self,
@@ -90,8 +92,11 @@ class Namespace(CdkResource):
         if self.platform_setting is not None:
             properties["PlatformSetting"] = self.platform_setting.properties(
             )
-        if self.change_balance_script is not None:
-            properties["ChangeBalanceScript"] = self.change_balance_script.properties(
+        if self.deposit_balance_script is not None:
+            properties["DepositBalanceScript"] = self.deposit_balance_script.properties(
+            )
+        if self.withdraw_balance_script is not None:
+            properties["WithdrawBalanceScript"] = self.withdraw_balance_script.properties(
             )
         if self.log_setting is not None:
             properties["LogSetting"] = self.log_setting.properties(
