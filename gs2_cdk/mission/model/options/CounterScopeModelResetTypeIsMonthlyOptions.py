@@ -13,6 +13,8 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from ....core.model import VerifyAction
+from ..enum.CounterScopeModelScopeType import CounterScopeModelScopeType
 from ..enum.CounterScopeModelResetType import CounterScopeModelResetType
 from ..enum.CounterScopeModelResetDayOfWeek import CounterScopeModelResetDayOfWeek
 

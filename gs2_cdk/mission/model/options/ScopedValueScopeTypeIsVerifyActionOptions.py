@@ -13,15 +13,15 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
-from ....core.model import VerifyAction
-from ..enum.CounterScopeModelScopeType import CounterScopeModelScopeType
-from ..enum.CounterScopeModelResetType import CounterScopeModelResetType
-from ..enum.CounterScopeModelResetDayOfWeek import CounterScopeModelResetDayOfWeek
+from ..enum.ScopedValueScopeType import ScopedValueScopeType
+from ..enum.ScopedValueResetType import ScopedValueResetType
 
 
-class CounterScopeModelResetTypeIsDailyOptions:
+class ScopedValueScopeTypeIsVerifyActionOptions:
+    next_reset_at: Optional[int]
     
     def __init__(
         self,
+        next_reset_at: Optional[int] = None,
     ):
-        pass
+        self.next_reset_at = next_reset_at

@@ -11,17 +11,21 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-from __future__ import annotations
-from typing import *
-from ....core.model import VerifyAction
-from ..enum.CounterScopeModelScopeType import CounterScopeModelScopeType
-from ..enum.CounterScopeModelResetType import CounterScopeModelResetType
-from ..enum.CounterScopeModelResetDayOfWeek import CounterScopeModelResetDayOfWeek
 
 
-class CounterScopeModelResetTypeIsDailyOptions:
-    
+
+
+class TargetCounterModelScopeType:
+    value: str
+    RESET_TIMING: 'TargetCounterModelScopeType'
+    VERIFY_ACTION: 'TargetCounterModelScopeType'
+
     def __init__(
         self,
+        value: str,
     ):
-        pass
+        self.value = value
+
+
+TargetCounterModelScopeType.RESET_TIMING = TargetCounterModelScopeType("resetTiming")
+TargetCounterModelScopeType.VERIFY_ACTION = TargetCounterModelScopeType("verifyAction")

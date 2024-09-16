@@ -13,22 +13,33 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from ....core.model import VerifyAction
+from ..enum.CounterScopeModelScopeType import CounterScopeModelScopeType
 from ..enum.CounterScopeModelResetType import CounterScopeModelResetType
 from ..enum.CounterScopeModelResetDayOfWeek import CounterScopeModelResetDayOfWeek
 
 
 class CounterScopeModelOptions:
+    reset_type: Optional[CounterScopeModelResetType]
     reset_day_of_month: Optional[int]
     reset_day_of_week: Optional[CounterScopeModelResetDayOfWeek]
     reset_hour: Optional[int]
+    condition_name: Optional[str]
+    condition: Optional[VerifyAction]
     
     def __init__(
         self,
+        reset_type: Optional[CounterScopeModelResetType] = None,
         reset_day_of_month: Optional[int] = None,
         reset_day_of_week: Optional[CounterScopeModelResetDayOfWeek] = None,
         reset_hour: Optional[int] = None,
+        condition_name: Optional[str] = None,
+        condition: Optional[VerifyAction] = None,
     ):
+        self.reset_type = reset_type
         self.reset_day_of_month = reset_day_of_month
         self.reset_day_of_week = reset_day_of_week
         self.reset_hour = reset_hour
+        self.condition_name = condition_name
+        self.condition = condition
 

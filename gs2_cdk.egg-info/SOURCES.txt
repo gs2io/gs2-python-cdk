@@ -131,6 +131,7 @@ src/gs2_cdk/enhance/stamp_sheet/__init__.py
 src/gs2_cdk/exchange/__init__.py
 src/gs2_cdk/exchange/model/CurrentMasterData.py
 src/gs2_cdk/exchange/model/IncrementalRateModel.py
+src/gs2_cdk/exchange/model/LogCost.py
 src/gs2_cdk/exchange/model/Namespace.py
 src/gs2_cdk/exchange/model/RateModel.py
 src/gs2_cdk/exchange/model/__init__.py

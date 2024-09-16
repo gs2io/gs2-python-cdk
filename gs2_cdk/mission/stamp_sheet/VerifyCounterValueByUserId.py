@@ -24,7 +24,9 @@ class VerifyCounterValueByUserId(VerifyAction):
         namespace_name: str,
         counter_name: str,
         verify_type: str,
-        reset_type: str,
+        scope_type: Optional[str] = None,
+        reset_type: Optional[str] = None,
+        condition_name: Optional[str] = None,
         value: Optional[int] = None,
         multiply_value_specifying_quantity: Optional[bool] = None,
         user_id: Optional[str] = "#{userId}",
@@ -34,7 +36,9 @@ class VerifyCounterValueByUserId(VerifyAction):
         properties["namespaceName"] = namespace_name
         properties["counterName"] = counter_name
         properties["verifyType"] = verify_type
+        properties["scopeType"] = scope_type
         properties["resetType"] = reset_type
+        properties["conditionName"] = condition_name
         properties["value"] = value
         properties["multiplyValueSpecifyingQuantity"] = multiply_value_specifying_quantity
         properties["userId"] = user_id

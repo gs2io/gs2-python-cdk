@@ -13,15 +13,19 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from ..enum.TargetCounterModelScopeType import TargetCounterModelScopeType
 from ..enum.TargetCounterModelResetType import TargetCounterModelResetType
 
 
 class TargetCounterModelOptions:
     reset_type: Optional[TargetCounterModelResetType]
+    condition_name: Optional[str]
     
     def __init__(
         self,
         reset_type: Optional[TargetCounterModelResetType] = None,
+        condition_name: Optional[str] = None,
     ):
         self.reset_type = reset_type
+        self.condition_name = condition_name
 

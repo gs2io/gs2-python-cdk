@@ -13,15 +13,22 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from ..enum.ScopedValueScopeType import ScopedValueScopeType
 from ..enum.ScopedValueResetType import ScopedValueResetType
 
 
 class ScopedValueOptions:
+    reset_type: Optional[ScopedValueResetType]
+    condition_name: Optional[str]
     next_reset_at: Optional[int]
     
     def __init__(
         self,
+        reset_type: Optional[ScopedValueResetType] = None,
+        condition_name: Optional[str] = None,
         next_reset_at: Optional[int] = None,
     ):
+        self.reset_type = reset_type
+        self.condition_name = condition_name
         self.next_reset_at = next_reset_at
 

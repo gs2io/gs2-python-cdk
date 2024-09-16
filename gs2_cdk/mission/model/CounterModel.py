@@ -13,6 +13,7 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from ...core.model import VerifyAction
 from .CounterScopeModel import CounterScopeModel
 from .options.CounterModelOptions import CounterModelOptions
 

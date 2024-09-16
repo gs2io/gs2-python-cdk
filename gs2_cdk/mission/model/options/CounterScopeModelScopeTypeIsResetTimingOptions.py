@@ -19,7 +19,7 @@ from ..enum.CounterScopeModelResetType import CounterScopeModelResetType
 from ..enum.CounterScopeModelResetDayOfWeek import CounterScopeModelResetDayOfWeek
 
 
-class CounterScopeModelResetTypeIsDailyOptions:
+class CounterScopeModelScopeTypeIsResetTimingOptions:
     
     def __init__(
         self,
