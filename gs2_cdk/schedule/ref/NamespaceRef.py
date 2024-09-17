@@ -17,6 +17,7 @@ from typing import *
 from ...core.func import GetAttr, Join
 from ..stamp_sheet.TriggerByUserId import TriggerByUserId
 from ..stamp_sheet.DeleteTriggerByUserId import DeleteTriggerByUserId
+from ..stamp_sheet.VerifyTriggerByUserId import VerifyTriggerByUserId
 from ..stamp_sheet.VerifyEventByUserId import VerifyEventByUserId
 
 
@@ -52,6 +53,21 @@ class NamespaceRef:
         return DeleteTriggerByUserId(
             self.namespace_name,
             trigger_name,
+            user_id,
+        )
+
+    def verify_trigger(
+        self,
+        trigger_name: str,
+        verify_type: str,
+        elapsed_minutes: Optional[int] = None,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifyTriggerByUserId:
+        return VerifyTriggerByUserId(
+            self.namespace_name,
+            trigger_name,
+            verify_type,
+            elapsed_minutes,
             user_id,
         )
 

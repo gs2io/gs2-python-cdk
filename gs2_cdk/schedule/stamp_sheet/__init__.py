@@ -13,4 +13,5 @@
 # permissions and limitations under the License.
 from .TriggerByUserId import TriggerByUserId
 from .DeleteTriggerByUserId import DeleteTriggerByUserId
+from .VerifyTriggerByUserId import VerifyTriggerByUserId
 from .VerifyEventByUserId import VerifyEventByUserId
