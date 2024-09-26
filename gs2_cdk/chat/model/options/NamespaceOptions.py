@@ -24,6 +24,7 @@ from ....core.model import LogSetting
 class NamespaceOptions:
     description: Optional[str]
     allow_create_room: Optional[bool]
+    message_life_time_days: Optional[int]
     post_message_script: Optional[ScriptSetting]
     create_room_script: Optional[ScriptSetting]
     delete_room_script: Optional[ScriptSetting]
@@ -36,6 +37,7 @@ class NamespaceOptions:
         self,
         description: Optional[str] = None,
         allow_create_room: Optional[bool] = None,
+        message_life_time_days: Optional[int] = None,
         post_message_script: Optional[ScriptSetting] = None,
         create_room_script: Optional[ScriptSetting] = None,
         delete_room_script: Optional[ScriptSetting] = None,
@@ -46,6 +48,7 @@ class NamespaceOptions:
     ):
         self.description = description
         self.allow_create_room = allow_create_room
+        self.message_life_time_days = message_life_time_days
         self.post_message_script = post_message_script
         self.create_room_script = create_room_script
         self.delete_room_script = delete_room_script

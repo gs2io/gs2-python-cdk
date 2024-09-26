@@ -22,6 +22,7 @@ from ..stamp_sheet.IncreaseCounterByUserId import IncreaseCounterByUserId
 from ..stamp_sheet.SetCounterByUserId import SetCounterByUserId
 from ..model.ScopedValue import ScopedValue
 from ..stamp_sheet.ReceiveByUserId import ReceiveByUserId
+from ..stamp_sheet.BatchReceiveByUserId import BatchReceiveByUserId
 from ..stamp_sheet.DecreaseCounterByUserId import DecreaseCounterByUserId
 from ..stamp_sheet.VerifyCompleteByUserId import VerifyCompleteByUserId
 from ..stamp_sheet.VerifyCounterValueByUserId import VerifyCounterValueByUserId
@@ -103,6 +104,19 @@ class NamespaceRef:
             self.namespace_name,
             mission_group_name,
             mission_task_name,
+            user_id,
+        )
+
+    def batch_receive(
+        self,
+        mission_group_name: str,
+        mission_task_names: List[str],
+        user_id: Optional[str] = "#{userId}",
+    ) -> BatchReceiveByUserId:
+        return BatchReceiveByUserId(
+            self.namespace_name,
+            mission_group_name,
+            mission_task_names,
             user_id,
         )
 

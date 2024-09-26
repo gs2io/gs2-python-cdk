@@ -474,6 +474,7 @@ src/gs2_cdk/mission/ref/MissionGroupModelRef.py
 src/gs2_cdk/mission/ref/MissionTaskModelRef.py
 src/gs2_cdk/mission/ref/NamespaceRef.py
 src/gs2_cdk/mission/ref/__init__.py
+src/gs2_cdk/mission/stamp_sheet/BatchReceiveByUserId.py
 src/gs2_cdk/mission/stamp_sheet/DecreaseCounterByUserId.py
 src/gs2_cdk/mission/stamp_sheet/IncreaseCounterByUserId.py
 src/gs2_cdk/mission/stamp_sheet/ReceiveByUserId.py

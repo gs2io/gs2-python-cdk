@@ -14,19 +14,26 @@
 from __future__ import annotations
 from typing import *
 
-from ....core.model import CdkResource, Stack
-from ....core.func import GetAttr
+from ...core.model import AcquireAction, ConsumeAction, VerifyAction
 
 
-class ScriptOptions:
-    description: Optional[str]
-    disable_string_number_to_number: Optional[bool]
-    
+class BatchReceiveByUserId(ConsumeAction):
+
     def __init__(
         self,
-        description: Optional[str] = None,
-        disable_string_number_to_number: Optional[bool] = None,
+        namespace_name: str,
+        mission_group_name: str,
+        mission_task_names: List[str],
+        user_id: Optional[str] = "#{userId}",
     ):
-        self.description = description
-        self.disable_string_number_to_number = disable_string_number_to_number
+        properties: Dict[str, Any] = {}
 
+        properties["namespaceName"] = namespace_name
+        properties["missionGroupName"] = mission_group_name
+        properties["missionTaskNames"] = mission_task_names
+        properties["userId"] = user_id
+
+        super().__init__(
+            "Gs2Mission:BatchReceiveByUserId",
+            properties,
+        )

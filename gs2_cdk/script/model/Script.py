@@ -28,6 +28,7 @@ class Script(CdkResource):
     name: str
     script: str
     description: Optional[str] = None
+    disable_string_number_to_number: Optional[bool] = None
 
     def __init__(
         self,
@@ -46,6 +47,7 @@ class Script(CdkResource):
         self.name = name
         self.script = script
         self.description = options.description if options.description else None
+        self.disable_string_number_to_number = options.disable_string_number_to_number if options.disable_string_number_to_number else None
         stack.add_resource(
             self,
         )
@@ -74,6 +76,8 @@ class Script(CdkResource):
             properties["Description"] = self.description
         if self.script is not None:
             properties["Script"] = self.script
+        if self.disable_string_number_to_number is not None:
+            properties["DisableStringNumberToNumber"] = self.disable_string_number_to_number
 
         return properties
 

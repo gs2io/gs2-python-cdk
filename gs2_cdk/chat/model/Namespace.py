@@ -30,6 +30,7 @@ class Namespace(CdkResource):
     name: str
     description: Optional[str] = None
     allow_create_room: Optional[bool] = None
+    message_life_time_days: Optional[int] = None
     post_message_script: Optional[ScriptSetting] = None
     create_room_script: Optional[ScriptSetting] = None
     delete_room_script: Optional[ScriptSetting] = None
@@ -52,6 +53,7 @@ class Namespace(CdkResource):
         self.name = name
         self.description = options.description if options.description else None
         self.allow_create_room = options.allow_create_room if options.allow_create_room else None
+        self.message_life_time_days = options.message_life_time_days if options.message_life_time_days else None
         self.post_message_script = options.post_message_script if options.post_message_script else None
         self.create_room_script = options.create_room_script if options.create_room_script else None
         self.delete_room_script = options.delete_room_script if options.delete_room_script else None
@@ -85,6 +87,8 @@ class Namespace(CdkResource):
             properties["Description"] = self.description
         if self.allow_create_room is not None:
             properties["AllowCreateRoom"] = self.allow_create_room
+        if self.message_life_time_days is not None:
+            properties["MessageLifeTimeDays"] = self.message_life_time_days
         if self.post_message_script is not None:
             properties["PostMessageScript"] = self.post_message_script.properties(
             )
