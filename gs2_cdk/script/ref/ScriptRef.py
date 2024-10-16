@@ -15,6 +15,8 @@ from __future__ import annotations
 from typing import *
 
 from ...core.func import GetAttr, Join
+from ..stamp_sheet.InvokeScript import InvokeScript
+from ..model.RandomStatus import RandomStatus
 
 
 class ScriptRef:
@@ -28,6 +30,20 @@ class ScriptRef:
     ):
         self.namespace_name = namespace_name
         self.script_name = script_name
+
+    def invoke_script(
+        self,
+        script_id: str,
+        args: Optional[str] = None,
+        random_status: Optional[RandomStatus] = None,
+        user_id: Optional[str] = "#{userId}",
+    ) -> InvokeScript:
+        return InvokeScript(
+            script_id,
+            args,
+            random_status,
+            user_id,
+        )
 
     def grn(
         self,

@@ -13,6 +13,7 @@ src/gs2_cdk/account/model/PlatformUser.py
 src/gs2_cdk/account/model/TakeOverTypeModel.py
 src/gs2_cdk/account/model/__init__.py
 src/gs2_cdk/account/ref/BanStatusRef.py
+src/gs2_cdk/account/ref/MasterDataVersionRef.py
 src/gs2_cdk/account/ref/NamespaceRef.py
 src/gs2_cdk/account/ref/TakeOverTypeModelRef.py
 src/gs2_cdk/account/ref/__init__.py
@@ -583,6 +584,9 @@ src/gs2_cdk/ranking2/ref/SubscribeRankingModelRef.py
 src/gs2_cdk/ranking2/ref/__init__.py
 src/gs2_cdk/ranking2/stamp_sheet/CreateClusterRankingReceivedRewardByUserId.py
 src/gs2_cdk/ranking2/stamp_sheet/CreateGlobalRankingReceivedRewardByUserId.py
+src/gs2_cdk/ranking2/stamp_sheet/VerifyClusterRankingScoreByUserId.py
+src/gs2_cdk/ranking2/stamp_sheet/VerifyGlobalRankingScoreByUserId.py
+src/gs2_cdk/ranking2/stamp_sheet/VerifySubscribeRankingScoreByUserId.py
 src/gs2_cdk/ranking2/stamp_sheet/__init__.py
 src/gs2_cdk/realtime/__init__.py
 src/gs2_cdk/realtime/model/Namespace.py
@@ -616,6 +620,7 @@ src/gs2_cdk/script/model/__init__.py
 src/gs2_cdk/script/ref/NamespaceRef.py
 src/gs2_cdk/script/ref/ScriptRef.py
 src/gs2_cdk/script/ref/__init__.py
+src/gs2_cdk/script/stamp_sheet/InvokeScript.py
 src/gs2_cdk/script/stamp_sheet/__init__.py
 src/gs2_cdk/season_rating/__init__.py
 src/gs2_cdk/season_rating/model/CurrentMasterData.py
@@ -648,6 +653,7 @@ src/gs2_cdk/serial_key/ref/SerialKeyRef.py
 src/gs2_cdk/serial_key/ref/__init__.py
 src/gs2_cdk/serial_key/stamp_sheet/RevertUseByUserId.py
 src/gs2_cdk/serial_key/stamp_sheet/UseByUserId.py
+src/gs2_cdk/serial_key/stamp_sheet/VerifyCodeByUserId.py
 src/gs2_cdk/serial_key/stamp_sheet/__init__.py
 src/gs2_cdk/showcase/__init__.py
 src/gs2_cdk/showcase/model/CurrentMasterData.py

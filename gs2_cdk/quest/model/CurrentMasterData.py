@@ -21,20 +21,20 @@ from .QuestGroupModel import QuestGroupModel
 class CurrentMasterData(CdkResource):
     version: str= "2019-05-14"
     namespace_name: str
-    quest_group_models: List[QuestGroupModel]
+    groups: List[QuestGroupModel]
 
     def __init__(
         self,
         stack: Stack,
         namespace_name: str,
-        quest_group_models: List[QuestGroupModel],
+        groups: List[QuestGroupModel],
     ):
         super().__init__(
             "Quest_CurrentQuestMaster_" + namespace_name
         )
 
         self.namespace_name = namespace_name
-        self.quest_group_models = quest_group_models
+        self.groups = groups
         stack.add_resource(
             self,
         )
@@ -56,11 +56,11 @@ class CurrentMasterData(CdkResource):
         settings: Dict[str, Any] = {}
 
         settings["version"] = self.version
-        if self.quest_group_models is not None:
-            settings["questGroupModels"] = [
+        if self.groups is not None:
+            settings["groups"] = [
                 v.properties(
                 )
-                for v in self.quest_group_models
+                for v in self.groups
             ]
 
         if self.namespace_name is not None:

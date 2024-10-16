@@ -32,11 +32,11 @@ class NamespaceRef:
 
     def entry_model(
         self,
-        entry_name: str,
+        entry_model_name: str,
     ) -> EntryModelRef:
         return EntryModelRef(
             self.namespace_name,
-            entry_name,
+            entry_model_name,
         )
 
     def add_entries(

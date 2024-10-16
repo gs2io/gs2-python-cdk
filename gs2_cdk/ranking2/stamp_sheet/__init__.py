@@ -13,3 +13,6 @@
 # permissions and limitations under the License.
 from .CreateGlobalRankingReceivedRewardByUserId import CreateGlobalRankingReceivedRewardByUserId
 from .CreateClusterRankingReceivedRewardByUserId import CreateClusterRankingReceivedRewardByUserId
+from .VerifyGlobalRankingScoreByUserId import VerifyGlobalRankingScoreByUserId
+from .VerifyClusterRankingScoreByUserId import VerifyClusterRankingScoreByUserId
+from .VerifySubscribeRankingScoreByUserId import VerifySubscribeRankingScoreByUserId

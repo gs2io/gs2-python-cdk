@@ -18,6 +18,7 @@ from ...core.func import GetAttr, Join
 from .CampaignModelRef import CampaignModelRef
 from ..stamp_sheet.RevertUseByUserId import RevertUseByUserId
 from ..stamp_sheet.UseByUserId import UseByUserId
+from ..stamp_sheet.VerifyCodeByUserId import VerifyCodeByUserId
 
 
 class NamespaceRef:
@@ -57,6 +58,19 @@ class NamespaceRef:
         return UseByUserId(
             self.namespace_name,
             code,
+            user_id,
+        )
+
+    def verify_code(
+        self,
+        code: str,
+        verify_type: str,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifyCodeByUserId:
+        return VerifyCodeByUserId(
+            self.namespace_name,
+            code,
+            verify_type,
             user_id,
         )
 

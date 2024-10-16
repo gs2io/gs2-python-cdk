@@ -14,51 +14,27 @@
 from __future__ import annotations
 from typing import *
 
-from ...core.func import GetAttr, Join
-from .ScriptRef import ScriptRef
-from ..stamp_sheet.InvokeScript import InvokeScript
+from ...core.model import AcquireAction, ConsumeAction, VerifyAction
 from ..model.RandomStatus import RandomStatus
 
 
-class NamespaceRef:
-    namespace_name: str
+class InvokeScript(AcquireAction):
 
     def __init__(
-        self,
-        namespace_name: str,
-    ):
-        self.namespace_name = namespace_name
-
-    def invoke_script(
         self,
         script_id: str,
         args: Optional[str] = None,
         random_status: Optional[RandomStatus] = None,
         user_id: Optional[str] = "#{userId}",
-    ) -> InvokeScript:
-        return InvokeScript(
-            script_id,
-            args,
-            random_status,
-            user_id,
-        )
+    ):
+        properties: Dict[str, Any] = {}
 
-    def grn(
-        self,
-    ) -> str:
-        return Join(
-            ":",
-            [
-                "grn",
-                "gs2",
-                GetAttr.region(
-                ).str(
-                ),
-                GetAttr.owner_id(
-                ).str(
-                ),
-                "script",
-                self.namespace_name,
-            ],
-        ).str(
+        properties["scriptId"] = script_id
+        properties["args"] = args
+        properties["randomStatus"] = random_status
+        properties["userId"] = user_id
+
+        super().__init__(
+            "Gs2Script:InvokeScript",
+            properties,
         )

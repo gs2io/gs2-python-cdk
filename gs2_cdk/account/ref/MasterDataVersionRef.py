@@ -15,44 +15,16 @@ from __future__ import annotations
 from typing import *
 
 from ...core.func import GetAttr, Join
-from .TakeOverTypeModelRef import TakeOverTypeModelRef
-from .MasterDataVersionRef import MasterDataVersionRef
 
 
-class NamespaceRef:
+class MasterDataVersionRef:
     namespace_name: str
+    object_key: str
 
     def __init__(
         self,
         namespace_name: str,
+        object_key: str,
     ):
         self.namespace_name = namespace_name
-
-    def take_over_type_model(
-        self,
-        type: int,
-    ) -> TakeOverTypeModelRef:
-        return TakeOverTypeModelRef(
-            self.namespace_name,
-            type,
-        )
-
-    def grn(
-        self,
-    ) -> str:
-        return Join(
-            ":",
-            [
-                "grn",
-                "gs2",
-                GetAttr.region(
-                ).str(
-                ),
-                GetAttr.owner_id(
-                ).str(
-                ),
-                "account",
-                self.namespace_name,
-            ],
-        ).str(
-        )
+        self.object_key = object_key

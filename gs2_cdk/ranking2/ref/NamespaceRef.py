@@ -20,6 +20,9 @@ from .SubscribeRankingModelRef import SubscribeRankingModelRef
 from .ClusterRankingModelRef import ClusterRankingModelRef
 from ..stamp_sheet.CreateGlobalRankingReceivedRewardByUserId import CreateGlobalRankingReceivedRewardByUserId
 from ..stamp_sheet.CreateClusterRankingReceivedRewardByUserId import CreateClusterRankingReceivedRewardByUserId
+from ..stamp_sheet.VerifyGlobalRankingScoreByUserId import VerifyGlobalRankingScoreByUserId
+from ..stamp_sheet.VerifyClusterRankingScoreByUserId import VerifyClusterRankingScoreByUserId
+from ..stamp_sheet.VerifySubscribeRankingScoreByUserId import VerifySubscribeRankingScoreByUserId
 
 
 class NamespaceRef:
@@ -83,6 +86,65 @@ class NamespaceRef:
             ranking_name,
             cluster_name,
             season,
+            user_id,
+        )
+
+    def verify_global_ranking_score(
+        self,
+        ranking_name: str,
+        verify_type: str,
+        score: int,
+        season: Optional[int] = None,
+        multiply_value_specifying_quantity: Optional[bool] = None,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifyGlobalRankingScoreByUserId:
+        return VerifyGlobalRankingScoreByUserId(
+            self.namespace_name,
+            ranking_name,
+            verify_type,
+            score,
+            season,
+            multiply_value_specifying_quantity,
+            user_id,
+        )
+
+    def verify_cluster_ranking_score(
+        self,
+        ranking_name: str,
+        cluster_name: str,
+        verify_type: str,
+        score: int,
+        season: Optional[int] = None,
+        multiply_value_specifying_quantity: Optional[bool] = None,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifyClusterRankingScoreByUserId:
+        return VerifyClusterRankingScoreByUserId(
+            self.namespace_name,
+            ranking_name,
+            cluster_name,
+            verify_type,
+            score,
+            season,
+            multiply_value_specifying_quantity,
+            user_id,
+        )
+
+    def verify_subscribe_ranking_score(
+        self,
+        ranking_name: str,
+        verify_type: str,
+        score: int,
+        season: Optional[int] = None,
+        multiply_value_specifying_quantity: Optional[bool] = None,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifySubscribeRankingScoreByUserId:
+        return VerifySubscribeRankingScoreByUserId(
+            self.namespace_name,
+            ranking_name,
+            verify_type,
+            score,
+            season,
+            multiply_value_specifying_quantity,
             user_id,
         )
 

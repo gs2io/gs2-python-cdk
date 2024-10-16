@@ -22,15 +22,15 @@ from ..stamp_sheet.VerifyEntryByUserId import VerifyEntryByUserId
 
 class EntryModelRef:
     namespace_name: str
-    entry_name: str
+    entry_model_name: str
 
     def __init__(
         self,
         namespace_name: str,
-        entry_name: str,
+        entry_model_name: str,
     ):
         self.namespace_name = namespace_name
-        self.entry_name = entry_name
+        self.entry_model_name = entry_model_name
 
     def add_entries(
         self,
@@ -56,13 +56,12 @@ class EntryModelRef:
 
     def verify_entry(
         self,
-        entry_model_name: str,
         verify_type: str,
         user_id: Optional[str] = "#{userId}",
     ) -> VerifyEntryByUserId:
         return VerifyEntryByUserId(
             self.namespace_name,
-            entry_model_name,
+            self.entry_model_name,
             verify_type,
             user_id,
         )
@@ -84,7 +83,7 @@ class EntryModelRef:
                 "dictionary",
                 self.namespace_name,
                 "model",
-                self.entry_name,
+                self.entry_model_name,
             ],
         ).str(
         )

@@ -93,12 +93,12 @@ class Namespace(CdkResource):
 
     def master_data(
         self,
-        category_models: List[CategoryModel],
+        categories: List[CategoryModel],
     ) -> Namespace:
         CurrentMasterData(
             self.stack,
             self.name,
-            category_models,
+            categories,
         ).add_depends_on(
             self,
         )

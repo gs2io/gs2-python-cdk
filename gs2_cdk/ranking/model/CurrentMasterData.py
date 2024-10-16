@@ -21,20 +21,20 @@ from .CategoryModel import CategoryModel
 class CurrentMasterData(CdkResource):
     version: str= "2019-09-17"
     namespace_name: str
-    category_models: List[CategoryModel]
+    categories: List[CategoryModel]
 
     def __init__(
         self,
         stack: Stack,
         namespace_name: str,
-        category_models: List[CategoryModel],
+        categories: List[CategoryModel],
     ):
         super().__init__(
             "Ranking_CurrentRankingMaster_" + namespace_name
         )
 
         self.namespace_name = namespace_name
-        self.category_models = category_models
+        self.categories = categories
         stack.add_resource(
             self,
         )
@@ -56,11 +56,11 @@ class CurrentMasterData(CdkResource):
         settings: Dict[str, Any] = {}
 
         settings["version"] = self.version
-        if self.category_models is not None:
-            settings["categoryModels"] = [
+        if self.categories is not None:
+            settings["categories"] = [
                 v.properties(
                 )
-                for v in self.category_models
+                for v in self.categories
             ]
 
         if self.namespace_name is not None:

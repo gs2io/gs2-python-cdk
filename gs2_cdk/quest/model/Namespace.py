@@ -115,12 +115,12 @@ class Namespace(CdkResource):
 
     def master_data(
         self,
-        quest_group_models: List[QuestGroupModel],
+        groups: List[QuestGroupModel],
     ) -> Namespace:
         CurrentMasterData(
             self.stack,
             self.name,
-            quest_group_models,
+            groups,
         ).add_depends_on(
             self,
         )
