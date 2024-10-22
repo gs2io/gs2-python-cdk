@@ -13,3 +13,4 @@
 # permissions and limitations under the License.
 from .NamespaceRef import NamespaceRef
 from .BuffEntryModelRef import BuffEntryModelRef
+from .MasterDataVersionRef import MasterDataVersionRef

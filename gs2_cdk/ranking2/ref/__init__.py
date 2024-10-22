@@ -19,3 +19,4 @@ from .ClusterRankingModelRef import ClusterRankingModelRef
 from .ClusterRankingSeasonRef import ClusterRankingSeasonRef
 from .ClusterRankingBorderRef import ClusterRankingBorderRef
 from .SubscribeRankingModelRef import SubscribeRankingModelRef
+from .MasterDataVersionRef import MasterDataVersionRef

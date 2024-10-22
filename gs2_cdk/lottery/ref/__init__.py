@@ -14,4 +14,5 @@
 from .NamespaceRef import NamespaceRef
 from .LotteryModelRef import LotteryModelRef
 from .PrizeTableRef import PrizeTableRef
+from .MasterDataVersionRef import MasterDataVersionRef
 from .PrizeLimitRef import PrizeLimitRef

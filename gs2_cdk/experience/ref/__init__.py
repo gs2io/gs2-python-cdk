@@ -14,3 +14,4 @@
 from .NamespaceRef import NamespaceRef
 from .ExperienceModelRef import ExperienceModelRef
 from .ThresholdRef import ThresholdRef
+from .MasterDataVersionRef import MasterDataVersionRef

@@ -12,6 +12,7 @@
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
 from .NamespaceRef import NamespaceRef
+from .MasterDataVersionRef import MasterDataVersionRef
 from .StaminaModelRef import StaminaModelRef
 from .MaxStaminaTableRef import MaxStaminaTableRef
 from .RecoverIntervalTableRef import RecoverIntervalTableRef

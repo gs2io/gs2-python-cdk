@@ -14,3 +14,4 @@
 from .NamespaceRef import NamespaceRef
 from .BalanceParameterModelRef import BalanceParameterModelRef
 from .RarityParameterModelRef import RarityParameterModelRef
+from .MasterDataVersionRef import MasterDataVersionRef

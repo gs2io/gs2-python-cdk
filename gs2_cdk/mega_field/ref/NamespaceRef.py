@@ -16,7 +16,6 @@ from typing import *
 
 from ...core.func import GetAttr, Join
 from .AreaModelRef import AreaModelRef
-from .NodeRef import NodeRef
 from .LayerRef import LayerRef
 
 

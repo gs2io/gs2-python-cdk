@@ -17,5 +17,6 @@ from .InboxRef import InboxRef
 from .GuildRef import GuildRef
 from .IgnoreUsersRef import IgnoreUsersRef
 from .LastGuildMasterActivityRef import LastGuildMasterActivityRef
+from .MasterDataVersionRef import MasterDataVersionRef
 from .RoleModelRef import RoleModelRef
 from .IgnoreUserRef import IgnoreUserRef

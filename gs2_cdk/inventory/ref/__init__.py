@@ -18,3 +18,4 @@ from .SimpleInventoryModelRef import SimpleInventoryModelRef
 from .SimpleItemModelRef import SimpleItemModelRef
 from .BigInventoryModelRef import BigInventoryModelRef
 from .BigItemModelRef import BigItemModelRef
+from .MasterDataVersionRef import MasterDataVersionRef

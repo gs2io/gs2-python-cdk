@@ -15,3 +15,4 @@ from .NamespaceRef import NamespaceRef
 from .FormModelRef import FormModelRef
 from .MoldModelRef import MoldModelRef
 from .PropertyFormModelRef import PropertyFormModelRef
+from .MasterDataVersionRef import MasterDataVersionRef

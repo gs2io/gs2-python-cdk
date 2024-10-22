@@ -14,3 +14,4 @@
 from .NamespaceRef import NamespaceRef
 from .RateModelRef import RateModelRef
 from .UnleashRateModelRef import UnleashRateModelRef
+from .MasterDataVersionRef import MasterDataVersionRef

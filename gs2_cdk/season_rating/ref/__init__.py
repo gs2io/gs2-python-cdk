@@ -14,4 +14,5 @@
 from .NamespaceRef import NamespaceRef
 from .MatchSessionRef import MatchSessionRef
 from .SeasonModelRef import SeasonModelRef
+from .MasterDataVersionRef import MasterDataVersionRef
 from .VoteRef import VoteRef

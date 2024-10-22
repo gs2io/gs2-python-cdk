@@ -14,3 +14,4 @@
 from .NamespaceRef import NamespaceRef
 from .IssueJobRef import IssueJobRef
 from .CampaignModelRef import CampaignModelRef
+from .MasterDataVersionRef import MasterDataVersionRef

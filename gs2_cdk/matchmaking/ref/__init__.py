@@ -13,4 +13,5 @@
 # permissions and limitations under the License.
 from .NamespaceRef import NamespaceRef
 from .RatingModelRef import RatingModelRef
+from .MasterDataVersionRef import MasterDataVersionRef
 from .SeasonModelRef import SeasonModelRef

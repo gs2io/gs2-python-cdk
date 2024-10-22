@@ -14,5 +14,6 @@
 from .NamespaceRef import NamespaceRef
 from .AreaModelRef import AreaModelRef
 from .LayerModelRef import LayerModelRef
+from .MasterDataVersionRef import MasterDataVersionRef
 from .NodeRef import NodeRef
 from .LayerRef import LayerRef

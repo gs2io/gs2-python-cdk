@@ -16,7 +16,6 @@ from typing import *
 
 from ...core.func import GetAttr, Join
 from .TakeOverTypeModelRef import TakeOverTypeModelRef
-from .MasterDataVersionRef import MasterDataVersionRef
 
 
 class NamespaceRef:

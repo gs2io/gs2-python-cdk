@@ -15,7 +15,6 @@ from __future__ import annotations
 from typing import *
 
 from ...core.func import GetAttr, Join
-from .ClusterRankingSeasonRef import ClusterRankingSeasonRef
 
 
 class ClusterRankingModelRef:

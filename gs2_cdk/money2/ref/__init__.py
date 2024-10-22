@@ -13,5 +13,6 @@
 # permissions and limitations under the License.
 from .NamespaceRef import NamespaceRef
 from .StoreContentModelRef import StoreContentModelRef
+from .MasterDataVersionRef import MasterDataVersionRef
 from .DailyTransactionHistoryRef import DailyTransactionHistoryRef
 from .UnusedBalanceRef import UnusedBalanceRef
