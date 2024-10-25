@@ -23,12 +23,14 @@ from ....core.model import LogSetting
 
 class NamespaceOptions:
     description: Optional[str]
+    change_notification: Optional[NotificationSetting]
     join_notification: Optional[NotificationSetting]
     leave_notification: Optional[NotificationSetting]
     change_member_notification: Optional[NotificationSetting]
     receive_request_notification: Optional[NotificationSetting]
     remove_request_notification: Optional[NotificationSetting]
     create_guild_script: Optional[ScriptSetting]
+    update_guild_script: Optional[ScriptSetting]
     join_guild_script: Optional[ScriptSetting]
     leave_guild_script: Optional[ScriptSetting]
     change_role_script: Optional[ScriptSetting]
@@ -37,24 +39,28 @@ class NamespaceOptions:
     def __init__(
         self,
         description: Optional[str] = None,
+        change_notification: Optional[NotificationSetting] = None,
         join_notification: Optional[NotificationSetting] = None,
         leave_notification: Optional[NotificationSetting] = None,
         change_member_notification: Optional[NotificationSetting] = None,
         receive_request_notification: Optional[NotificationSetting] = None,
         remove_request_notification: Optional[NotificationSetting] = None,
         create_guild_script: Optional[ScriptSetting] = None,
+        update_guild_script: Optional[ScriptSetting] = None,
         join_guild_script: Optional[ScriptSetting] = None,
         leave_guild_script: Optional[ScriptSetting] = None,
         change_role_script: Optional[ScriptSetting] = None,
         log_setting: Optional[LogSetting] = None,
     ):
         self.description = description
+        self.change_notification = change_notification
         self.join_notification = join_notification
         self.leave_notification = leave_notification
         self.change_member_notification = change_member_notification
         self.receive_request_notification = receive_request_notification
         self.remove_request_notification = remove_request_notification
         self.create_guild_script = create_guild_script
+        self.update_guild_script = update_guild_script
         self.join_guild_script = join_guild_script
         self.leave_guild_script = leave_guild_script
         self.change_role_script = change_role_script

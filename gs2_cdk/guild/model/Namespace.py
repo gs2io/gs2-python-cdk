@@ -31,12 +31,14 @@ class Namespace(CdkResource):
     stack: Stack
     name: str
     description: Optional[str] = None
+    change_notification: Optional[NotificationSetting] = None
     join_notification: Optional[NotificationSetting] = None
     leave_notification: Optional[NotificationSetting] = None
     change_member_notification: Optional[NotificationSetting] = None
     receive_request_notification: Optional[NotificationSetting] = None
     remove_request_notification: Optional[NotificationSetting] = None
     create_guild_script: Optional[ScriptSetting] = None
+    update_guild_script: Optional[ScriptSetting] = None
     join_guild_script: Optional[ScriptSetting] = None
     leave_guild_script: Optional[ScriptSetting] = None
     change_role_script: Optional[ScriptSetting] = None
@@ -55,12 +57,14 @@ class Namespace(CdkResource):
         self.stack = stack
         self.name = name
         self.description = options.description if options.description else None
+        self.change_notification = options.change_notification if options.change_notification else None
         self.join_notification = options.join_notification if options.join_notification else None
         self.leave_notification = options.leave_notification if options.leave_notification else None
         self.change_member_notification = options.change_member_notification if options.change_member_notification else None
         self.receive_request_notification = options.receive_request_notification if options.receive_request_notification else None
         self.remove_request_notification = options.remove_request_notification if options.remove_request_notification else None
         self.create_guild_script = options.create_guild_script if options.create_guild_script else None
+        self.update_guild_script = options.update_guild_script if options.update_guild_script else None
         self.join_guild_script = options.join_guild_script if options.join_guild_script else None
         self.leave_guild_script = options.leave_guild_script if options.leave_guild_script else None
         self.change_role_script = options.change_role_script if options.change_role_script else None
@@ -89,6 +93,9 @@ class Namespace(CdkResource):
             properties["Name"] = self.name
         if self.description is not None:
             properties["Description"] = self.description
+        if self.change_notification is not None:
+            properties["ChangeNotification"] = self.change_notification.properties(
+            )
         if self.join_notification is not None:
             properties["JoinNotification"] = self.join_notification.properties(
             )
@@ -106,6 +113,9 @@ class Namespace(CdkResource):
             )
         if self.create_guild_script is not None:
             properties["CreateGuildScript"] = self.create_guild_script.properties(
+            )
+        if self.update_guild_script is not None:
+            properties["UpdateGuildScript"] = self.update_guild_script.properties(
             )
         if self.join_guild_script is not None:
             properties["JoinGuildScript"] = self.join_guild_script.properties(
