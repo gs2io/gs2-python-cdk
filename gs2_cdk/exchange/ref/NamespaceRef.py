@@ -21,6 +21,7 @@ from ..stamp_sheet.ExchangeByUserId import ExchangeByUserId
 from ...core.model import Config
 from ..stamp_sheet.IncrementalExchangeByUserId import IncrementalExchangeByUserId
 from ..stamp_sheet.CreateAwaitByUserId import CreateAwaitByUserId
+from ..stamp_sheet.AcquireForceByUserId import AcquireForceByUserId
 from ..stamp_sheet.SkipByUserId import SkipByUserId
 from ..stamp_sheet.DeleteAwaitByUserId import DeleteAwaitByUserId
 
@@ -93,6 +94,19 @@ class NamespaceRef:
             self.namespace_name,
             rate_name,
             count,
+            config,
+            user_id,
+        )
+
+    def acquire_force(
+        self,
+        await_name: Optional[str] = None,
+        config: Optional[List[Config]] = None,
+        user_id: Optional[str] = "#{userId}",
+    ) -> AcquireForceByUserId:
+        return AcquireForceByUserId(
+            self.namespace_name,
+            await_name,
             config,
             user_id,
         )

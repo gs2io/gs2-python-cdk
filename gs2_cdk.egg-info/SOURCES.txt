@@ -146,6 +146,7 @@ src/gs2_cdk/exchange/ref/MasterDataVersionRef.py
 src/gs2_cdk/exchange/ref/NamespaceRef.py
 src/gs2_cdk/exchange/ref/RateModelRef.py
 src/gs2_cdk/exchange/ref/__init__.py
+src/gs2_cdk/exchange/stamp_sheet/AcquireForceByUserId.py
 src/gs2_cdk/exchange/stamp_sheet/CreateAwaitByUserId.py
 src/gs2_cdk/exchange/stamp_sheet/DeleteAwaitByUserId.py
 src/gs2_cdk/exchange/stamp_sheet/ExchangeByUserId.py

@@ -14,5 +14,6 @@
 from .ExchangeByUserId import ExchangeByUserId
 from .IncrementalExchangeByUserId import IncrementalExchangeByUserId
 from .CreateAwaitByUserId import CreateAwaitByUserId
+from .AcquireForceByUserId import AcquireForceByUserId
 from .SkipByUserId import SkipByUserId
 from .DeleteAwaitByUserId import DeleteAwaitByUserId
