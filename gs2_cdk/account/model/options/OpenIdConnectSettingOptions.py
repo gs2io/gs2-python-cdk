@@ -20,6 +20,7 @@ class OpenIdConnectSettingOptions:
     apple_team_id: Optional[str]
     apple_key_id: Optional[str]
     apple_private_key_pem: Optional[str]
+    done_endpoint_url: Optional[str]
     
     def __init__(
         self,
@@ -27,9 +28,11 @@ class OpenIdConnectSettingOptions:
         apple_team_id: Optional[str] = None,
         apple_key_id: Optional[str] = None,
         apple_private_key_pem: Optional[str] = None,
+        done_endpoint_url: Optional[str] = None,
     ):
         self.client_secret = client_secret
         self.apple_team_id = apple_team_id
         self.apple_key_id = apple_key_id
         self.apple_private_key_pem = apple_private_key_pem
+        self.done_endpoint_url = done_endpoint_url
 

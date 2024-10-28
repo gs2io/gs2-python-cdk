@@ -23,6 +23,7 @@ class OpenIdConnectSetting:
     apple_team_id: Optional[str] = None
     apple_key_id: Optional[str] = None
     apple_private_key_pem: Optional[str] = None
+    done_endpoint_url: Optional[str] = None
 
     def __init__(
         self,
@@ -36,6 +37,7 @@ class OpenIdConnectSetting:
         self.apple_team_id = options.apple_team_id if options.apple_team_id else None
         self.apple_key_id = options.apple_key_id if options.apple_key_id else None
         self.apple_private_key_pem = options.apple_private_key_pem if options.apple_private_key_pem else None
+        self.done_endpoint_url = options.done_endpoint_url if options.done_endpoint_url else None
 
     def properties(
         self,
@@ -54,5 +56,7 @@ class OpenIdConnectSetting:
             properties["appleKeyId"] = self.apple_key_id
         if self.apple_private_key_pem is not None:
             properties["applePrivateKeyPem"] = self.apple_private_key_pem
+        if self.done_endpoint_url is not None:
+            properties["doneEndpointUrl"] = self.done_endpoint_url
 
         return properties
