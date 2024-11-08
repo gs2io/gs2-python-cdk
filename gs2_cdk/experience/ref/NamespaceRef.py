@@ -114,6 +114,7 @@ class NamespaceRef:
         property_id: str,
         rate_name: str,
         acquire_actions: Optional[List[AcquireAction]] = None,
+        base_rate: Optional[float] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> MultiplyAcquireActionsByUserId:
         return MultiplyAcquireActionsByUserId(
@@ -122,6 +123,7 @@ class NamespaceRef:
             property_id,
             rate_name,
             acquire_actions,
+            base_rate,
             user_id,
         )
 

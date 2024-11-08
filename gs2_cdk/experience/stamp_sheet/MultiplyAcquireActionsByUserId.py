@@ -26,6 +26,7 @@ class MultiplyAcquireActionsByUserId(AcquireAction):
         property_id: str,
         rate_name: str,
         acquire_actions: Optional[List[AcquireAction]] = None,
+        base_rate: Optional[float] = None,
         user_id: Optional[str] = "#{userId}",
     ):
         properties: Dict[str, Any] = {}
@@ -35,6 +36,7 @@ class MultiplyAcquireActionsByUserId(AcquireAction):
         properties["propertyId"] = property_id
         properties["rateName"] = rate_name
         properties["acquireActions"] = acquire_actions
+        properties["baseRate"] = base_rate
         properties["userId"] = user_id
 
         super().__init__(
