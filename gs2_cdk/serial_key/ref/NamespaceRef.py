@@ -17,6 +17,7 @@ from typing import *
 from ...core.func import GetAttr, Join
 from .CampaignModelRef import CampaignModelRef
 from ..stamp_sheet.RevertUseByUserId import RevertUseByUserId
+from ..stamp_sheet.IssueOnce import IssueOnce
 from ..stamp_sheet.UseByUserId import UseByUserId
 from ..stamp_sheet.VerifyCodeByUserId import VerifyCodeByUserId
 
@@ -50,6 +51,17 @@ class NamespaceRef:
             user_id,
         )
 
+    def issue_once(
+        self,
+        campaign_model_name: str,
+        metadata: Optional[str] = None,
+    ) -> IssueOnce:
+        return IssueOnce(
+            self.namespace_name,
+            campaign_model_name,
+            metadata,
+        )
+
     def use(
         self,
         code: str,
@@ -65,12 +77,14 @@ class NamespaceRef:
         self,
         code: str,
         verify_type: str,
+        campaign_model_name: Optional[str] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> VerifyCodeByUserId:
         return VerifyCodeByUserId(
             self.namespace_name,
             code,
             verify_type,
+            campaign_model_name,
             user_id,
         )
 

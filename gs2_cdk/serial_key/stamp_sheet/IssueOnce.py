@@ -17,25 +17,21 @@ from typing import *
 from ...core.model import AcquireAction, ConsumeAction, VerifyAction
 
 
-class VerifyCodeByUserId(VerifyAction):
+class IssueOnce(AcquireAction):
 
     def __init__(
         self,
         namespace_name: str,
-        code: str,
-        verify_type: str,
-        campaign_model_name: Optional[str] = None,
-        user_id: Optional[str] = "#{userId}",
+        campaign_model_name: str,
+        metadata: Optional[str] = None,
     ):
         properties: Dict[str, Any] = {}
 
         properties["namespaceName"] = namespace_name
-        properties["code"] = code
-        properties["verifyType"] = verify_type
         properties["campaignModelName"] = campaign_model_name
-        properties["userId"] = user_id
+        properties["metadata"] = metadata
 
         super().__init__(
-            "Gs2SerialKey:VerifyCodeByUserId",
+            "Gs2SerialKey:IssueOnce",
             properties,
         )
