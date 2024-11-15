@@ -27,6 +27,8 @@ class GuildModel:
     guild_member_default_role: str
     rejoin_cool_time_minutes: int
     metadata: Optional[str] = None
+    max_concurrent_join_guilds: Optional[int] = None
+    max_concurrent_guild_master_count: Optional[int] = None
 
     def __init__(
         self,
@@ -49,6 +51,8 @@ class GuildModel:
         self.guild_member_default_role = guild_member_default_role
         self.rejoin_cool_time_minutes = rejoin_cool_time_minutes
         self.metadata = options.metadata if options.metadata else None
+        self.max_concurrent_join_guilds = options.max_concurrent_join_guilds if options.max_concurrent_join_guilds else None
+        self.max_concurrent_guild_master_count = options.max_concurrent_guild_master_count if options.max_concurrent_guild_master_count else None
 
     def properties(
         self,
@@ -77,5 +81,9 @@ class GuildModel:
             properties["guildMemberDefaultRole"] = self.guild_member_default_role
         if self.rejoin_cool_time_minutes is not None:
             properties["rejoinCoolTimeMinutes"] = self.rejoin_cool_time_minutes
+        if self.max_concurrent_join_guilds is not None:
+            properties["maxConcurrentJoinGuilds"] = self.max_concurrent_join_guilds
+        if self.max_concurrent_guild_master_count is not None:
+            properties["maxConcurrentGuildMasterCount"] = self.max_concurrent_guild_master_count
 
         return properties
