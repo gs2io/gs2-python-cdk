@@ -52,4 +52,12 @@ from .enum.TargetCounterModelScopeType import TargetCounterModelScopeType
 from .enum.TargetCounterModelResetType import TargetCounterModelResetType
 from .options.TargetCounterModelScopeTypeIsResetTimingOptions import TargetCounterModelScopeTypeIsResetTimingOptions
 from .options.TargetCounterModelScopeTypeIsVerifyActionOptions import TargetCounterModelScopeTypeIsVerifyActionOptions
+from .VerifyActionResult import VerifyActionResult
+from .options.VerifyActionResultOptions import VerifyActionResultOptions
+from .ConsumeActionResult import ConsumeActionResult
+from .options.ConsumeActionResultOptions import ConsumeActionResultOptions
+from .AcquireActionResult import AcquireActionResult
+from .options.AcquireActionResultOptions import AcquireActionResultOptions
+from .TransactionResult import TransactionResult
+from .options.TransactionResultOptions import TransactionResultOptions
 from .CurrentMasterData import CurrentMasterData

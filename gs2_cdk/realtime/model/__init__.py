@@ -11,9 +11,9 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
+#
+# deny overwrite
 from .Namespace import Namespace
 from .options.NamespaceOptions import NamespaceOptions
 from .enum.NamespaceServerType import NamespaceServerType
 from .enum.NamespaceServerSpec import NamespaceServerSpec
-from .Room import Room
-from .options.RoomOptions import RoomOptions

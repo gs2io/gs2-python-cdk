@@ -21,3 +21,11 @@ from .RandomUsed import RandomUsed
 from .options.RandomUsedOptions import RandomUsedOptions
 from .Transaction import Transaction
 from .options.TransactionOptions import TransactionOptions
+from .VerifyActionResult import VerifyActionResult
+from .options.VerifyActionResultOptions import VerifyActionResultOptions
+from .ConsumeActionResult import ConsumeActionResult
+from .options.ConsumeActionResultOptions import ConsumeActionResultOptions
+from .AcquireActionResult import AcquireActionResult
+from .options.AcquireActionResultOptions import AcquireActionResultOptions
+from .TransactionResult import TransactionResult
+from .options.TransactionResultOptions import TransactionResultOptions

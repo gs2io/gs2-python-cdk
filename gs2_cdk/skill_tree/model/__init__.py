@@ -15,4 +15,12 @@ from .Namespace import Namespace
 from .options.NamespaceOptions import NamespaceOptions
 from .NodeModel import NodeModel
 from .options.NodeModelOptions import NodeModelOptions
+from .VerifyActionResult import VerifyActionResult
+from .options.VerifyActionResultOptions import VerifyActionResultOptions
+from .ConsumeActionResult import ConsumeActionResult
+from .options.ConsumeActionResultOptions import ConsumeActionResultOptions
+from .AcquireActionResult import AcquireActionResult
+from .options.AcquireActionResultOptions import AcquireActionResultOptions
+from .TransactionResult import TransactionResult
+from .options.TransactionResultOptions import TransactionResultOptions
 from .CurrentMasterData import CurrentMasterData

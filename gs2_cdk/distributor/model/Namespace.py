@@ -32,6 +32,7 @@ class Namespace(CdkResource):
     description: Optional[str] = None
     assume_user_id: Optional[str] = None
     auto_run_stamp_sheet_notification: Optional[NotificationSetting] = None
+    auto_run_transaction_notification: Optional[NotificationSetting] = None
     log_setting: Optional[LogSetting] = None
 
     def __init__(
@@ -49,6 +50,7 @@ class Namespace(CdkResource):
         self.description = options.description if options.description else None
         self.assume_user_id = options.assume_user_id if options.assume_user_id else None
         self.auto_run_stamp_sheet_notification = options.auto_run_stamp_sheet_notification if options.auto_run_stamp_sheet_notification else None
+        self.auto_run_transaction_notification = options.auto_run_transaction_notification if options.auto_run_transaction_notification else None
         self.log_setting = options.log_setting if options.log_setting else None
         stack.add_resource(
             self,
@@ -78,6 +80,9 @@ class Namespace(CdkResource):
             properties["AssumeUserId"] = self.assume_user_id
         if self.auto_run_stamp_sheet_notification is not None:
             properties["AutoRunStampSheetNotification"] = self.auto_run_stamp_sheet_notification.properties(
+            )
+        if self.auto_run_transaction_notification is not None:
+            properties["AutoRunTransactionNotification"] = self.auto_run_transaction_notification.properties(
             )
         if self.log_setting is not None:
             properties["LogSetting"] = self.log_setting.properties(

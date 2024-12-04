@@ -24,6 +24,7 @@ class NamespaceOptions:
     description: Optional[str]
     assume_user_id: Optional[str]
     auto_run_stamp_sheet_notification: Optional[NotificationSetting]
+    auto_run_transaction_notification: Optional[NotificationSetting]
     log_setting: Optional[LogSetting]
     
     def __init__(
@@ -31,10 +32,12 @@ class NamespaceOptions:
         description: Optional[str] = None,
         assume_user_id: Optional[str] = None,
         auto_run_stamp_sheet_notification: Optional[NotificationSetting] = None,
+        auto_run_transaction_notification: Optional[NotificationSetting] = None,
         log_setting: Optional[LogSetting] = None,
     ):
         self.description = description
         self.assume_user_id = assume_user_id
         self.auto_run_stamp_sheet_notification = auto_run_stamp_sheet_notification
+        self.auto_run_transaction_notification = auto_run_transaction_notification
         self.log_setting = log_setting
 

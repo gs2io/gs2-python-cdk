@@ -30,4 +30,12 @@ from .ReceiveMemberRequest import ReceiveMemberRequest
 from .options.ReceiveMemberRequestOptions import ReceiveMemberRequestOptions
 from .IgnoreUser import IgnoreUser
 from .options.IgnoreUserOptions import IgnoreUserOptions
+from .VerifyActionResult import VerifyActionResult
+from .options.VerifyActionResultOptions import VerifyActionResultOptions
+from .ConsumeActionResult import ConsumeActionResult
+from .options.ConsumeActionResultOptions import ConsumeActionResultOptions
+from .AcquireActionResult import AcquireActionResult
+from .options.AcquireActionResultOptions import AcquireActionResultOptions
+from .TransactionResult import TransactionResult
+from .options.TransactionResultOptions import TransactionResultOptions
 from .CurrentMasterData import CurrentMasterData

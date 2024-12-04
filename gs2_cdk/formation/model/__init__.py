@@ -26,4 +26,12 @@ from .options.SlotModelOptions import SlotModelOptions
 from .SlotWithSignature import SlotWithSignature
 from .options.SlotWithSignatureOptions import SlotWithSignatureOptions
 from .enum.SlotWithSignaturePropertyType import SlotWithSignaturePropertyType
+from .VerifyActionResult import VerifyActionResult
+from .options.VerifyActionResultOptions import VerifyActionResultOptions
+from .ConsumeActionResult import ConsumeActionResult
+from .options.ConsumeActionResultOptions import ConsumeActionResultOptions
+from .AcquireActionResult import AcquireActionResult
+from .options.AcquireActionResultOptions import AcquireActionResultOptions
+from .TransactionResult import TransactionResult
+from .options.TransactionResultOptions import TransactionResultOptions
 from .CurrentMasterData import CurrentMasterData

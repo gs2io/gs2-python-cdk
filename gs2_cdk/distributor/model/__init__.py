@@ -15,6 +15,12 @@ from .Namespace import Namespace
 from .options.NamespaceOptions import NamespaceOptions
 from .DistributorModel import DistributorModel
 from .options.DistributorModelOptions import DistributorModelOptions
+from .AcquireActionResult import AcquireActionResult
+from .options.AcquireActionResultOptions import AcquireActionResultOptions
+from .ConsumeActionResult import ConsumeActionResult
+from .options.ConsumeActionResultOptions import ConsumeActionResultOptions
+from .VerifyActionResult import VerifyActionResult
+from .options.VerifyActionResultOptions import VerifyActionResultOptions
 from .DistributeResource import DistributeResource
 from .options.DistributeResourceOptions import DistributeResourceOptions
 from .CurrentMasterData import CurrentMasterData

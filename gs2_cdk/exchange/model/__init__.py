@@ -26,4 +26,14 @@ from .options.IncrementalRateModelCalculateTypeIsPowerOptions import Incremental
 from .options.IncrementalRateModelCalculateTypeIsGs2ScriptOptions import IncrementalRateModelCalculateTypeIsGs2ScriptOptions
 from .LogCost import LogCost
 from .options.LogCostOptions import LogCostOptions
+from .LogRate import LogRate
+from .options.LogRateOptions import LogRateOptions
+from .VerifyActionResult import VerifyActionResult
+from .options.VerifyActionResultOptions import VerifyActionResultOptions
+from .ConsumeActionResult import ConsumeActionResult
+from .options.ConsumeActionResultOptions import ConsumeActionResultOptions
+from .AcquireActionResult import AcquireActionResult
+from .options.AcquireActionResultOptions import AcquireActionResultOptions
+from .TransactionResult import TransactionResult
+from .options.TransactionResultOptions import TransactionResultOptions
 from .CurrentMasterData import CurrentMasterData

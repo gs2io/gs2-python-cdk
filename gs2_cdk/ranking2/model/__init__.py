@@ -25,4 +25,12 @@ from .options.SubscribeRankingModelOptions import SubscribeRankingModelOptions
 from .enum.SubscribeRankingModelOrderDirection import SubscribeRankingModelOrderDirection
 from .RankingReward import RankingReward
 from .options.RankingRewardOptions import RankingRewardOptions
+from .VerifyActionResult import VerifyActionResult
+from .options.VerifyActionResultOptions import VerifyActionResultOptions
+from .ConsumeActionResult import ConsumeActionResult
+from .options.ConsumeActionResultOptions import ConsumeActionResultOptions
+from .AcquireActionResult import AcquireActionResult
+from .options.AcquireActionResultOptions import AcquireActionResultOptions
+from .TransactionResult import TransactionResult
+from .options.TransactionResultOptions import TransactionResultOptions
 from .CurrentMasterData import CurrentMasterData

@@ -32,4 +32,12 @@ from .DrawnPrize import DrawnPrize
 from .options.DrawnPrizeOptions import DrawnPrizeOptions
 from .BoxItem import BoxItem
 from .options.BoxItemOptions import BoxItemOptions
+from .VerifyActionResult import VerifyActionResult
+from .options.VerifyActionResultOptions import VerifyActionResultOptions
+from .ConsumeActionResult import ConsumeActionResult
+from .options.ConsumeActionResultOptions import ConsumeActionResultOptions
+from .AcquireActionResult import AcquireActionResult
+from .options.AcquireActionResultOptions import AcquireActionResultOptions
+from .TransactionResult import TransactionResult
+from .options.TransactionResultOptions import TransactionResultOptions
 from .CurrentMasterData import CurrentMasterData

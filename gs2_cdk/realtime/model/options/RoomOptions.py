@@ -11,25 +11,5 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-from __future__ import annotations
-from typing import *
-
-from ....core.model import CdkResource, Stack
-from ....core.func import GetAttr
-
-
-class RoomOptions:
-    ip_address: Optional[str]
-    port: Optional[int]
-    encryption_key: Optional[str]
-    
-    def __init__(
-        self,
-        ip_address: Optional[str] = None,
-        port: Optional[int] = None,
-        encryption_key: Optional[str] = None,
-    ):
-        self.ip_address = ip_address
-        self.port = port
-        self.encryption_key = encryption_key
-
+#
+# deny overwrite
