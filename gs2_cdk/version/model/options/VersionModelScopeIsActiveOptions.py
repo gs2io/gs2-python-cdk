@@ -17,6 +17,7 @@ from ..Version import Version
 from ..ScheduleVersion import ScheduleVersion
 from ..enum.VersionModelScope import VersionModelScope
 from ..enum.VersionModelType import VersionModelType
+from ..enum.VersionModelApproveRequirement import VersionModelApproveRequirement
 
 
 class VersionModelScopeIsActiveOptions:

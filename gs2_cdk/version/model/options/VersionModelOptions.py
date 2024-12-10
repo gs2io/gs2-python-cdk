@@ -17,6 +17,7 @@ from ..Version import Version
 from ..ScheduleVersion import ScheduleVersion
 from ..enum.VersionModelScope import VersionModelScope
 from ..enum.VersionModelType import VersionModelType
+from ..enum.VersionModelApproveRequirement import VersionModelApproveRequirement
 
 
 class VersionModelOptions:
@@ -27,6 +28,7 @@ class VersionModelOptions:
     schedule_versions: Optional[List[ScheduleVersion]]
     need_signature: Optional[bool]
     signature_key_id: Optional[str]
+    approve_requirement: Optional[VersionModelApproveRequirement]
     
     def __init__(
         self,
@@ -37,6 +39,7 @@ class VersionModelOptions:
         schedule_versions: Optional[List[ScheduleVersion]] = None,
         need_signature: Optional[bool] = None,
         signature_key_id: Optional[str] = None,
+        approve_requirement: Optional[VersionModelApproveRequirement] = None,
     ):
         self.metadata = metadata
         self.current_version = current_version
@@ -45,4 +48,5 @@ class VersionModelOptions:
         self.schedule_versions = schedule_versions
         self.need_signature = need_signature
         self.signature_key_id = signature_key_id
+        self.approve_requirement = approve_requirement
 

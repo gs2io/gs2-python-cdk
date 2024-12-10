@@ -17,6 +17,7 @@ from .VersionModel import VersionModel
 from .options.VersionModelOptions import VersionModelOptions
 from .enum.VersionModelScope import VersionModelScope
 from .enum.VersionModelType import VersionModelType
+from .enum.VersionModelApproveRequirement import VersionModelApproveRequirement
 from .options.VersionModelTypeIsSimpleOptions import VersionModelTypeIsSimpleOptions
 from .options.VersionModelTypeIsScheduleOptions import VersionModelTypeIsScheduleOptions
 from .options.VersionModelScopeIsPassiveOptions import VersionModelScopeIsPassiveOptions

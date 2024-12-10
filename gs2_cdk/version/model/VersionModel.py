@@ -22,6 +22,7 @@ from .options.VersionModelScopeIsPassiveOptions import VersionModelScopeIsPassiv
 from .options.VersionModelScopeIsActiveOptions import VersionModelScopeIsActiveOptions
 from .enum.VersionModelScope import VersionModelScope
 from .enum.VersionModelType import VersionModelType
+from .enum.VersionModelApproveRequirement import VersionModelApproveRequirement
 
 
 class VersionModel:
@@ -35,6 +36,7 @@ class VersionModel:
     schedule_versions: Optional[List[ScheduleVersion]] = None
     need_signature: Optional[bool] = None
     signature_key_id: Optional[str] = None
+    approve_requirement: Optional[VersionModelApproveRequirement] = None
 
     def __init__(
         self,
@@ -53,6 +55,7 @@ class VersionModel:
         self.schedule_versions = options.schedule_versions if options.schedule_versions else None
         self.need_signature = options.need_signature if options.need_signature else None
         self.signature_key_id = options.signature_key_id if options.signature_key_id else None
+        self.approve_requirement = options.approve_requirement if options.approve_requirement else None
 
     @staticmethod
     def type_is_simple(
@@ -112,6 +115,7 @@ class VersionModel:
     def scope_is_active(
         name: str,
         type: VersionModelType,
+        approve_requirement: VersionModelApproveRequirement,
         options: Optional[VersionModelScopeIsActiveOptions] = VersionModelScopeIsActiveOptions(),
     ) -> VersionModel:
         return VersionModel(
@@ -119,6 +123,7 @@ class VersionModel:
             VersionModelScope.ACTIVE,
             type,
             VersionModelOptions(
+                approve_requirement,
                 options.metadata,
                 options.schedule_versions,
             ),
@@ -156,5 +161,7 @@ class VersionModel:
             properties["needSignature"] = self.need_signature
         if self.signature_key_id is not None:
             properties["signatureKeyId"] = self.signature_key_id
+        if self.approve_requirement is not None:
+            properties["approveRequirement"] = self.approve_requirement.value
 
         return properties

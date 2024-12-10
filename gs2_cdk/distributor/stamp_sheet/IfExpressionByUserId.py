@@ -17,7 +17,7 @@ from typing import *
 from ...core.model import AcquireAction, ConsumeAction, VerifyAction
 
 
-class IfExpressionByUserId(ConsumeAction):
+class IfExpressionByUserId(VerifyAction):
 
     def __init__(
         self,
