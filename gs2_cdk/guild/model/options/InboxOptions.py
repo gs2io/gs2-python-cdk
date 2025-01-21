@@ -13,17 +13,21 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from ..ReceiveMemberRequest import ReceiveMemberRequest
 
 
 class InboxOptions:
     from_user_ids: Optional[List[str]]
+    receive_member_requests: Optional[List[ReceiveMemberRequest]]
     revision: Optional[int]
     
     def __init__(
         self,
         from_user_ids: Optional[List[str]] = None,
+        receive_member_requests: Optional[List[ReceiveMemberRequest]] = None,
         revision: Optional[int] = None,
     ):
         self.from_user_ids = from_user_ids
+        self.receive_member_requests = receive_member_requests
         self.revision = revision
 

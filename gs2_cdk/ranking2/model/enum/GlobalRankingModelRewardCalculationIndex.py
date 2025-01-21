@@ -11,16 +11,21 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-from __future__ import annotations
-from typing import *
 
 
-class MemberOptions:
-    metadata: Optional[str]
-    
+
+
+class GlobalRankingModelRewardCalculationIndex:
+    value: str
+    RANK: 'GlobalRankingModelRewardCalculationIndex'
+    INDEX: 'GlobalRankingModelRewardCalculationIndex'
+
     def __init__(
         self,
-        metadata: Optional[str] = None,
+        value: str,
     ):
-        self.metadata = metadata
+        self.value = value
 
+
+GlobalRankingModelRewardCalculationIndex.RANK = GlobalRankingModelRewardCalculationIndex("rank")
+GlobalRankingModelRewardCalculationIndex.INDEX = GlobalRankingModelRewardCalculationIndex("index")

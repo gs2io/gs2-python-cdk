@@ -15,6 +15,11 @@ from .Namespace import Namespace
 from .options.NamespaceOptions import NamespaceOptions
 from .DistributorModel import DistributorModel
 from .options.DistributorModelOptions import DistributorModelOptions
+from .BatchRequestPayload import BatchRequestPayload
+from .options.BatchRequestPayloadOptions import BatchRequestPayloadOptions
+from .enum.BatchRequestPayloadService import BatchRequestPayloadService
+from .BatchResultPayload import BatchResultPayload
+from .options.BatchResultPayloadOptions import BatchResultPayloadOptions
 from .AcquireActionResult import AcquireActionResult
 from .options.AcquireActionResultOptions import AcquireActionResultOptions
 from .ConsumeActionResult import ConsumeActionResult

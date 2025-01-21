@@ -25,6 +25,8 @@ class GuildOptions:
     attribute3: Optional[int]
     attribute4: Optional[int]
     attribute5: Optional[int]
+    metadata: Optional[str]
+    member_metadata: Optional[str]
     custom_roles: Optional[List[RoleModel]]
     guild_member_default_role: Optional[str]
     time_offset_token: Optional[str]
@@ -36,6 +38,8 @@ class GuildOptions:
         attribute3: Optional[int] = None,
         attribute4: Optional[int] = None,
         attribute5: Optional[int] = None,
+        metadata: Optional[str] = None,
+        member_metadata: Optional[str] = None,
         custom_roles: Optional[List[RoleModel]] = None,
         guild_member_default_role: Optional[str] = None,
         time_offset_token: Optional[str] = None,
@@ -45,6 +49,8 @@ class GuildOptions:
         self.attribute3 = attribute3
         self.attribute4 = attribute4
         self.attribute5 = attribute5
+        self.metadata = metadata
+        self.member_metadata = member_metadata
         self.custom_roles = custom_roles
         self.guild_member_default_role = guild_member_default_role
         self.time_offset_token = time_offset_token

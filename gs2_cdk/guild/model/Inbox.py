@@ -13,12 +13,14 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from .ReceiveMemberRequest import ReceiveMemberRequest
 from .options.InboxOptions import InboxOptions
 
 
 class Inbox:
     guild_name: str
     from_user_ids: Optional[List[str]] = None
+    receive_member_requests: Optional[List[ReceiveMemberRequest]] = None
     revision: Optional[int] = None
 
     def __init__(
@@ -28,6 +30,7 @@ class Inbox:
     ):
         self.guild_name = guild_name
         self.from_user_ids = options.from_user_ids if options.from_user_ids else None
+        self.receive_member_requests = options.receive_member_requests if options.receive_member_requests else None
         self.revision = options.revision if options.revision else None
 
     def properties(
@@ -39,5 +42,11 @@ class Inbox:
             properties["guildName"] = self.guild_name
         if self.from_user_ids is not None:
             properties["fromUserIds"] = self.from_user_ids
+        if self.receive_member_requests is not None:
+            properties["receiveMemberRequests"] = [
+                v.properties(
+                )
+                for v in self.receive_member_requests
+            ]
 
         return properties

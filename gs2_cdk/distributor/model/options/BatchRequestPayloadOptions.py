@@ -13,14 +13,13 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from ..enum.BatchRequestPayloadService import BatchRequestPayloadService
 
 
-class MemberOptions:
-    metadata: Optional[str]
+class BatchRequestPayloadOptions:
     
     def __init__(
         self,
-        metadata: Optional[str] = None,
     ):
-        self.metadata = metadata
+        pass
 

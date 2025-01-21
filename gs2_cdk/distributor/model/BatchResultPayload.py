@@ -13,34 +13,35 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
-from .options.ReceiveMemberRequestOptions import ReceiveMemberRequestOptions
+from .options.BatchResultPayloadOptions import BatchResultPayloadOptions
 
 
-class ReceiveMemberRequest:
-    user_id: str
-    target_guild_name: str
-    metadata: Optional[str] = None
+class BatchResultPayload:
+    request_id: str
+    status_code: int
+    result_payload: str
 
     def __init__(
         self,
-        user_id: str,
-        target_guild_name: str,
-        options: Optional[ReceiveMemberRequestOptions] = ReceiveMemberRequestOptions(),
+        request_id: str,
+        status_code: int,
+        result_payload: str,
+        options: Optional[BatchResultPayloadOptions] = BatchResultPayloadOptions(),
     ):
-        self.user_id = user_id
-        self.target_guild_name = target_guild_name
-        self.metadata = options.metadata if options.metadata else None
+        self.request_id = request_id
+        self.status_code = status_code
+        self.result_payload = result_payload
 
     def properties(
         self,
     ) -> Dict[str, Any]:
         properties: Dict[str, Any] = {}
 
-        if self.user_id is not None:
-            properties["userId"] = self.user_id
-        if self.target_guild_name is not None:
-            properties["targetGuildName"] = self.target_guild_name
-        if self.metadata is not None:
-            properties["metadata"] = self.metadata
+        if self.request_id is not None:
+            properties["requestId"] = self.request_id
+        if self.status_code is not None:
+            properties["statusCode"] = self.status_code
+        if self.result_payload is not None:
+            properties["resultPayload"] = self.result_payload
 
         return properties

@@ -79,6 +79,8 @@ src/gs2_cdk/dictionary/stamp_sheet/VerifyEntryByUserId.py
 src/gs2_cdk/dictionary/stamp_sheet/__init__.py
 src/gs2_cdk/distributor/__init__.py
 src/gs2_cdk/distributor/model/AcquireActionResult.py
+src/gs2_cdk/distributor/model/BatchRequestPayload.py
+src/gs2_cdk/distributor/model/BatchResultPayload.py
 src/gs2_cdk/distributor/model/ConsumeActionResult.py
 src/gs2_cdk/distributor/model/CurrentMasterData.py
 src/gs2_cdk/distributor/model/DistributeResource.py

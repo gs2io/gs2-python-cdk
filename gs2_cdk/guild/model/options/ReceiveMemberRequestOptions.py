@@ -16,9 +16,11 @@ from typing import *
 
 
 class ReceiveMemberRequestOptions:
+    metadata: Optional[str]
     
     def __init__(
         self,
+        metadata: Optional[str] = None,
     ):
-        pass
+        self.metadata = metadata
 

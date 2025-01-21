@@ -36,6 +36,8 @@ class Guild(CdkResource):
     attribute3: Optional[int] = None
     attribute4: Optional[int] = None
     attribute5: Optional[int] = None
+    metadata: Optional[str] = None
+    member_metadata: Optional[str] = None
     custom_roles: Optional[List[RoleModel]] = None
     guild_member_default_role: Optional[str] = None
     time_offset_token: Optional[str] = None
@@ -65,6 +67,8 @@ class Guild(CdkResource):
         self.attribute3 = options.attribute3 if options.attribute3 else None
         self.attribute4 = options.attribute4 if options.attribute4 else None
         self.attribute5 = options.attribute5 if options.attribute5 else None
+        self.metadata = options.metadata if options.metadata else None
+        self.member_metadata = options.member_metadata if options.member_metadata else None
         self.custom_roles = options.custom_roles if options.custom_roles else None
         self.guild_member_default_role = options.guild_member_default_role if options.guild_member_default_role else None
         self.time_offset_token = options.time_offset_token if options.time_offset_token else None
@@ -106,6 +110,10 @@ class Guild(CdkResource):
             properties["Attribute4"] = self.attribute4
         if self.attribute5 is not None:
             properties["Attribute5"] = self.attribute5
+        if self.metadata is not None:
+            properties["Metadata"] = self.metadata
+        if self.member_metadata is not None:
+            properties["MemberMetadata"] = self.member_metadata
         if self.join_policy is not None:
             properties["JoinPolicy"] = self.join_policy
         if self.custom_roles is not None:

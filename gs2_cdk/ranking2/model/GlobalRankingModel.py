@@ -17,12 +17,14 @@ from ...core.model import AcquireAction
 from .RankingReward import RankingReward
 from .options.GlobalRankingModelOptions import GlobalRankingModelOptions
 from .enum.GlobalRankingModelOrderDirection import GlobalRankingModelOrderDirection
+from .enum.GlobalRankingModelRewardCalculationIndex import GlobalRankingModelRewardCalculationIndex
 
 
 class GlobalRankingModel:
     name: str
     sum: bool
     order_direction: GlobalRankingModelOrderDirection
+    reward_calculation_index: GlobalRankingModelRewardCalculationIndex
     metadata: Optional[str] = None
     minimum_value: Optional[int] = None
     maximum_value: Optional[int] = None
@@ -35,11 +37,13 @@ class GlobalRankingModel:
         name: str,
         sum: bool,
         order_direction: GlobalRankingModelOrderDirection,
+        reward_calculation_index: GlobalRankingModelRewardCalculationIndex,
         options: Optional[GlobalRankingModelOptions] = GlobalRankingModelOptions(),
     ):
         self.name = name
         self.sum = sum
         self.order_direction = order_direction
+        self.reward_calculation_index = reward_calculation_index
         self.metadata = options.metadata if options.metadata else None
         self.minimum_value = options.minimum_value if options.minimum_value else None
         self.maximum_value = options.maximum_value if options.maximum_value else None
@@ -74,5 +78,7 @@ class GlobalRankingModel:
             ]
         if self.access_period_event_id is not None:
             properties["accessPeriodEventId"] = self.access_period_event_id
+        if self.reward_calculation_index is not None:
+            properties["rewardCalculationIndex"] = self.reward_calculation_index.value
 
         return properties

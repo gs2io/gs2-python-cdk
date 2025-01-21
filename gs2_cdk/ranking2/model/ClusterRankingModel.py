@@ -18,6 +18,7 @@ from .RankingReward import RankingReward
 from .options.ClusterRankingModelOptions import ClusterRankingModelOptions
 from .enum.ClusterRankingModelClusterType import ClusterRankingModelClusterType
 from .enum.ClusterRankingModelOrderDirection import ClusterRankingModelOrderDirection
+from .enum.ClusterRankingModelRewardCalculationIndex import ClusterRankingModelRewardCalculationIndex
 
 
 class ClusterRankingModel:
@@ -25,6 +26,7 @@ class ClusterRankingModel:
     cluster_type: ClusterRankingModelClusterType
     sum: bool
     order_direction: ClusterRankingModelOrderDirection
+    reward_calculation_index: ClusterRankingModelRewardCalculationIndex
     metadata: Optional[str] = None
     minimum_value: Optional[int] = None
     maximum_value: Optional[int] = None
@@ -38,12 +40,14 @@ class ClusterRankingModel:
         cluster_type: ClusterRankingModelClusterType,
         sum: bool,
         order_direction: ClusterRankingModelOrderDirection,
+        reward_calculation_index: ClusterRankingModelRewardCalculationIndex,
         options: Optional[ClusterRankingModelOptions] = ClusterRankingModelOptions(),
     ):
         self.name = name
         self.cluster_type = cluster_type
         self.sum = sum
         self.order_direction = order_direction
+        self.reward_calculation_index = reward_calculation_index
         self.metadata = options.metadata if options.metadata else None
         self.minimum_value = options.minimum_value if options.minimum_value else None
         self.maximum_value = options.maximum_value if options.maximum_value else None
@@ -80,5 +84,7 @@ class ClusterRankingModel:
             ]
         if self.access_period_event_id is not None:
             properties["accessPeriodEventId"] = self.access_period_event_id
+        if self.reward_calculation_index is not None:
+            properties["rewardCalculationIndex"] = self.reward_calculation_index.value
 
         return properties

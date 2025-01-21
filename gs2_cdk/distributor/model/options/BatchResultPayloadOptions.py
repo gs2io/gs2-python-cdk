@@ -15,12 +15,10 @@ from __future__ import annotations
 from typing import *
 
 
-class MemberOptions:
-    metadata: Optional[str]
+class BatchResultPayloadOptions:
     
     def __init__(
         self,
-        metadata: Optional[str] = None,
     ):
-        self.metadata = metadata
+        pass
 

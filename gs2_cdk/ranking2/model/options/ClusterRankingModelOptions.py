@@ -17,6 +17,7 @@ from ....core.model import AcquireAction
 from ..RankingReward import RankingReward
 from ..enum.ClusterRankingModelClusterType import ClusterRankingModelClusterType
 from ..enum.ClusterRankingModelOrderDirection import ClusterRankingModelOrderDirection
+from ..enum.ClusterRankingModelRewardCalculationIndex import ClusterRankingModelRewardCalculationIndex
 
 
 class ClusterRankingModelOptions:

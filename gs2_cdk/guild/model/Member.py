@@ -19,6 +19,7 @@ from .options.MemberOptions import MemberOptions
 class Member:
     user_id: str
     role_name: str
+    metadata: Optional[str] = None
 
     def __init__(
         self,
@@ -28,6 +29,7 @@ class Member:
     ):
         self.user_id = user_id
         self.role_name = role_name
+        self.metadata = options.metadata if options.metadata else None
 
     def properties(
         self,
@@ -38,5 +40,7 @@ class Member:
             properties["userId"] = self.user_id
         if self.role_name is not None:
             properties["roleName"] = self.role_name
+        if self.metadata is not None:
+            properties["metadata"] = self.metadata
 
         return properties
