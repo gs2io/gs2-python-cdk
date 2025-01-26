@@ -13,6 +13,7 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from .ScopeValue import ScopeValue
 from .options.OpenIdConnectSettingOptions import OpenIdConnectSettingOptions
 
 
@@ -24,6 +25,8 @@ class OpenIdConnectSetting:
     apple_key_id: Optional[str] = None
     apple_private_key_pem: Optional[str] = None
     done_endpoint_url: Optional[str] = None
+    additional_scope_values: Optional[List[ScopeValue]] = None
+    additional_return_values: Optional[List[str]] = None
 
     def __init__(
         self,
@@ -38,6 +41,8 @@ class OpenIdConnectSetting:
         self.apple_key_id = options.apple_key_id if options.apple_key_id else None
         self.apple_private_key_pem = options.apple_private_key_pem if options.apple_private_key_pem else None
         self.done_endpoint_url = options.done_endpoint_url if options.done_endpoint_url else None
+        self.additional_scope_values = options.additional_scope_values if options.additional_scope_values else None
+        self.additional_return_values = options.additional_return_values if options.additional_return_values else None
 
     def properties(
         self,
@@ -58,5 +63,13 @@ class OpenIdConnectSetting:
             properties["applePrivateKeyPem"] = self.apple_private_key_pem
         if self.done_endpoint_url is not None:
             properties["doneEndpointUrl"] = self.done_endpoint_url
+        if self.additional_scope_values is not None:
+            properties["additionalScopeValues"] = [
+                v.properties(
+                )
+                for v in self.additional_scope_values
+            ]
+        if self.additional_return_values is not None:
+            properties["additionalReturnValues"] = self.additional_return_values
 
         return properties

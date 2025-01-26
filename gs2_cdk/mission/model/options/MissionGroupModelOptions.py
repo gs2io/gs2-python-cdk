@@ -28,6 +28,8 @@ class MissionGroupModelOptions:
     reset_day_of_week: Optional[MissionGroupModelResetDayOfWeek]
     reset_hour: Optional[int]
     complete_notification_namespace_id: Optional[str]
+    anchor_timestamp: Optional[int]
+    days: Optional[int]
     
     def __init__(
         self,
@@ -37,6 +39,8 @@ class MissionGroupModelOptions:
         reset_day_of_week: Optional[MissionGroupModelResetDayOfWeek] = None,
         reset_hour: Optional[int] = None,
         complete_notification_namespace_id: Optional[str] = None,
+        anchor_timestamp: Optional[int] = None,
+        days: Optional[int] = None,
     ):
         self.metadata = metadata
         self.tasks = tasks
@@ -44,4 +48,6 @@ class MissionGroupModelOptions:
         self.reset_day_of_week = reset_day_of_week
         self.reset_hour = reset_hour
         self.complete_notification_namespace_id = complete_notification_namespace_id
+        self.anchor_timestamp = anchor_timestamp
+        self.days = days
 

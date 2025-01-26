@@ -21,6 +21,7 @@ class ScopedValueResetType:
     DAILY: 'ScopedValueResetType'
     WEEKLY: 'ScopedValueResetType'
     MONTHLY: 'ScopedValueResetType'
+    DAYS: 'ScopedValueResetType'
 
     def __init__(
         self,
@@ -33,3 +34,4 @@ ScopedValueResetType.NOT_RESET = ScopedValueResetType("notReset")
 ScopedValueResetType.DAILY = ScopedValueResetType("daily")
 ScopedValueResetType.WEEKLY = ScopedValueResetType("weekly")
 ScopedValueResetType.MONTHLY = ScopedValueResetType("monthly")
+ScopedValueResetType.DAYS = ScopedValueResetType("days")

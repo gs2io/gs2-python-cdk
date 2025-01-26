@@ -13,6 +13,7 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from ..ScopeValue import ScopeValue
 
 
 class OpenIdConnectSettingOptions:
@@ -21,6 +22,8 @@ class OpenIdConnectSettingOptions:
     apple_key_id: Optional[str]
     apple_private_key_pem: Optional[str]
     done_endpoint_url: Optional[str]
+    additional_scope_values: Optional[List[ScopeValue]]
+    additional_return_values: Optional[List[str]]
     
     def __init__(
         self,
@@ -29,10 +32,14 @@ class OpenIdConnectSettingOptions:
         apple_key_id: Optional[str] = None,
         apple_private_key_pem: Optional[str] = None,
         done_endpoint_url: Optional[str] = None,
+        additional_scope_values: Optional[List[ScopeValue]] = None,
+        additional_return_values: Optional[List[str]] = None,
     ):
         self.client_secret = client_secret
         self.apple_team_id = apple_team_id
         self.apple_key_id = apple_key_id
         self.apple_private_key_pem = apple_private_key_pem
         self.done_endpoint_url = done_endpoint_url
+        self.additional_scope_values = additional_scope_values
+        self.additional_return_values = additional_return_values
 

@@ -13,16 +13,25 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
-from ..ScopeValue import ScopeValue
-from ..OpenIdConnectSetting import OpenIdConnectSetting
+from ..TargetCounterModel import TargetCounterModel
+from ....core.model import VerifyAction
+from ....core.model import AcquireAction
+from ..MissionTaskModel import MissionTaskModel
+from ..enum.MissionGroupModelResetType import MissionGroupModelResetType
+from ..enum.MissionGroupModelResetDayOfWeek import MissionGroupModelResetDayOfWeek
 
 
-class TakeOverTypeModelOptions:
+class MissionGroupModelResetTypeIsDaysOptions:
     metadata: Optional[str]
+    tasks: Optional[List[MissionTaskModel]]
+    complete_notification_namespace_id: Optional[str]
     
     def __init__(
         self,
         metadata: Optional[str] = None,
+        tasks: Optional[List[MissionTaskModel]] = None,
+        complete_notification_namespace_id: Optional[str] = None,
     ):
         self.metadata = metadata
-
+        self.tasks = tasks
+        self.complete_notification_namespace_id = complete_notification_namespace_id

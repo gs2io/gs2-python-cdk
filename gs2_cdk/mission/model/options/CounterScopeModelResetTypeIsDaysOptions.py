@@ -13,16 +13,15 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
-from ..ScopeValue import ScopeValue
-from ..OpenIdConnectSetting import OpenIdConnectSetting
+from ....core.model import VerifyAction
+from ..enum.CounterScopeModelScopeType import CounterScopeModelScopeType
+from ..enum.CounterScopeModelResetType import CounterScopeModelResetType
+from ..enum.CounterScopeModelResetDayOfWeek import CounterScopeModelResetDayOfWeek
 
 
-class TakeOverTypeModelOptions:
-    metadata: Optional[str]
+class CounterScopeModelResetTypeIsDaysOptions:
     
     def __init__(
         self,
-        metadata: Optional[str] = None,
     ):
-        self.metadata = metadata
-
+        pass

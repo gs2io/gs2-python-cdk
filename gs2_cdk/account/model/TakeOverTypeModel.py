@@ -13,6 +13,7 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from .ScopeValue import ScopeValue
 from .OpenIdConnectSetting import OpenIdConnectSetting
 from .options.TakeOverTypeModelOptions import TakeOverTypeModelOptions
 

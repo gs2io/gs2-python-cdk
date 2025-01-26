@@ -10,6 +10,7 @@ src/gs2_cdk/account/model/CurrentMasterData.py
 src/gs2_cdk/account/model/Namespace.py
 src/gs2_cdk/account/model/OpenIdConnectSetting.py
 src/gs2_cdk/account/model/PlatformUser.py
+src/gs2_cdk/account/model/ScopeValue.py
 src/gs2_cdk/account/model/TakeOverTypeModel.py
 src/gs2_cdk/account/model/__init__.py
 src/gs2_cdk/account/ref/BanStatusRef.py

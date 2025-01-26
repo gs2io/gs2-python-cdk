@@ -22,6 +22,7 @@ from .options.MissionGroupModelResetTypeIsNotResetOptions import MissionGroupMod
 from .options.MissionGroupModelResetTypeIsDailyOptions import MissionGroupModelResetTypeIsDailyOptions
 from .options.MissionGroupModelResetTypeIsWeeklyOptions import MissionGroupModelResetTypeIsWeeklyOptions
 from .options.MissionGroupModelResetTypeIsMonthlyOptions import MissionGroupModelResetTypeIsMonthlyOptions
+from .options.MissionGroupModelResetTypeIsDaysOptions import MissionGroupModelResetTypeIsDaysOptions
 from .enum.MissionGroupModelResetType import MissionGroupModelResetType
 from .enum.MissionGroupModelResetDayOfWeek import MissionGroupModelResetDayOfWeek
 
@@ -35,6 +36,8 @@ class MissionGroupModel:
     reset_day_of_week: Optional[MissionGroupModelResetDayOfWeek] = None
     reset_hour: Optional[int] = None
     complete_notification_namespace_id: Optional[str] = None
+    anchor_timestamp: Optional[int] = None
+    days: Optional[int] = None
 
     def __init__(
         self,
@@ -50,6 +53,8 @@ class MissionGroupModel:
         self.reset_day_of_week = options.reset_day_of_week if options.reset_day_of_week else None
         self.reset_hour = options.reset_hour if options.reset_hour else None
         self.complete_notification_namespace_id = options.complete_notification_namespace_id if options.complete_notification_namespace_id else None
+        self.anchor_timestamp = options.anchor_timestamp if options.anchor_timestamp else None
+        self.days = options.days if options.days else None
 
     @staticmethod
     def reset_type_is_not_reset(
@@ -121,6 +126,25 @@ class MissionGroupModel:
             ),
         )
 
+    @staticmethod
+    def reset_type_is_days(
+        name: str,
+        anchor_timestamp: int,
+        days: int,
+        options: Optional[MissionGroupModelResetTypeIsDaysOptions] = MissionGroupModelResetTypeIsDaysOptions(),
+    ) -> MissionGroupModel:
+        return MissionGroupModel(
+            name,
+            MissionGroupModelResetType.DAYS,
+            MissionGroupModelOptions(
+                anchor_timestamp,
+                days,
+                options.metadata,
+                options.tasks,
+                options.complete_notification_namespace_id,
+            ),
+        )
+
     def properties(
         self,
     ) -> Dict[str, Any]:
@@ -146,5 +170,9 @@ class MissionGroupModel:
             properties["resetHour"] = self.reset_hour
         if self.complete_notification_namespace_id is not None:
             properties["completeNotificationNamespaceId"] = self.complete_notification_namespace_id
+        if self.anchor_timestamp is not None:
+            properties["anchorTimestamp"] = self.anchor_timestamp
+        if self.days is not None:
+            properties["days"] = self.days
 
         return properties

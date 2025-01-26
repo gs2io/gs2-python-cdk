@@ -21,6 +21,7 @@ class TargetCounterModelResetType:
     DAILY: 'TargetCounterModelResetType'
     WEEKLY: 'TargetCounterModelResetType'
     MONTHLY: 'TargetCounterModelResetType'
+    DAYS: 'TargetCounterModelResetType'
 
     def __init__(
         self,
@@ -33,3 +34,4 @@ TargetCounterModelResetType.NOT_RESET = TargetCounterModelResetType("notReset")
 TargetCounterModelResetType.DAILY = TargetCounterModelResetType("daily")
 TargetCounterModelResetType.WEEKLY = TargetCounterModelResetType("weekly")
 TargetCounterModelResetType.MONTHLY = TargetCounterModelResetType("monthly")
+TargetCounterModelResetType.DAYS = TargetCounterModelResetType("days")

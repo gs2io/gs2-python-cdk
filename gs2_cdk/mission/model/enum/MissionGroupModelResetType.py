@@ -21,6 +21,7 @@ class MissionGroupModelResetType:
     DAILY: 'MissionGroupModelResetType'
     WEEKLY: 'MissionGroupModelResetType'
     MONTHLY: 'MissionGroupModelResetType'
+    DAYS: 'MissionGroupModelResetType'
 
     def __init__(
         self,
@@ -33,3 +34,4 @@ MissionGroupModelResetType.NOT_RESET = MissionGroupModelResetType("notReset")
 MissionGroupModelResetType.DAILY = MissionGroupModelResetType("daily")
 MissionGroupModelResetType.WEEKLY = MissionGroupModelResetType("weekly")
 MissionGroupModelResetType.MONTHLY = MissionGroupModelResetType("monthly")
+MissionGroupModelResetType.DAYS = MissionGroupModelResetType("days")

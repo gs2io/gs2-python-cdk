@@ -21,6 +21,7 @@ from .options.CounterScopeModelResetTypeIsNotResetOptions import CounterScopeMod
 from .options.CounterScopeModelResetTypeIsDailyOptions import CounterScopeModelResetTypeIsDailyOptions
 from .options.CounterScopeModelResetTypeIsWeeklyOptions import CounterScopeModelResetTypeIsWeeklyOptions
 from .options.CounterScopeModelResetTypeIsMonthlyOptions import CounterScopeModelResetTypeIsMonthlyOptions
+from .options.CounterScopeModelResetTypeIsDaysOptions import CounterScopeModelResetTypeIsDaysOptions
 from .enum.CounterScopeModelScopeType import CounterScopeModelScopeType
 from .enum.CounterScopeModelResetType import CounterScopeModelResetType
 from .enum.CounterScopeModelResetDayOfWeek import CounterScopeModelResetDayOfWeek
@@ -34,6 +35,8 @@ class CounterScopeModel:
     reset_hour: Optional[int] = None
     condition_name: Optional[str] = None
     condition: Optional[VerifyAction] = None
+    anchor_timestamp: Optional[int] = None
+    days: Optional[int] = None
 
     def __init__(
         self,
@@ -47,6 +50,8 @@ class CounterScopeModel:
         self.reset_hour = options.reset_hour if options.reset_hour else None
         self.condition_name = options.condition_name if options.condition_name else None
         self.condition = options.condition if options.condition else None
+        self.anchor_timestamp = options.anchor_timestamp if options.anchor_timestamp else None
+        self.days = options.days if options.days else None
 
     @staticmethod
     def scope_type_is_reset_timing(
@@ -128,6 +133,21 @@ class CounterScopeModel:
             ),
         )
 
+    @staticmethod
+    def reset_type_is_days(
+        scope_type: CounterScopeModelScopeType,
+        anchor_timestamp: int,
+        days: int,
+        options: Optional[CounterScopeModelResetTypeIsDaysOptions] = CounterScopeModelResetTypeIsDaysOptions(),
+    ) -> CounterScopeModel:
+        return CounterScopeModel(
+            scope_type,
+            CounterScopeModelOptions(
+                anchor_timestamp,
+                days,
+            ),
+        )
+
     def properties(
         self,
     ) -> Dict[str, Any]:
@@ -148,5 +168,9 @@ class CounterScopeModel:
         if self.condition is not None:
             properties["condition"] = self.condition.properties(
             )
+        if self.anchor_timestamp is not None:
+            properties["anchorTimestamp"] = self.anchor_timestamp
+        if self.days is not None:
+            properties["days"] = self.days
 
         return properties

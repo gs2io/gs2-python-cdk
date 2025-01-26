@@ -11,27 +11,16 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
+from __future__ import annotations
+from typing import *
 
 
-
-
-class CounterScopeModelResetType:
-    value: str
-    NOT_RESET: 'CounterScopeModelResetType'
-    DAILY: 'CounterScopeModelResetType'
-    WEEKLY: 'CounterScopeModelResetType'
-    MONTHLY: 'CounterScopeModelResetType'
-    DAYS: 'CounterScopeModelResetType'
-
+class ScopeValueOptions:
+    value: Optional[str]
+    
     def __init__(
         self,
-        value: str,
+        value: Optional[str] = None,
     ):
         self.value = value
 
-
-CounterScopeModelResetType.NOT_RESET = CounterScopeModelResetType("notReset")
-CounterScopeModelResetType.DAILY = CounterScopeModelResetType("daily")
-CounterScopeModelResetType.WEEKLY = CounterScopeModelResetType("weekly")
-CounterScopeModelResetType.MONTHLY = CounterScopeModelResetType("monthly")
-CounterScopeModelResetType.DAYS = CounterScopeModelResetType("days")
