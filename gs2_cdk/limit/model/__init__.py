@@ -21,4 +21,5 @@ from .options.LimitModelResetTypeIsNotResetOptions import LimitModelResetTypeIsN
 from .options.LimitModelResetTypeIsDailyOptions import LimitModelResetTypeIsDailyOptions
 from .options.LimitModelResetTypeIsWeeklyOptions import LimitModelResetTypeIsWeeklyOptions
 from .options.LimitModelResetTypeIsMonthlyOptions import LimitModelResetTypeIsMonthlyOptions
+from .options.LimitModelResetTypeIsDaysOptions import LimitModelResetTypeIsDaysOptions
 from .CurrentMasterData import CurrentMasterData

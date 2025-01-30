@@ -18,6 +18,7 @@ from .options.LimitModelResetTypeIsNotResetOptions import LimitModelResetTypeIsN
 from .options.LimitModelResetTypeIsDailyOptions import LimitModelResetTypeIsDailyOptions
 from .options.LimitModelResetTypeIsWeeklyOptions import LimitModelResetTypeIsWeeklyOptions
 from .options.LimitModelResetTypeIsMonthlyOptions import LimitModelResetTypeIsMonthlyOptions
+from .options.LimitModelResetTypeIsDaysOptions import LimitModelResetTypeIsDaysOptions
 from .enum.LimitModelResetType import LimitModelResetType
 from .enum.LimitModelResetDayOfWeek import LimitModelResetDayOfWeek
 
@@ -29,6 +30,8 @@ class LimitModel:
     reset_day_of_month: Optional[int] = None
     reset_day_of_week: Optional[LimitModelResetDayOfWeek] = None
     reset_hour: Optional[int] = None
+    anchor_timestamp: Optional[int] = None
+    days: Optional[int] = None
 
     def __init__(
         self,
@@ -42,6 +45,8 @@ class LimitModel:
         self.reset_day_of_month = options.reset_day_of_month if options.reset_day_of_month else None
         self.reset_day_of_week = options.reset_day_of_week if options.reset_day_of_week else None
         self.reset_hour = options.reset_hour if options.reset_hour else None
+        self.anchor_timestamp = options.anchor_timestamp if options.anchor_timestamp else None
+        self.days = options.days if options.days else None
 
     @staticmethod
     def reset_type_is_not_reset(
@@ -105,6 +110,23 @@ class LimitModel:
             ),
         )
 
+    @staticmethod
+    def reset_type_is_days(
+        name: str,
+        anchor_timestamp: int,
+        days: int,
+        options: Optional[LimitModelResetTypeIsDaysOptions] = LimitModelResetTypeIsDaysOptions(),
+    ) -> LimitModel:
+        return LimitModel(
+            name,
+            LimitModelResetType.DAYS,
+            LimitModelOptions(
+                anchor_timestamp,
+                days,
+                options.metadata,
+            ),
+        )
+
     def properties(
         self,
     ) -> Dict[str, Any]:
@@ -122,5 +144,9 @@ class LimitModel:
             properties["resetDayOfWeek"] = self.reset_day_of_week.value
         if self.reset_hour is not None:
             properties["resetHour"] = self.reset_hour
+        if self.anchor_timestamp is not None:
+            properties["anchorTimestamp"] = self.anchor_timestamp
+        if self.days is not None:
+            properties["days"] = self.days
 
         return properties

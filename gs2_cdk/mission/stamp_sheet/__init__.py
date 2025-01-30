@@ -17,5 +17,6 @@ from .SetCounterByUserId import SetCounterByUserId
 from .ReceiveByUserId import ReceiveByUserId
 from .BatchReceiveByUserId import BatchReceiveByUserId
 from .DecreaseCounterByUserId import DecreaseCounterByUserId
+from .ResetCounterByUserId import ResetCounterByUserId
 from .VerifyCompleteByUserId import VerifyCompleteByUserId
 from .VerifyCounterValueByUserId import VerifyCounterValueByUserId

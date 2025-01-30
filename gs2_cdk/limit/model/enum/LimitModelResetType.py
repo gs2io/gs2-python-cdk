@@ -21,6 +21,7 @@ class LimitModelResetType:
     DAILY: 'LimitModelResetType'
     WEEKLY: 'LimitModelResetType'
     MONTHLY: 'LimitModelResetType'
+    DAYS: 'LimitModelResetType'
 
     def __init__(
         self,
@@ -33,3 +34,4 @@ LimitModelResetType.NOT_RESET = LimitModelResetType("notReset")
 LimitModelResetType.DAILY = LimitModelResetType("daily")
 LimitModelResetType.WEEKLY = LimitModelResetType("weekly")
 LimitModelResetType.MONTHLY = LimitModelResetType("monthly")
+LimitModelResetType.DAYS = LimitModelResetType("days")

@@ -562,6 +562,7 @@ src/gs2_cdk/mission/stamp_sheet/BatchReceiveByUserId.py
 src/gs2_cdk/mission/stamp_sheet/DecreaseCounterByUserId.py
 src/gs2_cdk/mission/stamp_sheet/IncreaseCounterByUserId.py
 src/gs2_cdk/mission/stamp_sheet/ReceiveByUserId.py
+src/gs2_cdk/mission/stamp_sheet/ResetCounterByUserId.py
 src/gs2_cdk/mission/stamp_sheet/RevertReceiveByUserId.py
 src/gs2_cdk/mission/stamp_sheet/SetCounterByUserId.py
 src/gs2_cdk/mission/stamp_sheet/VerifyCompleteByUserId.py

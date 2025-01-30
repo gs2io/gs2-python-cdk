@@ -17,27 +17,11 @@ from ..enum.LimitModelResetType import LimitModelResetType
 from ..enum.LimitModelResetDayOfWeek import LimitModelResetDayOfWeek
 
 
-class LimitModelOptions:
+class LimitModelResetTypeIsDaysOptions:
     metadata: Optional[str]
-    reset_day_of_month: Optional[int]
-    reset_day_of_week: Optional[LimitModelResetDayOfWeek]
-    reset_hour: Optional[int]
-    anchor_timestamp: Optional[int]
-    days: Optional[int]
     
     def __init__(
         self,
         metadata: Optional[str] = None,
-        reset_day_of_month: Optional[int] = None,
-        reset_day_of_week: Optional[LimitModelResetDayOfWeek] = None,
-        reset_hour: Optional[int] = None,
-        anchor_timestamp: Optional[int] = None,
-        days: Optional[int] = None,
     ):
         self.metadata = metadata
-        self.reset_day_of_month = reset_day_of_month
-        self.reset_day_of_week = reset_day_of_week
-        self.reset_hour = reset_hour
-        self.anchor_timestamp = anchor_timestamp
-        self.days = days
-

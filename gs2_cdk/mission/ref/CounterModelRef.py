@@ -19,6 +19,7 @@ from ..stamp_sheet.IncreaseCounterByUserId import IncreaseCounterByUserId
 from ..stamp_sheet.SetCounterByUserId import SetCounterByUserId
 from ..model.ScopedValue import ScopedValue
 from ..stamp_sheet.DecreaseCounterByUserId import DecreaseCounterByUserId
+from ..stamp_sheet.ResetCounterByUserId import ResetCounterByUserId
 from ..stamp_sheet.VerifyCounterValueByUserId import VerifyCounterValueByUserId
 
 
@@ -67,6 +68,18 @@ class CounterModelRef:
             self.namespace_name,
             self.counter_name,
             value,
+            user_id,
+        )
+
+    def reset_counter(
+        self,
+        scopes: List[ScopedValue],
+        user_id: Optional[str] = "#{userId}",
+    ) -> ResetCounterByUserId:
+        return ResetCounterByUserId(
+            self.namespace_name,
+            self.counter_name,
+            scopes,
             user_id,
         )
 
