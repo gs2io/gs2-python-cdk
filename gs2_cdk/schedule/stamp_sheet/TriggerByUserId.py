@@ -24,7 +24,8 @@ class TriggerByUserId(AcquireAction):
         namespace_name: str,
         trigger_name: str,
         trigger_strategy: str,
-        ttl: int,
+        ttl: Optional[int] = None,
+        event_id: Optional[str] = None,
         user_id: Optional[str] = "#{userId}",
     ):
         properties: Dict[str, Any] = {}
@@ -33,6 +34,7 @@ class TriggerByUserId(AcquireAction):
         properties["triggerName"] = trigger_name
         properties["triggerStrategy"] = trigger_strategy
         properties["ttl"] = ttl
+        properties["eventId"] = event_id
         properties["userId"] = user_id
 
         super().__init__(

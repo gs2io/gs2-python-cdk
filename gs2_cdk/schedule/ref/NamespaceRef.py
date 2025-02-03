@@ -34,7 +34,8 @@ class NamespaceRef:
         self,
         trigger_name: str,
         trigger_strategy: str,
-        ttl: int,
+        ttl: Optional[int] = None,
+        event_id: Optional[str] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> TriggerByUserId:
         return TriggerByUserId(
@@ -42,6 +43,7 @@ class NamespaceRef:
             trigger_name,
             trigger_strategy,
             ttl,
+            event_id,
             user_id,
         )
 
