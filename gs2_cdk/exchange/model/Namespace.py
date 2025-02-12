@@ -37,6 +37,7 @@ class Namespace(CdkResource):
     transaction_setting: Optional[TransactionSetting] = None
     exchange_script: Optional[ScriptSetting] = None
     incremental_exchange_script: Optional[ScriptSetting] = None
+    acquire_await_script: Optional[ScriptSetting] = None
     log_setting: Optional[LogSetting] = None
 
     def __init__(
@@ -57,6 +58,7 @@ class Namespace(CdkResource):
         self.transaction_setting = options.transaction_setting if options.transaction_setting else None
         self.exchange_script = options.exchange_script if options.exchange_script else None
         self.incremental_exchange_script = options.incremental_exchange_script if options.incremental_exchange_script else None
+        self.acquire_await_script = options.acquire_await_script if options.acquire_await_script else None
         self.log_setting = options.log_setting if options.log_setting else None
         stack.add_resource(
             self,
@@ -94,6 +96,9 @@ class Namespace(CdkResource):
             )
         if self.incremental_exchange_script is not None:
             properties["IncrementalExchangeScript"] = self.incremental_exchange_script.properties(
+            )
+        if self.acquire_await_script is not None:
+            properties["AcquireAwaitScript"] = self.acquire_await_script.properties(
             )
         if self.log_setting is not None:
             properties["LogSetting"] = self.log_setting.properties(

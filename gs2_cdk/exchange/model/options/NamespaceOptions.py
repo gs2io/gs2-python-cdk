@@ -28,6 +28,7 @@ class NamespaceOptions:
     transaction_setting: Optional[TransactionSetting]
     exchange_script: Optional[ScriptSetting]
     incremental_exchange_script: Optional[ScriptSetting]
+    acquire_await_script: Optional[ScriptSetting]
     log_setting: Optional[LogSetting]
     queue_namespace_id: Optional[str]
     key_id: Optional[str]
@@ -40,6 +41,7 @@ class NamespaceOptions:
         transaction_setting: Optional[TransactionSetting] = None,
         exchange_script: Optional[ScriptSetting] = None,
         incremental_exchange_script: Optional[ScriptSetting] = None,
+        acquire_await_script: Optional[ScriptSetting] = None,
         log_setting: Optional[LogSetting] = None,
         queue_namespace_id: Optional[str] = None,
         key_id: Optional[str] = None,
@@ -50,6 +52,7 @@ class NamespaceOptions:
         self.transaction_setting = transaction_setting
         self.exchange_script = exchange_script
         self.incremental_exchange_script = incremental_exchange_script
+        self.acquire_await_script = acquire_await_script
         self.log_setting = log_setting
         self.queue_namespace_id = queue_namespace_id
         self.key_id = key_id
