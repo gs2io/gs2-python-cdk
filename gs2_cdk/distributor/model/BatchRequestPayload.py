@@ -14,7 +14,7 @@
 from __future__ import annotations
 from typing import *
 from .options.BatchRequestPayloadOptions import BatchRequestPayloadOptions
-from .enum.BatchRequestPayloadService import BatchRequestPayloadService
+from .enums.BatchRequestPayloadService import BatchRequestPayloadService
 
 
 class BatchRequestPayload:

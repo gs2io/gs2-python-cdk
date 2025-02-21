@@ -24,10 +24,10 @@ from ..ref.NamespaceRef import NamespaceRef
 from .CurrentMasterData import CurrentMasterData
 from .RatingModel import RatingModel
 from .SeasonModel import SeasonModel
-from .enum.NamespaceEnableDisconnectDetection import NamespaceEnableDisconnectDetection
-from .enum.NamespaceCreateGatheringTriggerType import NamespaceCreateGatheringTriggerType
-from .enum.NamespaceCompleteMatchmakingTriggerType import NamespaceCompleteMatchmakingTriggerType
-from .enum.NamespaceEnableCollaborateSeasonRating import NamespaceEnableCollaborateSeasonRating
+from .enums.NamespaceEnableDisconnectDetection import NamespaceEnableDisconnectDetection
+from .enums.NamespaceCreateGatheringTriggerType import NamespaceCreateGatheringTriggerType
+from .enums.NamespaceCompleteMatchmakingTriggerType import NamespaceCompleteMatchmakingTriggerType
+from .enums.NamespaceEnableCollaborateSeasonRating import NamespaceEnableCollaborateSeasonRating
 
 from .options.NamespaceOptions import NamespaceOptions
 

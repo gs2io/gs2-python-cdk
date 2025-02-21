@@ -19,8 +19,8 @@ from .options.LimitModelResetTypeIsDailyOptions import LimitModelResetTypeIsDail
 from .options.LimitModelResetTypeIsWeeklyOptions import LimitModelResetTypeIsWeeklyOptions
 from .options.LimitModelResetTypeIsMonthlyOptions import LimitModelResetTypeIsMonthlyOptions
 from .options.LimitModelResetTypeIsDaysOptions import LimitModelResetTypeIsDaysOptions
-from .enum.LimitModelResetType import LimitModelResetType
-from .enum.LimitModelResetDayOfWeek import LimitModelResetDayOfWeek
+from .enums.LimitModelResetType import LimitModelResetType
+from .enums.LimitModelResetDayOfWeek import LimitModelResetDayOfWeek
 
 
 class LimitModel:

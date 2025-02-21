@@ -21,10 +21,12 @@ from .BuffTargetGrn import BuffTargetGrn
 from .options.BuffTargetGrnOptions import BuffTargetGrnOptions
 from .BuffEntryModel import BuffEntryModel
 from .options.BuffEntryModelOptions import BuffEntryModelOptions
-from .enum.BuffEntryModelExpression import BuffEntryModelExpression
-from .enum.BuffEntryModelTargetType import BuffEntryModelTargetType
+from .enums.BuffEntryModelExpression import BuffEntryModelExpression
+from .enums.BuffEntryModelTargetType import BuffEntryModelTargetType
 from .options.BuffEntryModelTargetTypeIsModelOptions import BuffEntryModelTargetTypeIsModelOptions
 from .options.BuffEntryModelTargetTypeIsActionOptions import BuffEntryModelTargetTypeIsActionOptions
 from .OverrideBuffRate import OverrideBuffRate
 from .options.OverrideBuffRateOptions import OverrideBuffRateOptions
+from .enums.BuffTargetActionTargetActionName import BuffTargetActionTargetActionName
+from .enums.BuffTargetModelTargetModelName import BuffTargetModelTargetModelName
 from .CurrentMasterData import CurrentMasterData

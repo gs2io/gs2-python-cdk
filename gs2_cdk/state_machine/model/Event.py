@@ -18,7 +18,7 @@ from .EmitEvent import EmitEvent
 from .options.EventOptions import EventOptions
 from .options.EventEventTypeIsChangeStateOptions import EventEventTypeIsChangeStateOptions
 from .options.EventEventTypeIsEmitOptions import EventEventTypeIsEmitOptions
-from .enum.EventEventType import EventEventType
+from .enums.EventEventType import EventEventType
 
 
 class Event:

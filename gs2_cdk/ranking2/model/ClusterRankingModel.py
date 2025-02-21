@@ -16,9 +16,9 @@ from typing import *
 from ...core.model import AcquireAction
 from .RankingReward import RankingReward
 from .options.ClusterRankingModelOptions import ClusterRankingModelOptions
-from .enum.ClusterRankingModelClusterType import ClusterRankingModelClusterType
-from .enum.ClusterRankingModelOrderDirection import ClusterRankingModelOrderDirection
-from .enum.ClusterRankingModelRewardCalculationIndex import ClusterRankingModelRewardCalculationIndex
+from .enums.ClusterRankingModelClusterType import ClusterRankingModelClusterType
+from .enums.ClusterRankingModelOrderDirection import ClusterRankingModelOrderDirection
+from .enums.ClusterRankingModelRewardCalculationIndex import ClusterRankingModelRewardCalculationIndex
 
 
 class ClusterRankingModel:

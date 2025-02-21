@@ -20,8 +20,8 @@ from ...core.model import ScriptSetting
 from ...core.model import LogSetting
 
 from ..ref.NamespaceRef import NamespaceRef
-from .enum.NamespacePriority import NamespacePriority
-from .enum.NamespaceCurrency import NamespaceCurrency
+from .enums.NamespacePriority import NamespacePriority
+from .enums.NamespaceCurrency import NamespaceCurrency
 
 from .options.NamespaceOptions import NamespaceOptions
 

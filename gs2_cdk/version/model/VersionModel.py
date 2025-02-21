@@ -20,9 +20,9 @@ from .options.VersionModelTypeIsSimpleOptions import VersionModelTypeIsSimpleOpt
 from .options.VersionModelTypeIsScheduleOptions import VersionModelTypeIsScheduleOptions
 from .options.VersionModelScopeIsPassiveOptions import VersionModelScopeIsPassiveOptions
 from .options.VersionModelScopeIsActiveOptions import VersionModelScopeIsActiveOptions
-from .enum.VersionModelScope import VersionModelScope
-from .enum.VersionModelType import VersionModelType
-from .enum.VersionModelApproveRequirement import VersionModelApproveRequirement
+from .enums.VersionModelScope import VersionModelScope
+from .enums.VersionModelType import VersionModelType
+from .enums.VersionModelApproveRequirement import VersionModelApproveRequirement
 
 
 class VersionModel:

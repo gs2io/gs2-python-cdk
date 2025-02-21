@@ -16,8 +16,8 @@ from typing import *
 from .options.TargetCounterModelOptions import TargetCounterModelOptions
 from .options.TargetCounterModelScopeTypeIsResetTimingOptions import TargetCounterModelScopeTypeIsResetTimingOptions
 from .options.TargetCounterModelScopeTypeIsVerifyActionOptions import TargetCounterModelScopeTypeIsVerifyActionOptions
-from .enum.TargetCounterModelScopeType import TargetCounterModelScopeType
-from .enum.TargetCounterModelResetType import TargetCounterModelResetType
+from .enums.TargetCounterModelScopeType import TargetCounterModelScopeType
+from .enums.TargetCounterModelResetType import TargetCounterModelResetType
 
 
 class TargetCounterModel:

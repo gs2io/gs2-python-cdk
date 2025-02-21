@@ -19,7 +19,7 @@ from ...core.func import GetAttr
 from .BlockingPolicyModel import BlockingPolicyModel
 
 from ..ref.NamespaceRef import NamespaceRef
-from .enum.NamespaceStatus import NamespaceStatus
+from .enums.NamespaceStatus import NamespaceStatus
 
 from .options.NamespaceOptions import NamespaceOptions
 

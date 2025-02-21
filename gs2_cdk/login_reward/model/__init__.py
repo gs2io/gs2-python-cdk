@@ -15,9 +15,9 @@ from .Namespace import Namespace
 from .options.NamespaceOptions import NamespaceOptions
 from .BonusModel import BonusModel
 from .options.BonusModelOptions import BonusModelOptions
-from .enum.BonusModelMode import BonusModelMode
-from .enum.BonusModelRepeat import BonusModelRepeat
-from .enum.BonusModelMissedReceiveRelief import BonusModelMissedReceiveRelief
+from .enums.BonusModelMode import BonusModelMode
+from .enums.BonusModelRepeat import BonusModelRepeat
+from .enums.BonusModelMissedReceiveRelief import BonusModelMissedReceiveRelief
 from .options.BonusModelModeIsScheduleOptions import BonusModelModeIsScheduleOptions
 from .options.BonusModelModeIsStreamingOptions import BonusModelModeIsStreamingOptions
 from .options.BonusModelMissedReceiveReliefIsEnabledOptions import BonusModelMissedReceiveReliefIsEnabledOptions

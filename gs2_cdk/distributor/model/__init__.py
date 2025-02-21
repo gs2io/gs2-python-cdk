@@ -17,7 +17,7 @@ from .DistributorModel import DistributorModel
 from .options.DistributorModelOptions import DistributorModelOptions
 from .BatchRequestPayload import BatchRequestPayload
 from .options.BatchRequestPayloadOptions import BatchRequestPayloadOptions
-from .enum.BatchRequestPayloadService import BatchRequestPayloadService
+from .enums.BatchRequestPayloadService import BatchRequestPayloadService
 from .BatchResultPayload import BatchResultPayload
 from .options.BatchResultPayloadOptions import BatchResultPayloadOptions
 from .AcquireActionResult import AcquireActionResult

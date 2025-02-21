@@ -15,5 +15,5 @@
 # deny overwrite
 from .Namespace import Namespace
 from .options.NamespaceOptions import NamespaceOptions
-from .enum.NamespaceServerType import NamespaceServerType
-from .enum.NamespaceServerSpec import NamespaceServerSpec
+from .enums.NamespaceServerType import NamespaceServerType
+from .enums.NamespaceServerSpec import NamespaceServerSpec

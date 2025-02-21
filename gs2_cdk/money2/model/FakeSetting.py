@@ -14,7 +14,7 @@
 from __future__ import annotations
 from typing import *
 from .options.FakeSettingOptions import FakeSettingOptions
-from .enum.FakeSettingAcceptFakeReceipt import FakeSettingAcceptFakeReceipt
+from .enums.FakeSettingAcceptFakeReceipt import FakeSettingAcceptFakeReceipt
 
 
 class FakeSetting:

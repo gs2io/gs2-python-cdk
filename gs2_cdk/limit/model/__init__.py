@@ -15,8 +15,8 @@ from .Namespace import Namespace
 from .options.NamespaceOptions import NamespaceOptions
 from .LimitModel import LimitModel
 from .options.LimitModelOptions import LimitModelOptions
-from .enum.LimitModelResetType import LimitModelResetType
-from .enum.LimitModelResetDayOfWeek import LimitModelResetDayOfWeek
+from .enums.LimitModelResetType import LimitModelResetType
+from .enums.LimitModelResetDayOfWeek import LimitModelResetDayOfWeek
 from .options.LimitModelResetTypeIsNotResetOptions import LimitModelResetTypeIsNotResetOptions
 from .options.LimitModelResetTypeIsDailyOptions import LimitModelResetTypeIsDailyOptions
 from .options.LimitModelResetTypeIsWeeklyOptions import LimitModelResetTypeIsWeeklyOptions

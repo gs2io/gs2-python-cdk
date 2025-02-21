@@ -16,8 +16,8 @@ from typing import *
 from ..FixedTiming import FixedTiming
 from ..Scope import Scope
 from ..GlobalRankingSetting import GlobalRankingSetting
-from ..enum.CategoryModelOrderDirection import CategoryModelOrderDirection
-from ..enum.CategoryModelScope import CategoryModelScope
+from ..enums.CategoryModelOrderDirection import CategoryModelOrderDirection
+from ..enums.CategoryModelScope import CategoryModelScope
 
 
 class CategoryModelScopeIsGlobalOptions:

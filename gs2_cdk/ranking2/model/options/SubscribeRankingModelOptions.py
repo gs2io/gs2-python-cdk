@@ -13,7 +13,7 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
-from ..enum.SubscribeRankingModelOrderDirection import SubscribeRankingModelOrderDirection
+from ..enums.SubscribeRankingModelOrderDirection import SubscribeRankingModelOrderDirection
 
 
 class SubscribeRankingModelOptions:

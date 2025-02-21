@@ -15,7 +15,7 @@ from .Namespace import Namespace
 from .options.NamespaceOptions import NamespaceOptions
 from .IssueJob import IssueJob
 from .options.IssueJobOptions import IssueJobOptions
-from .enum.IssueJobStatus import IssueJobStatus
+from .enums.IssueJobStatus import IssueJobStatus
 from .CampaignModel import CampaignModel
 from .options.CampaignModelOptions import CampaignModelOptions
 from .CurrentMasterData import CurrentMasterData

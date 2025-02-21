@@ -14,7 +14,7 @@
 from __future__ import annotations
 from typing import *
 from .options.AccessLogWithTelemetryOptions import AccessLogWithTelemetryOptions
-from .enum.AccessLogWithTelemetryStatus import AccessLogWithTelemetryStatus
+from .enums.AccessLogWithTelemetryStatus import AccessLogWithTelemetryStatus
 
 
 class AccessLogWithTelemetry:

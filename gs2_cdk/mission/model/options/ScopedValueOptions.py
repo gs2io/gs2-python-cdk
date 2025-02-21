@@ -13,8 +13,8 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
-from ..enum.ScopedValueScopeType import ScopedValueScopeType
-from ..enum.ScopedValueResetType import ScopedValueResetType
+from ..enums.ScopedValueScopeType import ScopedValueScopeType
+from ..enums.ScopedValueResetType import ScopedValueResetType
 
 
 class ScopedValueOptions:

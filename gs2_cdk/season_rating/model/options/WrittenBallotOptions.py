@@ -11,18 +11,5 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-from __future__ import annotations
-from typing import *
-from ..Ballot import Ballot
-from ..GameResult import GameResult
-
-
-class WrittenBallotOptions:
-    game_results: Optional[List[GameResult]]
-    
-    def __init__(
-        self,
-        game_results: Optional[List[GameResult]] = None,
-    ):
-        self.game_results = game_results
-
+#
+# deny overwrite

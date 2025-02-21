@@ -19,7 +19,7 @@ from .Inbox import Inbox
 from .options.InboxOptions import InboxOptions
 from .Guild import Guild
 from .options.GuildOptions import GuildOptions
-from .enum.GuildJoinPolicy import GuildJoinPolicy
+from .enums.GuildJoinPolicy import GuildJoinPolicy
 from .LastGuildMasterActivity import LastGuildMasterActivity
 from .options.LastGuildMasterActivityOptions import LastGuildMasterActivityOptions
 from .RoleModel import RoleModel

@@ -15,10 +15,10 @@ from .Namespace import Namespace
 from .options.NamespaceOptions import NamespaceOptions
 from .Event import Event
 from .options.EventOptions import EventOptions
-from .enum.EventScheduleType import EventScheduleType
-from .enum.EventRepeatType import EventRepeatType
-from .enum.EventRepeatBeginDayOfWeek import EventRepeatBeginDayOfWeek
-from .enum.EventRepeatEndDayOfWeek import EventRepeatEndDayOfWeek
+from .enums.EventScheduleType import EventScheduleType
+from .enums.EventRepeatType import EventRepeatType
+from .enums.EventRepeatBeginDayOfWeek import EventRepeatBeginDayOfWeek
+from .enums.EventRepeatEndDayOfWeek import EventRepeatEndDayOfWeek
 from .options.EventScheduleTypeIsAbsoluteOptions import EventScheduleTypeIsAbsoluteOptions
 from .options.EventScheduleTypeIsRelativeOptions import EventScheduleTypeIsRelativeOptions
 from .options.EventRepeatTypeIsAlwaysOptions import EventRepeatTypeIsAlwaysOptions
@@ -27,9 +27,9 @@ from .options.EventRepeatTypeIsWeeklyOptions import EventRepeatTypeIsWeeklyOptio
 from .options.EventRepeatTypeIsMonthlyOptions import EventRepeatTypeIsMonthlyOptions
 from .RepeatSetting import RepeatSetting
 from .options.RepeatSettingOptions import RepeatSettingOptions
-from .enum.RepeatSettingRepeatType import RepeatSettingRepeatType
-from .enum.RepeatSettingBeginDayOfWeek import RepeatSettingBeginDayOfWeek
-from .enum.RepeatSettingEndDayOfWeek import RepeatSettingEndDayOfWeek
+from .enums.RepeatSettingRepeatType import RepeatSettingRepeatType
+from .enums.RepeatSettingBeginDayOfWeek import RepeatSettingBeginDayOfWeek
+from .enums.RepeatSettingEndDayOfWeek import RepeatSettingEndDayOfWeek
 from .options.RepeatSettingRepeatTypeIsAlwaysOptions import RepeatSettingRepeatTypeIsAlwaysOptions
 from .options.RepeatSettingRepeatTypeIsDailyOptions import RepeatSettingRepeatTypeIsDailyOptions
 from .options.RepeatSettingRepeatTypeIsWeeklyOptions import RepeatSettingRepeatTypeIsWeeklyOptions

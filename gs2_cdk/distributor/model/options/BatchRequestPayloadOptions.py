@@ -13,7 +13,7 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
-from ..enum.BatchRequestPayloadService import BatchRequestPayloadService
+from ..enums.BatchRequestPayloadService import BatchRequestPayloadService
 
 
 class BatchRequestPayloadOptions:

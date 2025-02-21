@@ -17,7 +17,7 @@ from ...core.model import AcquireAction
 from .options.PrizeOptions import PrizeOptions
 from .options.PrizeTypeIsActionOptions import PrizeTypeIsActionOptions
 from .options.PrizeTypeIsPrizeTableOptions import PrizeTypeIsPrizeTableOptions
-from .enum.PrizeType import PrizeType
+from .enums.PrizeType import PrizeType
 
 
 class Prize:

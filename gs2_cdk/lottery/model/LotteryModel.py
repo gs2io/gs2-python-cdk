@@ -18,8 +18,8 @@ from typing import *
 from .options.LotteryModelOptions import LotteryModelOptions
 from .options.LotteryModelMethodIsPrizeTableOptions import LotteryModelMethodIsPrizeTableOptions
 from .options.LotteryModelMethodIsScriptOptions import LotteryModelMethodIsScriptOptions
-from .enum.LotteryModelMode import LotteryModelMode
-from .enum.LotteryModelMethod import LotteryModelMethod
+from .enums.LotteryModelMode import LotteryModelMode
+from .enums.LotteryModelMethod import LotteryModelMethod
 
 
 class LotteryModel:

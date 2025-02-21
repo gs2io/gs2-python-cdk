@@ -19,8 +19,8 @@ from .GlobalRankingSetting import GlobalRankingSetting
 from .options.CategoryModelOptions import CategoryModelOptions
 from .options.CategoryModelScopeIsGlobalOptions import CategoryModelScopeIsGlobalOptions
 from .options.CategoryModelScopeIsScopedOptions import CategoryModelScopeIsScopedOptions
-from .enum.CategoryModelOrderDirection import CategoryModelOrderDirection
-from .enum.CategoryModelScope import CategoryModelScope
+from .enums.CategoryModelOrderDirection import CategoryModelOrderDirection
+from .enums.CategoryModelScope import CategoryModelScope
 
 
 class CategoryModel:

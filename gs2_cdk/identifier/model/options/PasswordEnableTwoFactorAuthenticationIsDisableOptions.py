@@ -14,7 +14,7 @@
 from __future__ import annotations
 from typing import *
 from ..TwoFactorAuthenticationSetting import TwoFactorAuthenticationSetting
-from ..enum.PasswordEnableTwoFactorAuthentication import PasswordEnableTwoFactorAuthentication
+from ..enums.PasswordEnableTwoFactorAuthentication import PasswordEnableTwoFactorAuthentication
 
 
 class PasswordEnableTwoFactorAuthenticationIsDisableOptions:

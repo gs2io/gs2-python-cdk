@@ -11,6 +11,8 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
+#
+# deny overwrite
 from __future__ import annotations
 from typing import *
 from .TargetCounterModel import TargetCounterModel
@@ -19,15 +21,13 @@ from ...core.model import AcquireAction
 from .options.MissionTaskModelOptions import MissionTaskModelOptions
 from .options.MissionTaskModelVerifyCompleteTypeIsCounterOptions import MissionTaskModelVerifyCompleteTypeIsCounterOptions
 from .options.MissionTaskModelVerifyCompleteTypeIsVerifyActionsOptions import MissionTaskModelVerifyCompleteTypeIsVerifyActionsOptions
-from .enum.MissionTaskModelVerifyCompleteType import MissionTaskModelVerifyCompleteType
-from .enum.MissionTaskModelTargetResetType import MissionTaskModelTargetResetType
+from .enums.MissionTaskModelVerifyCompleteType import MissionTaskModelVerifyCompleteType
+from .enums.MissionTaskModelTargetResetType import MissionTaskModelTargetResetType
 
 
 class MissionTaskModel:
     name: str
     verify_complete_type: MissionTaskModelVerifyCompleteType
-    counter_name: str
-    target_value: int
     metadata: Optional[str] = None
     target_counter: Optional[TargetCounterModel] = None
     verify_complete_consume_actions: Optional[List[VerifyAction]] = None
@@ -40,14 +40,10 @@ class MissionTaskModel:
         self,
         name: str,
         verify_complete_type: MissionTaskModelVerifyCompleteType,
-        counter_name: str,
-        target_value: int,
         options: Optional[MissionTaskModelOptions] = MissionTaskModelOptions(),
     ):
         self.name = name
         self.verify_complete_type = verify_complete_type
-        self.counter_name = counter_name
-        self.target_value = target_value
         self.metadata = options.metadata if options.metadata else None
         self.target_counter = options.target_counter if options.target_counter else None
         self.verify_complete_consume_actions = options.verify_complete_consume_actions if options.verify_complete_consume_actions else None
@@ -59,19 +55,15 @@ class MissionTaskModel:
     @staticmethod
     def verify_complete_type_is_counter(
         name: str,
-        counter_name: str,
-        target_value: int,
         target_counter: TargetCounterModel,
         options: Optional[MissionTaskModelVerifyCompleteTypeIsCounterOptions] = MissionTaskModelVerifyCompleteTypeIsCounterOptions(),
     ) -> MissionTaskModel:
         return MissionTaskModel(
             name,
             MissionTaskModelVerifyCompleteType.COUNTER,
-            counter_name,
-            target_value,
             MissionTaskModelOptions(
-                target_counter,
                 options.metadata,
+                target_counter,
                 options.verify_complete_consume_actions,
                 options.complete_acquire_actions,
                 options.challenge_period_event_id,
@@ -83,15 +75,11 @@ class MissionTaskModel:
     @staticmethod
     def verify_complete_type_is_verify_actions(
         name: str,
-        counter_name: str,
-        target_value: int,
         options: Optional[MissionTaskModelVerifyCompleteTypeIsVerifyActionsOptions] = MissionTaskModelVerifyCompleteTypeIsVerifyActionsOptions(),
     ) -> MissionTaskModel:
         return MissionTaskModel(
             name,
             MissionTaskModelVerifyCompleteType.VERIFY_ACTIONS,
-            counter_name,
-            target_value,
             MissionTaskModelOptions(
                 options.metadata,
                 options.verify_complete_consume_actions,
@@ -132,11 +120,7 @@ class MissionTaskModel:
             properties["challengePeriodEventId"] = self.challenge_period_event_id
         if self.premise_mission_task_name is not None:
             properties["premiseMissionTaskName"] = self.premise_mission_task_name
-        if self.counter_name is not None:
-            properties["counterName"] = self.counter_name
         if self.target_reset_type is not None:
             properties["targetResetType"] = self.target_reset_type.value
-        if self.target_value is not None:
-            properties["targetValue"] = self.target_value
 
         return properties

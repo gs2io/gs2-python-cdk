@@ -15,7 +15,7 @@ from __future__ import annotations
 from typing import *
 from ....core.model import ConsumeAction
 from ....core.model import AcquireAction
-from ..enum.IncrementalRateModelCalculateType import IncrementalRateModelCalculateType
+from ..enums.IncrementalRateModelCalculateType import IncrementalRateModelCalculateType
 
 
 class IncrementalRateModelCalculateTypeIsPowerOptions:

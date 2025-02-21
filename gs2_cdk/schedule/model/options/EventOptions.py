@@ -11,16 +11,19 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
+#
+# deny overwrite
 from __future__ import annotations
 from typing import *
 from ..RepeatSetting import RepeatSetting
-from ..enum.EventScheduleType import EventScheduleType
-from ..enum.EventRepeatType import EventRepeatType
-from ..enum.EventRepeatBeginDayOfWeek import EventRepeatBeginDayOfWeek
-from ..enum.EventRepeatEndDayOfWeek import EventRepeatEndDayOfWeek
+from ..enums.EventScheduleType import EventScheduleType
+from ..enums.EventRepeatType import EventRepeatType
+from ..enums.EventRepeatBeginDayOfWeek import EventRepeatBeginDayOfWeek
+from ..enums.EventRepeatEndDayOfWeek import EventRepeatEndDayOfWeek
 
 
 class EventOptions:
+    repeat_type: Optional[EventRepeatType]
     metadata: Optional[str]
     absolute_begin: Optional[int]
     absolute_end: Optional[int]
@@ -34,6 +37,7 @@ class EventOptions:
     
     def __init__(
         self,
+        repeat_type: Optional[EventRepeatType] = None,
         metadata: Optional[str] = None,
         absolute_begin: Optional[int] = None,
         absolute_end: Optional[int] = None,
@@ -45,6 +49,7 @@ class EventOptions:
         repeat_begin_hour: Optional[int] = None,
         repeat_end_hour: Optional[int] = None,
     ):
+        self.repeat_type = repeat_type
         self.metadata = metadata
         self.absolute_begin = absolute_begin
         self.absolute_end = absolute_end

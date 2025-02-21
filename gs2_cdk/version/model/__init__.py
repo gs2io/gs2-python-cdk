@@ -15,9 +15,9 @@ from .Namespace import Namespace
 from .options.NamespaceOptions import NamespaceOptions
 from .VersionModel import VersionModel
 from .options.VersionModelOptions import VersionModelOptions
-from .enum.VersionModelScope import VersionModelScope
-from .enum.VersionModelType import VersionModelType
-from .enum.VersionModelApproveRequirement import VersionModelApproveRequirement
+from .enums.VersionModelScope import VersionModelScope
+from .enums.VersionModelType import VersionModelType
+from .enums.VersionModelApproveRequirement import VersionModelApproveRequirement
 from .options.VersionModelTypeIsSimpleOptions import VersionModelTypeIsSimpleOptions
 from .options.VersionModelTypeIsScheduleOptions import VersionModelTypeIsScheduleOptions
 from .options.VersionModelScopeIsPassiveOptions import VersionModelScopeIsPassiveOptions

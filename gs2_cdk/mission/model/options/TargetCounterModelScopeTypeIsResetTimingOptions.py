@@ -13,8 +13,8 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
-from ..enum.TargetCounterModelScopeType import TargetCounterModelScopeType
-from ..enum.TargetCounterModelResetType import TargetCounterModelResetType
+from ..enums.TargetCounterModelScopeType import TargetCounterModelScopeType
+from ..enums.TargetCounterModelResetType import TargetCounterModelResetType
 
 
 class TargetCounterModelScopeTypeIsResetTimingOptions:

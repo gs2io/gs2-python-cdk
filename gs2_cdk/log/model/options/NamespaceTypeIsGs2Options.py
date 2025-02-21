@@ -13,7 +13,7 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
-from ..enum.NamespaceType import NamespaceType
+from ..enums.NamespaceType import NamespaceType
 
 
 class NamespaceTypeIsGs2Options:

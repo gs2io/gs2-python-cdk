@@ -13,7 +13,7 @@
 # permissions and limitations under the License.
 from .Namespace import Namespace
 from .options.NamespaceOptions import NamespaceOptions
-from .enum.NamespaceType import NamespaceType
+from .enums.NamespaceType import NamespaceType
 from .options.NamespaceTypeIsGs2Options import NamespaceTypeIsGs2Options
 from .options.NamespaceTypeIsBigqueryOptions import NamespaceTypeIsBigqueryOptions
 from .options.NamespaceTypeIsFirehoseOptions import NamespaceTypeIsFirehoseOptions
@@ -35,6 +35,6 @@ from .ExecuteStampTaskLogCount import ExecuteStampTaskLogCount
 from .options.ExecuteStampTaskLogCountOptions import ExecuteStampTaskLogCountOptions
 from .AccessLogWithTelemetry import AccessLogWithTelemetry
 from .options.AccessLogWithTelemetryOptions import AccessLogWithTelemetryOptions
-from .enum.AccessLogWithTelemetryStatus import AccessLogWithTelemetryStatus
+from .enums.AccessLogWithTelemetryStatus import AccessLogWithTelemetryStatus
 from .InGameLogTag import InGameLogTag
 from .options.InGameLogTagOptions import InGameLogTagOptions

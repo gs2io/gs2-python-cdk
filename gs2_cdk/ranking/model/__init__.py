@@ -15,8 +15,8 @@ from .Namespace import Namespace
 from .options.NamespaceOptions import NamespaceOptions
 from .CategoryModel import CategoryModel
 from .options.CategoryModelOptions import CategoryModelOptions
-from .enum.CategoryModelOrderDirection import CategoryModelOrderDirection
-from .enum.CategoryModelScope import CategoryModelScope
+from .enums.CategoryModelOrderDirection import CategoryModelOrderDirection
+from .enums.CategoryModelScope import CategoryModelScope
 from .options.CategoryModelScopeIsGlobalOptions import CategoryModelScopeIsGlobalOptions
 from .options.CategoryModelScopeIsScopedOptions import CategoryModelScopeIsScopedOptions
 from .Scope import Scope

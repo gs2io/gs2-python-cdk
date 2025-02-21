@@ -15,9 +15,9 @@ from __future__ import annotations
 from typing import *
 from ..Version import Version
 from ..ScheduleVersion import ScheduleVersion
-from ..enum.VersionModelScope import VersionModelScope
-from ..enum.VersionModelType import VersionModelType
-from ..enum.VersionModelApproveRequirement import VersionModelApproveRequirement
+from ..enums.VersionModelScope import VersionModelScope
+from ..enums.VersionModelType import VersionModelType
+from ..enums.VersionModelApproveRequirement import VersionModelApproveRequirement
 
 
 class VersionModelTypeIsScheduleOptions:

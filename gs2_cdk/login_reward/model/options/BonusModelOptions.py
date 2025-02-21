@@ -17,9 +17,9 @@ from ....core.model import AcquireAction
 from ..Reward import Reward
 from ....core.model import VerifyAction
 from ....core.model import ConsumeAction
-from ..enum.BonusModelMode import BonusModelMode
-from ..enum.BonusModelRepeat import BonusModelRepeat
-from ..enum.BonusModelMissedReceiveRelief import BonusModelMissedReceiveRelief
+from ..enums.BonusModelMode import BonusModelMode
+from ..enums.BonusModelRepeat import BonusModelRepeat
+from ..enums.BonusModelMissedReceiveRelief import BonusModelMissedReceiveRelief
 
 
 class BonusModelOptions:

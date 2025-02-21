@@ -14,10 +14,10 @@
 from __future__ import annotations
 from typing import *
 from ..RepeatSetting import RepeatSetting
-from ..enum.EventScheduleType import EventScheduleType
-from ..enum.EventRepeatType import EventRepeatType
-from ..enum.EventRepeatBeginDayOfWeek import EventRepeatBeginDayOfWeek
-from ..enum.EventRepeatEndDayOfWeek import EventRepeatEndDayOfWeek
+from ..enums.EventScheduleType import EventScheduleType
+from ..enums.EventRepeatType import EventRepeatType
+from ..enums.EventRepeatBeginDayOfWeek import EventRepeatBeginDayOfWeek
+from ..enums.EventRepeatEndDayOfWeek import EventRepeatEndDayOfWeek
 
 
 class EventScheduleTypeIsAbsoluteOptions:

@@ -19,9 +19,9 @@ from .options.RepeatSettingRepeatTypeIsDailyOptions import RepeatSettingRepeatTy
 from .options.RepeatSettingRepeatTypeIsWeeklyOptions import RepeatSettingRepeatTypeIsWeeklyOptions
 from .options.RepeatSettingRepeatTypeIsMonthlyOptions import RepeatSettingRepeatTypeIsMonthlyOptions
 from .options.RepeatSettingRepeatTypeIsCustomOptions import RepeatSettingRepeatTypeIsCustomOptions
-from .enum.RepeatSettingRepeatType import RepeatSettingRepeatType
-from .enum.RepeatSettingBeginDayOfWeek import RepeatSettingBeginDayOfWeek
-from .enum.RepeatSettingEndDayOfWeek import RepeatSettingEndDayOfWeek
+from .enums.RepeatSettingRepeatType import RepeatSettingRepeatType
+from .enums.RepeatSettingBeginDayOfWeek import RepeatSettingBeginDayOfWeek
+from .enums.RepeatSettingEndDayOfWeek import RepeatSettingEndDayOfWeek
 
 
 class RepeatSetting:

@@ -13,7 +13,7 @@
 # permissions and limitations under the License.
 from .Namespace import Namespace
 from .options.NamespaceOptions import NamespaceOptions
-from .enum.NamespacePriority import NamespacePriority
-from .enum.NamespaceCurrency import NamespaceCurrency
+from .enums.NamespacePriority import NamespacePriority
+from .enums.NamespaceCurrency import NamespaceCurrency
 from .WalletDetail import WalletDetail
 from .options.WalletDetailOptions import WalletDetailOptions

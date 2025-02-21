@@ -15,7 +15,7 @@ from .Namespace import Namespace
 from .options.NamespaceOptions import NamespaceOptions
 from .BalanceParameterModel import BalanceParameterModel
 from .options.BalanceParameterModelOptions import BalanceParameterModelOptions
-from .enum.BalanceParameterModelInitialValueStrategy import BalanceParameterModelInitialValueStrategy
+from .enums.BalanceParameterModelInitialValueStrategy import BalanceParameterModelInitialValueStrategy
 from .RarityParameterModel import RarityParameterModel
 from .options.RarityParameterModelOptions import RarityParameterModelOptions
 from .BalanceParameterValueModel import BalanceParameterValueModel

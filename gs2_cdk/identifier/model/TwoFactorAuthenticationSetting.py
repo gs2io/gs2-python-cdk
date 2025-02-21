@@ -14,7 +14,7 @@
 from __future__ import annotations
 from typing import *
 from .options.TwoFactorAuthenticationSettingOptions import TwoFactorAuthenticationSettingOptions
-from .enum.TwoFactorAuthenticationSettingStatus import TwoFactorAuthenticationSettingStatus
+from .enums.TwoFactorAuthenticationSettingStatus import TwoFactorAuthenticationSettingStatus
 
 
 class TwoFactorAuthenticationSetting:

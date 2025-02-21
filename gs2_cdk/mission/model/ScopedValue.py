@@ -16,8 +16,8 @@ from typing import *
 from .options.ScopedValueOptions import ScopedValueOptions
 from .options.ScopedValueScopeTypeIsResetTimingOptions import ScopedValueScopeTypeIsResetTimingOptions
 from .options.ScopedValueScopeTypeIsVerifyActionOptions import ScopedValueScopeTypeIsVerifyActionOptions
-from .enum.ScopedValueScopeType import ScopedValueScopeType
-from .enum.ScopedValueResetType import ScopedValueResetType
+from .enums.ScopedValueScopeType import ScopedValueScopeType
+from .enums.ScopedValueResetType import ScopedValueResetType
 
 
 class ScopedValue:

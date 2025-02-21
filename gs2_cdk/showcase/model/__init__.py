@@ -21,7 +21,7 @@ from .Showcase import Showcase
 from .options.ShowcaseOptions import ShowcaseOptions
 from .DisplayItem import DisplayItem
 from .options.DisplayItemOptions import DisplayItemOptions
-from .enum.DisplayItemType import DisplayItemType
+from .enums.DisplayItemType import DisplayItemType
 from .options.DisplayItemTypeIsSalesItemOptions import DisplayItemTypeIsSalesItemOptions
 from .options.DisplayItemTypeIsSalesItemGroupOptions import DisplayItemTypeIsSalesItemGroupOptions
 from .RandomShowcase import RandomShowcase

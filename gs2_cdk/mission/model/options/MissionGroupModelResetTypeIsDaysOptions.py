@@ -17,8 +17,8 @@ from ..TargetCounterModel import TargetCounterModel
 from ....core.model import VerifyAction
 from ....core.model import AcquireAction
 from ..MissionTaskModel import MissionTaskModel
-from ..enum.MissionGroupModelResetType import MissionGroupModelResetType
-from ..enum.MissionGroupModelResetDayOfWeek import MissionGroupModelResetDayOfWeek
+from ..enums.MissionGroupModelResetType import MissionGroupModelResetType
+from ..enums.MissionGroupModelResetDayOfWeek import MissionGroupModelResetDayOfWeek
 
 
 class MissionGroupModelResetTypeIsDaysOptions:

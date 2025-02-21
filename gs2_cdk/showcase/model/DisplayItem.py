@@ -21,7 +21,7 @@ from .SalesItemGroup import SalesItemGroup
 from .options.DisplayItemOptions import DisplayItemOptions
 from .options.DisplayItemTypeIsSalesItemOptions import DisplayItemTypeIsSalesItemOptions
 from .options.DisplayItemTypeIsSalesItemGroupOptions import DisplayItemTypeIsSalesItemGroupOptions
-from .enum.DisplayItemType import DisplayItemType
+from .enums.DisplayItemType import DisplayItemType
 
 
 class DisplayItem:

@@ -17,7 +17,7 @@ from .options.SerialKeyOptions import SerialKeyOptions
 from .options.SerialKeyStatusIsActiveOptions import SerialKeyStatusIsActiveOptions
 from .options.SerialKeyStatusIsUsedOptions import SerialKeyStatusIsUsedOptions
 from .options.SerialKeyStatusIsInactiveOptions import SerialKeyStatusIsInactiveOptions
-from .enum.SerialKeyStatus import SerialKeyStatus
+from .enums.SerialKeyStatus import SerialKeyStatus
 
 
 class SerialKey:

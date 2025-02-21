@@ -13,8 +13,8 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
-from ..enum.LimitModelResetType import LimitModelResetType
-from ..enum.LimitModelResetDayOfWeek import LimitModelResetDayOfWeek
+from ..enums.LimitModelResetType import LimitModelResetType
+from ..enums.LimitModelResetDayOfWeek import LimitModelResetDayOfWeek
 
 
 class LimitModelResetTypeIsWeeklyOptions:

@@ -16,7 +16,7 @@ from typing import *
 from ....core.model import TransactionSetting
 from ....core.model import ScriptSetting
 from ....core.model import LogSetting
-from ..enum.NamespaceSupportSpeculativeExecution import NamespaceSupportSpeculativeExecution
+from ..enums.NamespaceSupportSpeculativeExecution import NamespaceSupportSpeculativeExecution
 
 
 class NamespaceSupportSpeculativeExecutionIsEnableOptions:

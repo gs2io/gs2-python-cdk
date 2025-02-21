@@ -14,7 +14,7 @@
 from __future__ import annotations
 from typing import *
 from .options.SlotWithSignatureOptions import SlotWithSignatureOptions
-from .enum.SlotWithSignaturePropertyType import SlotWithSignaturePropertyType
+from .enums.SlotWithSignaturePropertyType import SlotWithSignaturePropertyType
 
 
 class SlotWithSignature:

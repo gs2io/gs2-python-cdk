@@ -13,7 +13,7 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
-from ..enum.AppleAppStoreVerifyReceiptEventEnvironment import AppleAppStoreVerifyReceiptEventEnvironment
+from ..enums.AppleAppStoreVerifyReceiptEventEnvironment import AppleAppStoreVerifyReceiptEventEnvironment
 
 
 class AppleAppStoreVerifyReceiptEventOptions:

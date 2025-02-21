@@ -15,7 +15,7 @@ from __future__ import annotations
 from typing import *
 from .BuffTargetGrn import BuffTargetGrn
 from .options.BuffTargetModelOptions import BuffTargetModelOptions
-from .enum.BuffTargetModelTargetModelName import BuffTargetModelTargetModelName
+from .enums.BuffTargetModelTargetModelName import BuffTargetModelTargetModelName
 
 
 class BuffTargetModel:

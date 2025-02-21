@@ -16,7 +16,7 @@ from typing import *
 from .AppleAppStoreVerifyReceiptEvent import AppleAppStoreVerifyReceiptEvent
 from .GooglePlayVerifyReceiptEvent import GooglePlayVerifyReceiptEvent
 from .options.VerifyReceiptEventOptions import VerifyReceiptEventOptions
-from .enum.VerifyReceiptEventPlatform import VerifyReceiptEventPlatform
+from .enums.VerifyReceiptEventPlatform import VerifyReceiptEventPlatform
 
 
 class VerifyReceiptEvent:

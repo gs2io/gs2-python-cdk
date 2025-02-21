@@ -14,7 +14,7 @@
 from __future__ import annotations
 from typing import *
 from .options.IssueJobOptions import IssueJobOptions
-from .enum.IssueJobStatus import IssueJobStatus
+from .enums.IssueJobStatus import IssueJobStatus
 
 
 class IssueJob:

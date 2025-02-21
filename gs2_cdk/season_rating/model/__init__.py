@@ -11,6 +11,8 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
+#
+# deny overwrite
 from .Namespace import Namespace
 from .options.NamespaceOptions import NamespaceOptions
 from .MatchSession import MatchSession
@@ -31,8 +33,4 @@ from .GameResult import GameResult
 from .options.GameResultOptions import GameResultOptions
 from .SignedBallot import SignedBallot
 from .options.SignedBallotOptions import SignedBallotOptions
-from .WrittenBallot import WrittenBallot
-from .options.WrittenBallotOptions import WrittenBallotOptions
-from .Vote import Vote
-from .options.VoteOptions import VoteOptions
 from .CurrentMasterData import CurrentMasterData

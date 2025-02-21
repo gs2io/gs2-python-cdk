@@ -14,7 +14,7 @@
 from __future__ import annotations
 from typing import *
 from .options.AppleAppStoreVerifyReceiptEventOptions import AppleAppStoreVerifyReceiptEventOptions
-from .enum.AppleAppStoreVerifyReceiptEventEnvironment import AppleAppStoreVerifyReceiptEventEnvironment
+from .enums.AppleAppStoreVerifyReceiptEventEnvironment import AppleAppStoreVerifyReceiptEventEnvironment
 
 
 class AppleAppStoreVerifyReceiptEvent:

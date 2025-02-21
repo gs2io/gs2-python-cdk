@@ -13,9 +13,9 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
-from ..enum.RepeatSettingRepeatType import RepeatSettingRepeatType
-from ..enum.RepeatSettingBeginDayOfWeek import RepeatSettingBeginDayOfWeek
-from ..enum.RepeatSettingEndDayOfWeek import RepeatSettingEndDayOfWeek
+from ..enums.RepeatSettingRepeatType import RepeatSettingRepeatType
+from ..enums.RepeatSettingBeginDayOfWeek import RepeatSettingBeginDayOfWeek
+from ..enums.RepeatSettingEndDayOfWeek import RepeatSettingEndDayOfWeek
 
 
 class RepeatSettingOptions:

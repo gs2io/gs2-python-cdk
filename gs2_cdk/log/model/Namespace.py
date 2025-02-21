@@ -18,7 +18,7 @@ from ...core.model import CdkResource, Stack
 from ...core.func import GetAttr
 
 from ..ref.NamespaceRef import NamespaceRef
-from .enum.NamespaceType import NamespaceType
+from .enums.NamespaceType import NamespaceType
 
 from .options.NamespaceOptions import NamespaceOptions
 

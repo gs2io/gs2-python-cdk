@@ -14,9 +14,9 @@
 from __future__ import annotations
 from typing import *
 from ....core.model import VerifyAction
-from ..enum.CounterScopeModelScopeType import CounterScopeModelScopeType
-from ..enum.CounterScopeModelResetType import CounterScopeModelResetType
-from ..enum.CounterScopeModelResetDayOfWeek import CounterScopeModelResetDayOfWeek
+from ..enums.CounterScopeModelScopeType import CounterScopeModelScopeType
+from ..enums.CounterScopeModelResetType import CounterScopeModelResetType
+from ..enums.CounterScopeModelResetDayOfWeek import CounterScopeModelResetDayOfWeek
 
 
 class CounterScopeModelOptions:

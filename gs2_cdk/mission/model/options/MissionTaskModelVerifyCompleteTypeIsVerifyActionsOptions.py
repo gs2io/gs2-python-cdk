@@ -16,8 +16,8 @@ from typing import *
 from ..TargetCounterModel import TargetCounterModel
 from ....core.model import VerifyAction
 from ....core.model import AcquireAction
-from ..enum.MissionTaskModelVerifyCompleteType import MissionTaskModelVerifyCompleteType
-from ..enum.MissionTaskModelTargetResetType import MissionTaskModelTargetResetType
+from ..enums.MissionTaskModelVerifyCompleteType import MissionTaskModelVerifyCompleteType
+from ..enums.MissionTaskModelTargetResetType import MissionTaskModelTargetResetType
 
 
 class MissionTaskModelVerifyCompleteTypeIsVerifyActionsOptions:

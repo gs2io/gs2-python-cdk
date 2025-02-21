@@ -19,7 +19,7 @@ from ...core.model import AcquireAction
 from .options.RateModelOptions import RateModelOptions
 from .options.RateModelTimingTypeIsImmediateOptions import RateModelTimingTypeIsImmediateOptions
 from .options.RateModelTimingTypeIsAwaitOptions import RateModelTimingTypeIsAwaitOptions
-from .enum.RateModelTimingType import RateModelTimingType
+from .enums.RateModelTimingType import RateModelTimingType
 
 
 class RateModel:

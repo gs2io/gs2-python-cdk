@@ -14,7 +14,7 @@
 from __future__ import annotations
 from typing import *
 from ....core.model import AcquireAction
-from ..enum.PrizeType import PrizeType
+from ..enums.PrizeType import PrizeType
 
 
 class PrizeOptions:

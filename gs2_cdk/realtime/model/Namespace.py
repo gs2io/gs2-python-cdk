@@ -20,8 +20,8 @@ from ...core.model import NotificationSetting
 from ...core.model import LogSetting
 
 from ..ref.NamespaceRef import NamespaceRef
-from .enum.NamespaceServerType import NamespaceServerType
-from .enum.NamespaceServerSpec import NamespaceServerSpec
+from .enums.NamespaceServerType import NamespaceServerType
+from .enums.NamespaceServerSpec import NamespaceServerSpec
 
 from .options.NamespaceOptions import NamespaceOptions
 

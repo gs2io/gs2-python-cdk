@@ -16,8 +16,8 @@ from typing import *
 from ...core.model import AcquireAction
 from .RankingReward import RankingReward
 from .options.GlobalRankingModelOptions import GlobalRankingModelOptions
-from .enum.GlobalRankingModelOrderDirection import GlobalRankingModelOrderDirection
-from .enum.GlobalRankingModelRewardCalculationIndex import GlobalRankingModelRewardCalculationIndex
+from .enums.GlobalRankingModelOrderDirection import GlobalRankingModelOrderDirection
+from .enums.GlobalRankingModelRewardCalculationIndex import GlobalRankingModelRewardCalculationIndex
 
 
 class GlobalRankingModel:

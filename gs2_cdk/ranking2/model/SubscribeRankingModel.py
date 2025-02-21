@@ -14,7 +14,7 @@
 from __future__ import annotations
 from typing import *
 from .options.SubscribeRankingModelOptions import SubscribeRankingModelOptions
-from .enum.SubscribeRankingModelOrderDirection import SubscribeRankingModelOrderDirection
+from .enums.SubscribeRankingModelOrderDirection import SubscribeRankingModelOrderDirection
 
 
 class SubscribeRankingModel:

@@ -13,7 +13,7 @@
 # permissions and limitations under the License.
 from .Namespace import Namespace
 from .options.NamespaceOptions import NamespaceOptions
-from .enum.NamespaceSupportSpeculativeExecution import NamespaceSupportSpeculativeExecution
+from .enums.NamespaceSupportSpeculativeExecution import NamespaceSupportSpeculativeExecution
 from .options.NamespaceSupportSpeculativeExecutionIsEnableOptions import NamespaceSupportSpeculativeExecutionIsEnableOptions
 from .options.NamespaceSupportSpeculativeExecutionIsDisableOptions import NamespaceSupportSpeculativeExecutionIsDisableOptions
 from .StateMachineMaster import StateMachineMaster
@@ -24,7 +24,7 @@ from .Variable import Variable
 from .options.VariableOptions import VariableOptions
 from .Event import Event
 from .options.EventOptions import EventOptions
-from .enum.EventEventType import EventEventType
+from .enums.EventEventType import EventEventType
 from .options.EventEventTypeIsChangeStateOptions import EventEventTypeIsChangeStateOptions
 from .options.EventEventTypeIsEmitOptions import EventEventTypeIsEmitOptions
 from .ChangeStateEvent import ChangeStateEvent

@@ -15,7 +15,7 @@ from __future__ import annotations
 from typing import *
 from ..ChangeStateEvent import ChangeStateEvent
 from ..EmitEvent import EmitEvent
-from ..enum.EventEventType import EventEventType
+from ..enums.EventEventType import EventEventType
 
 
 class EventEventTypeIsChangeStateOptions:

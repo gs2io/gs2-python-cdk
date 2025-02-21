@@ -16,7 +16,7 @@ from typing import *
 from .options.AcquireActionRateOptions import AcquireActionRateOptions
 from .options.AcquireActionRateModeIsDoubleOptions import AcquireActionRateModeIsDoubleOptions
 from .options.AcquireActionRateModeIsBigOptions import AcquireActionRateModeIsBigOptions
-from .enum.AcquireActionRateMode import AcquireActionRateMode
+from .enums.AcquireActionRateMode import AcquireActionRateMode
 
 
 class AcquireActionRate:

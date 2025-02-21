@@ -11,6 +11,8 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
+#
+# deny overwrite
 from __future__ import annotations
 from typing import *
 from .RepeatSetting import RepeatSetting
@@ -21,10 +23,10 @@ from .options.EventRepeatTypeIsAlwaysOptions import EventRepeatTypeIsAlwaysOptio
 from .options.EventRepeatTypeIsDailyOptions import EventRepeatTypeIsDailyOptions
 from .options.EventRepeatTypeIsWeeklyOptions import EventRepeatTypeIsWeeklyOptions
 from .options.EventRepeatTypeIsMonthlyOptions import EventRepeatTypeIsMonthlyOptions
-from .enum.EventScheduleType import EventScheduleType
-from .enum.EventRepeatType import EventRepeatType
-from .enum.EventRepeatBeginDayOfWeek import EventRepeatBeginDayOfWeek
-from .enum.EventRepeatEndDayOfWeek import EventRepeatEndDayOfWeek
+from .enums.EventScheduleType import EventScheduleType
+from .enums.EventRepeatType import EventRepeatType
+from .enums.EventRepeatBeginDayOfWeek import EventRepeatBeginDayOfWeek
+from .enums.EventRepeatEndDayOfWeek import EventRepeatEndDayOfWeek
 
 
 class Event:
@@ -48,13 +50,12 @@ class Event:
         name: str,
         schedule_type: EventScheduleType,
         repeat_setting: RepeatSetting,
-        repeat_type: EventRepeatType,
         options: Optional[EventOptions] = EventOptions(),
     ):
         self.name = name
         self.schedule_type = schedule_type
         self.repeat_setting = repeat_setting
-        self.repeat_type = repeat_type
+        self.repeat_type = options.repeat_type if options.repeat_type else None
         self.metadata = options.metadata if options.metadata else None
         self.absolute_begin = options.absolute_begin if options.absolute_begin else None
         self.absolute_end = options.absolute_end if options.absolute_end else None
@@ -70,14 +71,12 @@ class Event:
     def schedule_type_is_absolute(
         name: str,
         repeat_setting: RepeatSetting,
-        repeat_type: EventRepeatType,
         options: Optional[EventScheduleTypeIsAbsoluteOptions] = EventScheduleTypeIsAbsoluteOptions(),
     ) -> Event:
         return Event(
             name,
             EventScheduleType.ABSOLUTE,
             repeat_setting,
-            repeat_type,
             EventOptions(
                 options.metadata,
                 options.absolute_begin,
@@ -89,7 +88,6 @@ class Event:
     def schedule_type_is_relative(
         name: str,
         repeat_setting: RepeatSetting,
-        repeat_type: EventRepeatType,
         relative_trigger_name: str,
         options: Optional[EventScheduleTypeIsRelativeOptions] = EventScheduleTypeIsRelativeOptions(),
     ) -> Event:
@@ -97,12 +95,11 @@ class Event:
             name,
             EventScheduleType.RELATIVE,
             repeat_setting,
-            repeat_type,
             EventOptions(
-                relative_trigger_name,
-                options.metadata,
-                options.absolute_begin,
-                options.absolute_end,
+                metadata = options.metadata,
+                absolute_begin = options.absolute_begin,
+                absolute_end = options.absolute_end,
+                relative_trigger_name = relative_trigger_name,
             ),
         )
 
@@ -117,8 +114,8 @@ class Event:
             name,
             schedule_type,
             repeat_setting,
-            EventRepeatType.ALWAYS,
             EventOptions(
+                EventRepeatType.ALWAYS,
                 options.metadata,
                 options.absolute_begin,
                 options.absolute_end,
@@ -138,13 +135,13 @@ class Event:
             name,
             schedule_type,
             repeat_setting,
-            EventRepeatType.DAILY,
             EventOptions(
-                repeat_begin_hour,
-                repeat_end_hour,
-                options.metadata,
-                options.absolute_begin,
-                options.absolute_end,
+                repeat_type = EventRepeatType.DAILY,
+                repeat_begin_hour = repeat_begin_hour,
+                repeat_end_hour = repeat_end_hour,
+                metadata = options.metadata,
+                absolute_begin = options.absolute_begin,
+                absolute_end = options.absolute_end,
             ),
         )
 
@@ -163,15 +160,15 @@ class Event:
             name,
             schedule_type,
             repeat_setting,
-            EventRepeatType.WEEKLY,
             EventOptions(
-                repeat_begin_day_of_week,
-                repeat_end_day_of_week,
-                repeat_begin_hour,
-                repeat_end_hour,
-                options.metadata,
-                options.absolute_begin,
-                options.absolute_end,
+                repeat_type = EventRepeatType.WEEKLY,
+                repeat_begin_day_of_week = repeat_begin_day_of_week,
+                repeat_end_day_of_week = repeat_end_day_of_week,
+                repeat_begin_hour = repeat_begin_hour,
+                repeat_end_hour = repeat_end_hour,
+                metadata = options.metadata,
+                absolute_begin = options.absolute_begin,
+                absolute_end = options.absolute_end,
             ),
         )
 
@@ -190,15 +187,15 @@ class Event:
             name,
             schedule_type,
             repeat_setting,
-            EventRepeatType.MONTHLY,
             EventOptions(
-                repeat_begin_day_of_month,
-                repeat_end_day_of_month,
-                repeat_begin_hour,
-                repeat_end_hour,
-                options.metadata,
-                options.absolute_begin,
-                options.absolute_end,
+                repeat_type = EventRepeatType.MONTHLY,
+                repeat_begin_day_of_month = repeat_begin_day_of_month,
+                repeat_end_day_of_month = repeat_end_day_of_month,
+                repeat_begin_hour = repeat_begin_hour,
+                repeat_end_hour = repeat_end_hour,
+                metadata = options.metadata,
+                absolute_begin = options.absolute_begin,
+                absolute_end = options.absolute_end,
             ),
         )
 

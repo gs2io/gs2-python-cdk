@@ -21,7 +21,7 @@ from .GradeEntryModel import GradeEntryModel
 from .options.GradeEntryModelOptions import GradeEntryModelOptions
 from .AcquireActionRate import AcquireActionRate
 from .options.AcquireActionRateOptions import AcquireActionRateOptions
-from .enum.AcquireActionRateMode import AcquireActionRateMode
+from .enums.AcquireActionRateMode import AcquireActionRateMode
 from .options.AcquireActionRateModeIsDoubleOptions import AcquireActionRateModeIsDoubleOptions
 from .options.AcquireActionRateModeIsBigOptions import AcquireActionRateModeIsBigOptions
 from .VerifyActionResult import VerifyActionResult

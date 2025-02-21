@@ -23,7 +23,7 @@ from ...core.model import LogSetting
 from ..ref.NamespaceRef import NamespaceRef
 from .CurrentMasterData import CurrentMasterData
 from .StoreContentModel import StoreContentModel
-from .enum.NamespaceCurrencyUsagePriority import NamespaceCurrencyUsagePriority
+from .enums.NamespaceCurrencyUsagePriority import NamespaceCurrencyUsagePriority
 
 from .options.NamespaceOptions import NamespaceOptions
 

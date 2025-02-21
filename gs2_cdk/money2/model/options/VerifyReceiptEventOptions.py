@@ -15,7 +15,7 @@ from __future__ import annotations
 from typing import *
 from ..AppleAppStoreVerifyReceiptEvent import AppleAppStoreVerifyReceiptEvent
 from ..GooglePlayVerifyReceiptEvent import GooglePlayVerifyReceiptEvent
-from ..enum.VerifyReceiptEventPlatform import VerifyReceiptEventPlatform
+from ..enums.VerifyReceiptEventPlatform import VerifyReceiptEventPlatform
 
 
 class VerifyReceiptEventOptions:

@@ -19,8 +19,8 @@ from .BuffTargetAction import BuffTargetAction
 from .options.BuffEntryModelOptions import BuffEntryModelOptions
 from .options.BuffEntryModelTargetTypeIsModelOptions import BuffEntryModelTargetTypeIsModelOptions
 from .options.BuffEntryModelTargetTypeIsActionOptions import BuffEntryModelTargetTypeIsActionOptions
-from .enum.BuffEntryModelExpression import BuffEntryModelExpression
-from .enum.BuffEntryModelTargetType import BuffEntryModelTargetType
+from .enums.BuffEntryModelExpression import BuffEntryModelExpression
+from .enums.BuffEntryModelTargetType import BuffEntryModelTargetType
 
 
 class BuffEntryModel:

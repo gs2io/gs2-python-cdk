@@ -18,7 +18,7 @@ from ....core.model import ConsumeAction
 from ....core.model import AcquireAction
 from ..SalesItem import SalesItem
 from ..SalesItemGroup import SalesItemGroup
-from ..enum.DisplayItemType import DisplayItemType
+from ..enums.DisplayItemType import DisplayItemType
 
 
 class DisplayItemTypeIsSalesItemOptions:

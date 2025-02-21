@@ -14,7 +14,7 @@
 from __future__ import annotations
 from typing import *
 from .options.ReceiptOptions import ReceiptOptions
-from .enum.ReceiptStore import ReceiptStore
+from .enums.ReceiptStore import ReceiptStore
 
 
 class Receipt:

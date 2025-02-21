@@ -15,7 +15,7 @@ from __future__ import annotations
 from typing import *
 from .BalanceParameterValueModel import BalanceParameterValueModel
 from .options.BalanceParameterModelOptions import BalanceParameterModelOptions
-from .enum.BalanceParameterModelInitialValueStrategy import BalanceParameterModelInitialValueStrategy
+from .enums.BalanceParameterModelInitialValueStrategy import BalanceParameterModelInitialValueStrategy
 
 
 class BalanceParameterModel:
