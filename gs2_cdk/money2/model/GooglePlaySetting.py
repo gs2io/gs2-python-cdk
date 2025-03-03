@@ -19,6 +19,7 @@ from .options.GooglePlaySettingOptions import GooglePlaySettingOptions
 class GooglePlaySetting:
     package_name: Optional[str] = None
     public_key: Optional[str] = None
+    credentials_j_s_o_n: Optional[str] = None
 
     def __init__(
         self,
@@ -26,6 +27,7 @@ class GooglePlaySetting:
     ):
         self.package_name = options.package_name if options.package_name else None
         self.public_key = options.public_key if options.public_key else None
+        self.credentials_j_s_o_n = options.credentials_j_s_o_n if options.credentials_j_s_o_n else None
 
     def properties(
         self,
@@ -36,5 +38,7 @@ class GooglePlaySetting:
             properties["packageName"] = self.package_name
         if self.public_key is not None:
             properties["publicKey"] = self.public_key
+        if self.credentials_j_s_o_n is not None:
+            properties["credentialsJSON"] = self.credentials_j_s_o_n
 
         return properties

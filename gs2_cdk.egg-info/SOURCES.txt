@@ -582,6 +582,7 @@ src/gs2_cdk/money/stamp_sheet/__init__.py
 src/gs2_cdk/money2/__init__.py
 src/gs2_cdk/money2/model/AppleAppStoreContent.py
 src/gs2_cdk/money2/model/AppleAppStoreSetting.py
+src/gs2_cdk/money2/model/AppleAppStoreSubscriptionContent.py
 src/gs2_cdk/money2/model/AppleAppStoreVerifyReceiptEvent.py
 src/gs2_cdk/money2/model/CurrentMasterData.py
 src/gs2_cdk/money2/model/DailyTransactionHistory.py
@@ -589,12 +590,17 @@ src/gs2_cdk/money2/model/DepositEvent.py
 src/gs2_cdk/money2/model/DepositTransaction.py
 src/gs2_cdk/money2/model/FakeSetting.py
 src/gs2_cdk/money2/model/GooglePlayContent.py
+src/gs2_cdk/money2/model/GooglePlayRealtimeNotificationMessage.py
 src/gs2_cdk/money2/model/GooglePlaySetting.py
+src/gs2_cdk/money2/model/GooglePlaySubscriptionContent.py
 src/gs2_cdk/money2/model/GooglePlayVerifyReceiptEvent.py
 src/gs2_cdk/money2/model/Namespace.py
 src/gs2_cdk/money2/model/PlatformSetting.py
 src/gs2_cdk/money2/model/Receipt.py
+src/gs2_cdk/money2/model/RefundEvent.py
 src/gs2_cdk/money2/model/StoreContentModel.py
+src/gs2_cdk/money2/model/StoreSubscriptionContentModel.py
+src/gs2_cdk/money2/model/SubscribeTransaction.py
 src/gs2_cdk/money2/model/UnusedBalance.py
 src/gs2_cdk/money2/model/VerifyReceiptEvent.py
 src/gs2_cdk/money2/model/WalletSummary.py
@@ -604,6 +610,8 @@ src/gs2_cdk/money2/ref/DailyTransactionHistoryRef.py
 src/gs2_cdk/money2/ref/MasterDataVersionRef.py
 src/gs2_cdk/money2/ref/NamespaceRef.py
 src/gs2_cdk/money2/ref/StoreContentModelRef.py
+src/gs2_cdk/money2/ref/StoreSubscriptionContentModelRef.py
+src/gs2_cdk/money2/ref/SubscribeTransactionRef.py
 src/gs2_cdk/money2/ref/UnusedBalanceRef.py
 src/gs2_cdk/money2/ref/__init__.py
 src/gs2_cdk/money2/stamp_sheet/DepositByUserId.py

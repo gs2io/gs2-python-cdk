@@ -17,10 +17,19 @@ from typing import *
 
 class AppleAppStoreSettingOptions:
     bundle_id: Optional[str]
+    issuer_id: Optional[str]
+    key_id: Optional[str]
+    private_key_pem: Optional[str]
     
     def __init__(
         self,
         bundle_id: Optional[str] = None,
+        issuer_id: Optional[str] = None,
+        key_id: Optional[str] = None,
+        private_key_pem: Optional[str] = None,
     ):
         self.bundle_id = bundle_id
+        self.issuer_id = issuer_id
+        self.key_id = key_id
+        self.private_key_pem = private_key_pem
 

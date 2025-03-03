@@ -13,20 +13,24 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from .options.GooglePlaySubscriptionContentOptions import GooglePlaySubscriptionContentOptions
 
 
-class GooglePlaySettingOptions:
-    package_name: Optional[str]
-    public_key: Optional[str]
-    credentials_j_s_o_n: Optional[str]
-    
+class GooglePlaySubscriptionContent:
+    product_id: Optional[str] = None
+
     def __init__(
         self,
-        package_name: Optional[str] = None,
-        public_key: Optional[str] = None,
-        credentials_j_s_o_n: Optional[str] = None,
+        options: Optional[GooglePlaySubscriptionContentOptions] = GooglePlaySubscriptionContentOptions(),
     ):
-        self.package_name = package_name
-        self.public_key = public_key
-        self.credentials_j_s_o_n = credentials_j_s_o_n
+        self.product_id = options.product_id if options.product_id else None
 
+    def properties(
+        self,
+    ) -> Dict[str, Any]:
+        properties: Dict[str, Any] = {}
+
+        if self.product_id is not None:
+            properties["productId"] = self.product_id
+
+        return properties

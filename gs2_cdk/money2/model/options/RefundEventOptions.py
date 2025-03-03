@@ -13,20 +13,20 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from ..AppleAppStoreVerifyReceiptEvent import AppleAppStoreVerifyReceiptEvent
+from ..GooglePlayVerifyReceiptEvent import GooglePlayVerifyReceiptEvent
+from ..enums.RefundEventPlatform import RefundEventPlatform
 
 
-class GooglePlaySettingOptions:
-    package_name: Optional[str]
-    public_key: Optional[str]
-    credentials_j_s_o_n: Optional[str]
+class RefundEventOptions:
+    apple_app_store_refund_event: Optional[AppleAppStoreVerifyReceiptEvent]
+    google_play_refund_event: Optional[GooglePlayVerifyReceiptEvent]
     
     def __init__(
         self,
-        package_name: Optional[str] = None,
-        public_key: Optional[str] = None,
-        credentials_j_s_o_n: Optional[str] = None,
+        apple_app_store_refund_event: Optional[AppleAppStoreVerifyReceiptEvent] = None,
+        google_play_refund_event: Optional[GooglePlayVerifyReceiptEvent] = None,
     ):
-        self.package_name = package_name
-        self.public_key = public_key
-        self.credentials_j_s_o_n = credentials_j_s_o_n
+        self.apple_app_store_refund_event = apple_app_store_refund_event
+        self.google_play_refund_event = google_play_refund_event
 

@@ -12,7 +12,9 @@
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
 from .NamespaceRef import NamespaceRef
+from .SubscribeTransactionRef import SubscribeTransactionRef
 from .StoreContentModelRef import StoreContentModelRef
+from .StoreSubscriptionContentModelRef import StoreSubscriptionContentModelRef
 from .MasterDataVersionRef import MasterDataVersionRef
 from .DailyTransactionHistoryRef import DailyTransactionHistoryRef
 from .UnusedBalanceRef import UnusedBalanceRef

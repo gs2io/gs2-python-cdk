@@ -18,12 +18,18 @@ from .options.AppleAppStoreSettingOptions import AppleAppStoreSettingOptions
 
 class AppleAppStoreSetting:
     bundle_id: Optional[str] = None
+    issuer_id: Optional[str] = None
+    key_id: Optional[str] = None
+    private_key_pem: Optional[str] = None
 
     def __init__(
         self,
         options: Optional[AppleAppStoreSettingOptions] = AppleAppStoreSettingOptions(),
     ):
         self.bundle_id = options.bundle_id if options.bundle_id else None
+        self.issuer_id = options.issuer_id if options.issuer_id else None
+        self.key_id = options.key_id if options.key_id else None
+        self.private_key_pem = options.private_key_pem if options.private_key_pem else None
 
     def properties(
         self,
@@ -32,5 +38,11 @@ class AppleAppStoreSetting:
 
         if self.bundle_id is not None:
             properties["bundleId"] = self.bundle_id
+        if self.issuer_id is not None:
+            properties["issuerId"] = self.issuer_id
+        if self.key_id is not None:
+            properties["keyId"] = self.key_id
+        if self.private_key_pem is not None:
+            properties["privateKeyPem"] = self.private_key_pem
 
         return properties

@@ -15,18 +15,10 @@ from __future__ import annotations
 from typing import *
 
 
-class GooglePlaySettingOptions:
-    package_name: Optional[str]
-    public_key: Optional[str]
-    credentials_j_s_o_n: Optional[str]
+class GooglePlayRealtimeNotificationMessageOptions:
     
     def __init__(
         self,
-        package_name: Optional[str] = None,
-        public_key: Optional[str] = None,
-        credentials_j_s_o_n: Optional[str] = None,
     ):
-        self.package_name = package_name
-        self.public_key = public_key
-        self.credentials_j_s_o_n = credentials_j_s_o_n
+        pass
 

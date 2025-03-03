@@ -13,20 +13,22 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from ..AppleAppStoreSubscriptionContent import AppleAppStoreSubscriptionContent
+from ..GooglePlaySubscriptionContent import GooglePlaySubscriptionContent
 
 
-class GooglePlaySettingOptions:
-    package_name: Optional[str]
-    public_key: Optional[str]
-    credentials_j_s_o_n: Optional[str]
+class StoreSubscriptionContentModelOptions:
+    metadata: Optional[str]
+    apple_app_store: Optional[AppleAppStoreSubscriptionContent]
+    google_play: Optional[GooglePlaySubscriptionContent]
     
     def __init__(
         self,
-        package_name: Optional[str] = None,
-        public_key: Optional[str] = None,
-        credentials_j_s_o_n: Optional[str] = None,
+        metadata: Optional[str] = None,
+        apple_app_store: Optional[AppleAppStoreSubscriptionContent] = None,
+        google_play: Optional[GooglePlaySubscriptionContent] = None,
     ):
-        self.package_name = package_name
-        self.public_key = public_key
-        self.credentials_j_s_o_n = credentials_j_s_o_n
+        self.metadata = metadata
+        self.apple_app_store = apple_app_store
+        self.google_play = google_play
 

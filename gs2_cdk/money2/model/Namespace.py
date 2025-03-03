@@ -18,11 +18,13 @@ from ...core.model import CdkResource, Stack
 from ...core.func import GetAttr
 from .PlatformSetting import PlatformSetting
 from ...core.model import ScriptSetting
+from ...core.model import NotificationSetting
 from ...core.model import LogSetting
 
 from ..ref.NamespaceRef import NamespaceRef
 from .CurrentMasterData import CurrentMasterData
 from .StoreContentModel import StoreContentModel
+from .StoreSubscriptionContentModel import StoreSubscriptionContentModel
 from .enums.NamespaceCurrencyUsagePriority import NamespaceCurrencyUsagePriority
 
 from .options.NamespaceOptions import NamespaceOptions
@@ -37,6 +39,11 @@ class Namespace(CdkResource):
     description: Optional[str] = None
     deposit_balance_script: Optional[ScriptSetting] = None
     withdraw_balance_script: Optional[ScriptSetting] = None
+    subscribe_script: Optional[str] = None
+    renew_script: Optional[str] = None
+    unsubscribe_script: Optional[str] = None
+    take_over_script: Optional[ScriptSetting] = None
+    change_subscription_status_notification: Optional[NotificationSetting] = None
     log_setting: Optional[LogSetting] = None
 
     def __init__(
@@ -60,6 +67,11 @@ class Namespace(CdkResource):
         self.description = options.description if options.description else None
         self.deposit_balance_script = options.deposit_balance_script if options.deposit_balance_script else None
         self.withdraw_balance_script = options.withdraw_balance_script if options.withdraw_balance_script else None
+        self.subscribe_script = options.subscribe_script if options.subscribe_script else None
+        self.renew_script = options.renew_script if options.renew_script else None
+        self.unsubscribe_script = options.unsubscribe_script if options.unsubscribe_script else None
+        self.take_over_script = options.take_over_script if options.take_over_script else None
+        self.change_subscription_status_notification = options.change_subscription_status_notification if options.change_subscription_status_notification else None
         self.log_setting = options.log_setting if options.log_setting else None
         stack.add_resource(
             self,
@@ -98,6 +110,18 @@ class Namespace(CdkResource):
         if self.withdraw_balance_script is not None:
             properties["WithdrawBalanceScript"] = self.withdraw_balance_script.properties(
             )
+        if self.subscribe_script is not None:
+            properties["SubscribeScript"] = self.subscribe_script
+        if self.renew_script is not None:
+            properties["RenewScript"] = self.renew_script
+        if self.unsubscribe_script is not None:
+            properties["UnsubscribeScript"] = self.unsubscribe_script
+        if self.take_over_script is not None:
+            properties["TakeOverScript"] = self.take_over_script.properties(
+            )
+        if self.change_subscription_status_notification is not None:
+            properties["ChangeSubscriptionStatusNotification"] = self.change_subscription_status_notification.properties(
+            )
         if self.log_setting is not None:
             properties["LogSetting"] = self.log_setting.properties(
             )
@@ -123,11 +147,13 @@ class Namespace(CdkResource):
     def master_data(
         self,
         store_content_models: List[StoreContentModel],
+        store_subscription_content_models: List[StoreSubscriptionContentModel],
     ) -> Namespace:
         CurrentMasterData(
             self.stack,
             self.name,
             store_content_models,
+            store_subscription_content_models,
         ).add_depends_on(
             self,
         )

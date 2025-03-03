@@ -13,20 +13,25 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from ..enums.SubscribeTransactionStore import SubscribeTransactionStore
+from ..enums.SubscribeTransactionStatusDetail import SubscribeTransactionStatusDetail
 
 
-class GooglePlaySettingOptions:
-    package_name: Optional[str]
-    public_key: Optional[str]
-    credentials_j_s_o_n: Optional[str]
+class SubscribeTransactionOptions:
+    user_id: Optional[str]
+    last_allocated_at: Optional[int]
+    last_take_over_at: Optional[int]
+    revision: Optional[int]
     
     def __init__(
         self,
-        package_name: Optional[str] = None,
-        public_key: Optional[str] = None,
-        credentials_j_s_o_n: Optional[str] = None,
+        user_id: Optional[str] = None,
+        last_allocated_at: Optional[int] = None,
+        last_take_over_at: Optional[int] = None,
+        revision: Optional[int] = None,
     ):
-        self.package_name = package_name
-        self.public_key = public_key
-        self.credentials_j_s_o_n = credentials_j_s_o_n
+        self.user_id = user_id
+        self.last_allocated_at = last_allocated_at
+        self.last_take_over_at = last_take_over_at
+        self.revision = revision
 

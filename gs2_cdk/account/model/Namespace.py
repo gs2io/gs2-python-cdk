@@ -36,6 +36,7 @@ class Namespace(CdkResource):
     authentication_script: Optional[ScriptSetting] = None
     create_take_over_script: Optional[ScriptSetting] = None
     do_take_over_script: Optional[ScriptSetting] = None
+    ban_script: Optional[ScriptSetting] = None
     log_setting: Optional[LogSetting] = None
 
     def __init__(
@@ -57,6 +58,7 @@ class Namespace(CdkResource):
         self.authentication_script = options.authentication_script if options.authentication_script else None
         self.create_take_over_script = options.create_take_over_script if options.create_take_over_script else None
         self.do_take_over_script = options.do_take_over_script if options.do_take_over_script else None
+        self.ban_script = options.ban_script if options.ban_script else None
         self.log_setting = options.log_setting if options.log_setting else None
         stack.add_resource(
             self,
@@ -97,6 +99,9 @@ class Namespace(CdkResource):
             )
         if self.do_take_over_script is not None:
             properties["DoTakeOverScript"] = self.do_take_over_script.properties(
+            )
+        if self.ban_script is not None:
+            properties["BanScript"] = self.ban_script.properties(
             )
         if self.log_setting is not None:
             properties["LogSetting"] = self.log_setting.properties(

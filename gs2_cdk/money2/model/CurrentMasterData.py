@@ -16,18 +16,21 @@ from typing import *
 
 from ...core.model import CdkResource, Stack
 from .StoreContentModel import StoreContentModel
+from .StoreSubscriptionContentModel import StoreSubscriptionContentModel
 
 
 class CurrentMasterData(CdkResource):
     version: str= "2024-06-20"
     namespace_name: str
     store_content_models: List[StoreContentModel]
+    store_subscription_content_models: List[StoreSubscriptionContentModel]
 
     def __init__(
         self,
         stack: Stack,
         namespace_name: str,
         store_content_models: List[StoreContentModel],
+        store_subscription_content_models: List[StoreSubscriptionContentModel],
     ):
         super().__init__(
             "Money2_CurrentModelMaster_" + namespace_name
@@ -35,6 +38,7 @@ class CurrentMasterData(CdkResource):
 
         self.namespace_name = namespace_name
         self.store_content_models = store_content_models
+        self.store_subscription_content_models = store_subscription_content_models
         stack.add_resource(
             self,
         )
@@ -61,6 +65,12 @@ class CurrentMasterData(CdkResource):
                 v.properties(
                 )
                 for v in self.store_content_models
+            ]
+        if self.store_subscription_content_models is not None:
+            settings["storeSubscriptionContentModels"] = [
+                v.properties(
+                )
+                for v in self.store_subscription_content_models
             ]
 
         if self.namespace_name is not None:

@@ -11,22 +11,23 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-from __future__ import annotations
-from typing import *
 
 
-class GooglePlaySettingOptions:
-    package_name: Optional[str]
-    public_key: Optional[str]
-    credentials_j_s_o_n: Optional[str]
-    
+
+
+class SubscribeTransactionStore:
+    value: str
+    APPLE_APP_STORE: 'SubscribeTransactionStore'
+    GOOGLE_PLAY: 'SubscribeTransactionStore'
+    FAKE: 'SubscribeTransactionStore'
+
     def __init__(
         self,
-        package_name: Optional[str] = None,
-        public_key: Optional[str] = None,
-        credentials_j_s_o_n: Optional[str] = None,
+        value: str,
     ):
-        self.package_name = package_name
-        self.public_key = public_key
-        self.credentials_j_s_o_n = credentials_j_s_o_n
+        self.value = value
 
+
+SubscribeTransactionStore.APPLE_APP_STORE = SubscribeTransactionStore("AppleAppStore")
+SubscribeTransactionStore.GOOGLE_PLAY = SubscribeTransactionStore("GooglePlay")
+SubscribeTransactionStore.FAKE = SubscribeTransactionStore("fake")
