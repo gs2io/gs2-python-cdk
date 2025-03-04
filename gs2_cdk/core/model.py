@@ -1,4 +1,5 @@
 from __future__ import annotations
+from typing import *
 from abc import abstractmethod
 from typing import List, Dict, Any
 
@@ -113,22 +114,53 @@ class Stack:
         return yaml.dump(self.template(), indent=2)
 
 
+class TransactionSettingOptions:
+
+    enable_atomic_commit: Optional[bool]
+    transaction_use_distributor: Optional[bool]
+    acquire_action_use_job_queue: Optional[bool]
+    distributor_namespace_id: Optional[str]
+    queue_namespace_id: Optional[str]
+
+    def __init__(
+            self,
+            enable_atomic_commit: Optional[bool] = None,
+            transaction_use_distributor: Optional[bool] = None,
+            acquire_action_use_job_queue: Optional[bool] = None,
+            distributor_namespace_id: Optional[str] = None,
+            queue_namespace_id: Optional[str] = None,
+    ):
+        self.enable_atomic_commit = enable_atomic_commit
+        self.transaction_use_distributor = transaction_use_distributor
+        self.acquire_action_use_job_queue = acquire_action_use_job_queue
+        self.distributor_namespace_id = distributor_namespace_id
+        self.queue_namespace_id = queue_namespace_id
+
+
 class TransactionSetting:
 
+    enable_atomic_commit: bool
+    transaction_use_distributor: bool
+    acquire_action_use_job_queue: bool
     distributor_namespace_id: str
     queue_namespace_id: str
 
     def __init__(
             self,
-            distributor_namespace_id: str = None,
-            queue_namespace_id: str = None,
+            options: Optional[TransactionSettingOptions] = TransactionSettingOptions(),
     ):
-        self.distributor_namespace_id = distributor_namespace_id
-        self.queue_namespace_id = queue_namespace_id
+        self.enable_atomic_commit = options.enable_atomic_commit if options.enable_atomic_commit else False
+        self.transaction_use_distributor = options.transaction_use_distributor if options.transaction_use_distributor else False
+        self.acquire_action_use_job_queue = options.acquire_action_use_job_queue if options.acquire_action_use_job_queue else False
+        self.distributor_namespace_id = options.distributor_namespace_id if options.distributor_namespace_id else None
+        self.queue_namespace_id = options.queue_namespace_id if options.queue_namespace_id else None
 
     def properties(self) -> Dict[str, Any]:
         return {
             "EnableAutoRun": True,
+            "EnableAtomicCommit": self.enable_atomic_commit,
+            "TransactionUseDistributor": self.transaction_use_distributor,
+            "AcquireActionUseJobQueue": self.acquire_action_use_job_queue,
             "DistributorNamespaceId": self.distributor_namespace_id,
             "QueueNamespaceId": self.queue_namespace_id,
         }
@@ -161,6 +193,22 @@ class ScriptSetting:
             "DoneTriggerQueueNamespaceId": self.done_trigger_queue_namespace_id,
         }
 
+class NotificationSettingOptions:
+
+    gateway_namespace_id: Optional[str]
+    enable_transfer_mobile_notification: Optional[bool]
+    sound: Optional[str]
+
+    def __init__(
+            self,
+            gateway_namespace_id: Optional[str] = None,
+            enable_transfer_mobile_notification: Optional[bool] = False,
+            sound: Optional[str] = None,
+    ):
+        self.gateway_namespace_id = gateway_namespace_id
+        self.enable_transfer_mobile_notification = enable_transfer_mobile_notification
+        self.sound = sound
+
 
 class NotificationSetting:
 
@@ -170,13 +218,11 @@ class NotificationSetting:
 
     def __init__(
             self,
-            gateway_namespace_id: str = None,
-            enable_transfer_mobile_notification: bool = None,
-            sound: str = None,
+            options: Optional[NotificationSettingOptions] = NotificationSettingOptions(),
     ):
-        self.gateway_namespace_id = gateway_namespace_id
-        self.enable_transfer_mobile_notification = enable_transfer_mobile_notification
-        self.sound = sound
+        self.gateway_namespace_id = options.gateway_namespace_id if options.gateway_namespace_id else None
+        self.enable_transfer_mobile_notification = options.enable_transfer_mobile_notification if options.enable_transfer_mobile_notification else False
+        self.sound = options.sound if options.sound else None
 
     def properties(self) -> Dict[str, Any]:
         return {
