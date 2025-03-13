@@ -16,14 +16,19 @@ from typing import *
 from .AppleAppStoreSubscriptionContent import AppleAppStoreSubscriptionContent
 from .GooglePlaySubscriptionContent import GooglePlaySubscriptionContent
 from .options.StoreSubscriptionContentModelOptions import StoreSubscriptionContentModelOptions
+from .options.StoreSubscriptionContentModelTriggerExtendModeIsJustOptions import StoreSubscriptionContentModelTriggerExtendModeIsJustOptions
+from .options.StoreSubscriptionContentModelTriggerExtendModeIsRollupHourOptions import StoreSubscriptionContentModelTriggerExtendModeIsRollupHourOptions
+from .enums.StoreSubscriptionContentModelTriggerExtendMode import StoreSubscriptionContentModelTriggerExtendMode
 
 
 class StoreSubscriptionContentModel:
     name: str
     schedule_namespace_id: str
     trigger_name: str
+    trigger_extend_mode: StoreSubscriptionContentModelTriggerExtendMode
     reallocate_span_days: int
     metadata: Optional[str] = None
+    rollup_hour: Optional[int] = None
     apple_app_store: Optional[AppleAppStoreSubscriptionContent] = None
     google_play: Optional[GooglePlaySubscriptionContent] = None
 
@@ -32,16 +37,63 @@ class StoreSubscriptionContentModel:
         name: str,
         schedule_namespace_id: str,
         trigger_name: str,
+        trigger_extend_mode: StoreSubscriptionContentModelTriggerExtendMode,
         reallocate_span_days: int,
         options: Optional[StoreSubscriptionContentModelOptions] = StoreSubscriptionContentModelOptions(),
     ):
         self.name = name
         self.schedule_namespace_id = schedule_namespace_id
         self.trigger_name = trigger_name
+        self.trigger_extend_mode = trigger_extend_mode
         self.reallocate_span_days = reallocate_span_days
         self.metadata = options.metadata if options.metadata else None
+        self.rollup_hour = options.rollup_hour if options.rollup_hour else None
         self.apple_app_store = options.apple_app_store if options.apple_app_store else None
         self.google_play = options.google_play if options.google_play else None
+
+    @staticmethod
+    def trigger_extend_mode_is_just(
+        name: str,
+        schedule_namespace_id: str,
+        trigger_name: str,
+        reallocate_span_days: int,
+        options: Optional[StoreSubscriptionContentModelTriggerExtendModeIsJustOptions] = StoreSubscriptionContentModelTriggerExtendModeIsJustOptions(),
+    ) -> StoreSubscriptionContentModel:
+        return StoreSubscriptionContentModel(
+            name,
+            schedule_namespace_id,
+            trigger_name,
+            StoreSubscriptionContentModelTriggerExtendMode.JUST,
+            reallocate_span_days,
+            StoreSubscriptionContentModelOptions(
+                options.metadata,
+                options.apple_app_store,
+                options.google_play,
+            ),
+        )
+
+    @staticmethod
+    def trigger_extend_mode_is_rollup_hour(
+        name: str,
+        schedule_namespace_id: str,
+        trigger_name: str,
+        reallocate_span_days: int,
+        rollup_hour: int,
+        options: Optional[StoreSubscriptionContentModelTriggerExtendModeIsRollupHourOptions] = StoreSubscriptionContentModelTriggerExtendModeIsRollupHourOptions(),
+    ) -> StoreSubscriptionContentModel:
+        return StoreSubscriptionContentModel(
+            name,
+            schedule_namespace_id,
+            trigger_name,
+            StoreSubscriptionContentModelTriggerExtendMode.ROLLUP_HOUR,
+            reallocate_span_days,
+            StoreSubscriptionContentModelOptions(
+                rollup_hour,
+                options.metadata,
+                options.apple_app_store,
+                options.google_play,
+            ),
+        )
 
     def properties(
         self,
@@ -56,6 +108,10 @@ class StoreSubscriptionContentModel:
             properties["scheduleNamespaceId"] = self.schedule_namespace_id
         if self.trigger_name is not None:
             properties["triggerName"] = self.trigger_name
+        if self.trigger_extend_mode is not None:
+            properties["triggerExtendMode"] = self.trigger_extend_mode.value
+        if self.rollup_hour is not None:
+            properties["rollupHour"] = self.rollup_hour
         if self.reallocate_span_days is not None:
             properties["reallocateSpanDays"] = self.reallocate_span_days
         if self.apple_app_store is not None:

@@ -11,19 +11,21 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-from __future__ import annotations
-from typing import *
 
 
-class GooglePlaySettingOptions:
-    package_name: Optional[str]
-    public_key: Optional[str]
-    
+
+
+class StoreSubscriptionContentModelTriggerExtendMode:
+    value: str
+    JUST: 'StoreSubscriptionContentModelTriggerExtendMode'
+    ROLLUP_HOUR: 'StoreSubscriptionContentModelTriggerExtendMode'
+
     def __init__(
         self,
-        package_name: Optional[str] = None,
-        public_key: Optional[str] = None,
+        value: str,
     ):
-        self.package_name = package_name
-        self.public_key = public_key
+        self.value = value
 
+
+StoreSubscriptionContentModelTriggerExtendMode.JUST = StoreSubscriptionContentModelTriggerExtendMode("just")
+StoreSubscriptionContentModelTriggerExtendMode.ROLLUP_HOUR = StoreSubscriptionContentModelTriggerExtendMode("rollupHour")

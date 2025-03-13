@@ -25,6 +25,7 @@ class InvokeScript(AcquireAction):
         script_id: str,
         args: Optional[str] = None,
         random_status: Optional[RandomStatus] = None,
+        force_use_distributor: Optional[bool] = None,
         user_id: Optional[str] = "#{userId}",
     ):
         properties: Dict[str, Any] = {}
@@ -32,6 +33,7 @@ class InvokeScript(AcquireAction):
         properties["scriptId"] = script_id
         properties["args"] = args
         properties["randomStatus"] = random_status
+        properties["forceUseDistributor"] = force_use_distributor
         properties["userId"] = user_id
 
         super().__init__(

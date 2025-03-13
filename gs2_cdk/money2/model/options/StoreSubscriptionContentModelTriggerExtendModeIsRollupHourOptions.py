@@ -18,21 +18,17 @@ from ..GooglePlaySubscriptionContent import GooglePlaySubscriptionContent
 from ..enums.StoreSubscriptionContentModelTriggerExtendMode import StoreSubscriptionContentModelTriggerExtendMode
 
 
-class StoreSubscriptionContentModelOptions:
+class StoreSubscriptionContentModelTriggerExtendModeIsRollupHourOptions:
     metadata: Optional[str]
-    rollup_hour: Optional[int]
     apple_app_store: Optional[AppleAppStoreSubscriptionContent]
     google_play: Optional[GooglePlaySubscriptionContent]
     
     def __init__(
         self,
         metadata: Optional[str] = None,
-        rollup_hour: Optional[int] = None,
         apple_app_store: Optional[AppleAppStoreSubscriptionContent] = None,
         google_play: Optional[GooglePlaySubscriptionContent] = None,
     ):
         self.metadata = metadata
-        self.rollup_hour = rollup_hour
         self.apple_app_store = apple_app_store
         self.google_play = google_play
-

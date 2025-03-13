@@ -18,6 +18,7 @@ from .options.AppleAppStoreSettingOptions import AppleAppStoreSettingOptions
 
 class AppleAppStoreSetting:
     bundle_id: Optional[str] = None
+    shared_secret_key: Optional[str] = None
     issuer_id: Optional[str] = None
     key_id: Optional[str] = None
     private_key_pem: Optional[str] = None
@@ -27,6 +28,7 @@ class AppleAppStoreSetting:
         options: Optional[AppleAppStoreSettingOptions] = AppleAppStoreSettingOptions(),
     ):
         self.bundle_id = options.bundle_id if options.bundle_id else None
+        self.shared_secret_key = options.shared_secret_key if options.shared_secret_key else None
         self.issuer_id = options.issuer_id if options.issuer_id else None
         self.key_id = options.key_id if options.key_id else None
         self.private_key_pem = options.private_key_pem if options.private_key_pem else None
@@ -38,6 +40,8 @@ class AppleAppStoreSetting:
 
         if self.bundle_id is not None:
             properties["bundleId"] = self.bundle_id
+        if self.shared_secret_key is not None:
+            properties["sharedSecretKey"] = self.shared_secret_key
         if self.issuer_id is not None:
             properties["issuerId"] = self.issuer_id
         if self.key_id is not None:

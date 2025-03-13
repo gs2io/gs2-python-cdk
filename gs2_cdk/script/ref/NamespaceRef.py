@@ -34,12 +34,14 @@ class NamespaceRef:
         script_id: str,
         args: Optional[str] = None,
         random_status: Optional[RandomStatus] = None,
+        force_use_distributor: Optional[bool] = None,
         user_id: Optional[str] = "#{userId}",
     ) -> InvokeScript:
         return InvokeScript(
             script_id,
             args,
             random_status,
+            force_use_distributor,
             user_id,
         )
 
