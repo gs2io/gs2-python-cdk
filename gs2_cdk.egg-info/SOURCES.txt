@@ -598,6 +598,7 @@ src/gs2_cdk/money2/model/Namespace.py
 src/gs2_cdk/money2/model/PlatformSetting.py
 src/gs2_cdk/money2/model/Receipt.py
 src/gs2_cdk/money2/model/RefundEvent.py
+src/gs2_cdk/money2/model/RefundHistory.py
 src/gs2_cdk/money2/model/StoreContentModel.py
 src/gs2_cdk/money2/model/StoreSubscriptionContentModel.py
 src/gs2_cdk/money2/model/SubscribeTransaction.py
@@ -609,6 +610,7 @@ src/gs2_cdk/money2/model/__init__.py
 src/gs2_cdk/money2/ref/DailyTransactionHistoryRef.py
 src/gs2_cdk/money2/ref/MasterDataVersionRef.py
 src/gs2_cdk/money2/ref/NamespaceRef.py
+src/gs2_cdk/money2/ref/RefundHistoryRef.py
 src/gs2_cdk/money2/ref/StoreContentModelRef.py
 src/gs2_cdk/money2/ref/StoreSubscriptionContentModelRef.py
 src/gs2_cdk/money2/ref/SubscribeTransactionRef.py

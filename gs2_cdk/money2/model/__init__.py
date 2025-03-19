@@ -18,6 +18,8 @@ from .SubscribeTransaction import SubscribeTransaction
 from .options.SubscribeTransactionOptions import SubscribeTransactionOptions
 from .enums.SubscribeTransactionStore import SubscribeTransactionStore
 from .enums.SubscribeTransactionStatusDetail import SubscribeTransactionStatusDetail
+from .RefundHistory import RefundHistory
+from .options.RefundHistoryOptions import RefundHistoryOptions
 from .StoreContentModel import StoreContentModel
 from .options.StoreContentModelOptions import StoreContentModelOptions
 from .StoreSubscriptionContentModel import StoreSubscriptionContentModel

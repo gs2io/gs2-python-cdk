@@ -11,11 +11,19 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-from .NamespaceRef import NamespaceRef
-from .SubscribeTransactionRef import SubscribeTransactionRef
-from .RefundHistoryRef import RefundHistoryRef
-from .StoreContentModelRef import StoreContentModelRef
-from .StoreSubscriptionContentModelRef import StoreSubscriptionContentModelRef
-from .MasterDataVersionRef import MasterDataVersionRef
-from .DailyTransactionHistoryRef import DailyTransactionHistoryRef
-from .UnusedBalanceRef import UnusedBalanceRef
+from __future__ import annotations
+from typing import *
+from ..AppleAppStoreVerifyReceiptEvent import AppleAppStoreVerifyReceiptEvent
+from ..GooglePlayVerifyReceiptEvent import GooglePlayVerifyReceiptEvent
+from ..RefundEvent import RefundEvent
+
+
+class RefundHistoryOptions:
+    user_id: Optional[str]
+    
+    def __init__(
+        self,
+        user_id: Optional[str] = None,
+    ):
+        self.user_id = user_id
+
