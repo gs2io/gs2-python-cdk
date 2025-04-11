@@ -836,6 +836,11 @@ src/gs2_cdk/stamina/stamp_sheet/RecoverStaminaByUserId.py
 src/gs2_cdk/stamina/stamp_sheet/SetMaxValueByUserId.py
 src/gs2_cdk/stamina/stamp_sheet/SetRecoverIntervalByUserId.py
 src/gs2_cdk/stamina/stamp_sheet/SetRecoverValueByUserId.py
+src/gs2_cdk/stamina/stamp_sheet/VerifyStaminaMaxValueByUserId.py
+src/gs2_cdk/stamina/stamp_sheet/VerifyStaminaOverflowValueByUserId.py
+src/gs2_cdk/stamina/stamp_sheet/VerifyStaminaRecoverIntervalMinutesByUserId.py
+src/gs2_cdk/stamina/stamp_sheet/VerifyStaminaRecoverValueByUserId.py
+src/gs2_cdk/stamina/stamp_sheet/VerifyStaminaValueByUserId.py
 src/gs2_cdk/stamina/stamp_sheet/__init__.py
 src/gs2_cdk/state_machine/__init__.py
 src/gs2_cdk/state_machine/integration/StateMachine.py

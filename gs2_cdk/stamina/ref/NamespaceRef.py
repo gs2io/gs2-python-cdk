@@ -23,6 +23,11 @@ from ..stamp_sheet.SetRecoverIntervalByUserId import SetRecoverIntervalByUserId
 from ..stamp_sheet.SetRecoverValueByUserId import SetRecoverValueByUserId
 from ..stamp_sheet.DecreaseMaxValueByUserId import DecreaseMaxValueByUserId
 from ..stamp_sheet.ConsumeStaminaByUserId import ConsumeStaminaByUserId
+from ..stamp_sheet.VerifyStaminaValueByUserId import VerifyStaminaValueByUserId
+from ..stamp_sheet.VerifyStaminaMaxValueByUserId import VerifyStaminaMaxValueByUserId
+from ..stamp_sheet.VerifyStaminaRecoverIntervalMinutesByUserId import VerifyStaminaRecoverIntervalMinutesByUserId
+from ..stamp_sheet.VerifyStaminaRecoverValueByUserId import VerifyStaminaRecoverValueByUserId
+from ..stamp_sheet.VerifyStaminaOverflowValueByUserId import VerifyStaminaOverflowValueByUserId
 
 
 class NamespaceRef:
@@ -131,6 +136,91 @@ class NamespaceRef:
             self.namespace_name,
             stamina_name,
             consume_value,
+            user_id,
+        )
+
+    def verify_stamina_value(
+        self,
+        stamina_name: str,
+        verify_type: str,
+        value: int,
+        multiply_value_specifying_quantity: Optional[bool] = None,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifyStaminaValueByUserId:
+        return VerifyStaminaValueByUserId(
+            self.namespace_name,
+            stamina_name,
+            verify_type,
+            value,
+            multiply_value_specifying_quantity,
+            user_id,
+        )
+
+    def verify_stamina_max_value(
+        self,
+        stamina_name: str,
+        verify_type: str,
+        value: int,
+        multiply_value_specifying_quantity: Optional[bool] = None,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifyStaminaMaxValueByUserId:
+        return VerifyStaminaMaxValueByUserId(
+            self.namespace_name,
+            stamina_name,
+            verify_type,
+            value,
+            multiply_value_specifying_quantity,
+            user_id,
+        )
+
+    def verify_stamina_recover_interval_minutes(
+        self,
+        stamina_name: str,
+        verify_type: str,
+        value: int,
+        multiply_value_specifying_quantity: Optional[bool] = None,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifyStaminaRecoverIntervalMinutesByUserId:
+        return VerifyStaminaRecoverIntervalMinutesByUserId(
+            self.namespace_name,
+            stamina_name,
+            verify_type,
+            value,
+            multiply_value_specifying_quantity,
+            user_id,
+        )
+
+    def verify_stamina_recover_value(
+        self,
+        stamina_name: str,
+        verify_type: str,
+        value: int,
+        multiply_value_specifying_quantity: Optional[bool] = None,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifyStaminaRecoverValueByUserId:
+        return VerifyStaminaRecoverValueByUserId(
+            self.namespace_name,
+            stamina_name,
+            verify_type,
+            value,
+            multiply_value_specifying_quantity,
+            user_id,
+        )
+
+    def verify_stamina_overflow_value(
+        self,
+        stamina_name: str,
+        verify_type: str,
+        value: int,
+        multiply_value_specifying_quantity: Optional[bool] = None,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifyStaminaOverflowValueByUserId:
+        return VerifyStaminaOverflowValueByUserId(
+            self.namespace_name,
+            stamina_name,
+            verify_type,
+            value,
+            multiply_value_specifying_quantity,
             user_id,
         )
 

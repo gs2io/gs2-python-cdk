@@ -15,26 +15,29 @@ from __future__ import annotations
 from typing import *
 
 from ...core.model import AcquireAction, ConsumeAction, VerifyAction
-from ..model.RandomStatus import RandomStatus
 
 
-class InvokeScript(AcquireAction):
+class VerifyStaminaOverflowValueByUserId(VerifyAction):
 
     def __init__(
         self,
-        script_id: str,
-        args: Optional[str] = None,
-        random_status: Optional[RandomStatus] = None,
+        namespace_name: str,
+        stamina_name: str,
+        verify_type: str,
+        value: int,
+        multiply_value_specifying_quantity: Optional[bool] = None,
         user_id: Optional[str] = "#{userId}",
     ):
         properties: Dict[str, Any] = {}
 
-        properties["scriptId"] = script_id
-        properties["args"] = args
-        properties["randomStatus"] = random_status
+        properties["namespaceName"] = namespace_name
+        properties["staminaName"] = stamina_name
+        properties["verifyType"] = verify_type
+        properties["value"] = value
+        properties["multiplyValueSpecifyingQuantity"] = multiply_value_specifying_quantity
         properties["userId"] = user_id
 
         super().__init__(
-            "Gs2Script:InvokeScript",
+            "Gs2Stamina:VerifyStaminaOverflowValueByUserId",
             properties,
         )

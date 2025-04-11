@@ -16,12 +16,14 @@ from typing import *
 from ...core.model import AcquireAction
 from .AcquireActionList import AcquireActionList
 from .options.CategoryModelOptions import CategoryModelOptions
+from .enums.CategoryModelRewardResetMode import CategoryModelRewardResetMode
 
 
 class CategoryModel:
     name: str
     reward_interval_minutes: int
     default_maximum_idle_minutes: int
+    reward_reset_mode: CategoryModelRewardResetMode
     acquire_actions: List[AcquireActionList]
     metadata: Optional[str] = None
     idle_period_schedule_id: Optional[str] = None
@@ -32,12 +34,14 @@ class CategoryModel:
         name: str,
         reward_interval_minutes: int,
         default_maximum_idle_minutes: int,
+        reward_reset_mode: CategoryModelRewardResetMode,
         acquire_actions: List[AcquireActionList],
         options: Optional[CategoryModelOptions] = CategoryModelOptions(),
     ):
         self.name = name
         self.reward_interval_minutes = reward_interval_minutes
         self.default_maximum_idle_minutes = default_maximum_idle_minutes
+        self.reward_reset_mode = reward_reset_mode
         self.acquire_actions = acquire_actions
         self.metadata = options.metadata if options.metadata else None
         self.idle_period_schedule_id = options.idle_period_schedule_id if options.idle_period_schedule_id else None
@@ -56,6 +60,8 @@ class CategoryModel:
             properties["rewardIntervalMinutes"] = self.reward_interval_minutes
         if self.default_maximum_idle_minutes is not None:
             properties["defaultMaximumIdleMinutes"] = self.default_maximum_idle_minutes
+        if self.reward_reset_mode is not None:
+            properties["rewardResetMode"] = self.reward_reset_mode.value
         if self.acquire_actions is not None:
             properties["acquireActions"] = [
                 v.properties(

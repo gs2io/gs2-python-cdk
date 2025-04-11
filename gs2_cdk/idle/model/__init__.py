@@ -15,6 +15,7 @@ from .Namespace import Namespace
 from .options.NamespaceOptions import NamespaceOptions
 from .CategoryModel import CategoryModel
 from .options.CategoryModelOptions import CategoryModelOptions
+from .enums.CategoryModelRewardResetMode import CategoryModelRewardResetMode
 from .VerifyActionResult import VerifyActionResult
 from .options.VerifyActionResultOptions import VerifyActionResultOptions
 from .ConsumeActionResult import ConsumeActionResult

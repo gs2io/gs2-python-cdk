@@ -23,6 +23,8 @@ class DailyTransactionHistory:
     currency: str
     deposit_amount: float
     withdraw_amount: float
+    issue_count: int
+    consume_count: int
     revision: Optional[int] = None
 
     def __init__(
@@ -33,6 +35,8 @@ class DailyTransactionHistory:
         currency: str,
         deposit_amount: float,
         withdraw_amount: float,
+        issue_count: int,
+        consume_count: int,
         options: Optional[DailyTransactionHistoryOptions] = DailyTransactionHistoryOptions(),
     ):
         self.year = year
@@ -41,6 +45,8 @@ class DailyTransactionHistory:
         self.currency = currency
         self.deposit_amount = deposit_amount
         self.withdraw_amount = withdraw_amount
+        self.issue_count = issue_count
+        self.consume_count = consume_count
         self.revision = options.revision if options.revision else None
 
     def properties(
@@ -60,5 +66,9 @@ class DailyTransactionHistory:
             properties["depositAmount"] = self.deposit_amount
         if self.withdraw_amount is not None:
             properties["withdrawAmount"] = self.withdraw_amount
+        if self.issue_count is not None:
+            properties["issueCount"] = self.issue_count
+        if self.consume_count is not None:
+            properties["consumeCount"] = self.consume_count
 
         return properties

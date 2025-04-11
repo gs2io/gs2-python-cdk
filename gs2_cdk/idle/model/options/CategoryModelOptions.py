@@ -15,6 +15,7 @@ from __future__ import annotations
 from typing import *
 from ....core.model import AcquireAction
 from ..AcquireActionList import AcquireActionList
+from ..enums.CategoryModelRewardResetMode import CategoryModelRewardResetMode
 
 
 class CategoryModelOptions:
