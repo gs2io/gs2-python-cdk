@@ -13,10 +13,6 @@
 # permissions and limitations under the License.
 from .NamespaceRef import NamespaceRef
 from .GlobalRankingModelRef import GlobalRankingModelRef
-from .GlobalRankingSeasonRef import GlobalRankingSeasonRef
-from .GlobalRankingBorderRef import GlobalRankingBorderRef
 from .ClusterRankingModelRef import ClusterRankingModelRef
-from .ClusterRankingSeasonRef import ClusterRankingSeasonRef
-from .ClusterRankingBorderRef import ClusterRankingBorderRef
 from .SubscribeRankingModelRef import SubscribeRankingModelRef
 from .MasterDataVersionRef import MasterDataVersionRef
