@@ -11,23 +11,21 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-from __future__ import annotations
-from typing import *
-from ..enums.NamespaceType import NamespaceType
-from ..enums.NamespaceFirehoseCompressData import NamespaceFirehoseCompressData
 
 
-class NamespaceTypeIsFirehoseOptions:
-    description: Optional[str]
-    status: Optional[str]
-    revision: Optional[int]
-    
+
+
+class NamespaceFirehoseCompressData:
+    value: str
+    NONE: 'NamespaceFirehoseCompressData'
+    GZIP: 'NamespaceFirehoseCompressData'
+
     def __init__(
         self,
-        description: Optional[str] = None,
-        status: Optional[str] = None,
-        revision: Optional[int] = None,
+        value: str,
     ):
-        self.description = description
-        self.status = status
-        self.revision = revision
+        self.value = value
+
+
+NamespaceFirehoseCompressData.NONE = NamespaceFirehoseCompressData("none")
+NamespaceFirehoseCompressData.GZIP = NamespaceFirehoseCompressData("gzip")

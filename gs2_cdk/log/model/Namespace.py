@@ -19,6 +19,7 @@ from ...core.func import GetAttr
 
 from ..ref.NamespaceRef import NamespaceRef
 from .enums.NamespaceType import NamespaceType
+from .enums.NamespaceFirehoseCompressData import NamespaceFirehoseCompressData
 
 from .options.NamespaceOptions import NamespaceOptions
 
@@ -35,6 +36,7 @@ class Namespace(CdkResource):
     aws_access_key_id: Optional[str] = None
     aws_secret_access_key: Optional[str] = None
     firehose_stream_name: Optional[str] = None
+    firehose_compress_data: Optional[NamespaceFirehoseCompressData] = None
 
     def __init__(
         self,
@@ -57,6 +59,7 @@ class Namespace(CdkResource):
         self.aws_access_key_id = options.aws_access_key_id if options.aws_access_key_id else None
         self.aws_secret_access_key = options.aws_secret_access_key if options.aws_secret_access_key else None
         self.firehose_stream_name = options.firehose_stream_name if options.firehose_stream_name else None
+        self.firehose_compress_data = options.firehose_compress_data if options.firehose_compress_data else None
         stack.add_resource(
             self,
         )
@@ -97,6 +100,8 @@ class Namespace(CdkResource):
             properties["AwsSecretAccessKey"] = self.aws_secret_access_key
         if self.firehose_stream_name is not None:
             properties["FirehoseStreamName"] = self.firehose_stream_name
+        if self.firehose_compress_data is not None:
+            properties["FirehoseCompressData"] = self.firehose_compress_data
 
         return properties
 

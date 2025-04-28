@@ -14,6 +14,7 @@
 from __future__ import annotations
 from typing import *
 from ..enums.NamespaceType import NamespaceType
+from ..enums.NamespaceFirehoseCompressData import NamespaceFirehoseCompressData
 
 
 class NamespaceTypeIsGs2Options:

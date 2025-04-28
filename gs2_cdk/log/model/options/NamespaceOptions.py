@@ -28,6 +28,7 @@ class NamespaceOptions:
     aws_access_key_id: Optional[str]
     aws_secret_access_key: Optional[str]
     firehose_stream_name: Optional[str]
+    firehose_compress_data: Optional[NamespaceFirehoseCompressData]
     
     def __init__(
         self,
@@ -40,6 +41,7 @@ class NamespaceOptions:
         aws_access_key_id: Optional[str] = None,
         aws_secret_access_key: Optional[str] = None,
         firehose_stream_name: Optional[str] = None,
+        firehose_compress_data: Optional[NamespaceFirehoseCompressData] = None,
     ):
         self.description = description
         self.type = type
@@ -50,4 +52,5 @@ class NamespaceOptions:
         self.aws_access_key_id = aws_access_key_id
         self.aws_secret_access_key = aws_secret_access_key
         self.firehose_stream_name = firehose_stream_name
+        self.firehose_compress_data = firehose_compress_data
 

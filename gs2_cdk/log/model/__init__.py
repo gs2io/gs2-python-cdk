@@ -14,6 +14,7 @@
 from .Namespace import Namespace
 from .options.NamespaceOptions import NamespaceOptions
 from .enums.NamespaceType import NamespaceType
+from .enums.NamespaceFirehoseCompressData import NamespaceFirehoseCompressData
 from .options.NamespaceTypeIsGs2Options import NamespaceTypeIsGs2Options
 from .options.NamespaceTypeIsBigqueryOptions import NamespaceTypeIsBigqueryOptions
 from .options.NamespaceTypeIsFirehoseOptions import NamespaceTypeIsFirehoseOptions
