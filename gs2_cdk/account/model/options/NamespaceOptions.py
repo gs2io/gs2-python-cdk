@@ -29,6 +29,7 @@ class NamespaceOptions:
     create_take_over_script: Optional[ScriptSetting]
     do_take_over_script: Optional[ScriptSetting]
     ban_script: Optional[ScriptSetting]
+    un_ban_script: Optional[ScriptSetting]
     log_setting: Optional[LogSetting]
     
     def __init__(
@@ -41,6 +42,7 @@ class NamespaceOptions:
         create_take_over_script: Optional[ScriptSetting] = None,
         do_take_over_script: Optional[ScriptSetting] = None,
         ban_script: Optional[ScriptSetting] = None,
+        un_ban_script: Optional[ScriptSetting] = None,
         log_setting: Optional[LogSetting] = None,
     ):
         self.description = description
@@ -51,5 +53,6 @@ class NamespaceOptions:
         self.create_take_over_script = create_take_over_script
         self.do_take_over_script = do_take_over_script
         self.ban_script = ban_script
+        self.un_ban_script = un_ban_script
         self.log_setting = log_setting
 
