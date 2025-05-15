@@ -86,7 +86,5 @@ class ScopedValue:
             properties["conditionName"] = self.condition_name
         if self.value is not None:
             properties["value"] = self.value
-        if self.next_reset_at is not None:
-            properties["nextResetAt"] = self.next_reset_at
 
         return properties
