@@ -15,13 +15,13 @@ from __future__ import annotations
 from typing import *
 from ...core.model import VerifyAction
 from .options.CounterScopeModelOptions import CounterScopeModelOptions
-from .options.CounterScopeModelScopeTypeIsResetTimingOptions import CounterScopeModelScopeTypeIsResetTimingOptions
-from .options.CounterScopeModelScopeTypeIsVerifyActionOptions import CounterScopeModelScopeTypeIsVerifyActionOptions
 from .options.CounterScopeModelResetTypeIsNotResetOptions import CounterScopeModelResetTypeIsNotResetOptions
 from .options.CounterScopeModelResetTypeIsDailyOptions import CounterScopeModelResetTypeIsDailyOptions
 from .options.CounterScopeModelResetTypeIsWeeklyOptions import CounterScopeModelResetTypeIsWeeklyOptions
 from .options.CounterScopeModelResetTypeIsMonthlyOptions import CounterScopeModelResetTypeIsMonthlyOptions
 from .options.CounterScopeModelResetTypeIsDaysOptions import CounterScopeModelResetTypeIsDaysOptions
+from .options.CounterScopeModelScopeTypeIsResetTimingOptions import CounterScopeModelScopeTypeIsResetTimingOptions
+from .options.CounterScopeModelScopeTypeIsVerifyActionOptions import CounterScopeModelScopeTypeIsVerifyActionOptions
 from .enums.CounterScopeModelScopeType import CounterScopeModelScopeType
 from .enums.CounterScopeModelResetType import CounterScopeModelResetType
 from .enums.CounterScopeModelResetDayOfWeek import CounterScopeModelResetDayOfWeek
@@ -29,7 +29,7 @@ from .enums.CounterScopeModelResetDayOfWeek import CounterScopeModelResetDayOfWe
 
 class CounterScopeModel:
     scope_type: CounterScopeModelScopeType
-    reset_type: Optional[CounterScopeModelResetType] = None
+    reset_type: CounterScopeModelResetType
     reset_day_of_month: Optional[int] = None
     reset_day_of_week: Optional[CounterScopeModelResetDayOfWeek] = None
     reset_hour: Optional[int] = None
@@ -41,10 +41,11 @@ class CounterScopeModel:
     def __init__(
         self,
         scope_type: CounterScopeModelScopeType,
+        reset_type: CounterScopeModelResetType,
         options: Optional[CounterScopeModelOptions] = CounterScopeModelOptions(),
     ):
         self.scope_type = scope_type
-        self.reset_type = options.reset_type if options.reset_type else None
+        self.reset_type = reset_type
         self.reset_day_of_month = options.reset_day_of_month if options.reset_day_of_month else None
         self.reset_day_of_week = options.reset_day_of_week if options.reset_day_of_week else None
         self.reset_hour = options.reset_hour if options.reset_hour else None
@@ -54,38 +55,13 @@ class CounterScopeModel:
         self.days = options.days if options.days else None
 
     @staticmethod
-    def scope_type_is_reset_timing(
-        reset_type: CounterScopeModelResetType,
-        options: Optional[CounterScopeModelScopeTypeIsResetTimingOptions] = CounterScopeModelScopeTypeIsResetTimingOptions(),
-    ) -> CounterScopeModel:
-        return CounterScopeModel(
-            CounterScopeModelScopeType.RESET_TIMING,
-            CounterScopeModelOptions(
-                reset_type,
-            ),
-        )
-
-    @staticmethod
-    def scope_type_is_verify_action(
-        condition_name: str,
-        condition: VerifyAction,
-        options: Optional[CounterScopeModelScopeTypeIsVerifyActionOptions] = CounterScopeModelScopeTypeIsVerifyActionOptions(),
-    ) -> CounterScopeModel:
-        return CounterScopeModel(
-            CounterScopeModelScopeType.VERIFY_ACTION,
-            CounterScopeModelOptions(
-                condition_name,
-                condition,
-            ),
-        )
-
-    @staticmethod
     def reset_type_is_not_reset(
         scope_type: CounterScopeModelScopeType,
         options: Optional[CounterScopeModelResetTypeIsNotResetOptions] = CounterScopeModelResetTypeIsNotResetOptions(),
     ) -> CounterScopeModel:
         return CounterScopeModel(
             scope_type,
+            CounterScopeModelResetType.NOT_RESET,
             CounterScopeModelOptions(
             ),
         )
@@ -98,6 +74,7 @@ class CounterScopeModel:
     ) -> CounterScopeModel:
         return CounterScopeModel(
             scope_type,
+            CounterScopeModelResetType.DAILY,
             CounterScopeModelOptions(
                 reset_hour,
             ),
@@ -112,6 +89,7 @@ class CounterScopeModel:
     ) -> CounterScopeModel:
         return CounterScopeModel(
             scope_type,
+            CounterScopeModelResetType.WEEKLY,
             CounterScopeModelOptions(
                 reset_day_of_week,
                 reset_hour,
@@ -127,6 +105,7 @@ class CounterScopeModel:
     ) -> CounterScopeModel:
         return CounterScopeModel(
             scope_type,
+            CounterScopeModelResetType.MONTHLY,
             CounterScopeModelOptions(
                 reset_day_of_month,
                 reset_hour,
@@ -142,9 +121,38 @@ class CounterScopeModel:
     ) -> CounterScopeModel:
         return CounterScopeModel(
             scope_type,
+            CounterScopeModelResetType.DAYS,
             CounterScopeModelOptions(
                 anchor_timestamp,
                 days,
+            ),
+        )
+
+    @staticmethod
+    def scope_type_is_reset_timing(
+        reset_type: CounterScopeModelResetType,
+        options: Optional[CounterScopeModelScopeTypeIsResetTimingOptions] = CounterScopeModelScopeTypeIsResetTimingOptions(),
+    ) -> CounterScopeModel:
+        return CounterScopeModel(
+            CounterScopeModelScopeType.RESET_TIMING,
+            reset_type,
+            CounterScopeModelOptions(
+            ),
+        )
+
+    @staticmethod
+    def scope_type_is_verify_action(
+        reset_type: CounterScopeModelResetType,
+        condition_name: str,
+        condition: VerifyAction,
+        options: Optional[CounterScopeModelScopeTypeIsVerifyActionOptions] = CounterScopeModelScopeTypeIsVerifyActionOptions(),
+    ) -> CounterScopeModel:
+        return CounterScopeModel(
+            CounterScopeModelScopeType.VERIFY_ACTION,
+            reset_type,
+            CounterScopeModelOptions(
+                condition_name,
+                condition,
             ),
         )
 
