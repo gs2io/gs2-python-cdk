@@ -227,6 +227,15 @@ src/gs2_cdk/formation/stamp_sheet/SetFormByUserId.py
 src/gs2_cdk/formation/stamp_sheet/SetMoldCapacityByUserId.py
 src/gs2_cdk/formation/stamp_sheet/SubMoldCapacityByUserId.py
 src/gs2_cdk/formation/stamp_sheet/__init__.py
+src/gs2_cdk/freeze/__init__.py
+src/gs2_cdk/freeze/model/Microservice.py
+src/gs2_cdk/freeze/model/Output.py
+src/gs2_cdk/freeze/model/Stage.py
+src/gs2_cdk/freeze/model/__init__.py
+src/gs2_cdk/freeze/ref/OutputRef.py
+src/gs2_cdk/freeze/ref/StageRef.py
+src/gs2_cdk/freeze/ref/__init__.py
+src/gs2_cdk/freeze/stamp_sheet/__init__.py
 src/gs2_cdk/friend/__init__.py
 src/gs2_cdk/friend/model/Namespace.py
 src/gs2_cdk/friend/model/__init__.py
