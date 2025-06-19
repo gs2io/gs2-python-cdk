@@ -12,6 +12,7 @@
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
 from .TriggerByUserId import TriggerByUserId
+from .ExtendTriggerByUserId import ExtendTriggerByUserId
 from .DeleteTriggerByUserId import DeleteTriggerByUserId
 from .VerifyTriggerByUserId import VerifyTriggerByUserId
 from .VerifyEventByUserId import VerifyEventByUserId

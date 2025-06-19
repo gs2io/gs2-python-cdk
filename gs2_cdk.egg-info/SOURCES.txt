@@ -722,6 +722,7 @@ src/gs2_cdk/schedule/ref/MasterDataVersionRef.py
 src/gs2_cdk/schedule/ref/NamespaceRef.py
 src/gs2_cdk/schedule/ref/__init__.py
 src/gs2_cdk/schedule/stamp_sheet/DeleteTriggerByUserId.py
+src/gs2_cdk/schedule/stamp_sheet/ExtendTriggerByUserId.py
 src/gs2_cdk/schedule/stamp_sheet/TriggerByUserId.py
 src/gs2_cdk/schedule/stamp_sheet/VerifyEventByUserId.py
 src/gs2_cdk/schedule/stamp_sheet/VerifyTriggerByUserId.py
@@ -738,6 +739,7 @@ src/gs2_cdk/script/model/TransactionResult.py
 src/gs2_cdk/script/model/VerifyActionResult.py
 src/gs2_cdk/script/model/__init__.py
 src/gs2_cdk/script/ref/NamespaceRef.py
+src/gs2_cdk/script/ref/ScriptPayloadVersionRef.py
 src/gs2_cdk/script/ref/ScriptRef.py
 src/gs2_cdk/script/ref/__init__.py
 src/gs2_cdk/script/stamp_sheet/InvokeScript.py

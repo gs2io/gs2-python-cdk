@@ -42,6 +42,7 @@ class Namespace(CdkResource):
     join_guild_script: Optional[ScriptSetting] = None
     leave_guild_script: Optional[ScriptSetting] = None
     change_role_script: Optional[ScriptSetting] = None
+    delete_guild_script: Optional[ScriptSetting] = None
     log_setting: Optional[LogSetting] = None
 
     def __init__(
@@ -68,6 +69,7 @@ class Namespace(CdkResource):
         self.join_guild_script = options.join_guild_script if options.join_guild_script else None
         self.leave_guild_script = options.leave_guild_script if options.leave_guild_script else None
         self.change_role_script = options.change_role_script if options.change_role_script else None
+        self.delete_guild_script = options.delete_guild_script if options.delete_guild_script else None
         self.log_setting = options.log_setting if options.log_setting else None
         stack.add_resource(
             self,
@@ -125,6 +127,9 @@ class Namespace(CdkResource):
             )
         if self.change_role_script is not None:
             properties["ChangeRoleScript"] = self.change_role_script.properties(
+            )
+        if self.delete_guild_script is not None:
+            properties["DeleteGuildScript"] = self.delete_guild_script.properties(
             )
         if self.log_setting is not None:
             properties["LogSetting"] = self.log_setting.properties(

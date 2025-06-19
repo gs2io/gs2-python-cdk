@@ -16,6 +16,7 @@ from typing import *
 
 from ...core.func import GetAttr, Join
 from ..stamp_sheet.TriggerByUserId import TriggerByUserId
+from ..stamp_sheet.ExtendTriggerByUserId import ExtendTriggerByUserId
 from ..stamp_sheet.DeleteTriggerByUserId import DeleteTriggerByUserId
 from ..stamp_sheet.VerifyTriggerByUserId import VerifyTriggerByUserId
 from ..stamp_sheet.VerifyEventByUserId import VerifyEventByUserId
@@ -44,6 +45,19 @@ class NamespaceRef:
             trigger_strategy,
             ttl,
             event_id,
+            user_id,
+        )
+
+    def extend_trigger(
+        self,
+        trigger_name: str,
+        extend_seconds: int,
+        user_id: Optional[str] = "#{userId}",
+    ) -> ExtendTriggerByUserId:
+        return ExtendTriggerByUserId(
+            self.namespace_name,
+            trigger_name,
+            extend_seconds,
             user_id,
         )
 

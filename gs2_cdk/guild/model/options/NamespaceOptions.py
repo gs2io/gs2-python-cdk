@@ -34,6 +34,7 @@ class NamespaceOptions:
     join_guild_script: Optional[ScriptSetting]
     leave_guild_script: Optional[ScriptSetting]
     change_role_script: Optional[ScriptSetting]
+    delete_guild_script: Optional[ScriptSetting]
     log_setting: Optional[LogSetting]
     
     def __init__(
@@ -50,6 +51,7 @@ class NamespaceOptions:
         join_guild_script: Optional[ScriptSetting] = None,
         leave_guild_script: Optional[ScriptSetting] = None,
         change_role_script: Optional[ScriptSetting] = None,
+        delete_guild_script: Optional[ScriptSetting] = None,
         log_setting: Optional[LogSetting] = None,
     ):
         self.description = description
@@ -64,5 +66,6 @@ class NamespaceOptions:
         self.join_guild_script = join_guild_script
         self.leave_guild_script = leave_guild_script
         self.change_role_script = change_role_script
+        self.delete_guild_script = delete_guild_script
         self.log_setting = log_setting
 
