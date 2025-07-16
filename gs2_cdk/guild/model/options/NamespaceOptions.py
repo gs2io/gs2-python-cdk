@@ -32,6 +32,7 @@ class NamespaceOptions:
     create_guild_script: Optional[ScriptSetting]
     update_guild_script: Optional[ScriptSetting]
     join_guild_script: Optional[ScriptSetting]
+    receive_join_request_script: Optional[ScriptSetting]
     leave_guild_script: Optional[ScriptSetting]
     change_role_script: Optional[ScriptSetting]
     delete_guild_script: Optional[ScriptSetting]
@@ -49,6 +50,7 @@ class NamespaceOptions:
         create_guild_script: Optional[ScriptSetting] = None,
         update_guild_script: Optional[ScriptSetting] = None,
         join_guild_script: Optional[ScriptSetting] = None,
+        receive_join_request_script: Optional[ScriptSetting] = None,
         leave_guild_script: Optional[ScriptSetting] = None,
         change_role_script: Optional[ScriptSetting] = None,
         delete_guild_script: Optional[ScriptSetting] = None,
@@ -64,6 +66,7 @@ class NamespaceOptions:
         self.create_guild_script = create_guild_script
         self.update_guild_script = update_guild_script
         self.join_guild_script = join_guild_script
+        self.receive_join_request_script = receive_join_request_script
         self.leave_guild_script = leave_guild_script
         self.change_role_script = change_role_script
         self.delete_guild_script = delete_guild_script

@@ -15,7 +15,6 @@ from __future__ import annotations
 from typing import *
 
 from ...core.func import GetAttr, Join
-from .InboxRef import InboxRef
 from ..stamp_sheet.IncreaseMaximumCurrentMaximumMemberCountByGuildName import IncreaseMaximumCurrentMaximumMemberCountByGuildName
 from ..stamp_sheet.SetMaximumCurrentMaximumMemberCountByGuildName import SetMaximumCurrentMaximumMemberCountByGuildName
 from ..stamp_sheet.DecreaseMaximumCurrentMaximumMemberCountByGuildName import DecreaseMaximumCurrentMaximumMemberCountByGuildName

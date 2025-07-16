@@ -40,6 +40,7 @@ class Namespace(CdkResource):
     create_guild_script: Optional[ScriptSetting] = None
     update_guild_script: Optional[ScriptSetting] = None
     join_guild_script: Optional[ScriptSetting] = None
+    receive_join_request_script: Optional[ScriptSetting] = None
     leave_guild_script: Optional[ScriptSetting] = None
     change_role_script: Optional[ScriptSetting] = None
     delete_guild_script: Optional[ScriptSetting] = None
@@ -67,6 +68,7 @@ class Namespace(CdkResource):
         self.create_guild_script = options.create_guild_script if options.create_guild_script else None
         self.update_guild_script = options.update_guild_script if options.update_guild_script else None
         self.join_guild_script = options.join_guild_script if options.join_guild_script else None
+        self.receive_join_request_script = options.receive_join_request_script if options.receive_join_request_script else None
         self.leave_guild_script = options.leave_guild_script if options.leave_guild_script else None
         self.change_role_script = options.change_role_script if options.change_role_script else None
         self.delete_guild_script = options.delete_guild_script if options.delete_guild_script else None
@@ -121,6 +123,9 @@ class Namespace(CdkResource):
             )
         if self.join_guild_script is not None:
             properties["JoinGuildScript"] = self.join_guild_script.properties(
+            )
+        if self.receive_join_request_script is not None:
+            properties["ReceiveJoinRequestScript"] = self.receive_join_request_script.properties(
             )
         if self.leave_guild_script is not None:
             properties["LeaveGuildScript"] = self.leave_guild_script.properties(

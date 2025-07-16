@@ -15,8 +15,6 @@ from .Namespace import Namespace
 from .options.NamespaceOptions import NamespaceOptions
 from .GuildModel import GuildModel
 from .options.GuildModelOptions import GuildModelOptions
-from .Inbox import Inbox
-from .options.InboxOptions import InboxOptions
 from .Guild import Guild
 from .options.GuildOptions import GuildOptions
 from .enums.GuildJoinPolicy import GuildJoinPolicy
