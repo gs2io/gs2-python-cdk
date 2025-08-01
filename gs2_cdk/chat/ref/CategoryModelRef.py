@@ -15,26 +15,19 @@ from __future__ import annotations
 from typing import *
 
 from ...core.func import GetAttr, Join
-from .CategoryModelRef import CategoryModelRef
 
 
-class NamespaceRef:
+class CategoryModelRef:
     namespace_name: str
+    category: int
 
     def __init__(
         self,
         namespace_name: str,
+        category: int,
     ):
         self.namespace_name = namespace_name
-
-    def category_model(
-        self,
-        category: int,
-    ) -> CategoryModelRef:
-        return CategoryModelRef(
-            self.namespace_name,
-            category,
-        )
+        self.category = category
 
     def grn(
         self,
@@ -52,6 +45,8 @@ class NamespaceRef:
                 ),
                 "chat",
                 self.namespace_name,
+                "model",
+                self.category,
             ],
         ).str(
         )

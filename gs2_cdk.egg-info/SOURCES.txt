@@ -50,9 +50,14 @@ src/gs2_cdk/buff/ref/NamespaceRef.py
 src/gs2_cdk/buff/ref/__init__.py
 src/gs2_cdk/buff/stamp_sheet/__init__.py
 src/gs2_cdk/chat/__init__.py
+src/gs2_cdk/chat/model/CategoryModel.py
+src/gs2_cdk/chat/model/CurrentMasterData.py
 src/gs2_cdk/chat/model/Namespace.py
 src/gs2_cdk/chat/model/NotificationType.py
 src/gs2_cdk/chat/model/__init__.py
+src/gs2_cdk/chat/ref/CategoryModelRef.py
+src/gs2_cdk/chat/ref/MasterDataObjectRef.py
+src/gs2_cdk/chat/ref/MasterDataVersionRef.py
 src/gs2_cdk/chat/ref/NamespaceRef.py
 src/gs2_cdk/chat/ref/__init__.py
 src/gs2_cdk/chat/stamp_sheet/__init__.py

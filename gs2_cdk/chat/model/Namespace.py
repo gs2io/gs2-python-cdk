@@ -21,6 +21,8 @@ from ...core.model import NotificationSetting
 from ...core.model import LogSetting
 
 from ..ref.NamespaceRef import NamespaceRef
+from .CurrentMasterData import CurrentMasterData
+from .CategoryModel import CategoryModel
 
 from .options.NamespaceOptions import NamespaceOptions
 
@@ -128,3 +130,16 @@ class Namespace(CdkResource):
             "Item.NamespaceId",
             None,
         )
+
+    def master_data(
+        self,
+        category_models: List[CategoryModel],
+    ) -> Namespace:
+        CurrentMasterData(
+            self.stack,
+            self.name,
+            category_models,
+        ).add_depends_on(
+            self,
+        )
+        return self

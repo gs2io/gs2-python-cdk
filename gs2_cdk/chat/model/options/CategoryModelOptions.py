@@ -11,11 +11,17 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-from .Namespace import Namespace
-from .options.NamespaceOptions import NamespaceOptions
-from .CategoryModel import CategoryModel
-from .options.CategoryModelOptions import CategoryModelOptions
-from .enums.CategoryModelRejectAccessTokenPost import CategoryModelRejectAccessTokenPost
-from .NotificationType import NotificationType
-from .options.NotificationTypeOptions import NotificationTypeOptions
-from .CurrentMasterData import CurrentMasterData
+from __future__ import annotations
+from typing import *
+from ..enums.CategoryModelRejectAccessTokenPost import CategoryModelRejectAccessTokenPost
+
+
+class CategoryModelOptions:
+    reject_access_token_post: Optional[CategoryModelRejectAccessTokenPost]
+    
+    def __init__(
+        self,
+        reject_access_token_post: Optional[CategoryModelRejectAccessTokenPost] = None,
+    ):
+        self.reject_access_token_post = reject_access_token_post
+
