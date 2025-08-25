@@ -33,7 +33,6 @@ class Namespace(CdkResource):
     description: Optional[str] = None
     transaction_setting: Optional[TransactionSetting] = None
     lottery_trigger_script_id: Optional[str] = None
-    choice_prize_table_script_id: Optional[str] = None
     log_setting: Optional[LogSetting] = None
 
     def __init__(
@@ -51,7 +50,6 @@ class Namespace(CdkResource):
         self.description = options.description if options.description else None
         self.transaction_setting = options.transaction_setting if options.transaction_setting else None
         self.lottery_trigger_script_id = options.lottery_trigger_script_id if options.lottery_trigger_script_id else None
-        self.choice_prize_table_script_id = options.choice_prize_table_script_id if options.choice_prize_table_script_id else None
         self.log_setting = options.log_setting if options.log_setting else None
         stack.add_resource(
             self,
@@ -82,8 +80,6 @@ class Namespace(CdkResource):
             )
         if self.lottery_trigger_script_id is not None:
             properties["LotteryTriggerScriptId"] = self.lottery_trigger_script_id
-        if self.choice_prize_table_script_id is not None:
-            properties["ChoicePrizeTableScriptId"] = self.choice_prize_table_script_id
         if self.log_setting is not None:
             properties["LogSetting"] = self.log_setting.properties(
             )

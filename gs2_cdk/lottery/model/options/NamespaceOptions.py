@@ -24,7 +24,6 @@ class NamespaceOptions:
     description: Optional[str]
     transaction_setting: Optional[TransactionSetting]
     lottery_trigger_script_id: Optional[str]
-    choice_prize_table_script_id: Optional[str]
     log_setting: Optional[LogSetting]
     queue_namespace_id: Optional[str]
     key_id: Optional[str]
@@ -34,7 +33,6 @@ class NamespaceOptions:
         description: Optional[str] = None,
         transaction_setting: Optional[TransactionSetting] = None,
         lottery_trigger_script_id: Optional[str] = None,
-        choice_prize_table_script_id: Optional[str] = None,
         log_setting: Optional[LogSetting] = None,
         queue_namespace_id: Optional[str] = None,
         key_id: Optional[str] = None,
@@ -42,7 +40,6 @@ class NamespaceOptions:
         self.description = description
         self.transaction_setting = transaction_setting
         self.lottery_trigger_script_id = lottery_trigger_script_id
-        self.choice_prize_table_script_id = choice_prize_table_script_id
         self.log_setting = log_setting
         self.queue_namespace_id = queue_namespace_id
         self.key_id = key_id
