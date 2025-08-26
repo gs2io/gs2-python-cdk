@@ -39,6 +39,7 @@ class Namespace(CdkResource):
     description: Optional[str] = None
     deposit_balance_script: Optional[ScriptSetting] = None
     withdraw_balance_script: Optional[ScriptSetting] = None
+    verify_receipt_script: Optional[ScriptSetting] = None
     subscribe_script: Optional[str] = None
     renew_script: Optional[str] = None
     unsubscribe_script: Optional[str] = None
@@ -67,6 +68,7 @@ class Namespace(CdkResource):
         self.description = options.description if options.description else None
         self.deposit_balance_script = options.deposit_balance_script if options.deposit_balance_script else None
         self.withdraw_balance_script = options.withdraw_balance_script if options.withdraw_balance_script else None
+        self.verify_receipt_script = options.verify_receipt_script if options.verify_receipt_script else None
         self.subscribe_script = options.subscribe_script if options.subscribe_script else None
         self.renew_script = options.renew_script if options.renew_script else None
         self.unsubscribe_script = options.unsubscribe_script if options.unsubscribe_script else None
@@ -109,6 +111,9 @@ class Namespace(CdkResource):
             )
         if self.withdraw_balance_script is not None:
             properties["WithdrawBalanceScript"] = self.withdraw_balance_script.properties(
+            )
+        if self.verify_receipt_script is not None:
+            properties["VerifyReceiptScript"] = self.verify_receipt_script.properties(
             )
         if self.subscribe_script is not None:
             properties["SubscribeScript"] = self.subscribe_script

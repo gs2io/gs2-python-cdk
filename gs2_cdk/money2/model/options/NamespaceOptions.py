@@ -26,6 +26,7 @@ class NamespaceOptions:
     description: Optional[str]
     deposit_balance_script: Optional[ScriptSetting]
     withdraw_balance_script: Optional[ScriptSetting]
+    verify_receipt_script: Optional[ScriptSetting]
     subscribe_script: Optional[str]
     renew_script: Optional[str]
     unsubscribe_script: Optional[str]
@@ -38,6 +39,7 @@ class NamespaceOptions:
         description: Optional[str] = None,
         deposit_balance_script: Optional[ScriptSetting] = None,
         withdraw_balance_script: Optional[ScriptSetting] = None,
+        verify_receipt_script: Optional[ScriptSetting] = None,
         subscribe_script: Optional[str] = None,
         renew_script: Optional[str] = None,
         unsubscribe_script: Optional[str] = None,
@@ -48,6 +50,7 @@ class NamespaceOptions:
         self.description = description
         self.deposit_balance_script = deposit_balance_script
         self.withdraw_balance_script = withdraw_balance_script
+        self.verify_receipt_script = verify_receipt_script
         self.subscribe_script = subscribe_script
         self.renew_script = renew_script
         self.unsubscribe_script = unsubscribe_script
