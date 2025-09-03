@@ -16,6 +16,7 @@ from typing import *
 
 from ....core.model import CdkResource, Stack
 from ....core.func import GetAttr
+from ....core.model import TransactionSetting
 from ....core.model import ScriptSetting
 from ....core.model import NotificationSetting
 from ....core.model import LogSetting
@@ -23,6 +24,7 @@ from ....core.model import LogSetting
 
 class NamespaceOptions:
     description: Optional[str]
+    transaction_setting: Optional[TransactionSetting]
     follow_script: Optional[ScriptSetting]
     unfollow_script: Optional[ScriptSetting]
     send_request_script: Optional[ScriptSetting]
@@ -42,6 +44,7 @@ class NamespaceOptions:
     def __init__(
         self,
         description: Optional[str] = None,
+        transaction_setting: Optional[TransactionSetting] = None,
         follow_script: Optional[ScriptSetting] = None,
         unfollow_script: Optional[ScriptSetting] = None,
         send_request_script: Optional[ScriptSetting] = None,
@@ -59,6 +62,7 @@ class NamespaceOptions:
         log_setting: Optional[LogSetting] = None,
     ):
         self.description = description
+        self.transaction_setting = transaction_setting
         self.follow_script = follow_script
         self.unfollow_script = unfollow_script
         self.send_request_script = send_request_script

@@ -16,12 +16,14 @@ from typing import *
 
 from ....core.model import CdkResource, Stack
 from ....core.func import GetAttr
+from ....core.model import TransactionSetting
 from ....core.model import ScriptSetting
 from ....core.model import LogSetting
 
 
 class NamespaceOptions:
     description: Optional[str]
+    transaction_setting: Optional[TransactionSetting]
     change_password_if_take_over: Optional[bool]
     different_user_id_for_login_and_data_retention: Optional[bool]
     create_account_script: Optional[ScriptSetting]
@@ -35,6 +37,7 @@ class NamespaceOptions:
     def __init__(
         self,
         description: Optional[str] = None,
+        transaction_setting: Optional[TransactionSetting] = None,
         change_password_if_take_over: Optional[bool] = None,
         different_user_id_for_login_and_data_retention: Optional[bool] = None,
         create_account_script: Optional[ScriptSetting] = None,
@@ -46,6 +49,7 @@ class NamespaceOptions:
         log_setting: Optional[LogSetting] = None,
     ):
         self.description = description
+        self.transaction_setting = transaction_setting
         self.change_password_if_take_over = change_password_if_take_over
         self.different_user_id_for_login_and_data_retention = different_user_id_for_login_and_data_retention
         self.create_account_script = create_account_script

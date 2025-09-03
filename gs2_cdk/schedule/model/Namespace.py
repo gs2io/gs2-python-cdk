@@ -16,6 +16,7 @@ from typing import *
 
 from ...core.model import CdkResource, Stack
 from ...core.func import GetAttr
+from ...core.model import TransactionSetting
 from ...core.model import LogSetting
 
 from ..ref.NamespaceRef import NamespaceRef
@@ -29,6 +30,7 @@ class Namespace(CdkResource):
     stack: Stack
     name: str
     description: Optional[str] = None
+    transaction_setting: Optional[TransactionSetting] = None
     log_setting: Optional[LogSetting] = None
 
     def __init__(
@@ -44,6 +46,7 @@ class Namespace(CdkResource):
         self.stack = stack
         self.name = name
         self.description = options.description if options.description else None
+        self.transaction_setting = options.transaction_setting if options.transaction_setting else None
         self.log_setting = options.log_setting if options.log_setting else None
         stack.add_resource(
             self,
@@ -69,6 +72,9 @@ class Namespace(CdkResource):
             properties["Name"] = self.name
         if self.description is not None:
             properties["Description"] = self.description
+        if self.transaction_setting is not None:
+            properties["TransactionSetting"] = self.transaction_setting.properties(
+            )
         if self.log_setting is not None:
             properties["LogSetting"] = self.log_setting.properties(
             )

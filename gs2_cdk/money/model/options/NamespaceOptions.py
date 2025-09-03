@@ -16,12 +16,14 @@ from typing import *
 
 from ....core.model import CdkResource, Stack
 from ....core.func import GetAttr
+from ....core.model import TransactionSetting
 from ....core.model import ScriptSetting
 from ....core.model import LogSetting
 
 
 class NamespaceOptions:
     description: Optional[str]
+    transaction_setting: Optional[TransactionSetting]
     apple_key: Optional[str]
     google_key: Optional[str]
     enable_fake_receipt: Optional[bool]
@@ -33,6 +35,7 @@ class NamespaceOptions:
     def __init__(
         self,
         description: Optional[str] = None,
+        transaction_setting: Optional[TransactionSetting] = None,
         apple_key: Optional[str] = None,
         google_key: Optional[str] = None,
         enable_fake_receipt: Optional[bool] = None,
@@ -42,6 +45,7 @@ class NamespaceOptions:
         log_setting: Optional[LogSetting] = None,
     ):
         self.description = description
+        self.transaction_setting = transaction_setting
         self.apple_key = apple_key
         self.google_key = google_key
         self.enable_fake_receipt = enable_fake_receipt

@@ -16,12 +16,14 @@ from typing import *
 
 from ....core.model import CdkResource, Stack
 from ....core.func import GetAttr
+from ....core.model import TransactionSetting
 from ....core.model import ScriptSetting
 from ....core.model import LogSetting
 
 
 class NamespaceOptions:
     description: Optional[str]
+    transaction_setting: Optional[TransactionSetting]
     accept_version_script: Optional[ScriptSetting]
     check_version_trigger_script_id: Optional[str]
     log_setting: Optional[LogSetting]
@@ -29,11 +31,13 @@ class NamespaceOptions:
     def __init__(
         self,
         description: Optional[str] = None,
+        transaction_setting: Optional[TransactionSetting] = None,
         accept_version_script: Optional[ScriptSetting] = None,
         check_version_trigger_script_id: Optional[str] = None,
         log_setting: Optional[LogSetting] = None,
     ):
         self.description = description
+        self.transaction_setting = transaction_setting
         self.accept_version_script = accept_version_script
         self.check_version_trigger_script_id = check_version_trigger_script_id
         self.log_setting = log_setting

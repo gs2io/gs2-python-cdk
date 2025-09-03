@@ -13,6 +13,7 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from ....core.model import TransactionSetting
 from ....core.model import ScriptSetting
 from ....core.model import NotificationSetting
 from ....core.model import LogSetting
@@ -24,6 +25,7 @@ from ..enums.NamespaceEnableCollaborateSeasonRating import NamespaceEnableCollab
 
 class NamespaceCreateGatheringTriggerTypeIsGs2ScriptOptions:
     description: Optional[str]
+    transaction_setting: Optional[TransactionSetting]
     change_rating_script: Optional[ScriptSetting]
     join_notification: Optional[NotificationSetting]
     leave_notification: Optional[NotificationSetting]
@@ -35,6 +37,7 @@ class NamespaceCreateGatheringTriggerTypeIsGs2ScriptOptions:
     def __init__(
         self,
         description: Optional[str] = None,
+        transaction_setting: Optional[TransactionSetting] = None,
         change_rating_script: Optional[ScriptSetting] = None,
         join_notification: Optional[NotificationSetting] = None,
         leave_notification: Optional[NotificationSetting] = None,
@@ -44,6 +47,7 @@ class NamespaceCreateGatheringTriggerTypeIsGs2ScriptOptions:
         revision: Optional[int] = None,
     ):
         self.description = description
+        self.transaction_setting = transaction_setting
         self.change_rating_script = change_rating_script
         self.join_notification = join_notification
         self.leave_notification = leave_notification

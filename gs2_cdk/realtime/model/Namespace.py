@@ -16,6 +16,7 @@ from typing import *
 
 from ...core.model import CdkResource, Stack
 from ...core.func import GetAttr
+from ...core.model import TransactionSetting
 from ...core.model import NotificationSetting
 from ...core.model import LogSetting
 
@@ -32,6 +33,7 @@ class Namespace(CdkResource):
     server_type: NamespaceServerType
     server_spec: NamespaceServerSpec
     description: Optional[str] = None
+    transaction_setting: Optional[TransactionSetting] = None
     create_notification: Optional[NotificationSetting] = None
     log_setting: Optional[LogSetting] = None
 
@@ -52,6 +54,7 @@ class Namespace(CdkResource):
         self.server_type = server_type
         self.server_spec = server_spec
         self.description = options.description if options.description else None
+        self.transaction_setting = options.transaction_setting if options.transaction_setting else None
         self.create_notification = options.create_notification if options.create_notification else None
         self.log_setting = options.log_setting if options.log_setting else None
         stack.add_resource(
@@ -78,6 +81,9 @@ class Namespace(CdkResource):
             properties["Name"] = self.name
         if self.description is not None:
             properties["Description"] = self.description
+        if self.transaction_setting is not None:
+            properties["TransactionSetting"] = self.transaction_setting.properties(
+            )
         if self.server_type is not None:
             properties["ServerType"] = self.server_type
         if self.server_spec is not None:

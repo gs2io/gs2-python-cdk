@@ -16,6 +16,7 @@ from typing import *
 
 from ...core.model import CdkResource, Stack
 from ...core.func import GetAttr
+from ...core.model import TransactionSetting
 from ...core.model import NotificationSetting
 from ...core.model import ScriptSetting
 from ...core.model import LogSetting
@@ -31,6 +32,7 @@ class Namespace(CdkResource):
     stack: Stack
     name: str
     description: Optional[str] = None
+    transaction_setting: Optional[TransactionSetting] = None
     change_notification: Optional[NotificationSetting] = None
     join_notification: Optional[NotificationSetting] = None
     leave_notification: Optional[NotificationSetting] = None
@@ -59,6 +61,7 @@ class Namespace(CdkResource):
         self.stack = stack
         self.name = name
         self.description = options.description if options.description else None
+        self.transaction_setting = options.transaction_setting if options.transaction_setting else None
         self.change_notification = options.change_notification if options.change_notification else None
         self.join_notification = options.join_notification if options.join_notification else None
         self.leave_notification = options.leave_notification if options.leave_notification else None
@@ -97,6 +100,9 @@ class Namespace(CdkResource):
             properties["Name"] = self.name
         if self.description is not None:
             properties["Description"] = self.description
+        if self.transaction_setting is not None:
+            properties["TransactionSetting"] = self.transaction_setting.properties(
+            )
         if self.change_notification is not None:
             properties["ChangeNotification"] = self.change_notification.properties(
             )

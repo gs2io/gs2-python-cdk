@@ -16,6 +16,7 @@ from typing import *
 
 from ...core.model import CdkResource, Stack
 from ...core.func import GetAttr
+from ...core.model import TransactionSetting
 from ...core.model import ScriptSetting
 from ...core.model import LogSetting
 
@@ -30,6 +31,7 @@ class Namespace(CdkResource):
     stack: Stack
     name: str
     description: Optional[str] = None
+    transaction_setting: Optional[TransactionSetting] = None
     entry_script: Optional[ScriptSetting] = None
     duplicate_entry_script: Optional[str] = None
     log_setting: Optional[LogSetting] = None
@@ -47,6 +49,7 @@ class Namespace(CdkResource):
         self.stack = stack
         self.name = name
         self.description = options.description if options.description else None
+        self.transaction_setting = options.transaction_setting if options.transaction_setting else None
         self.entry_script = options.entry_script if options.entry_script else None
         self.duplicate_entry_script = options.duplicate_entry_script if options.duplicate_entry_script else None
         self.log_setting = options.log_setting if options.log_setting else None
@@ -74,6 +77,9 @@ class Namespace(CdkResource):
             properties["Name"] = self.name
         if self.description is not None:
             properties["Description"] = self.description
+        if self.transaction_setting is not None:
+            properties["TransactionSetting"] = self.transaction_setting.properties(
+            )
         if self.entry_script is not None:
             properties["EntryScript"] = self.entry_script.properties(
             )

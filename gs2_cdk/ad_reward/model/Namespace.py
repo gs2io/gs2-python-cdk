@@ -16,6 +16,7 @@ from typing import *
 
 from ...core.model import CdkResource, Stack
 from ...core.func import GetAttr
+from ...core.model import TransactionSetting
 from .AdMob import AdMob
 from .UnityAd import UnityAd
 from .AppLovinMax import AppLovinMax
@@ -31,10 +32,11 @@ from .options.NamespaceOptions import NamespaceOptions
 class Namespace(CdkResource):
     stack: Stack
     name: str
+    description: Optional[str] = None
+    transaction_setting: Optional[TransactionSetting] = None
     admob: Optional[AdMob] = None
     unity_ad: Optional[UnityAd] = None
     app_lovin_maxes: Optional[List[AppLovinMax]] = None
-    description: Optional[str] = None
     acquire_point_script: Optional[ScriptSetting] = None
     consume_point_script: Optional[ScriptSetting] = None
     change_point_notification: Optional[NotificationSetting] = None
@@ -52,10 +54,11 @@ class Namespace(CdkResource):
 
         self.stack = stack
         self.name = name
+        self.description = options.description if options.description else None
+        self.transaction_setting = options.transaction_setting if options.transaction_setting else None
         self.admob = options.admob if options.admob else None
         self.unity_ad = options.unity_ad if options.unity_ad else None
         self.app_lovin_maxes = options.app_lovin_maxes if options.app_lovin_maxes else None
-        self.description = options.description if options.description else None
         self.acquire_point_script = options.acquire_point_script if options.acquire_point_script else None
         self.consume_point_script = options.consume_point_script if options.consume_point_script else None
         self.change_point_notification = options.change_point_notification if options.change_point_notification else None
@@ -82,6 +85,11 @@ class Namespace(CdkResource):
 
         if self.name is not None:
             properties["Name"] = self.name
+        if self.description is not None:
+            properties["Description"] = self.description
+        if self.transaction_setting is not None:
+            properties["TransactionSetting"] = self.transaction_setting.properties(
+            )
         if self.admob is not None:
             properties["Admob"] = self.admob.properties(
             )
@@ -94,8 +102,6 @@ class Namespace(CdkResource):
                 )
                 for v in self.app_lovin_maxes
             ]
-        if self.description is not None:
-            properties["Description"] = self.description
         if self.acquire_point_script is not None:
             properties["AcquirePointScript"] = self.acquire_point_script.properties(
             )

@@ -16,6 +16,7 @@ from typing import *
 
 from ...core.model import CdkResource, Stack
 from ...core.func import GetAttr
+from ...core.model import TransactionSetting
 from ...core.model import ScriptSetting
 from ...core.model import NotificationSetting
 from ...core.model import LogSetting
@@ -38,6 +39,7 @@ class Namespace(CdkResource):
     create_gathering_trigger_type: NamespaceCreateGatheringTriggerType
     complete_matchmaking_trigger_type: NamespaceCompleteMatchmakingTriggerType
     description: Optional[str] = None
+    transaction_setting: Optional[TransactionSetting] = None
     enable_rating: Optional[bool] = None
     enable_disconnect_detection: Optional[NamespaceEnableDisconnectDetection] = None
     disconnect_detection_timeout_seconds: Optional[int] = None
@@ -72,6 +74,7 @@ class Namespace(CdkResource):
         self.create_gathering_trigger_type = create_gathering_trigger_type
         self.complete_matchmaking_trigger_type = complete_matchmaking_trigger_type
         self.description = options.description if options.description else None
+        self.transaction_setting = options.transaction_setting if options.transaction_setting else None
         self.enable_rating = options.enable_rating if options.enable_rating else None
         self.enable_disconnect_detection = options.enable_disconnect_detection if options.enable_disconnect_detection else None
         self.disconnect_detection_timeout_seconds = options.disconnect_detection_timeout_seconds if options.disconnect_detection_timeout_seconds else None
@@ -112,6 +115,9 @@ class Namespace(CdkResource):
             properties["Name"] = self.name
         if self.description is not None:
             properties["Description"] = self.description
+        if self.transaction_setting is not None:
+            properties["TransactionSetting"] = self.transaction_setting.properties(
+            )
         if self.enable_rating is not None:
             properties["EnableRating"] = self.enable_rating
         if self.enable_disconnect_detection is not None:

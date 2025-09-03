@@ -16,12 +16,14 @@ from typing import *
 
 from ....core.model import CdkResource, Stack
 from ....core.func import GetAttr
+from ....core.model import TransactionSetting
 from ....core.model import NotificationSetting
 from ....core.model import LogSetting
 
 
 class NamespaceOptions:
     description: Optional[str]
+    transaction_setting: Optional[TransactionSetting]
     assume_user_id: Optional[str]
     auto_run_stamp_sheet_notification: Optional[NotificationSetting]
     auto_run_transaction_notification: Optional[NotificationSetting]
@@ -30,12 +32,14 @@ class NamespaceOptions:
     def __init__(
         self,
         description: Optional[str] = None,
+        transaction_setting: Optional[TransactionSetting] = None,
         assume_user_id: Optional[str] = None,
         auto_run_stamp_sheet_notification: Optional[NotificationSetting] = None,
         auto_run_transaction_notification: Optional[NotificationSetting] = None,
         log_setting: Optional[LogSetting] = None,
     ):
         self.description = description
+        self.transaction_setting = transaction_setting
         self.assume_user_id = assume_user_id
         self.auto_run_stamp_sheet_notification = auto_run_stamp_sheet_notification
         self.auto_run_transaction_notification = auto_run_transaction_notification

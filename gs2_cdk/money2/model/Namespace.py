@@ -16,6 +16,7 @@ from typing import *
 
 from ...core.model import CdkResource, Stack
 from ...core.func import GetAttr
+from ...core.model import TransactionSetting
 from .PlatformSetting import PlatformSetting
 from ...core.model import ScriptSetting
 from ...core.model import NotificationSetting
@@ -37,6 +38,7 @@ class Namespace(CdkResource):
     shared_free_currency: bool
     platform_setting: PlatformSetting
     description: Optional[str] = None
+    transaction_setting: Optional[TransactionSetting] = None
     deposit_balance_script: Optional[ScriptSetting] = None
     withdraw_balance_script: Optional[ScriptSetting] = None
     verify_receipt_script: Optional[ScriptSetting] = None
@@ -66,6 +68,7 @@ class Namespace(CdkResource):
         self.shared_free_currency = shared_free_currency
         self.platform_setting = platform_setting
         self.description = options.description if options.description else None
+        self.transaction_setting = options.transaction_setting if options.transaction_setting else None
         self.deposit_balance_script = options.deposit_balance_script if options.deposit_balance_script else None
         self.withdraw_balance_script = options.withdraw_balance_script if options.withdraw_balance_script else None
         self.verify_receipt_script = options.verify_receipt_script if options.verify_receipt_script else None
@@ -101,6 +104,9 @@ class Namespace(CdkResource):
             properties["CurrencyUsagePriority"] = self.currency_usage_priority
         if self.description is not None:
             properties["Description"] = self.description
+        if self.transaction_setting is not None:
+            properties["TransactionSetting"] = self.transaction_setting.properties(
+            )
         if self.shared_free_currency is not None:
             properties["SharedFreeCurrency"] = self.shared_free_currency
         if self.platform_setting is not None:

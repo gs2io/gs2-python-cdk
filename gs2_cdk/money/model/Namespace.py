@@ -16,6 +16,7 @@ from typing import *
 
 from ...core.model import CdkResource, Stack
 from ...core.func import GetAttr
+from ...core.model import TransactionSetting
 from ...core.model import ScriptSetting
 from ...core.model import LogSetting
 
@@ -33,6 +34,7 @@ class Namespace(CdkResource):
     share_free: bool
     currency: NamespaceCurrency
     description: Optional[str] = None
+    transaction_setting: Optional[TransactionSetting] = None
     apple_key: Optional[str] = None
     google_key: Optional[str] = None
     enable_fake_receipt: Optional[bool] = None
@@ -60,6 +62,7 @@ class Namespace(CdkResource):
         self.share_free = share_free
         self.currency = currency
         self.description = options.description if options.description else None
+        self.transaction_setting = options.transaction_setting if options.transaction_setting else None
         self.apple_key = options.apple_key if options.apple_key else None
         self.google_key = options.google_key if options.google_key else None
         self.enable_fake_receipt = options.enable_fake_receipt if options.enable_fake_receipt else None
@@ -91,6 +94,9 @@ class Namespace(CdkResource):
             properties["Name"] = self.name
         if self.description is not None:
             properties["Description"] = self.description
+        if self.transaction_setting is not None:
+            properties["TransactionSetting"] = self.transaction_setting.properties(
+            )
         if self.priority is not None:
             properties["Priority"] = self.priority
         if self.share_free is not None:

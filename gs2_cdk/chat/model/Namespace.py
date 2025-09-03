@@ -16,6 +16,7 @@ from typing import *
 
 from ...core.model import CdkResource, Stack
 from ...core.func import GetAttr
+from ...core.model import TransactionSetting
 from ...core.model import ScriptSetting
 from ...core.model import NotificationSetting
 from ...core.model import LogSetting
@@ -31,6 +32,7 @@ class Namespace(CdkResource):
     stack: Stack
     name: str
     description: Optional[str] = None
+    transaction_setting: Optional[TransactionSetting] = None
     allow_create_room: Optional[bool] = None
     message_life_time_days: Optional[int] = None
     post_message_script: Optional[ScriptSetting] = None
@@ -54,6 +56,7 @@ class Namespace(CdkResource):
         self.stack = stack
         self.name = name
         self.description = options.description if options.description else None
+        self.transaction_setting = options.transaction_setting if options.transaction_setting else None
         self.allow_create_room = options.allow_create_room if options.allow_create_room else None
         self.message_life_time_days = options.message_life_time_days if options.message_life_time_days else None
         self.post_message_script = options.post_message_script if options.post_message_script else None
@@ -87,6 +90,9 @@ class Namespace(CdkResource):
             properties["Name"] = self.name
         if self.description is not None:
             properties["Description"] = self.description
+        if self.transaction_setting is not None:
+            properties["TransactionSetting"] = self.transaction_setting.properties(
+            )
         if self.allow_create_room is not None:
             properties["AllowCreateRoom"] = self.allow_create_room
         if self.message_life_time_days is not None:

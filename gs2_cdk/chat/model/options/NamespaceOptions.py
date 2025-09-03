@@ -16,6 +16,7 @@ from typing import *
 
 from ....core.model import CdkResource, Stack
 from ....core.func import GetAttr
+from ....core.model import TransactionSetting
 from ....core.model import ScriptSetting
 from ....core.model import NotificationSetting
 from ....core.model import LogSetting
@@ -23,6 +24,7 @@ from ....core.model import LogSetting
 
 class NamespaceOptions:
     description: Optional[str]
+    transaction_setting: Optional[TransactionSetting]
     allow_create_room: Optional[bool]
     message_life_time_days: Optional[int]
     post_message_script: Optional[ScriptSetting]
@@ -36,6 +38,7 @@ class NamespaceOptions:
     def __init__(
         self,
         description: Optional[str] = None,
+        transaction_setting: Optional[TransactionSetting] = None,
         allow_create_room: Optional[bool] = None,
         message_life_time_days: Optional[int] = None,
         post_message_script: Optional[ScriptSetting] = None,
@@ -47,6 +50,7 @@ class NamespaceOptions:
         log_setting: Optional[LogSetting] = None,
     ):
         self.description = description
+        self.transaction_setting = transaction_setting
         self.allow_create_room = allow_create_room
         self.message_life_time_days = message_life_time_days
         self.post_message_script = post_message_script

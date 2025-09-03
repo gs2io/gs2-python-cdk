@@ -16,6 +16,7 @@ from typing import *
 
 from ...core.model import CdkResource, Stack
 from ...core.func import GetAttr
+from ...core.model import TransactionSetting
 from ...core.model import NotificationSetting
 from ...core.model import LogSetting
 
@@ -30,6 +31,7 @@ class Namespace(CdkResource):
     stack: Stack
     name: str
     description: Optional[str] = None
+    transaction_setting: Optional[TransactionSetting] = None
     assume_user_id: Optional[str] = None
     auto_run_stamp_sheet_notification: Optional[NotificationSetting] = None
     auto_run_transaction_notification: Optional[NotificationSetting] = None
@@ -48,6 +50,7 @@ class Namespace(CdkResource):
         self.stack = stack
         self.name = name
         self.description = options.description if options.description else None
+        self.transaction_setting = options.transaction_setting if options.transaction_setting else None
         self.assume_user_id = options.assume_user_id if options.assume_user_id else None
         self.auto_run_stamp_sheet_notification = options.auto_run_stamp_sheet_notification if options.auto_run_stamp_sheet_notification else None
         self.auto_run_transaction_notification = options.auto_run_transaction_notification if options.auto_run_transaction_notification else None
@@ -76,6 +79,9 @@ class Namespace(CdkResource):
             properties["Name"] = self.name
         if self.description is not None:
             properties["Description"] = self.description
+        if self.transaction_setting is not None:
+            properties["TransactionSetting"] = self.transaction_setting.properties(
+            )
         if self.assume_user_id is not None:
             properties["AssumeUserId"] = self.assume_user_id
         if self.auto_run_stamp_sheet_notification is not None:
