@@ -29,6 +29,7 @@ class NamespaceOptions:
     join_notification: Optional[NotificationSetting]
     leave_notification: Optional[NotificationSetting]
     change_member_notification: Optional[NotificationSetting]
+    change_member_notification_ignore_change_metadata: Optional[bool]
     receive_request_notification: Optional[NotificationSetting]
     remove_request_notification: Optional[NotificationSetting]
     create_guild_script: Optional[ScriptSetting]
@@ -48,6 +49,7 @@ class NamespaceOptions:
         join_notification: Optional[NotificationSetting] = None,
         leave_notification: Optional[NotificationSetting] = None,
         change_member_notification: Optional[NotificationSetting] = None,
+        change_member_notification_ignore_change_metadata: Optional[bool] = None,
         receive_request_notification: Optional[NotificationSetting] = None,
         remove_request_notification: Optional[NotificationSetting] = None,
         create_guild_script: Optional[ScriptSetting] = None,
@@ -65,6 +67,7 @@ class NamespaceOptions:
         self.join_notification = join_notification
         self.leave_notification = leave_notification
         self.change_member_notification = change_member_notification
+        self.change_member_notification_ignore_change_metadata = change_member_notification_ignore_change_metadata
         self.receive_request_notification = receive_request_notification
         self.remove_request_notification = remove_request_notification
         self.create_guild_script = create_guild_script

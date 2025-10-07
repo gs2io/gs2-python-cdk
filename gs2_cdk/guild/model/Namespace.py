@@ -37,6 +37,7 @@ class Namespace(CdkResource):
     join_notification: Optional[NotificationSetting] = None
     leave_notification: Optional[NotificationSetting] = None
     change_member_notification: Optional[NotificationSetting] = None
+    change_member_notification_ignore_change_metadata: Optional[bool] = None
     receive_request_notification: Optional[NotificationSetting] = None
     remove_request_notification: Optional[NotificationSetting] = None
     create_guild_script: Optional[ScriptSetting] = None
@@ -66,6 +67,7 @@ class Namespace(CdkResource):
         self.join_notification = options.join_notification if options.join_notification else None
         self.leave_notification = options.leave_notification if options.leave_notification else None
         self.change_member_notification = options.change_member_notification if options.change_member_notification else None
+        self.change_member_notification_ignore_change_metadata = options.change_member_notification_ignore_change_metadata if options.change_member_notification_ignore_change_metadata else None
         self.receive_request_notification = options.receive_request_notification if options.receive_request_notification else None
         self.remove_request_notification = options.remove_request_notification if options.remove_request_notification else None
         self.create_guild_script = options.create_guild_script if options.create_guild_script else None
@@ -115,6 +117,8 @@ class Namespace(CdkResource):
         if self.change_member_notification is not None:
             properties["ChangeMemberNotification"] = self.change_member_notification.properties(
             )
+        if self.change_member_notification_ignore_change_metadata is not None:
+            properties["ChangeMemberNotificationIgnoreChangeMetadata"] = self.change_member_notification_ignore_change_metadata
         if self.receive_request_notification is not None:
             properties["ReceiveRequestNotification"] = self.receive_request_notification.properties(
             )
