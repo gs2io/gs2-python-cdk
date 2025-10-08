@@ -250,6 +250,7 @@ src/gs2_cdk/friend/stamp_sheet/UpdateProfileByUserId.py
 src/gs2_cdk/friend/stamp_sheet/__init__.py
 src/gs2_cdk/gateway/__init__.py
 src/gs2_cdk/gateway/model/Namespace.py
+src/gs2_cdk/gateway/model/SendNotificationEntry.py
 src/gs2_cdk/gateway/model/__init__.py
 src/gs2_cdk/gateway/ref/NamespaceRef.py
 src/gs2_cdk/gateway/ref/__init__.py

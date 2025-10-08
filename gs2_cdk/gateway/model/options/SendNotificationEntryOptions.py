@@ -11,7 +11,16 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-from .Namespace import Namespace
-from .options.NamespaceOptions import NamespaceOptions
-from .SendNotificationEntry import SendNotificationEntry
-from .options.SendNotificationEntryOptions import SendNotificationEntryOptions
+from __future__ import annotations
+from typing import *
+
+
+class SendNotificationEntryOptions:
+    sound: Optional[str]
+    
+    def __init__(
+        self,
+        sound: Optional[str] = None,
+    ):
+        self.sound = sound
+
