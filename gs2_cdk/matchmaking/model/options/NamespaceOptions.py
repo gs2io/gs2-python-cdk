@@ -28,8 +28,10 @@ class NamespaceOptions:
     enable_rating: Optional[bool]
     enable_disconnect_detection: Optional[NamespaceEnableDisconnectDetection]
     disconnect_detection_timeout_seconds: Optional[int]
+    create_gathering_trigger_type: Optional[NamespaceCreateGatheringTriggerType]
     create_gathering_trigger_realtime_namespace_id: Optional[str]
     create_gathering_trigger_script_id: Optional[str]
+    complete_matchmaking_trigger_type: Optional[NamespaceCompleteMatchmakingTriggerType]
     complete_matchmaking_trigger_realtime_namespace_id: Optional[str]
     complete_matchmaking_trigger_script_id: Optional[str]
     enable_collaborate_season_rating: Optional[NamespaceEnableCollaborateSeasonRating]
@@ -49,8 +51,10 @@ class NamespaceOptions:
         enable_rating: Optional[bool] = None,
         enable_disconnect_detection: Optional[NamespaceEnableDisconnectDetection] = None,
         disconnect_detection_timeout_seconds: Optional[int] = None,
+        create_gathering_trigger_type: Optional[NamespaceCreateGatheringTriggerType] = None,
         create_gathering_trigger_realtime_namespace_id: Optional[str] = None,
         create_gathering_trigger_script_id: Optional[str] = None,
+        complete_matchmaking_trigger_type: Optional[NamespaceCompleteMatchmakingTriggerType] = None,
         complete_matchmaking_trigger_realtime_namespace_id: Optional[str] = None,
         complete_matchmaking_trigger_script_id: Optional[str] = None,
         enable_collaborate_season_rating: Optional[NamespaceEnableCollaborateSeasonRating] = None,
@@ -68,8 +72,10 @@ class NamespaceOptions:
         self.enable_rating = enable_rating
         self.enable_disconnect_detection = enable_disconnect_detection
         self.disconnect_detection_timeout_seconds = disconnect_detection_timeout_seconds
+        self.create_gathering_trigger_type = create_gathering_trigger_type
         self.create_gathering_trigger_realtime_namespace_id = create_gathering_trigger_realtime_namespace_id
         self.create_gathering_trigger_script_id = create_gathering_trigger_script_id
+        self.complete_matchmaking_trigger_type = complete_matchmaking_trigger_type
         self.complete_matchmaking_trigger_realtime_namespace_id = complete_matchmaking_trigger_realtime_namespace_id
         self.complete_matchmaking_trigger_script_id = complete_matchmaking_trigger_script_id
         self.enable_collaborate_season_rating = enable_collaborate_season_rating

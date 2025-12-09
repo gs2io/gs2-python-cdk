@@ -36,15 +36,15 @@ from .options.NamespaceOptions import NamespaceOptions
 class Namespace(CdkResource):
     stack: Stack
     name: str
-    create_gathering_trigger_type: NamespaceCreateGatheringTriggerType
-    complete_matchmaking_trigger_type: NamespaceCompleteMatchmakingTriggerType
     description: Optional[str] = None
     transaction_setting: Optional[TransactionSetting] = None
     enable_rating: Optional[bool] = None
     enable_disconnect_detection: Optional[NamespaceEnableDisconnectDetection] = None
     disconnect_detection_timeout_seconds: Optional[int] = None
+    create_gathering_trigger_type: Optional[NamespaceCreateGatheringTriggerType] = None
     create_gathering_trigger_realtime_namespace_id: Optional[str] = None
     create_gathering_trigger_script_id: Optional[str] = None
+    complete_matchmaking_trigger_type: Optional[NamespaceCompleteMatchmakingTriggerType] = None
     complete_matchmaking_trigger_realtime_namespace_id: Optional[str] = None
     complete_matchmaking_trigger_script_id: Optional[str] = None
     enable_collaborate_season_rating: Optional[NamespaceEnableCollaborateSeasonRating] = None
@@ -61,8 +61,6 @@ class Namespace(CdkResource):
         self,
         stack: Stack,
         name: str,
-        create_gathering_trigger_type: NamespaceCreateGatheringTriggerType,
-        complete_matchmaking_trigger_type: NamespaceCompleteMatchmakingTriggerType,
         options: Optional[NamespaceOptions] = NamespaceOptions(),
     ):
         super().__init__(
@@ -71,15 +69,15 @@ class Namespace(CdkResource):
 
         self.stack = stack
         self.name = name
-        self.create_gathering_trigger_type = create_gathering_trigger_type
-        self.complete_matchmaking_trigger_type = complete_matchmaking_trigger_type
         self.description = options.description if options.description else None
         self.transaction_setting = options.transaction_setting if options.transaction_setting else None
         self.enable_rating = options.enable_rating if options.enable_rating else None
         self.enable_disconnect_detection = options.enable_disconnect_detection if options.enable_disconnect_detection else None
         self.disconnect_detection_timeout_seconds = options.disconnect_detection_timeout_seconds if options.disconnect_detection_timeout_seconds else None
+        self.create_gathering_trigger_type = options.create_gathering_trigger_type if options.create_gathering_trigger_type else None
         self.create_gathering_trigger_realtime_namespace_id = options.create_gathering_trigger_realtime_namespace_id if options.create_gathering_trigger_realtime_namespace_id else None
         self.create_gathering_trigger_script_id = options.create_gathering_trigger_script_id if options.create_gathering_trigger_script_id else None
+        self.complete_matchmaking_trigger_type = options.complete_matchmaking_trigger_type if options.complete_matchmaking_trigger_type else None
         self.complete_matchmaking_trigger_realtime_namespace_id = options.complete_matchmaking_trigger_realtime_namespace_id if options.complete_matchmaking_trigger_realtime_namespace_id else None
         self.complete_matchmaking_trigger_script_id = options.complete_matchmaking_trigger_script_id if options.complete_matchmaking_trigger_script_id else None
         self.enable_collaborate_season_rating = options.enable_collaborate_season_rating if options.enable_collaborate_season_rating else None
