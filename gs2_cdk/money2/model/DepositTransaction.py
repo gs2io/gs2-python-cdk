@@ -44,7 +44,5 @@ class DepositTransaction:
             properties["currency"] = self.currency
         if self.count is not None:
             properties["count"] = self.count
-        if self.deposited_at is not None:
-            properties["depositedAt"] = self.deposited_at
 
         return properties
