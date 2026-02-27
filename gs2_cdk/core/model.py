@@ -193,6 +193,14 @@ class ScriptSetting:
             "DoneTriggerQueueNamespaceId": self.done_trigger_queue_namespace_id,
         }
 
+
+class ScriptSettingDoneTriggerTargetType:
+
+    NONE = 'none'
+    GS2_SCRIPT = 'gs2_script'
+    AWS = 'aws'
+
+
 class NotificationSettingOptions:
 
     gateway_namespace_id: Optional[str]
@@ -230,6 +238,12 @@ class NotificationSetting:
             "EnableTransferMobileNotification": self.enable_transfer_mobile_notification,
             "Sound": self.sound,
         }
+
+
+class NotificationSettingEnable:
+
+    ENABLED = 'Enabled'
+    DISABLED = 'Disabled'
 
 
 class LogSetting:
