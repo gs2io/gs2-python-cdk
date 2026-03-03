@@ -166,6 +166,26 @@ class TransactionSetting:
         }
 
 
+class ScriptSettingOptions:
+
+    trigger_script_id: Optional[str]
+    done_trigger_target_type: Optional[ScriptSettingDoneTriggerTargetType]
+    done_trigger_script_id: Optional[str]
+    done_trigger_queue_namespace_id: Optional[str]
+
+    def __init__(
+            self,
+            trigger_script_id: Optional[str] = None,
+            done_trigger_target_type: Optional[ScriptSettingDoneTriggerTargetType] = None,
+            done_trigger_script_id: Optional[str] = None,
+            done_trigger_queue_namespace_id: Optional[str] = None,
+    ):
+        self.trigger_script_id = trigger_script_id
+        self.done_trigger_target_type = done_trigger_target_type
+        self.done_trigger_script_id = done_trigger_script_id
+        self.done_trigger_queue_namespace_id = done_trigger_queue_namespace_id
+
+
 class ScriptSetting:
 
     trigger_script_id: str
@@ -175,15 +195,12 @@ class ScriptSetting:
 
     def __init__(
             self,
-            trigger_script_id: str = None,
-            done_trigger_target_type: str = 'none',
-            done_trigger_script_id: str = None,
-            done_trigger_queue_namespace_id: str = None,
+            options: Optional[ScriptSettingOptions] = ScriptSettingOptions(),
     ):
-        self.trigger_script_id = trigger_script_id
-        self.done_trigger_target_type = done_trigger_target_type
-        self.done_trigger_script_id = done_trigger_script_id
-        self.done_trigger_queue_namespace_id = done_trigger_queue_namespace_id
+        self.trigger_script_id = options.trigger_script_id if options.trigger_script_id else None
+        self.done_trigger_target_type = options.done_trigger_target_type if options.done_trigger_target_type else None
+        self.done_trigger_script_id = options.done_trigger_script_id if options.done_trigger_script_id else None
+        self.done_trigger_queue_namespace_id = options.done_trigger_queue_namespace_id if options.done_trigger_queue_namespace_id else None
 
     def properties(self) -> Dict[str, Any]:
         return {
@@ -206,16 +223,19 @@ class NotificationSettingOptions:
     gateway_namespace_id: Optional[str]
     enable_transfer_mobile_notification: Optional[bool]
     sound: Optional[str]
+    enable: Optional[NotificationSettingEnable]
 
     def __init__(
             self,
             gateway_namespace_id: Optional[str] = None,
             enable_transfer_mobile_notification: Optional[bool] = False,
             sound: Optional[str] = None,
+            enable: Optional[NotificationSettingEnable] = None,
     ):
         self.gateway_namespace_id = gateway_namespace_id
         self.enable_transfer_mobile_notification = enable_transfer_mobile_notification
         self.sound = sound
+        self.enable = enable
 
 
 class NotificationSetting:
