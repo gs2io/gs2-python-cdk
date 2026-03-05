@@ -11,6 +11,8 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
+#
+# deny overwrite
 from __future__ import annotations
 from typing import *
 from .BuffTargetGrn import BuffTargetGrn
@@ -19,14 +21,14 @@ from .enums.BuffTargetModelTargetModelName import BuffTargetModelTargetModelName
 
 
 class BuffTargetModel:
-    target_model_name: str
+    target_model_name: BuffTargetModelTargetModelName
     target_field_name: str
     condition_grns: List[BuffTargetGrn]
     rate: float
 
     def __init__(
         self,
-        target_model_name: str,
+        target_model_name: BuffTargetModelTargetModelName,
         target_field_name: str,
         condition_grns: List[BuffTargetGrn],
         rate: float,
