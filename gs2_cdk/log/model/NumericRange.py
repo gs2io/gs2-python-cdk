@@ -13,38 +13,30 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
-
-from ...core.func import GetAttr, Join
-from .FacetModelRef import FacetModelRef
-from .DashboardRef import DashboardRef
-from .MetricModelRef import MetricModelRef
+from .options.NumericRangeOptions import NumericRangeOptions
 
 
-class NamespaceRef:
-    namespace_name: str
+class NumericRange:
+    min: float
+    max: float
 
     def __init__(
         self,
-        namespace_name: str,
+        min: float,
+        max: float,
+        options: Optional[NumericRangeOptions] = NumericRangeOptions(),
     ):
-        self.namespace_name = namespace_name
+        self.min = min
+        self.max = max
 
-    def grn(
+    def properties(
         self,
-    ) -> str:
-        return Join(
-            ":",
-            [
-                "grn",
-                "gs2",
-                GetAttr.region(
-                ).str(
-                ),
-                GetAttr.owner_id(
-                ).str(
-                ),
-                "log",
-                self.namespace_name,
-            ],
-        ).str(
-        )
+    ) -> Dict[str, Any]:
+        properties: Dict[str, Any] = {}
+
+        if self.min is not None:
+            properties["min"] = self.min
+        if self.max is not None:
+            properties["max"] = self.max
+
+        return properties

@@ -11,7 +11,19 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-from .NamespaceRef import NamespaceRef
-from .FacetModelRef import FacetModelRef
-from .DashboardRef import DashboardRef
-from .MetricModelRef import MetricModelRef
+from __future__ import annotations
+from typing import *
+
+
+class TimeseriesMetadataOptions:
+    keys: Optional[List[str]]
+    group_by: Optional[List[str]]
+    
+    def __init__(
+        self,
+        keys: Optional[List[str]] = None,
+        group_by: Optional[List[str]] = None,
+    ):
+        self.keys = keys
+        self.group_by = group_by
+

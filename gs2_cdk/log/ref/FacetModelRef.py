@@ -15,19 +15,19 @@ from __future__ import annotations
 from typing import *
 
 from ...core.func import GetAttr, Join
-from .FacetModelRef import FacetModelRef
-from .DashboardRef import DashboardRef
-from .MetricModelRef import MetricModelRef
 
 
-class NamespaceRef:
+class FacetModelRef:
     namespace_name: str
+    field: str
 
     def __init__(
         self,
         namespace_name: str,
+        field: str,
     ):
         self.namespace_name = namespace_name
+        self.field = field
 
     def grn(
         self,
@@ -45,6 +45,9 @@ class NamespaceRef:
                 ),
                 "log",
                 self.namespace_name,
+                "model",
+                "facet",
+                self.field,
             ],
         ).str(
         )

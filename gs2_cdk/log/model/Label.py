@@ -13,38 +13,30 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
-
-from ...core.func import GetAttr, Join
-from .FacetModelRef import FacetModelRef
-from .DashboardRef import DashboardRef
-from .MetricModelRef import MetricModelRef
+from .options.LabelOptions import LabelOptions
 
 
-class NamespaceRef:
-    namespace_name: str
+class Label:
+    key: str
+    value: str
 
     def __init__(
         self,
-        namespace_name: str,
+        key: str,
+        value: str,
+        options: Optional[LabelOptions] = LabelOptions(),
     ):
-        self.namespace_name = namespace_name
+        self.key = key
+        self.value = value
 
-    def grn(
+    def properties(
         self,
-    ) -> str:
-        return Join(
-            ":",
-            [
-                "grn",
-                "gs2",
-                GetAttr.region(
-                ).str(
-                ),
-                GetAttr.owner_id(
-                ).str(
-                ),
-                "log",
-                self.namespace_name,
-            ],
-        ).str(
-        )
+    ) -> Dict[str, Any]:
+        properties: Dict[str, Any] = {}
+
+        if self.key is not None:
+            properties["key"] = self.key
+        if self.value is not None:
+            properties["value"] = self.value
+
+        return properties

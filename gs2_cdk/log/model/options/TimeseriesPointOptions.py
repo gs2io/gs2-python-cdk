@@ -11,7 +11,17 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-from .NamespaceRef import NamespaceRef
-from .FacetModelRef import FacetModelRef
-from .DashboardRef import DashboardRef
-from .MetricModelRef import MetricModelRef
+from __future__ import annotations
+from typing import *
+from ..TimeseriesValue import TimeseriesValue
+
+
+class TimeseriesPointOptions:
+    values: Optional[List[TimeseriesValue]]
+    
+    def __init__(
+        self,
+        values: Optional[List[TimeseriesValue]] = None,
+    ):
+        self.values = values
+

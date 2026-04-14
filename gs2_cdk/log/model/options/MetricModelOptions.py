@@ -11,7 +11,17 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-from .NamespaceRef import NamespaceRef
-from .FacetModelRef import FacetModelRef
-from .DashboardRef import DashboardRef
-from .MetricModelRef import MetricModelRef
+from __future__ import annotations
+from typing import *
+from ..enums.MetricModelType import MetricModelType
+
+
+class MetricModelOptions:
+    labels: Optional[List[str]]
+    
+    def __init__(
+        self,
+        labels: Optional[List[str]] = None,
+    ):
+        self.labels = labels
+

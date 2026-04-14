@@ -13,38 +13,30 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
-
-from ...core.func import GetAttr, Join
-from .FacetModelRef import FacetModelRef
-from .DashboardRef import DashboardRef
-from .MetricModelRef import MetricModelRef
+from .options.FacetValueCountOptions import FacetValueCountOptions
 
 
-class NamespaceRef:
-    namespace_name: str
+class FacetValueCount:
+    value: str
+    count: int
 
     def __init__(
         self,
-        namespace_name: str,
+        value: str,
+        count: int,
+        options: Optional[FacetValueCountOptions] = FacetValueCountOptions(),
     ):
-        self.namespace_name = namespace_name
+        self.value = value
+        self.count = count
 
-    def grn(
+    def properties(
         self,
-    ) -> str:
-        return Join(
-            ":",
-            [
-                "grn",
-                "gs2",
-                GetAttr.region(
-                ).str(
-                ),
-                GetAttr.owner_id(
-                ).str(
-                ),
-                "log",
-                self.namespace_name,
-            ],
-        ).str(
-        )
+    ) -> Dict[str, Any]:
+        properties: Dict[str, Any] = {}
+
+        if self.value is not None:
+            properties["value"] = self.value
+        if self.count is not None:
+            properties["count"] = self.count
+
+        return properties

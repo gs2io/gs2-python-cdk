@@ -13,38 +13,28 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
-
-from ...core.func import GetAttr, Join
-from .FacetModelRef import FacetModelRef
-from .DashboardRef import DashboardRef
-from .MetricModelRef import MetricModelRef
+from .options.TimeseriesMetadataOptions import TimeseriesMetadataOptions
 
 
-class NamespaceRef:
-    namespace_name: str
+class TimeseriesMetadata:
+    keys: Optional[List[str]] = None
+    group_by: Optional[List[str]] = None
 
     def __init__(
         self,
-        namespace_name: str,
+        options: Optional[TimeseriesMetadataOptions] = TimeseriesMetadataOptions(),
     ):
-        self.namespace_name = namespace_name
+        self.keys = options.keys if options.keys else None
+        self.group_by = options.group_by if options.group_by else None
 
-    def grn(
+    def properties(
         self,
-    ) -> str:
-        return Join(
-            ":",
-            [
-                "grn",
-                "gs2",
-                GetAttr.region(
-                ).str(
-                ),
-                GetAttr.owner_id(
-                ).str(
-                ),
-                "log",
-                self.namespace_name,
-            ],
-        ).str(
-        )
+    ) -> Dict[str, Any]:
+        properties: Dict[str, Any] = {}
+
+        if self.keys is not None:
+            properties["keys"] = self.keys
+        if self.group_by is not None:
+            properties["groupBy"] = self.group_by
+
+        return properties

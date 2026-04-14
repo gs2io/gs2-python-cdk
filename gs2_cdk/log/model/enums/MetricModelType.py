@@ -11,7 +11,23 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-from .NamespaceRef import NamespaceRef
-from .FacetModelRef import FacetModelRef
-from .DashboardRef import DashboardRef
-from .MetricModelRef import MetricModelRef
+
+
+
+
+class MetricModelType:
+    value: str
+    STRING: 'MetricModelType'
+    DOUBLE: 'MetricModelType'
+    MEASURE: 'MetricModelType'
+
+    def __init__(
+        self,
+        value: str,
+    ):
+        self.value = value
+
+
+MetricModelType.STRING = MetricModelType("string")
+MetricModelType.DOUBLE = MetricModelType("double")
+MetricModelType.MEASURE = MetricModelType("measure")

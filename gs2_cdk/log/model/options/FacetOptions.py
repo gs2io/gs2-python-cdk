@@ -11,7 +11,24 @@
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
-from .NamespaceRef import NamespaceRef
-from .FacetModelRef import FacetModelRef
-from .DashboardRef import DashboardRef
-from .MetricModelRef import MetricModelRef
+from __future__ import annotations
+from typing import *
+from ..FacetValueCount import FacetValueCount
+from ..NumericRange import NumericRange
+
+
+class FacetOptions:
+    values: Optional[List[FacetValueCount]]
+    range: Optional[NumericRange]
+    global_range: Optional[NumericRange]
+    
+    def __init__(
+        self,
+        values: Optional[List[FacetValueCount]] = None,
+        range: Optional[NumericRange] = None,
+        global_range: Optional[NumericRange] = None,
+    ):
+        self.values = values
+        self.range = range
+        self.global_range = global_range
+
