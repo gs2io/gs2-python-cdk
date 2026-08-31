@@ -18,6 +18,7 @@ from .options.LastGuildMasterActivityOptions import LastGuildMasterActivityOptio
 
 class LastGuildMasterActivity:
     user_id: str
+    revision: Optional[int] = None
 
     def __init__(
         self,
@@ -25,6 +26,7 @@ class LastGuildMasterActivity:
         options: Optional[LastGuildMasterActivityOptions] = LastGuildMasterActivityOptions(),
     ):
         self.user_id = user_id
+        self.revision = options.revision if options.revision else None
 
     def properties(
         self,
