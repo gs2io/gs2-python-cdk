@@ -25,6 +25,8 @@ from .BigInventoryModel import BigInventoryModel
 from .options.BigInventoryModelOptions import BigInventoryModelOptions
 from .BigItemModel import BigItemModel
 from .options.BigItemModelOptions import BigItemModelOptions
+from .TransactionSettingV2 import TransactionSettingV2
+from .options.TransactionSettingV2Options import TransactionSettingV2Options
 from .AcquireCount import AcquireCount
 from .options.AcquireCountOptions import AcquireCountOptions
 from .ConsumeCount import ConsumeCount

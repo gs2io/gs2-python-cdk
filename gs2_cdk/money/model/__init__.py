@@ -17,3 +17,5 @@ from .enums.NamespacePriority import NamespacePriority
 from .enums.NamespaceCurrency import NamespaceCurrency
 from .WalletDetail import WalletDetail
 from .options.WalletDetailOptions import WalletDetailOptions
+from .TransactionSettingV2 import TransactionSettingV2
+from .options.TransactionSettingV2Options import TransactionSettingV2Options

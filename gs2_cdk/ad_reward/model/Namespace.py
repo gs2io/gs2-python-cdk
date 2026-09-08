@@ -17,6 +17,7 @@ from typing import *
 from ...core.model import CdkResource, Stack
 from ...core.func import GetAttr
 from ...core.model import TransactionSetting
+from .TransactionSettingV2 import TransactionSettingV2
 from .AdMob import AdMob
 from .UnityAd import UnityAd
 from .AppLovinMax import AppLovinMax
@@ -33,7 +34,9 @@ class Namespace(CdkResource):
     stack: Stack
     name: str
     description: Optional[str] = None
+    # @deprecated
     transaction_setting: Optional[TransactionSetting] = None
+    transaction_setting_v2: Optional[TransactionSettingV2] = None
     admob: Optional[AdMob] = None
     unity_ad: Optional[UnityAd] = None
     app_lovin_maxes: Optional[List[AppLovinMax]] = None
@@ -56,6 +59,7 @@ class Namespace(CdkResource):
         self.name = name
         self.description = options.description if options.description else None
         self.transaction_setting = options.transaction_setting if options.transaction_setting else None
+        self.transaction_setting_v2 = options.transaction_setting_v2 if options.transaction_setting_v2 else None
         self.admob = options.admob if options.admob else None
         self.unity_ad = options.unity_ad if options.unity_ad else None
         self.app_lovin_maxes = options.app_lovin_maxes if options.app_lovin_maxes else None
@@ -89,6 +93,9 @@ class Namespace(CdkResource):
             properties["Description"] = self.description
         if self.transaction_setting is not None:
             properties["TransactionSetting"] = self.transaction_setting.properties(
+            )
+        if self.transaction_setting_v2 is not None:
+            properties["TransactionSettingV2"] = self.transaction_setting_v2.properties(
             )
         if self.admob is not None:
             properties["Admob"] = self.admob.properties(

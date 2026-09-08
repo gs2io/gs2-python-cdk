@@ -17,15 +17,19 @@ from typing import *
 from ....core.model import CdkResource, Stack
 from ....core.func import GetAttr
 from ....core.model import TransactionSetting
+from ..TransactionSettingV2 import TransactionSettingV2
 from ..PlatformSetting import PlatformSetting
 from ....core.model import ScriptSetting
 from ....core.model import NotificationSetting
 from ....core.model import LogSetting
+from ..enums.NamespaceCurrencyUsagePriority import NamespaceCurrencyUsagePriority
 
 
 class NamespaceOptions:
     description: Optional[str]
+    # @deprecated
     transaction_setting: Optional[TransactionSetting]
+    transaction_setting_v2: Optional[TransactionSettingV2]
     deposit_balance_script: Optional[ScriptSetting]
     withdraw_balance_script: Optional[ScriptSetting]
     verify_receipt_script: Optional[ScriptSetting]
@@ -40,6 +44,7 @@ class NamespaceOptions:
         self,
         description: Optional[str] = None,
         transaction_setting: Optional[TransactionSetting] = None,
+        transaction_setting_v2: Optional[TransactionSettingV2] = None,
         deposit_balance_script: Optional[ScriptSetting] = None,
         withdraw_balance_script: Optional[ScriptSetting] = None,
         verify_receipt_script: Optional[ScriptSetting] = None,
@@ -52,6 +57,7 @@ class NamespaceOptions:
     ):
         self.description = description
         self.transaction_setting = transaction_setting
+        self.transaction_setting_v2 = transaction_setting_v2
         self.deposit_balance_script = deposit_balance_script
         self.withdraw_balance_script = withdraw_balance_script
         self.verify_receipt_script = verify_receipt_script

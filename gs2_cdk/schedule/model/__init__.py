@@ -37,4 +37,6 @@ from .options.RepeatSettingRepeatTypeIsMonthlyOptions import RepeatSettingRepeat
 from .options.RepeatSettingRepeatTypeIsCustomOptions import RepeatSettingRepeatTypeIsCustomOptions
 from .RepeatSchedule import RepeatSchedule
 from .options.RepeatScheduleOptions import RepeatScheduleOptions
+from .TransactionSettingV2 import TransactionSettingV2
+from .options.TransactionSettingV2Options import TransactionSettingV2Options
 from .CurrentMasterData import CurrentMasterData

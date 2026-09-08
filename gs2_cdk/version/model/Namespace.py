@@ -17,6 +17,7 @@ from typing import *
 from ...core.model import CdkResource, Stack
 from ...core.func import GetAttr
 from ...core.model import TransactionSetting
+from .TransactionSettingV2 import TransactionSettingV2
 from ...core.model import ScriptSetting
 from ...core.model import LogSetting
 
@@ -32,7 +33,9 @@ class Namespace(CdkResource):
     name: str
     assume_user_id: str
     description: Optional[str] = None
+    # @deprecated
     transaction_setting: Optional[TransactionSetting] = None
+    transaction_setting_v2: Optional[TransactionSettingV2] = None
     accept_version_script: Optional[ScriptSetting] = None
     check_version_trigger_script_id: Optional[str] = None
     log_setting: Optional[LogSetting] = None
@@ -53,6 +56,7 @@ class Namespace(CdkResource):
         self.assume_user_id = assume_user_id
         self.description = options.description if options.description else None
         self.transaction_setting = options.transaction_setting if options.transaction_setting else None
+        self.transaction_setting_v2 = options.transaction_setting_v2 if options.transaction_setting_v2 else None
         self.accept_version_script = options.accept_version_script if options.accept_version_script else None
         self.check_version_trigger_script_id = options.check_version_trigger_script_id if options.check_version_trigger_script_id else None
         self.log_setting = options.log_setting if options.log_setting else None
@@ -82,6 +86,9 @@ class Namespace(CdkResource):
             properties["Description"] = self.description
         if self.transaction_setting is not None:
             properties["TransactionSetting"] = self.transaction_setting.properties(
+            )
+        if self.transaction_setting_v2 is not None:
+            properties["TransactionSettingV2"] = self.transaction_setting_v2.properties(
             )
         if self.assume_user_id is not None:
             properties["AssumeUserId"] = self.assume_user_id

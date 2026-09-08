@@ -17,6 +17,7 @@ from typing import *
 from ...core.model import CdkResource, Stack
 from ...core.func import GetAttr
 from ...core.model import TransactionSetting
+from .TransactionSettingV2 import TransactionSettingV2
 from ...core.model import ScriptSetting
 from ...core.model import LogSetting
 
@@ -34,7 +35,9 @@ class Namespace(CdkResource):
     description: Optional[str] = None
     enable_await_exchange: Optional[bool] = None
     enable_direct_exchange: Optional[bool] = None
+    # @deprecated
     transaction_setting: Optional[TransactionSetting] = None
+    transaction_setting_v2: Optional[TransactionSettingV2] = None
     exchange_script: Optional[ScriptSetting] = None
     incremental_exchange_script: Optional[ScriptSetting] = None
     acquire_await_script: Optional[ScriptSetting] = None
@@ -56,6 +59,7 @@ class Namespace(CdkResource):
         self.enable_await_exchange = options.enable_await_exchange if options.enable_await_exchange else None
         self.enable_direct_exchange = options.enable_direct_exchange if options.enable_direct_exchange else None
         self.transaction_setting = options.transaction_setting if options.transaction_setting else None
+        self.transaction_setting_v2 = options.transaction_setting_v2 if options.transaction_setting_v2 else None
         self.exchange_script = options.exchange_script if options.exchange_script else None
         self.incremental_exchange_script = options.incremental_exchange_script if options.incremental_exchange_script else None
         self.acquire_await_script = options.acquire_await_script if options.acquire_await_script else None
@@ -90,6 +94,9 @@ class Namespace(CdkResource):
             properties["EnableDirectExchange"] = self.enable_direct_exchange
         if self.transaction_setting is not None:
             properties["TransactionSetting"] = self.transaction_setting.properties(
+            )
+        if self.transaction_setting_v2 is not None:
+            properties["TransactionSettingV2"] = self.transaction_setting_v2.properties(
             )
         if self.exchange_script is not None:
             properties["ExchangeScript"] = self.exchange_script.properties(

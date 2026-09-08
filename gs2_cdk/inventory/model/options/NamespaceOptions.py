@@ -17,13 +17,16 @@ from typing import *
 from ....core.model import CdkResource, Stack
 from ....core.func import GetAttr
 from ....core.model import TransactionSetting
+from ..TransactionSettingV2 import TransactionSettingV2
 from ....core.model import ScriptSetting
 from ....core.model import LogSetting
 
 
 class NamespaceOptions:
     description: Optional[str]
+    # @deprecated
     transaction_setting: Optional[TransactionSetting]
+    transaction_setting_v2: Optional[TransactionSettingV2]
     acquire_script: Optional[ScriptSetting]
     overflow_script: Optional[ScriptSetting]
     consume_script: Optional[ScriptSetting]
@@ -37,6 +40,7 @@ class NamespaceOptions:
         self,
         description: Optional[str] = None,
         transaction_setting: Optional[TransactionSetting] = None,
+        transaction_setting_v2: Optional[TransactionSettingV2] = None,
         acquire_script: Optional[ScriptSetting] = None,
         overflow_script: Optional[ScriptSetting] = None,
         consume_script: Optional[ScriptSetting] = None,
@@ -48,6 +52,7 @@ class NamespaceOptions:
     ):
         self.description = description
         self.transaction_setting = transaction_setting
+        self.transaction_setting_v2 = transaction_setting_v2
         self.acquire_script = acquire_script
         self.overflow_script = overflow_script
         self.consume_script = consume_script

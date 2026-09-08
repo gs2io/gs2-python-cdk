@@ -17,6 +17,7 @@ from typing import *
 from ...core.model import CdkResource, Stack
 from ...core.func import GetAttr
 from ...core.model import TransactionSetting
+from .TransactionSettingV2 import TransactionSettingV2
 from ...core.model import ScriptSetting
 from ...core.model import NotificationSetting
 from ...core.model import LogSetting
@@ -33,7 +34,9 @@ class Namespace(CdkResource):
     name: str
     description: Optional[str] = None
     is_automatic_deleting_enabled: Optional[bool] = None
+    # @deprecated
     transaction_setting: Optional[TransactionSetting] = None
+    transaction_setting_v2: Optional[TransactionSettingV2] = None
     receive_message_script: Optional[ScriptSetting] = None
     read_message_script: Optional[ScriptSetting] = None
     delete_message_script: Optional[ScriptSetting] = None
@@ -55,6 +58,7 @@ class Namespace(CdkResource):
         self.description = options.description if options.description else None
         self.is_automatic_deleting_enabled = options.is_automatic_deleting_enabled if options.is_automatic_deleting_enabled else None
         self.transaction_setting = options.transaction_setting if options.transaction_setting else None
+        self.transaction_setting_v2 = options.transaction_setting_v2 if options.transaction_setting_v2 else None
         self.receive_message_script = options.receive_message_script if options.receive_message_script else None
         self.read_message_script = options.read_message_script if options.read_message_script else None
         self.delete_message_script = options.delete_message_script if options.delete_message_script else None
@@ -88,6 +92,9 @@ class Namespace(CdkResource):
             properties["IsAutomaticDeletingEnabled"] = self.is_automatic_deleting_enabled
         if self.transaction_setting is not None:
             properties["TransactionSetting"] = self.transaction_setting.properties(
+            )
+        if self.transaction_setting_v2 is not None:
+            properties["TransactionSettingV2"] = self.transaction_setting_v2.properties(
             )
         if self.receive_message_script is not None:
             properties["ReceiveMessageScript"] = self.receive_message_script.properties(

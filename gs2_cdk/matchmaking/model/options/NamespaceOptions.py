@@ -17,14 +17,21 @@ from typing import *
 from ....core.model import CdkResource, Stack
 from ....core.func import GetAttr
 from ....core.model import TransactionSetting
+from ..TransactionSettingV2 import TransactionSettingV2
 from ....core.model import ScriptSetting
 from ....core.model import NotificationSetting
 from ....core.model import LogSetting
+from ..enums.NamespaceEnableDisconnectDetection import NamespaceEnableDisconnectDetection
+from ..enums.NamespaceCreateGatheringTriggerType import NamespaceCreateGatheringTriggerType
+from ..enums.NamespaceCompleteMatchmakingTriggerType import NamespaceCompleteMatchmakingTriggerType
+from ..enums.NamespaceEnableCollaborateSeasonRating import NamespaceEnableCollaborateSeasonRating
 
 
 class NamespaceOptions:
     description: Optional[str]
+    # @deprecated
     transaction_setting: Optional[TransactionSetting]
+    transaction_setting_v2: Optional[TransactionSettingV2]
     enable_rating: Optional[bool]
     enable_disconnect_detection: Optional[NamespaceEnableDisconnectDetection]
     disconnect_detection_timeout_seconds: Optional[int]
@@ -48,6 +55,7 @@ class NamespaceOptions:
         self,
         description: Optional[str] = None,
         transaction_setting: Optional[TransactionSetting] = None,
+        transaction_setting_v2: Optional[TransactionSettingV2] = None,
         enable_rating: Optional[bool] = None,
         enable_disconnect_detection: Optional[NamespaceEnableDisconnectDetection] = None,
         disconnect_detection_timeout_seconds: Optional[int] = None,
@@ -69,6 +77,7 @@ class NamespaceOptions:
     ):
         self.description = description
         self.transaction_setting = transaction_setting
+        self.transaction_setting_v2 = transaction_setting_v2
         self.enable_rating = enable_rating
         self.enable_disconnect_detection = enable_disconnect_detection
         self.disconnect_detection_timeout_seconds = disconnect_detection_timeout_seconds

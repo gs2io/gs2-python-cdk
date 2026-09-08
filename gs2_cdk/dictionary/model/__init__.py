@@ -15,4 +15,6 @@ from .Namespace import Namespace
 from .options.NamespaceOptions import NamespaceOptions
 from .EntryModel import EntryModel
 from .options.EntryModelOptions import EntryModelOptions
+from .TransactionSettingV2 import TransactionSettingV2
+from .options.TransactionSettingV2Options import TransactionSettingV2Options
 from .CurrentMasterData import CurrentMasterData

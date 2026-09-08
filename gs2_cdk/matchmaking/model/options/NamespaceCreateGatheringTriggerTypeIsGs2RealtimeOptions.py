@@ -14,6 +14,7 @@
 from __future__ import annotations
 from typing import *
 from ....core.model import TransactionSetting
+from ..TransactionSettingV2 import TransactionSettingV2
 from ....core.model import ScriptSetting
 from ....core.model import NotificationSetting
 from ....core.model import LogSetting
@@ -26,6 +27,7 @@ from ..enums.NamespaceEnableCollaborateSeasonRating import NamespaceEnableCollab
 class NamespaceCreateGatheringTriggerTypeIsGs2RealtimeOptions:
     description: Optional[str]
     transaction_setting: Optional[TransactionSetting]
+    transaction_setting_v2: Optional[TransactionSettingV2]
     change_rating_script: Optional[ScriptSetting]
     join_notification: Optional[NotificationSetting]
     leave_notification: Optional[NotificationSetting]
@@ -38,6 +40,7 @@ class NamespaceCreateGatheringTriggerTypeIsGs2RealtimeOptions:
         self,
         description: Optional[str] = None,
         transaction_setting: Optional[TransactionSetting] = None,
+        transaction_setting_v2: Optional[TransactionSettingV2] = None,
         change_rating_script: Optional[ScriptSetting] = None,
         join_notification: Optional[NotificationSetting] = None,
         leave_notification: Optional[NotificationSetting] = None,
@@ -48,6 +51,7 @@ class NamespaceCreateGatheringTriggerTypeIsGs2RealtimeOptions:
     ):
         self.description = description
         self.transaction_setting = transaction_setting
+        self.transaction_setting_v2 = transaction_setting_v2
         self.change_rating_script = change_rating_script
         self.join_notification = join_notification
         self.leave_notification = leave_notification

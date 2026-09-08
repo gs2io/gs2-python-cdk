@@ -18,4 +18,6 @@ from .options.CategoryModelOptions import CategoryModelOptions
 from .enums.CategoryModelRejectAccessTokenPost import CategoryModelRejectAccessTokenPost
 from .NotificationType import NotificationType
 from .options.NotificationTypeOptions import NotificationTypeOptions
+from .TransactionSettingV2 import TransactionSettingV2
+from .options.TransactionSettingV2Options import TransactionSettingV2Options
 from .CurrentMasterData import CurrentMasterData

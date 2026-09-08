@@ -17,13 +17,16 @@ from typing import *
 from ....core.model import CdkResource, Stack
 from ....core.func import GetAttr
 from ....core.model import TransactionSetting
+from ..TransactionSettingV2 import TransactionSettingV2
 from ....core.model import ScriptSetting
 from ....core.model import LogSetting
 
 
 class NamespaceOptions:
     description: Optional[str]
+    # @deprecated
     transaction_setting: Optional[TransactionSetting]
+    transaction_setting_v2: Optional[TransactionSettingV2]
     start_quest_script: Optional[ScriptSetting]
     complete_quest_script: Optional[ScriptSetting]
     failed_quest_script: Optional[ScriptSetting]
@@ -35,6 +38,7 @@ class NamespaceOptions:
         self,
         description: Optional[str] = None,
         transaction_setting: Optional[TransactionSetting] = None,
+        transaction_setting_v2: Optional[TransactionSettingV2] = None,
         start_quest_script: Optional[ScriptSetting] = None,
         complete_quest_script: Optional[ScriptSetting] = None,
         failed_quest_script: Optional[ScriptSetting] = None,
@@ -44,6 +48,7 @@ class NamespaceOptions:
     ):
         self.description = description
         self.transaction_setting = transaction_setting
+        self.transaction_setting_v2 = transaction_setting_v2
         self.start_quest_script = start_quest_script
         self.complete_quest_script = complete_quest_script
         self.failed_quest_script = failed_quest_script

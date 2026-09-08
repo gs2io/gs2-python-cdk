@@ -31,6 +31,8 @@ from .RatingModel import RatingModel
 from .options.RatingModelOptions import RatingModelOptions
 from .SeasonModel import SeasonModel
 from .options.SeasonModelOptions import SeasonModelOptions
+from .TransactionSettingV2 import TransactionSettingV2
+from .options.TransactionSettingV2Options import TransactionSettingV2Options
 from .AttributeRange import AttributeRange
 from .options.AttributeRangeOptions import AttributeRangeOptions
 from .CapacityOfRole import CapacityOfRole

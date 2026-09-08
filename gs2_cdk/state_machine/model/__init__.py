@@ -22,6 +22,8 @@ from .StackEntry import StackEntry
 from .options.StackEntryOptions import StackEntryOptions
 from .Variable import Variable
 from .options.VariableOptions import VariableOptions
+from .TransactionSettingV2 import TransactionSettingV2
+from .options.TransactionSettingV2Options import TransactionSettingV2Options
 from .Event import Event
 from .options.EventOptions import EventOptions
 from .enums.EventEventType import EventEventType

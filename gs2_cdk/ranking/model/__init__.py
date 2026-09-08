@@ -27,4 +27,6 @@ from .FixedTiming import FixedTiming
 from .options.FixedTimingOptions import FixedTimingOptions
 from .CalculatedAt import CalculatedAt
 from .options.CalculatedAtOptions import CalculatedAtOptions
+from .TransactionSettingV2 import TransactionSettingV2
+from .options.TransactionSettingV2Options import TransactionSettingV2Options
 from .CurrentMasterData import CurrentMasterData

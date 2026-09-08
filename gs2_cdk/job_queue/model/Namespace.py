@@ -17,6 +17,7 @@ from typing import *
 from ...core.model import CdkResource, Stack
 from ...core.func import GetAttr
 from ...core.model import TransactionSetting
+from .TransactionSettingV2 import TransactionSettingV2
 from ...core.model import NotificationSetting
 from ...core.model import LogSetting
 
@@ -29,7 +30,9 @@ class Namespace(CdkResource):
     stack: Stack
     name: str
     description: Optional[str] = None
+    # @deprecated
     transaction_setting: Optional[TransactionSetting] = None
+    transaction_setting_v2: Optional[TransactionSettingV2] = None
     push_notification: Optional[NotificationSetting] = None
     run_notification: Optional[NotificationSetting] = None
     log_setting: Optional[LogSetting] = None
@@ -48,6 +51,7 @@ class Namespace(CdkResource):
         self.name = name
         self.description = options.description if options.description else None
         self.transaction_setting = options.transaction_setting if options.transaction_setting else None
+        self.transaction_setting_v2 = options.transaction_setting_v2 if options.transaction_setting_v2 else None
         self.push_notification = options.push_notification if options.push_notification else None
         self.run_notification = options.run_notification if options.run_notification else None
         self.log_setting = options.log_setting if options.log_setting else None
@@ -77,6 +81,9 @@ class Namespace(CdkResource):
             properties["Description"] = self.description
         if self.transaction_setting is not None:
             properties["TransactionSetting"] = self.transaction_setting.properties(
+            )
+        if self.transaction_setting_v2 is not None:
+            properties["TransactionSettingV2"] = self.transaction_setting_v2.properties(
             )
         properties["EnableAutoRun"] = True
         if self.push_notification is not None:

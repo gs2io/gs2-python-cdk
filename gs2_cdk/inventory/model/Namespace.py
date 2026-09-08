@@ -17,6 +17,7 @@ from typing import *
 from ...core.model import CdkResource, Stack
 from ...core.func import GetAttr
 from ...core.model import TransactionSetting
+from .TransactionSettingV2 import TransactionSettingV2
 from ...core.model import ScriptSetting
 from ...core.model import LogSetting
 
@@ -33,7 +34,9 @@ class Namespace(CdkResource):
     stack: Stack
     name: str
     description: Optional[str] = None
+    # @deprecated
     transaction_setting: Optional[TransactionSetting] = None
+    transaction_setting_v2: Optional[TransactionSettingV2] = None
     acquire_script: Optional[ScriptSetting] = None
     overflow_script: Optional[ScriptSetting] = None
     consume_script: Optional[ScriptSetting] = None
@@ -57,6 +60,7 @@ class Namespace(CdkResource):
         self.name = name
         self.description = options.description if options.description else None
         self.transaction_setting = options.transaction_setting if options.transaction_setting else None
+        self.transaction_setting_v2 = options.transaction_setting_v2 if options.transaction_setting_v2 else None
         self.acquire_script = options.acquire_script if options.acquire_script else None
         self.overflow_script = options.overflow_script if options.overflow_script else None
         self.consume_script = options.consume_script if options.consume_script else None
@@ -91,6 +95,9 @@ class Namespace(CdkResource):
             properties["Description"] = self.description
         if self.transaction_setting is not None:
             properties["TransactionSetting"] = self.transaction_setting.properties(
+            )
+        if self.transaction_setting_v2 is not None:
+            properties["TransactionSettingV2"] = self.transaction_setting_v2.properties(
             )
         if self.acquire_script is not None:
             properties["AcquireScript"] = self.acquire_script.properties(

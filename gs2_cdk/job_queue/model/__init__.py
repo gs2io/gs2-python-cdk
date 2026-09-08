@@ -13,6 +13,8 @@
 # permissions and limitations under the License.
 from .Namespace import Namespace
 from .options.NamespaceOptions import NamespaceOptions
+from .TransactionSettingV2 import TransactionSettingV2
+from .options.TransactionSettingV2Options import TransactionSettingV2Options
 from .JobEntry import JobEntry
 from .options.JobEntryOptions import JobEntryOptions
 from .JobResultBody import JobResultBody

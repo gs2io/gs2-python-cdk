@@ -17,6 +17,7 @@ from typing import *
 from ....core.model import CdkResource, Stack
 from ....core.func import GetAttr
 from ....core.model import TransactionSetting
+from ..TransactionSettingV2 import TransactionSettingV2
 from ..AdMob import AdMob
 from ..UnityAd import UnityAd
 from ..AppLovinMax import AppLovinMax
@@ -27,7 +28,9 @@ from ....core.model import LogSetting
 
 class NamespaceOptions:
     description: Optional[str]
+    # @deprecated
     transaction_setting: Optional[TransactionSetting]
+    transaction_setting_v2: Optional[TransactionSettingV2]
     admob: Optional[AdMob]
     unity_ad: Optional[UnityAd]
     app_lovin_maxes: Optional[List[AppLovinMax]]
@@ -40,6 +43,7 @@ class NamespaceOptions:
         self,
         description: Optional[str] = None,
         transaction_setting: Optional[TransactionSetting] = None,
+        transaction_setting_v2: Optional[TransactionSettingV2] = None,
         admob: Optional[AdMob] = None,
         unity_ad: Optional[UnityAd] = None,
         app_lovin_maxes: Optional[List[AppLovinMax]] = None,
@@ -50,6 +54,7 @@ class NamespaceOptions:
     ):
         self.description = description
         self.transaction_setting = transaction_setting
+        self.transaction_setting_v2 = transaction_setting_v2
         self.admob = admob
         self.unity_ad = unity_ad
         self.app_lovin_maxes = app_lovin_maxes

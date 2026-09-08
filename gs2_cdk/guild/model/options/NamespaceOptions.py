@@ -17,6 +17,7 @@ from typing import *
 from ....core.model import CdkResource, Stack
 from ....core.func import GetAttr
 from ....core.model import TransactionSetting
+from ..TransactionSettingV2 import TransactionSettingV2
 from ....core.model import NotificationSetting
 from ....core.model import ScriptSetting
 from ....core.model import LogSetting
@@ -24,7 +25,9 @@ from ....core.model import LogSetting
 
 class NamespaceOptions:
     description: Optional[str]
+    # @deprecated
     transaction_setting: Optional[TransactionSetting]
+    transaction_setting_v2: Optional[TransactionSettingV2]
     change_notification: Optional[NotificationSetting]
     join_notification: Optional[NotificationSetting]
     leave_notification: Optional[NotificationSetting]
@@ -45,6 +48,7 @@ class NamespaceOptions:
         self,
         description: Optional[str] = None,
         transaction_setting: Optional[TransactionSetting] = None,
+        transaction_setting_v2: Optional[TransactionSettingV2] = None,
         change_notification: Optional[NotificationSetting] = None,
         join_notification: Optional[NotificationSetting] = None,
         leave_notification: Optional[NotificationSetting] = None,
@@ -63,6 +67,7 @@ class NamespaceOptions:
     ):
         self.description = description
         self.transaction_setting = transaction_setting
+        self.transaction_setting_v2 = transaction_setting_v2
         self.change_notification = change_notification
         self.join_notification = join_notification
         self.leave_notification = leave_notification

@@ -17,6 +17,7 @@ from typing import *
 from ...core.model import CdkResource, Stack
 from ...core.func import GetAttr
 from ...core.model import TransactionSetting
+from .TransactionSettingV2 import TransactionSettingV2
 from ...core.model import ScriptSetting
 from ...core.model import LogSetting
 
@@ -32,9 +33,13 @@ class Namespace(CdkResource):
     stack: Stack
     name: str
     description: Optional[str] = None
+    # @deprecated
     transaction_setting: Optional[TransactionSetting] = None
+    transaction_setting_v2: Optional[TransactionSettingV2] = None
     enhance_script: Optional[ScriptSetting] = None
     log_setting: Optional[LogSetting] = None
+    # @deprecated
+    enable_direct_enhance: Optional[bool] = None
 
     def __init__(
         self,
@@ -50,8 +55,10 @@ class Namespace(CdkResource):
         self.name = name
         self.description = options.description if options.description else None
         self.transaction_setting = options.transaction_setting if options.transaction_setting else None
+        self.transaction_setting_v2 = options.transaction_setting_v2 if options.transaction_setting_v2 else None
         self.enhance_script = options.enhance_script if options.enhance_script else None
         self.log_setting = options.log_setting if options.log_setting else None
+        self.enable_direct_enhance = options.enable_direct_enhance if options.enable_direct_enhance else None
         stack.add_resource(
             self,
         )
@@ -79,12 +86,17 @@ class Namespace(CdkResource):
         if self.transaction_setting is not None:
             properties["TransactionSetting"] = self.transaction_setting.properties(
             )
+        if self.transaction_setting_v2 is not None:
+            properties["TransactionSettingV2"] = self.transaction_setting_v2.properties(
+            )
         if self.enhance_script is not None:
             properties["EnhanceScript"] = self.enhance_script.properties(
             )
         if self.log_setting is not None:
             properties["LogSetting"] = self.log_setting.properties(
             )
+        if self.enable_direct_enhance is not None:
+            properties["EnableDirectEnhance"] = self.enable_direct_enhance
 
         return properties
 

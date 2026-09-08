@@ -23,4 +23,6 @@ from .PlatformUser import PlatformUser
 from .options.PlatformUserOptions import PlatformUserOptions
 from .BanStatus import BanStatus
 from .options.BanStatusOptions import BanStatusOptions
+from .TransactionSettingV2 import TransactionSettingV2
+from .options.TransactionSettingV2Options import TransactionSettingV2Options
 from .CurrentMasterData import CurrentMasterData

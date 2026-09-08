@@ -28,6 +28,8 @@ from .TargetVersion import TargetVersion
 from .options.TargetVersionOptions import TargetVersionOptions
 from .SignTargetVersion import SignTargetVersion
 from .options.SignTargetVersionOptions import SignTargetVersionOptions
+from .TransactionSettingV2 import TransactionSettingV2
+from .options.TransactionSettingV2Options import TransactionSettingV2Options
 from .Version import Version
 from .options.VersionOptions import VersionOptions
 from .ScheduleVersion import ScheduleVersion

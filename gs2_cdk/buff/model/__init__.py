@@ -27,6 +27,8 @@ from .options.BuffEntryModelTargetTypeIsModelOptions import BuffEntryModelTarget
 from .options.BuffEntryModelTargetTypeIsActionOptions import BuffEntryModelTargetTypeIsActionOptions
 from .OverrideBuffRate import OverrideBuffRate
 from .options.OverrideBuffRateOptions import OverrideBuffRateOptions
+from .TransactionSettingV2 import TransactionSettingV2
+from .options.TransactionSettingV2Options import TransactionSettingV2Options
 from .enums.BuffTargetActionTargetActionName import BuffTargetActionTargetActionName
 from .enums.BuffTargetModelTargetModelName import BuffTargetModelTargetModelName
 from .CurrentMasterData import CurrentMasterData

@@ -21,4 +21,6 @@ from .RecoverIntervalTable import RecoverIntervalTable
 from .options.RecoverIntervalTableOptions import RecoverIntervalTableOptions
 from .RecoverValueTable import RecoverValueTable
 from .options.RecoverValueTableOptions import RecoverValueTableOptions
+from .TransactionSettingV2 import TransactionSettingV2
+from .options.TransactionSettingV2Options import TransactionSettingV2Options
 from .CurrentMasterData import CurrentMasterData

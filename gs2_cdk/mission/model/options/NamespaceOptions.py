@@ -17,6 +17,7 @@ from typing import *
 from ....core.model import CdkResource, Stack
 from ....core.func import GetAttr
 from ....core.model import TransactionSetting
+from ..TransactionSettingV2 import TransactionSettingV2
 from ....core.model import ScriptSetting
 from ....core.model import NotificationSetting
 from ....core.model import LogSetting
@@ -24,7 +25,9 @@ from ....core.model import LogSetting
 
 class NamespaceOptions:
     description: Optional[str]
+    # @deprecated
     transaction_setting: Optional[TransactionSetting]
+    transaction_setting_v2: Optional[TransactionSettingV2]
     mission_complete_script: Optional[ScriptSetting]
     counter_increment_script: Optional[ScriptSetting]
     receive_rewards_script: Optional[ScriptSetting]
@@ -37,6 +40,7 @@ class NamespaceOptions:
         self,
         description: Optional[str] = None,
         transaction_setting: Optional[TransactionSetting] = None,
+        transaction_setting_v2: Optional[TransactionSettingV2] = None,
         mission_complete_script: Optional[ScriptSetting] = None,
         counter_increment_script: Optional[ScriptSetting] = None,
         receive_rewards_script: Optional[ScriptSetting] = None,
@@ -47,6 +51,7 @@ class NamespaceOptions:
     ):
         self.description = description
         self.transaction_setting = transaction_setting
+        self.transaction_setting_v2 = transaction_setting_v2
         self.mission_complete_script = mission_complete_script
         self.counter_increment_script = counter_increment_script
         self.receive_rewards_script = receive_rewards_script

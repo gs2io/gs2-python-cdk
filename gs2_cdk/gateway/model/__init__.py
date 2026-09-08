@@ -15,3 +15,5 @@ from .Namespace import Namespace
 from .options.NamespaceOptions import NamespaceOptions
 from .SendNotificationEntry import SendNotificationEntry
 from .options.SendNotificationEntryOptions import SendNotificationEntryOptions
+from .TransactionSettingV2 import TransactionSettingV2
+from .options.TransactionSettingV2Options import TransactionSettingV2Options

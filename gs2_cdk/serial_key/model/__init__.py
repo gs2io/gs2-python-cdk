@@ -18,4 +18,6 @@ from .options.IssueJobOptions import IssueJobOptions
 from .enums.IssueJobStatus import IssueJobStatus
 from .CampaignModel import CampaignModel
 from .options.CampaignModelOptions import CampaignModelOptions
+from .TransactionSettingV2 import TransactionSettingV2
+from .options.TransactionSettingV2Options import TransactionSettingV2Options
 from .CurrentMasterData import CurrentMasterData

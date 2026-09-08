@@ -16,6 +16,8 @@ from typing import *
 
 from ....core.model import CdkResource, Stack
 from ....core.func import GetAttr
+from ..enums.NamespaceType import NamespaceType
+from ..enums.NamespaceFirehoseCompressData import NamespaceFirehoseCompressData
 
 
 class NamespaceOptions:

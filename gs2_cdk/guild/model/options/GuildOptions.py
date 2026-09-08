@@ -17,6 +17,7 @@ from typing import *
 from ....core.model import CdkResource, Stack
 from ....core.func import GetAttr
 from ..RoleModel import RoleModel
+from ..enums.GuildJoinPolicy import GuildJoinPolicy
 
 
 class GuildOptions:

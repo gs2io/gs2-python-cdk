@@ -17,13 +17,18 @@ from typing import *
 from ....core.model import CdkResource, Stack
 from ....core.func import GetAttr
 from ....core.model import TransactionSetting
+from ..TransactionSettingV2 import TransactionSettingV2
 from ....core.model import ScriptSetting
 from ....core.model import LogSetting
+from ..enums.NamespacePriority import NamespacePriority
+from ..enums.NamespaceCurrency import NamespaceCurrency
 
 
 class NamespaceOptions:
     description: Optional[str]
+    # @deprecated
     transaction_setting: Optional[TransactionSetting]
+    transaction_setting_v2: Optional[TransactionSettingV2]
     apple_key: Optional[str]
     google_key: Optional[str]
     enable_fake_receipt: Optional[bool]
@@ -36,6 +41,7 @@ class NamespaceOptions:
         self,
         description: Optional[str] = None,
         transaction_setting: Optional[TransactionSetting] = None,
+        transaction_setting_v2: Optional[TransactionSettingV2] = None,
         apple_key: Optional[str] = None,
         google_key: Optional[str] = None,
         enable_fake_receipt: Optional[bool] = None,
@@ -46,6 +52,7 @@ class NamespaceOptions:
     ):
         self.description = description
         self.transaction_setting = transaction_setting
+        self.transaction_setting_v2 = transaction_setting_v2
         self.apple_key = apple_key
         self.google_key = google_key
         self.enable_fake_receipt = enable_fake_receipt

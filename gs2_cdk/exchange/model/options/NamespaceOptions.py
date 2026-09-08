@@ -17,6 +17,7 @@ from typing import *
 from ....core.model import CdkResource, Stack
 from ....core.func import GetAttr
 from ....core.model import TransactionSetting
+from ..TransactionSettingV2 import TransactionSettingV2
 from ....core.model import ScriptSetting
 from ....core.model import LogSetting
 
@@ -25,7 +26,9 @@ class NamespaceOptions:
     description: Optional[str]
     enable_await_exchange: Optional[bool]
     enable_direct_exchange: Optional[bool]
+    # @deprecated
     transaction_setting: Optional[TransactionSetting]
+    transaction_setting_v2: Optional[TransactionSettingV2]
     exchange_script: Optional[ScriptSetting]
     incremental_exchange_script: Optional[ScriptSetting]
     acquire_await_script: Optional[ScriptSetting]
@@ -39,6 +42,7 @@ class NamespaceOptions:
         enable_await_exchange: Optional[bool] = None,
         enable_direct_exchange: Optional[bool] = None,
         transaction_setting: Optional[TransactionSetting] = None,
+        transaction_setting_v2: Optional[TransactionSettingV2] = None,
         exchange_script: Optional[ScriptSetting] = None,
         incremental_exchange_script: Optional[ScriptSetting] = None,
         acquire_await_script: Optional[ScriptSetting] = None,
@@ -50,6 +54,7 @@ class NamespaceOptions:
         self.enable_await_exchange = enable_await_exchange
         self.enable_direct_exchange = enable_direct_exchange
         self.transaction_setting = transaction_setting
+        self.transaction_setting_v2 = transaction_setting_v2
         self.exchange_script = exchange_script
         self.incremental_exchange_script = incremental_exchange_script
         self.acquire_await_script = acquire_await_script

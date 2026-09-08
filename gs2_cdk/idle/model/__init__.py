@@ -26,4 +26,6 @@ from .TransactionResult import TransactionResult
 from .options.TransactionResultOptions import TransactionResultOptions
 from .AcquireActionList import AcquireActionList
 from .options.AcquireActionListOptions import AcquireActionListOptions
+from .TransactionSettingV2 import TransactionSettingV2
+from .options.TransactionSettingV2Options import TransactionSettingV2Options
 from .CurrentMasterData import CurrentMasterData

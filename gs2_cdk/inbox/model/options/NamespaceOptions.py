@@ -17,6 +17,7 @@ from typing import *
 from ....core.model import CdkResource, Stack
 from ....core.func import GetAttr
 from ....core.model import TransactionSetting
+from ..TransactionSettingV2 import TransactionSettingV2
 from ....core.model import ScriptSetting
 from ....core.model import NotificationSetting
 from ....core.model import LogSetting
@@ -25,7 +26,9 @@ from ....core.model import LogSetting
 class NamespaceOptions:
     description: Optional[str]
     is_automatic_deleting_enabled: Optional[bool]
+    # @deprecated
     transaction_setting: Optional[TransactionSetting]
+    transaction_setting_v2: Optional[TransactionSettingV2]
     receive_message_script: Optional[ScriptSetting]
     read_message_script: Optional[ScriptSetting]
     delete_message_script: Optional[ScriptSetting]
@@ -39,6 +42,7 @@ class NamespaceOptions:
         description: Optional[str] = None,
         is_automatic_deleting_enabled: Optional[bool] = None,
         transaction_setting: Optional[TransactionSetting] = None,
+        transaction_setting_v2: Optional[TransactionSettingV2] = None,
         receive_message_script: Optional[ScriptSetting] = None,
         read_message_script: Optional[ScriptSetting] = None,
         delete_message_script: Optional[ScriptSetting] = None,
@@ -50,6 +54,7 @@ class NamespaceOptions:
         self.description = description
         self.is_automatic_deleting_enabled = is_automatic_deleting_enabled
         self.transaction_setting = transaction_setting
+        self.transaction_setting_v2 = transaction_setting_v2
         self.receive_message_script = receive_message_script
         self.read_message_script = read_message_script
         self.delete_message_script = delete_message_script
