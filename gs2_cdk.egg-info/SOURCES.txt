@@ -23,6 +23,7 @@ src/gs2_cdk/account/stamp_sheet/__init__.py
 src/gs2_cdk/ad_reward/__init__.py
 src/gs2_cdk/ad_reward/model/AdMob.py
 src/gs2_cdk/ad_reward/model/AppLovinMax.py
+src/gs2_cdk/ad_reward/model/MobileNotificationMessage.py
 src/gs2_cdk/ad_reward/model/Namespace.py
 src/gs2_cdk/ad_reward/model/TransactionSettingV2.py
 src/gs2_cdk/ad_reward/model/UnityAd.py
@@ -55,6 +56,7 @@ src/gs2_cdk/buff/stamp_sheet/__init__.py
 src/gs2_cdk/chat/__init__.py
 src/gs2_cdk/chat/model/CategoryModel.py
 src/gs2_cdk/chat/model/CurrentMasterData.py
+src/gs2_cdk/chat/model/MobileNotificationMessage.py
 src/gs2_cdk/chat/model/Namespace.py
 src/gs2_cdk/chat/model/NotificationType.py
 src/gs2_cdk/chat/model/TransactionSettingV2.py
@@ -97,6 +99,7 @@ src/gs2_cdk/distributor/model/ConsumeActionResult.py
 src/gs2_cdk/distributor/model/CurrentMasterData.py
 src/gs2_cdk/distributor/model/DistributeResource.py
 src/gs2_cdk/distributor/model/DistributorModel.py
+src/gs2_cdk/distributor/model/MobileNotificationMessage.py
 src/gs2_cdk/distributor/model/Namespace.py
 src/gs2_cdk/distributor/model/StampSheetResult.py
 src/gs2_cdk/distributor/model/TransactionSettingV2.py
@@ -254,6 +257,7 @@ src/gs2_cdk/freeze/ref/StageRef.py
 src/gs2_cdk/freeze/ref/__init__.py
 src/gs2_cdk/freeze/stamp_sheet/__init__.py
 src/gs2_cdk/friend/__init__.py
+src/gs2_cdk/friend/model/MobileNotificationMessage.py
 src/gs2_cdk/friend/model/Namespace.py
 src/gs2_cdk/friend/model/TransactionSettingV2.py
 src/gs2_cdk/friend/model/__init__.py
@@ -262,6 +266,7 @@ src/gs2_cdk/friend/ref/__init__.py
 src/gs2_cdk/friend/stamp_sheet/UpdateProfileByUserId.py
 src/gs2_cdk/friend/stamp_sheet/__init__.py
 src/gs2_cdk/gateway/__init__.py
+src/gs2_cdk/gateway/model/MobileNotificationMessage.py
 src/gs2_cdk/gateway/model/Namespace.py
 src/gs2_cdk/gateway/model/SendNotificationEntry.py
 src/gs2_cdk/gateway/model/TransactionSettingV2.py
@@ -311,6 +316,7 @@ src/gs2_cdk/guild/model/IgnoreUsers.py
 src/gs2_cdk/guild/model/Inbox.py
 src/gs2_cdk/guild/model/LastGuildMasterActivity.py
 src/gs2_cdk/guild/model/Member.py
+src/gs2_cdk/guild/model/MobileNotificationMessage.py
 src/gs2_cdk/guild/model/Namespace.py
 src/gs2_cdk/guild/model/ReceiveMemberRequest.py
 src/gs2_cdk/guild/model/RoleModel.py
@@ -378,6 +384,7 @@ src/gs2_cdk/inbox/model/AcquireActionResult.py
 src/gs2_cdk/inbox/model/ConsumeActionResult.py
 src/gs2_cdk/inbox/model/CurrentMasterData.py
 src/gs2_cdk/inbox/model/GlobalMessage.py
+src/gs2_cdk/inbox/model/MobileNotificationMessage.py
 src/gs2_cdk/inbox/model/Namespace.py
 src/gs2_cdk/inbox/model/TimeSpan.py
 src/gs2_cdk/inbox/model/TransactionResult.py
@@ -437,6 +444,7 @@ src/gs2_cdk/inventory/stamp_sheet/__init__.py
 src/gs2_cdk/job_queue/__init__.py
 src/gs2_cdk/job_queue/model/JobEntry.py
 src/gs2_cdk/job_queue/model/JobResultBody.py
+src/gs2_cdk/job_queue/model/MobileNotificationMessage.py
 src/gs2_cdk/job_queue/model/Namespace.py
 src/gs2_cdk/job_queue/model/TransactionSettingV2.py
 src/gs2_cdk/job_queue/model/__init__.py
@@ -559,6 +567,7 @@ src/gs2_cdk/matchmaking/model/AttributeRange.py
 src/gs2_cdk/matchmaking/model/CapacityOfRole.py
 src/gs2_cdk/matchmaking/model/CurrentMasterData.py
 src/gs2_cdk/matchmaking/model/GameResult.py
+src/gs2_cdk/matchmaking/model/MobileNotificationMessage.py
 src/gs2_cdk/matchmaking/model/Namespace.py
 src/gs2_cdk/matchmaking/model/Player.py
 src/gs2_cdk/matchmaking/model/RatingModel.py
@@ -601,6 +610,7 @@ src/gs2_cdk/mission/model/CounterScopeModel.py
 src/gs2_cdk/mission/model/CurrentMasterData.py
 src/gs2_cdk/mission/model/MissionGroupModel.py
 src/gs2_cdk/mission/model/MissionTaskModel.py
+src/gs2_cdk/mission/model/MobileNotificationMessage.py
 src/gs2_cdk/mission/model/Namespace.py
 src/gs2_cdk/mission/model/ScopedValue.py
 src/gs2_cdk/mission/model/TargetCounterModel.py
@@ -651,6 +661,7 @@ src/gs2_cdk/money2/model/GooglePlayRealtimeNotificationMessage.py
 src/gs2_cdk/money2/model/GooglePlaySetting.py
 src/gs2_cdk/money2/model/GooglePlaySubscriptionContent.py
 src/gs2_cdk/money2/model/GooglePlayVerifyReceiptEvent.py
+src/gs2_cdk/money2/model/MobileNotificationMessage.py
 src/gs2_cdk/money2/model/Namespace.py
 src/gs2_cdk/money2/model/PlatformSetting.py
 src/gs2_cdk/money2/model/Receipt.py
@@ -756,6 +767,7 @@ src/gs2_cdk/ranking2/stamp_sheet/VerifyGlobalRankingScoreByUserId.py
 src/gs2_cdk/ranking2/stamp_sheet/VerifySubscribeRankingScoreByUserId.py
 src/gs2_cdk/ranking2/stamp_sheet/__init__.py
 src/gs2_cdk/realtime/__init__.py
+src/gs2_cdk/realtime/model/MobileNotificationMessage.py
 src/gs2_cdk/realtime/model/Namespace.py
 src/gs2_cdk/realtime/model/Room.py
 src/gs2_cdk/realtime/model/TransactionSettingV2.py

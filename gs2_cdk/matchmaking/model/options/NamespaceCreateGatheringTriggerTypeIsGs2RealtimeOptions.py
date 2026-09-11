@@ -16,6 +16,7 @@ from typing import *
 from ....core.model import TransactionSetting
 from ..TransactionSettingV2 import TransactionSettingV2
 from ....core.model import ScriptSetting
+from ..MobileNotificationMessage import MobileNotificationMessage
 from ....core.model import NotificationSetting
 from ....core.model import LogSetting
 from ..enums.NamespaceEnableDisconnectDetection import NamespaceEnableDisconnectDetection

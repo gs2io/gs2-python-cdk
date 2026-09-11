@@ -13,6 +13,7 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from .MobileNotificationMessage import MobileNotificationMessage
 from .options.SendNotificationEntryOptions import SendNotificationEntryOptions
 
 
@@ -23,6 +24,7 @@ class SendNotificationEntry:
     payload: str
     enable_transfer_mobile_notification: bool
     sound: Optional[str] = None
+    mobile_notification_messages: Optional[List[MobileNotificationMessage]] = None
 
     def __init__(
         self,
@@ -39,6 +41,7 @@ class SendNotificationEntry:
         self.payload = payload
         self.enable_transfer_mobile_notification = enable_transfer_mobile_notification
         self.sound = options.sound if options.sound else None
+        self.mobile_notification_messages = options.mobile_notification_messages if options.mobile_notification_messages else None
 
     def properties(
         self,
@@ -57,5 +60,11 @@ class SendNotificationEntry:
             properties["enableTransferMobileNotification"] = self.enable_transfer_mobile_notification
         if self.sound is not None:
             properties["sound"] = self.sound
+        if self.mobile_notification_messages is not None:
+            properties["mobileNotificationMessages"] = [
+                v.properties(
+                )
+                for v in self.mobile_notification_messages
+            ]
 
         return properties

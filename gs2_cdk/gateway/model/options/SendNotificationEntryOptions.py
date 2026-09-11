@@ -13,14 +13,18 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from ..MobileNotificationMessage import MobileNotificationMessage
 
 
 class SendNotificationEntryOptions:
     sound: Optional[str]
+    mobile_notification_messages: Optional[List[MobileNotificationMessage]]
     
     def __init__(
         self,
         sound: Optional[str] = None,
+        mobile_notification_messages: Optional[List[MobileNotificationMessage]] = None,
     ):
         self.sound = sound
+        self.mobile_notification_messages = mobile_notification_messages
 

@@ -30,4 +30,6 @@ from .DistributeResource import DistributeResource
 from .options.DistributeResourceOptions import DistributeResourceOptions
 from .TransactionSettingV2 import TransactionSettingV2
 from .options.TransactionSettingV2Options import TransactionSettingV2Options
+from .MobileNotificationMessage import MobileNotificationMessage
+from .options.MobileNotificationMessageOptions import MobileNotificationMessageOptions
 from .CurrentMasterData import CurrentMasterData

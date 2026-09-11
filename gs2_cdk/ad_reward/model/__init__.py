@@ -19,5 +19,7 @@ from .UnityAd import UnityAd
 from .options.UnityAdOptions import UnityAdOptions
 from .AppLovinMax import AppLovinMax
 from .options.AppLovinMaxOptions import AppLovinMaxOptions
+from .MobileNotificationMessage import MobileNotificationMessage
+from .options.MobileNotificationMessageOptions import MobileNotificationMessageOptions
 from .TransactionSettingV2 import TransactionSettingV2
 from .options.TransactionSettingV2Options import TransactionSettingV2Options
