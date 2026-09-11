@@ -26,7 +26,9 @@ class NamespaceOptions:
     # @deprecated
     transaction_setting: Optional[TransactionSetting]
     transaction_setting_v2: Optional[TransactionSettingV2]
+    # @deprecated
     firebase_secret: Optional[str]
+    firebase_project_id: Optional[str]
     log_setting: Optional[LogSetting]
     
     def __init__(
@@ -35,11 +37,13 @@ class NamespaceOptions:
         transaction_setting: Optional[TransactionSetting] = None,
         transaction_setting_v2: Optional[TransactionSettingV2] = None,
         firebase_secret: Optional[str] = None,
+        firebase_project_id: Optional[str] = None,
         log_setting: Optional[LogSetting] = None,
     ):
         self.description = description
         self.transaction_setting = transaction_setting
         self.transaction_setting_v2 = transaction_setting_v2
         self.firebase_secret = firebase_secret
+        self.firebase_project_id = firebase_project_id
         self.log_setting = log_setting
 

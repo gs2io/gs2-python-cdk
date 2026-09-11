@@ -32,7 +32,9 @@ class Namespace(CdkResource):
     # @deprecated
     transaction_setting: Optional[TransactionSetting] = None
     transaction_setting_v2: Optional[TransactionSettingV2] = None
+    # @deprecated
     firebase_secret: Optional[str] = None
+    firebase_project_id: Optional[str] = None
     log_setting: Optional[LogSetting] = None
 
     def __init__(
@@ -51,6 +53,7 @@ class Namespace(CdkResource):
         self.transaction_setting = options.transaction_setting if options.transaction_setting else None
         self.transaction_setting_v2 = options.transaction_setting_v2 if options.transaction_setting_v2 else None
         self.firebase_secret = options.firebase_secret if options.firebase_secret else None
+        self.firebase_project_id = options.firebase_project_id if options.firebase_project_id else None
         self.log_setting = options.log_setting if options.log_setting else None
         stack.add_resource(
             self,
@@ -84,6 +87,8 @@ class Namespace(CdkResource):
             )
         if self.firebase_secret is not None:
             properties["FirebaseSecret"] = self.firebase_secret
+        if self.firebase_project_id is not None:
+            properties["FirebaseProjectId"] = self.firebase_project_id
         if self.log_setting is not None:
             properties["LogSetting"] = self.log_setting.properties(
             )
