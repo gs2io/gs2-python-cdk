@@ -103,6 +103,7 @@ src/gs2_cdk/distributor/model/MobileNotificationMessage.py
 src/gs2_cdk/distributor/model/Namespace.py
 src/gs2_cdk/distributor/model/StampSheetResult.py
 src/gs2_cdk/distributor/model/TransactionSettingV2.py
+src/gs2_cdk/distributor/model/UserDataEntry.py
 src/gs2_cdk/distributor/model/VerifyActionResult.py
 src/gs2_cdk/distributor/model/__init__.py
 src/gs2_cdk/distributor/ref/DistributorModelRef.py

@@ -21,6 +21,7 @@ from .AttachSecurityPolicy import AttachSecurityPolicy
 from .SecurityPolicy import SecurityPolicy
 
 from ..ref.UserRef import UserRef
+from .enums.UserDataStoreKeyScheme import UserDataStoreKeyScheme
 
 from .options.UserOptions import UserOptions
 
