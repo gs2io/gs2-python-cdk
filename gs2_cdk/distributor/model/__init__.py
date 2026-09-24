@@ -20,8 +20,6 @@ from .options.BatchRequestPayloadOptions import BatchRequestPayloadOptions
 from .enums.BatchRequestPayloadService import BatchRequestPayloadService
 from .BatchResultPayload import BatchResultPayload
 from .options.BatchResultPayloadOptions import BatchResultPayloadOptions
-from .UserDataEntry import UserDataEntry
-from .options.UserDataEntryOptions import UserDataEntryOptions
 from .AcquireActionResult import AcquireActionResult
 from .options.AcquireActionResultOptions import AcquireActionResultOptions
 from .ConsumeActionResult import ConsumeActionResult
