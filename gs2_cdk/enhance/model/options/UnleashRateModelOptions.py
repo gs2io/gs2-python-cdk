@@ -13,18 +13,25 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from ..UnleashIndividualMaterialSetting import UnleashIndividualMaterialSetting
+from ..UnleashQuantityMaterialSetting import UnleashQuantityMaterialSetting
+from ..UnleashMaterial import UnleashMaterial
+from ..UnleashRecipe import UnleashRecipe
 from ..UnleashRateEntryModel import UnleashRateEntryModel
 
 
 class UnleashRateModelOptions:
     description: Optional[str]
     metadata: Optional[str]
+    group_key_hierarchy: Optional[List[str]]
     
     def __init__(
         self,
         description: Optional[str] = None,
         metadata: Optional[str] = None,
+        group_key_hierarchy: Optional[List[str]] = None,
     ):
         self.description = description
         self.metadata = metadata
+        self.group_key_hierarchy = group_key_hierarchy
 

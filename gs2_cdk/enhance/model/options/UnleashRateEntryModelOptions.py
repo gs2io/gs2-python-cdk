@@ -13,12 +13,22 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from ..UnleashIndividualMaterialSetting import UnleashIndividualMaterialSetting
+from ..UnleashQuantityMaterialSetting import UnleashQuantityMaterialSetting
+from ..UnleashMaterial import UnleashMaterial
+from ..UnleashRecipe import UnleashRecipe
+from ..enums.UnleashRateEntryModelType import UnleashRateEntryModelType
 
 
 class UnleashRateEntryModelOptions:
+    need_count: Optional[int]
+    recipes: Optional[List[UnleashRecipe]]
     
     def __init__(
         self,
+        need_count: Optional[int] = None,
+        recipes: Optional[List[UnleashRecipe]] = None,
     ):
-        pass
+        self.need_count = need_count
+        self.recipes = recipes
 

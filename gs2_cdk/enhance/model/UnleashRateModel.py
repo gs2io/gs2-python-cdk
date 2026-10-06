@@ -13,6 +13,10 @@
 # permissions and limitations under the License.
 from __future__ import annotations
 from typing import *
+from .UnleashIndividualMaterialSetting import UnleashIndividualMaterialSetting
+from .UnleashQuantityMaterialSetting import UnleashQuantityMaterialSetting
+from .UnleashMaterial import UnleashMaterial
+from .UnleashRecipe import UnleashRecipe
 from .UnleashRateEntryModel import UnleashRateEntryModel
 from .options.UnleashRateModelOptions import UnleashRateModelOptions
 
@@ -24,6 +28,7 @@ class UnleashRateModel:
     grade_entries: List[UnleashRateEntryModel]
     description: Optional[str] = None
     metadata: Optional[str] = None
+    group_key_hierarchy: Optional[List[str]] = None
 
     def __init__(
         self,
@@ -39,6 +44,7 @@ class UnleashRateModel:
         self.grade_entries = grade_entries
         self.description = options.description if options.description else None
         self.metadata = options.metadata if options.metadata else None
+        self.group_key_hierarchy = options.group_key_hierarchy if options.group_key_hierarchy else None
 
     def properties(
         self,
@@ -55,6 +61,8 @@ class UnleashRateModel:
             properties["targetInventoryModelId"] = self.target_inventory_model_id
         if self.grade_model_id is not None:
             properties["gradeModelId"] = self.grade_model_id
+        if self.group_key_hierarchy is not None:
+            properties["groupKeyHierarchy"] = self.group_key_hierarchy
         if self.grade_entries is not None:
             properties["gradeEntries"] = [
                 v.properties(

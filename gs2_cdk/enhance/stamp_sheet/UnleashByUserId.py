@@ -15,6 +15,7 @@ from __future__ import annotations
 from typing import *
 
 from ...core.model import AcquireAction, ConsumeAction, VerifyAction
+from ..model.UnleashMaterialSelection import UnleashMaterialSelection
 from ...core.model import Config
 
 
@@ -25,7 +26,9 @@ class UnleashByUserId(AcquireAction):
         namespace_name: str,
         rate_name: str,
         target_item_set_id: str,
-        materials: List[str],
+        materials: Optional[List[str]] = None,
+        recipe_name: Optional[str] = None,
+        recipe_materials: Optional[List[UnleashMaterialSelection]] = None,
         config: Optional[List[Config]] = None,
         user_id: Optional[str] = "#{userId}",
     ):
@@ -35,6 +38,8 @@ class UnleashByUserId(AcquireAction):
         properties["rateName"] = rate_name
         properties["targetItemSetId"] = target_item_set_id
         properties["materials"] = materials
+        properties["recipeName"] = recipe_name
+        properties["recipeMaterials"] = recipe_materials
         properties["config"] = config
         properties["userId"] = user_id
 
