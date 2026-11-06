@@ -37,6 +37,9 @@ class Namespace(CdkResource):
     # @deprecated
     transaction_setting: Optional[TransactionSetting] = None
     transaction_setting_v2: Optional[TransactionSettingV2] = None
+    object_catalog: Optional[str] = None
+    state_machine_namespace_id: Optional[str] = None
+    state_machine_version: Optional[int] = None
     create_notification: Optional[NotificationSetting] = None
     log_setting: Optional[LogSetting] = None
 
@@ -59,6 +62,9 @@ class Namespace(CdkResource):
         self.description = options.description if options.description else None
         self.transaction_setting = options.transaction_setting if options.transaction_setting else None
         self.transaction_setting_v2 = options.transaction_setting_v2 if options.transaction_setting_v2 else None
+        self.object_catalog = options.object_catalog if options.object_catalog else None
+        self.state_machine_namespace_id = options.state_machine_namespace_id if options.state_machine_namespace_id else None
+        self.state_machine_version = options.state_machine_version if options.state_machine_version else None
         self.create_notification = options.create_notification if options.create_notification else None
         self.log_setting = options.log_setting if options.log_setting else None
         stack.add_resource(
@@ -95,6 +101,12 @@ class Namespace(CdkResource):
             properties["ServerType"] = self.server_type
         if self.server_spec is not None:
             properties["ServerSpec"] = self.server_spec
+        if self.object_catalog is not None:
+            properties["ObjectCatalog"] = self.object_catalog
+        if self.state_machine_namespace_id is not None:
+            properties["StateMachineNamespaceId"] = self.state_machine_namespace_id
+        if self.state_machine_version is not None:
+            properties["StateMachineVersion"] = self.state_machine_version
         if self.create_notification is not None:
             properties["CreateNotification"] = self.create_notification.properties(
             )

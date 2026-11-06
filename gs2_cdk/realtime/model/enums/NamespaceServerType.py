@@ -18,6 +18,8 @@
 class NamespaceServerType:
     value: str
     RELAY: 'NamespaceServerType'
+    SYNC: 'NamespaceServerType'
+    STATE_MACHINE: 'NamespaceServerType'
 
     def __init__(
         self,
@@ -27,3 +29,5 @@ class NamespaceServerType:
 
 
 NamespaceServerType.RELAY = NamespaceServerType("relay")
+NamespaceServerType.SYNC = NamespaceServerType("sync")
+NamespaceServerType.STATE_MACHINE = NamespaceServerType("stateMachine")
