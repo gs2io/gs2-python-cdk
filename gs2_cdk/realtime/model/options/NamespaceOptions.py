@@ -18,6 +18,8 @@ from ....core.model import CdkResource, Stack
 from ....core.func import GetAttr
 from ....core.model import TransactionSetting
 from ..TransactionSettingV2 import TransactionSettingV2
+from ..SyncSetting import SyncSetting
+from ..StateMachineSetting import StateMachineSetting
 from ....core.model import NotificationSetting
 from ....core.model import LogSetting
 from ..enums.NamespaceServerType import NamespaceServerType
@@ -29,9 +31,8 @@ class NamespaceOptions:
     # @deprecated
     transaction_setting: Optional[TransactionSetting]
     transaction_setting_v2: Optional[TransactionSettingV2]
-    object_catalog: Optional[str]
-    state_machine_namespace_id: Optional[str]
-    state_machine_version: Optional[int]
+    sync_setting: Optional[SyncSetting]
+    state_machine_setting: Optional[StateMachineSetting]
     create_notification: Optional[NotificationSetting]
     log_setting: Optional[LogSetting]
     
@@ -40,18 +41,16 @@ class NamespaceOptions:
         description: Optional[str] = None,
         transaction_setting: Optional[TransactionSetting] = None,
         transaction_setting_v2: Optional[TransactionSettingV2] = None,
-        object_catalog: Optional[str] = None,
-        state_machine_namespace_id: Optional[str] = None,
-        state_machine_version: Optional[int] = None,
+        sync_setting: Optional[SyncSetting] = None,
+        state_machine_setting: Optional[StateMachineSetting] = None,
         create_notification: Optional[NotificationSetting] = None,
         log_setting: Optional[LogSetting] = None,
     ):
         self.description = description
         self.transaction_setting = transaction_setting
         self.transaction_setting_v2 = transaction_setting_v2
-        self.object_catalog = object_catalog
-        self.state_machine_namespace_id = state_machine_namespace_id
-        self.state_machine_version = state_machine_version
+        self.sync_setting = sync_setting
+        self.state_machine_setting = state_machine_setting
         self.create_notification = create_notification
         self.log_setting = log_setting
 

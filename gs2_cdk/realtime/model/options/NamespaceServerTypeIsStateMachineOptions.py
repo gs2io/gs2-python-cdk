@@ -15,6 +15,8 @@ from __future__ import annotations
 from typing import *
 from ....core.model import TransactionSetting
 from ..TransactionSettingV2 import TransactionSettingV2
+from ..SyncSetting import SyncSetting
+from ..StateMachineSetting import StateMachineSetting
 from ..MobileNotificationMessage import MobileNotificationMessage
 from ....core.model import NotificationSetting
 from ....core.model import LogSetting
@@ -26,7 +28,7 @@ class NamespaceServerTypeIsStateMachineOptions:
     description: Optional[str]
     transaction_setting: Optional[TransactionSetting]
     transaction_setting_v2: Optional[TransactionSettingV2]
-    state_machine_version: Optional[int]
+    sync_setting: Optional[SyncSetting]
     create_notification: Optional[NotificationSetting]
     log_setting: Optional[LogSetting]
     revision: Optional[int]
@@ -36,7 +38,7 @@ class NamespaceServerTypeIsStateMachineOptions:
         description: Optional[str] = None,
         transaction_setting: Optional[TransactionSetting] = None,
         transaction_setting_v2: Optional[TransactionSettingV2] = None,
-        state_machine_version: Optional[int] = None,
+        sync_setting: Optional[SyncSetting] = None,
         create_notification: Optional[NotificationSetting] = None,
         log_setting: Optional[LogSetting] = None,
         revision: Optional[int] = None,
@@ -44,7 +46,7 @@ class NamespaceServerTypeIsStateMachineOptions:
         self.description = description
         self.transaction_setting = transaction_setting
         self.transaction_setting_v2 = transaction_setting_v2
-        self.state_machine_version = state_machine_version
+        self.sync_setting = sync_setting
         self.create_notification = create_notification
         self.log_setting = log_setting
         self.revision = revision

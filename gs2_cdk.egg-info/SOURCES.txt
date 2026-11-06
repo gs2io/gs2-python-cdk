@@ -776,6 +776,8 @@ src/gs2_cdk/realtime/__init__.py
 src/gs2_cdk/realtime/model/MobileNotificationMessage.py
 src/gs2_cdk/realtime/model/Namespace.py
 src/gs2_cdk/realtime/model/Room.py
+src/gs2_cdk/realtime/model/StateMachineSetting.py
+src/gs2_cdk/realtime/model/SyncSetting.py
 src/gs2_cdk/realtime/model/TransactionSettingV2.py
 src/gs2_cdk/realtime/model/__init__.py
 src/gs2_cdk/realtime/ref/NamespaceRef.py
