@@ -30,6 +30,8 @@ from .PurchaseCount import PurchaseCount
 from .options.PurchaseCountOptions import PurchaseCountOptions
 from .RandomDisplayItemModel import RandomDisplayItemModel
 from .options.RandomDisplayItemModelOptions import RandomDisplayItemModelOptions
+from .Bonus import Bonus
+from .options.BonusOptions import BonusOptions
 from .VerifyActionResult import VerifyActionResult
 from .options.VerifyActionResultOptions import VerifyActionResultOptions
 from .ConsumeActionResult import ConsumeActionResult

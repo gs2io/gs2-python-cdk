@@ -16,6 +16,7 @@ from typing import *
 from ...core.model import VerifyAction
 from ...core.model import ConsumeAction
 from ...core.model import AcquireAction
+from .Bonus import Bonus
 from .options.SalesItemOptions import SalesItemOptions
 
 
@@ -25,6 +26,7 @@ class SalesItem:
     metadata: Optional[str] = None
     verify_actions: Optional[List[VerifyAction]] = None
     consume_actions: Optional[List[ConsumeAction]] = None
+    bonuses: Optional[List[Bonus]] = None
 
     def __init__(
         self,
@@ -37,6 +39,7 @@ class SalesItem:
         self.metadata = options.metadata if options.metadata else None
         self.verify_actions = options.verify_actions if options.verify_actions else None
         self.consume_actions = options.consume_actions if options.consume_actions else None
+        self.bonuses = options.bonuses if options.bonuses else None
 
     def properties(
         self,
@@ -64,6 +67,12 @@ class SalesItem:
                 v.properties(
                 )
                 for v in self.acquire_actions
+            ]
+        if self.bonuses is not None:
+            properties["bonuses"] = [
+                v.properties(
+                )
+                for v in self.bonuses
             ]
 
         return properties

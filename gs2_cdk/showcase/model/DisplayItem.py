@@ -16,6 +16,7 @@ from typing import *
 from ...core.model import VerifyAction
 from ...core.model import ConsumeAction
 from ...core.model import AcquireAction
+from .Bonus import Bonus
 from .SalesItem import SalesItem
 from .SalesItemGroup import SalesItemGroup
 from .options.DisplayItemOptions import DisplayItemOptions
