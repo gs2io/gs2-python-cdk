@@ -775,6 +775,7 @@ src/gs2_cdk/ranking2/stamp_sheet/__init__.py
 src/gs2_cdk/realtime/__init__.py
 src/gs2_cdk/realtime/model/MobileNotificationMessage.py
 src/gs2_cdk/realtime/model/Namespace.py
+src/gs2_cdk/realtime/model/ParticipantSetting.py
 src/gs2_cdk/realtime/model/Room.py
 src/gs2_cdk/realtime/model/StateMachineSetting.py
 src/gs2_cdk/realtime/model/SyncSetting.py

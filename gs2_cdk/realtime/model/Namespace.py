@@ -20,6 +20,7 @@ from ...core.model import TransactionSetting
 from .TransactionSettingV2 import TransactionSettingV2
 from .SyncSetting import SyncSetting
 from .StateMachineSetting import StateMachineSetting
+from .ParticipantSetting import ParticipantSetting
 from ...core.model import NotificationSetting
 from ...core.model import LogSetting
 
@@ -41,6 +42,7 @@ class Namespace(CdkResource):
     transaction_setting_v2: Optional[TransactionSettingV2] = None
     sync_setting: Optional[SyncSetting] = None
     state_machine_setting: Optional[StateMachineSetting] = None
+    participant_setting: Optional[ParticipantSetting] = None
     create_notification: Optional[NotificationSetting] = None
     log_setting: Optional[LogSetting] = None
 
@@ -65,6 +67,7 @@ class Namespace(CdkResource):
         self.transaction_setting_v2 = options.transaction_setting_v2 if options.transaction_setting_v2 else None
         self.sync_setting = options.sync_setting if options.sync_setting else None
         self.state_machine_setting = options.state_machine_setting if options.state_machine_setting else None
+        self.participant_setting = options.participant_setting if options.participant_setting else None
         self.create_notification = options.create_notification if options.create_notification else None
         self.log_setting = options.log_setting if options.log_setting else None
         stack.add_resource(
@@ -106,6 +109,9 @@ class Namespace(CdkResource):
             )
         if self.state_machine_setting is not None:
             properties["StateMachineSetting"] = self.state_machine_setting.properties(
+            )
+        if self.participant_setting is not None:
+            properties["ParticipantSetting"] = self.participant_setting.properties(
             )
         if self.create_notification is not None:
             properties["CreateNotification"] = self.create_notification.properties(

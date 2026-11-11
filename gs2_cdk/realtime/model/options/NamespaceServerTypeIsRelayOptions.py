@@ -17,6 +17,7 @@ from ....core.model import TransactionSetting
 from ..TransactionSettingV2 import TransactionSettingV2
 from ..SyncSetting import SyncSetting
 from ..StateMachineSetting import StateMachineSetting
+from ..ParticipantSetting import ParticipantSetting
 from ..MobileNotificationMessage import MobileNotificationMessage
 from ....core.model import NotificationSetting
 from ....core.model import LogSetting
@@ -29,6 +30,7 @@ class NamespaceServerTypeIsRelayOptions:
     transaction_setting: Optional[TransactionSetting]
     transaction_setting_v2: Optional[TransactionSettingV2]
     sync_setting: Optional[SyncSetting]
+    participant_setting: Optional[ParticipantSetting]
     create_notification: Optional[NotificationSetting]
     log_setting: Optional[LogSetting]
     revision: Optional[int]
@@ -39,6 +41,7 @@ class NamespaceServerTypeIsRelayOptions:
         transaction_setting: Optional[TransactionSetting] = None,
         transaction_setting_v2: Optional[TransactionSettingV2] = None,
         sync_setting: Optional[SyncSetting] = None,
+        participant_setting: Optional[ParticipantSetting] = None,
         create_notification: Optional[NotificationSetting] = None,
         log_setting: Optional[LogSetting] = None,
         revision: Optional[int] = None,
@@ -47,6 +50,7 @@ class NamespaceServerTypeIsRelayOptions:
         self.transaction_setting = transaction_setting
         self.transaction_setting_v2 = transaction_setting_v2
         self.sync_setting = sync_setting
+        self.participant_setting = participant_setting
         self.create_notification = create_notification
         self.log_setting = log_setting
         self.revision = revision

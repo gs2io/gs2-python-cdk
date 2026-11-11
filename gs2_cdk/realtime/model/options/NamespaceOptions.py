@@ -20,6 +20,7 @@ from ....core.model import TransactionSetting
 from ..TransactionSettingV2 import TransactionSettingV2
 from ..SyncSetting import SyncSetting
 from ..StateMachineSetting import StateMachineSetting
+from ..ParticipantSetting import ParticipantSetting
 from ....core.model import NotificationSetting
 from ....core.model import LogSetting
 from ..enums.NamespaceServerType import NamespaceServerType
@@ -33,6 +34,7 @@ class NamespaceOptions:
     transaction_setting_v2: Optional[TransactionSettingV2]
     sync_setting: Optional[SyncSetting]
     state_machine_setting: Optional[StateMachineSetting]
+    participant_setting: Optional[ParticipantSetting]
     create_notification: Optional[NotificationSetting]
     log_setting: Optional[LogSetting]
     
@@ -43,6 +45,7 @@ class NamespaceOptions:
         transaction_setting_v2: Optional[TransactionSettingV2] = None,
         sync_setting: Optional[SyncSetting] = None,
         state_machine_setting: Optional[StateMachineSetting] = None,
+        participant_setting: Optional[ParticipantSetting] = None,
         create_notification: Optional[NotificationSetting] = None,
         log_setting: Optional[LogSetting] = None,
     ):
@@ -51,6 +54,7 @@ class NamespaceOptions:
         self.transaction_setting_v2 = transaction_setting_v2
         self.sync_setting = sync_setting
         self.state_machine_setting = state_machine_setting
+        self.participant_setting = participant_setting
         self.create_notification = create_notification
         self.log_setting = log_setting
 
