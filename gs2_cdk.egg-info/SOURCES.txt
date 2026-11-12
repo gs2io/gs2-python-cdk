@@ -5,6 +5,7 @@ src/gs2_cdk.egg-info/SOURCES.txt
 src/gs2_cdk.egg-info/dependency_links.txt
 src/gs2_cdk.egg-info/top_level.txt
 src/gs2_cdk/account/__init__.py
+src/gs2_cdk/account/model/AccountDeletionSetting.py
 src/gs2_cdk/account/model/BanStatus.py
 src/gs2_cdk/account/model/CurrentMasterData.py
 src/gs2_cdk/account/model/Namespace.py
@@ -15,6 +16,7 @@ src/gs2_cdk/account/model/TakeOverTypeModel.py
 src/gs2_cdk/account/model/TransactionSettingV2.py
 src/gs2_cdk/account/model/__init__.py
 src/gs2_cdk/account/ref/BanStatusRef.py
+src/gs2_cdk/account/ref/DeletionScheduleRef.py
 src/gs2_cdk/account/ref/MasterDataVersionRef.py
 src/gs2_cdk/account/ref/NamespaceRef.py
 src/gs2_cdk/account/ref/TakeOverTypeModelRef.py

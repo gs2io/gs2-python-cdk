@@ -19,6 +19,7 @@ from ....core.func import GetAttr
 from ....core.model import TransactionSetting
 from ..TransactionSettingV2 import TransactionSettingV2
 from ....core.model import ScriptSetting
+from ..AccountDeletionSetting import AccountDeletionSetting
 from ....core.model import LogSetting
 
 
@@ -35,6 +36,10 @@ class NamespaceOptions:
     do_take_over_script: Optional[ScriptSetting]
     ban_script: Optional[ScriptSetting]
     un_ban_script: Optional[ScriptSetting]
+    account_deletion_setting: Optional[AccountDeletionSetting]
+    request_deletion_script: Optional[ScriptSetting]
+    cancel_deletion_script: Optional[ScriptSetting]
+    execute_deletion_script: Optional[ScriptSetting]
     log_setting: Optional[LogSetting]
     
     def __init__(
@@ -50,6 +55,10 @@ class NamespaceOptions:
         do_take_over_script: Optional[ScriptSetting] = None,
         ban_script: Optional[ScriptSetting] = None,
         un_ban_script: Optional[ScriptSetting] = None,
+        account_deletion_setting: Optional[AccountDeletionSetting] = None,
+        request_deletion_script: Optional[ScriptSetting] = None,
+        cancel_deletion_script: Optional[ScriptSetting] = None,
+        execute_deletion_script: Optional[ScriptSetting] = None,
         log_setting: Optional[LogSetting] = None,
     ):
         self.description = description
@@ -63,5 +72,9 @@ class NamespaceOptions:
         self.do_take_over_script = do_take_over_script
         self.ban_script = ban_script
         self.un_ban_script = un_ban_script
+        self.account_deletion_setting = account_deletion_setting
+        self.request_deletion_script = request_deletion_script
+        self.cancel_deletion_script = cancel_deletion_script
+        self.execute_deletion_script = execute_deletion_script
         self.log_setting = log_setting
 

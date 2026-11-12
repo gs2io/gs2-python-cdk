@@ -19,6 +19,7 @@ from ...core.func import GetAttr
 from ...core.model import TransactionSetting
 from .TransactionSettingV2 import TransactionSettingV2
 from ...core.model import ScriptSetting
+from .AccountDeletionSetting import AccountDeletionSetting
 from ...core.model import LogSetting
 
 from ..ref.NamespaceRef import NamespaceRef
@@ -43,6 +44,10 @@ class Namespace(CdkResource):
     do_take_over_script: Optional[ScriptSetting] = None
     ban_script: Optional[ScriptSetting] = None
     un_ban_script: Optional[ScriptSetting] = None
+    account_deletion_setting: Optional[AccountDeletionSetting] = None
+    request_deletion_script: Optional[ScriptSetting] = None
+    cancel_deletion_script: Optional[ScriptSetting] = None
+    execute_deletion_script: Optional[ScriptSetting] = None
     log_setting: Optional[LogSetting] = None
 
     def __init__(
@@ -68,6 +73,10 @@ class Namespace(CdkResource):
         self.do_take_over_script = options.do_take_over_script if options.do_take_over_script else None
         self.ban_script = options.ban_script if options.ban_script else None
         self.un_ban_script = options.un_ban_script if options.un_ban_script else None
+        self.account_deletion_setting = options.account_deletion_setting if options.account_deletion_setting else None
+        self.request_deletion_script = options.request_deletion_script if options.request_deletion_script else None
+        self.cancel_deletion_script = options.cancel_deletion_script if options.cancel_deletion_script else None
+        self.execute_deletion_script = options.execute_deletion_script if options.execute_deletion_script else None
         self.log_setting = options.log_setting if options.log_setting else None
         stack.add_resource(
             self,
@@ -120,6 +129,18 @@ class Namespace(CdkResource):
             )
         if self.un_ban_script is not None:
             properties["UnBanScript"] = self.un_ban_script.properties(
+            )
+        if self.account_deletion_setting is not None:
+            properties["AccountDeletionSetting"] = self.account_deletion_setting.properties(
+            )
+        if self.request_deletion_script is not None:
+            properties["RequestDeletionScript"] = self.request_deletion_script.properties(
+            )
+        if self.cancel_deletion_script is not None:
+            properties["CancelDeletionScript"] = self.cancel_deletion_script.properties(
+            )
+        if self.execute_deletion_script is not None:
+            properties["ExecuteDeletionScript"] = self.execute_deletion_script.properties(
             )
         if self.log_setting is not None:
             properties["LogSetting"] = self.log_setting.properties(

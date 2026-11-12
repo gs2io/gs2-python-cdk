@@ -23,6 +23,10 @@ from .PlatformUser import PlatformUser
 from .options.PlatformUserOptions import PlatformUserOptions
 from .BanStatus import BanStatus
 from .options.BanStatusOptions import BanStatusOptions
+from .AccountDeletionSetting import AccountDeletionSetting
+from .options.AccountDeletionSettingOptions import AccountDeletionSettingOptions
+from .enums.AccountDeletionSettingLoginDuringGracePeriod import AccountDeletionSettingLoginDuringGracePeriod
+from .enums.AccountDeletionSettingCleanUserDataScope import AccountDeletionSettingCleanUserDataScope
 from .TransactionSettingV2 import TransactionSettingV2
 from .options.TransactionSettingV2Options import TransactionSettingV2Options
 from .CurrentMasterData import CurrentMasterData
