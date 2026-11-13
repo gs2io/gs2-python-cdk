@@ -8,6 +8,7 @@ src/gs2_cdk/account/__init__.py
 src/gs2_cdk/account/model/AccountDeletionSetting.py
 src/gs2_cdk/account/model/BanStatus.py
 src/gs2_cdk/account/model/CurrentMasterData.py
+src/gs2_cdk/account/model/IssuedCodeSetting.py
 src/gs2_cdk/account/model/Namespace.py
 src/gs2_cdk/account/model/OpenIdConnectSetting.py
 src/gs2_cdk/account/model/PlatformUser.py

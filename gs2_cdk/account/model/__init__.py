@@ -15,8 +15,13 @@ from .Namespace import Namespace
 from .options.NamespaceOptions import NamespaceOptions
 from .TakeOverTypeModel import TakeOverTypeModel
 from .options.TakeOverTypeModelOptions import TakeOverTypeModelOptions
+from .enums.TakeOverTypeModelTakeOverMethod import TakeOverTypeModelTakeOverMethod
+from .options.TakeOverTypeModelTakeOverMethodIsOpenIdConnectOptions import TakeOverTypeModelTakeOverMethodIsOpenIdConnectOptions
+from .options.TakeOverTypeModelTakeOverMethodIsIssuedCodeOptions import TakeOverTypeModelTakeOverMethodIsIssuedCodeOptions
 from .OpenIdConnectSetting import OpenIdConnectSetting
 from .options.OpenIdConnectSettingOptions import OpenIdConnectSettingOptions
+from .IssuedCodeSetting import IssuedCodeSetting
+from .options.IssuedCodeSettingOptions import IssuedCodeSettingOptions
 from .ScopeValue import ScopeValue
 from .options.ScopeValueOptions import ScopeValueOptions
 from .PlatformUser import PlatformUser

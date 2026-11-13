@@ -15,14 +15,22 @@ from __future__ import annotations
 from typing import *
 from ..ScopeValue import ScopeValue
 from ..OpenIdConnectSetting import OpenIdConnectSetting
+from ..IssuedCodeSetting import IssuedCodeSetting
+from ..enums.TakeOverTypeModelTakeOverMethod import TakeOverTypeModelTakeOverMethod
 
 
 class TakeOverTypeModelOptions:
     metadata: Optional[str]
+    open_id_connect_setting: Optional[OpenIdConnectSetting]
+    issued_code_setting: Optional[IssuedCodeSetting]
     
     def __init__(
         self,
         metadata: Optional[str] = None,
+        open_id_connect_setting: Optional[OpenIdConnectSetting] = None,
+        issued_code_setting: Optional[IssuedCodeSetting] = None,
     ):
         self.metadata = metadata
+        self.open_id_connect_setting = open_id_connect_setting
+        self.issued_code_setting = issued_code_setting
 
