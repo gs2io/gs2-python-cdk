@@ -35,6 +35,7 @@ src/gs2_cdk/ad_reward/ref/NamespaceRef.py
 src/gs2_cdk/ad_reward/ref/__init__.py
 src/gs2_cdk/ad_reward/stamp_sheet/AcquirePointByUserId.py
 src/gs2_cdk/ad_reward/stamp_sheet/ConsumePointByUserId.py
+src/gs2_cdk/ad_reward/stamp_sheet/VerifyPointByUserId.py
 src/gs2_cdk/ad_reward/stamp_sheet/__init__.py
 src/gs2_cdk/auth/__init__.py
 src/gs2_cdk/auth/model/AccessToken.py

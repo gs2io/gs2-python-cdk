@@ -13,3 +13,4 @@
 # permissions and limitations under the License.
 from .AcquirePointByUserId import AcquirePointByUserId
 from .ConsumePointByUserId import ConsumePointByUserId
+from .VerifyPointByUserId import VerifyPointByUserId

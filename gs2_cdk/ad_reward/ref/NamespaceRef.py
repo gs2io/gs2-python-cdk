@@ -17,6 +17,7 @@ from typing import *
 from ...core.func import GetAttr, Join
 from ..stamp_sheet.AcquirePointByUserId import AcquirePointByUserId
 from ..stamp_sheet.ConsumePointByUserId import ConsumePointByUserId
+from ..stamp_sheet.VerifyPointByUserId import VerifyPointByUserId
 
 
 class NamespaceRef:
@@ -47,6 +48,21 @@ class NamespaceRef:
         return ConsumePointByUserId(
             self.namespace_name,
             point,
+            user_id,
+        )
+
+    def verify_point(
+        self,
+        verify_type: str,
+        point: int,
+        multiply_value_specifying_quantity: Optional[bool] = None,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifyPointByUserId:
+        return VerifyPointByUserId(
+            self.namespace_name,
+            verify_type,
+            point,
+            multiply_value_specifying_quantity,
             user_id,
         )
 
