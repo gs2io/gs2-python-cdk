@@ -18,6 +18,7 @@ from ...core.func import GetAttr, Join
 from .RatingModelRef import RatingModelRef
 from .SeasonModelRef import SeasonModelRef
 from ..stamp_sheet.VerifyIncludeParticipantByUserId import VerifyIncludeParticipantByUserId
+from ..stamp_sheet.VerifyRatingByUserId import VerifyRatingByUserId
 
 
 class NamespaceRef:
@@ -63,6 +64,21 @@ class NamespaceRef:
             tier,
             verify_type,
             season_gathering_name,
+            user_id,
+        )
+
+    def verify_rating(
+        self,
+        rating_name: str,
+        verify_type: str,
+        rate_value: float,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifyRatingByUserId:
+        return VerifyRatingByUserId(
+            self.namespace_name,
+            rating_name,
+            verify_type,
+            rate_value,
             user_id,
         )
 

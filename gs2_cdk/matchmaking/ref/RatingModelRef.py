@@ -15,6 +15,7 @@ from __future__ import annotations
 from typing import *
 
 from ...core.func import GetAttr, Join
+from ..stamp_sheet.VerifyRatingByUserId import VerifyRatingByUserId
 
 
 class RatingModelRef:
@@ -28,6 +29,20 @@ class RatingModelRef:
     ):
         self.namespace_name = namespace_name
         self.rating_name = rating_name
+
+    def verify_rating(
+        self,
+        verify_type: str,
+        rate_value: float,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifyRatingByUserId:
+        return VerifyRatingByUserId(
+            self.namespace_name,
+            self.rating_name,
+            verify_type,
+            rate_value,
+            user_id,
+        )
 
     def grn(
         self,
