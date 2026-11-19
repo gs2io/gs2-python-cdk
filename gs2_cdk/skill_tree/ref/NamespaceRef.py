@@ -18,6 +18,7 @@ from ...core.func import GetAttr, Join
 from .NodeModelRef import NodeModelRef
 from ..stamp_sheet.MarkReleaseByUserId import MarkReleaseByUserId
 from ..stamp_sheet.MarkRestrainByUserId import MarkRestrainByUserId
+from ..stamp_sheet.VerifyStatusByUserId import VerifyStatusByUserId
 
 
 class NamespaceRef:
@@ -61,6 +62,21 @@ class NamespaceRef:
             self.namespace_name,
             property_id,
             node_model_names,
+            user_id,
+        )
+
+    def verify_status(
+        self,
+        property_id: str,
+        node_model_name: str,
+        verify_type: str,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifyStatusByUserId:
+        return VerifyStatusByUserId(
+            self.namespace_name,
+            property_id,
+            node_model_name,
+            verify_type,
             user_id,
         )
 

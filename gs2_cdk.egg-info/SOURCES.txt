@@ -910,6 +910,7 @@ src/gs2_cdk/skill_tree/ref/NodeModelRef.py
 src/gs2_cdk/skill_tree/ref/__init__.py
 src/gs2_cdk/skill_tree/stamp_sheet/MarkReleaseByUserId.py
 src/gs2_cdk/skill_tree/stamp_sheet/MarkRestrainByUserId.py
+src/gs2_cdk/skill_tree/stamp_sheet/VerifyStatusByUserId.py
 src/gs2_cdk/skill_tree/stamp_sheet/__init__.py
 src/gs2_cdk/stamina/__init__.py
 src/gs2_cdk/stamina/model/CurrentMasterData.py
