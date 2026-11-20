@@ -19,6 +19,7 @@ from .QuestGroupModelRef import QuestGroupModelRef
 from ..stamp_sheet.CreateProgressByUserId import CreateProgressByUserId
 from ...core.model import Config
 from ..stamp_sheet.DeleteProgressByUserId import DeleteProgressByUserId
+from ..stamp_sheet.VerifyCompletedQuestListByUserId import VerifyCompletedQuestListByUserId
 
 
 class NamespaceRef:
@@ -60,6 +61,21 @@ class NamespaceRef:
     ) -> DeleteProgressByUserId:
         return DeleteProgressByUserId(
             self.namespace_name,
+            user_id,
+        )
+
+    def verify_completed_quest_list(
+        self,
+        quest_group_name: str,
+        quest_name: str,
+        verify_type: str,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifyCompletedQuestListByUserId:
+        return VerifyCompletedQuestListByUserId(
+            self.namespace_name,
+            quest_group_name,
+            quest_name,
+            verify_type,
             user_id,
         )
 

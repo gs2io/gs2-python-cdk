@@ -732,6 +732,7 @@ src/gs2_cdk/quest/ref/QuestModelRef.py
 src/gs2_cdk/quest/ref/__init__.py
 src/gs2_cdk/quest/stamp_sheet/CreateProgressByUserId.py
 src/gs2_cdk/quest/stamp_sheet/DeleteProgressByUserId.py
+src/gs2_cdk/quest/stamp_sheet/VerifyCompletedQuestListByUserId.py
 src/gs2_cdk/quest/stamp_sheet/__init__.py
 src/gs2_cdk/ranking/__init__.py
 src/gs2_cdk/ranking/model/CalculatedAt.py

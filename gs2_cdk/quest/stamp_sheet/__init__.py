@@ -13,3 +13,4 @@
 # permissions and limitations under the License.
 from .CreateProgressByUserId import CreateProgressByUserId
 from .DeleteProgressByUserId import DeleteProgressByUserId
+from .VerifyCompletedQuestListByUserId import VerifyCompletedQuestListByUserId
