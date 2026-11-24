@@ -144,6 +144,7 @@ src/gs2_cdk/enchant/stamp_sheet/ReDrawBalanceParameterStatusByUserId.py
 src/gs2_cdk/enchant/stamp_sheet/ReDrawRarityParameterStatusByUserId.py
 src/gs2_cdk/enchant/stamp_sheet/SetBalanceParameterStatusByUserId.py
 src/gs2_cdk/enchant/stamp_sheet/SetRarityParameterStatusByUserId.py
+src/gs2_cdk/enchant/stamp_sheet/VerifyBalanceParameterStatusByUserId.py
 src/gs2_cdk/enchant/stamp_sheet/VerifyRarityParameterStatusByUserId.py
 src/gs2_cdk/enchant/stamp_sheet/__init__.py
 src/gs2_cdk/enhance/__init__.py

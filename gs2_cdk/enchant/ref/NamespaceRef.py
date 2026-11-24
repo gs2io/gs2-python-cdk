@@ -22,6 +22,7 @@ from ..stamp_sheet.SetBalanceParameterStatusByUserId import SetBalanceParameterS
 from ..stamp_sheet.ReDrawRarityParameterStatusByUserId import ReDrawRarityParameterStatusByUserId
 from ..stamp_sheet.AddRarityParameterStatusByUserId import AddRarityParameterStatusByUserId
 from ..stamp_sheet.SetRarityParameterStatusByUserId import SetRarityParameterStatusByUserId
+from ..stamp_sheet.VerifyBalanceParameterStatusByUserId import VerifyBalanceParameterStatusByUserId
 from ..stamp_sheet.VerifyRarityParameterStatusByUserId import VerifyRarityParameterStatusByUserId
 
 
@@ -124,6 +125,25 @@ class NamespaceRef:
             parameter_name,
             property_id,
             parameter_values,
+            user_id,
+        )
+
+    def verify_balance_parameter_status(
+        self,
+        parameter_name: str,
+        property_id: str,
+        parameter_value_name: str,
+        verify_type: str,
+        parameter_value: int,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifyBalanceParameterStatusByUserId:
+        return VerifyBalanceParameterStatusByUserId(
+            self.namespace_name,
+            parameter_name,
+            property_id,
+            parameter_value_name,
+            verify_type,
+            parameter_value,
             user_id,
         )
 
