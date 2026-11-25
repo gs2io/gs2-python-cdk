@@ -14,3 +14,4 @@
 from .AddEntriesByUserId import AddEntriesByUserId
 from .DeleteEntriesByUserId import DeleteEntriesByUserId
 from .VerifyEntryByUserId import VerifyEntryByUserId
+from .VerifyEntryCountByUserId import VerifyEntryCountByUserId

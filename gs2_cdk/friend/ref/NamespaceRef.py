@@ -16,6 +16,9 @@ from typing import *
 
 from ...core.func import GetAttr, Join
 from ..stamp_sheet.UpdateProfileByUserId import UpdateProfileByUserId
+from ..stamp_sheet.VerifyFollowByUserId import VerifyFollowByUserId
+from ..stamp_sheet.VerifyFriendByUserId import VerifyFriendByUserId
+from ..stamp_sheet.VerifyFriendCountByUserId import VerifyFriendCountByUserId
 
 
 class NamespaceRef:
@@ -39,6 +42,45 @@ class NamespaceRef:
             public_profile,
             follower_profile,
             friend_profile,
+            user_id,
+        )
+
+    def verify_follow(
+        self,
+        target_user_id: str,
+        verify_type: str,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifyFollowByUserId:
+        return VerifyFollowByUserId(
+            self.namespace_name,
+            target_user_id,
+            verify_type,
+            user_id,
+        )
+
+    def verify_friend(
+        self,
+        target_user_id: str,
+        verify_type: str,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifyFriendByUserId:
+        return VerifyFriendByUserId(
+            self.namespace_name,
+            target_user_id,
+            verify_type,
+            user_id,
+        )
+
+    def verify_friend_count(
+        self,
+        verify_type: str,
+        count: int,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifyFriendCountByUserId:
+        return VerifyFriendCountByUserId(
+            self.namespace_name,
+            verify_type,
+            count,
             user_id,
         )
 

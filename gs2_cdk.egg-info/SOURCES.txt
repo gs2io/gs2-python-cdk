@@ -94,6 +94,7 @@ src/gs2_cdk/dictionary/ref/__init__.py
 src/gs2_cdk/dictionary/stamp_sheet/AddEntriesByUserId.py
 src/gs2_cdk/dictionary/stamp_sheet/DeleteEntriesByUserId.py
 src/gs2_cdk/dictionary/stamp_sheet/VerifyEntryByUserId.py
+src/gs2_cdk/dictionary/stamp_sheet/VerifyEntryCountByUserId.py
 src/gs2_cdk/dictionary/stamp_sheet/__init__.py
 src/gs2_cdk/distributor/__init__.py
 src/gs2_cdk/distributor/model/AcquireActionResult.py
@@ -275,6 +276,9 @@ src/gs2_cdk/friend/model/__init__.py
 src/gs2_cdk/friend/ref/NamespaceRef.py
 src/gs2_cdk/friend/ref/__init__.py
 src/gs2_cdk/friend/stamp_sheet/UpdateProfileByUserId.py
+src/gs2_cdk/friend/stamp_sheet/VerifyFollowByUserId.py
+src/gs2_cdk/friend/stamp_sheet/VerifyFriendByUserId.py
+src/gs2_cdk/friend/stamp_sheet/VerifyFriendCountByUserId.py
 src/gs2_cdk/friend/stamp_sheet/__init__.py
 src/gs2_cdk/gateway/__init__.py
 src/gs2_cdk/gateway/model/MobileNotificationMessage.py

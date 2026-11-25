@@ -19,6 +19,7 @@ from .EntryModelRef import EntryModelRef
 from ..stamp_sheet.AddEntriesByUserId import AddEntriesByUserId
 from ..stamp_sheet.DeleteEntriesByUserId import DeleteEntriesByUserId
 from ..stamp_sheet.VerifyEntryByUserId import VerifyEntryByUserId
+from ..stamp_sheet.VerifyEntryCountByUserId import VerifyEntryCountByUserId
 
 
 class NamespaceRef:
@@ -71,6 +72,21 @@ class NamespaceRef:
             self.namespace_name,
             entry_model_name,
             verify_type,
+            user_id,
+        )
+
+    def verify_entry_count(
+        self,
+        verify_type: str,
+        count: int,
+        entry_model_names: Optional[List[str]] = None,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifyEntryCountByUserId:
+        return VerifyEntryCountByUserId(
+            self.namespace_name,
+            verify_type,
+            count,
+            entry_model_names,
             user_id,
         )
 
