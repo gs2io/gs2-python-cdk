@@ -23,6 +23,7 @@ from ...core.model import AcquireAction
 from ...core.model import Config
 from ..stamp_sheet.SetFormByUserId import SetFormByUserId
 from ..stamp_sheet.SubMoldCapacityByUserId import SubMoldCapacityByUserId
+from ..stamp_sheet.VerifyFormByUserId import VerifyFormByUserId
 
 
 class MoldModelRef:
@@ -108,6 +109,28 @@ class MoldModelRef:
             self.namespace_name,
             self.mold_model_name,
             capacity,
+            user_id,
+        )
+
+    def verify_form(
+        self,
+        index: int,
+        property_id_regex: str,
+        verify_type: str,
+        count: int,
+        slot_name: Optional[str] = None,
+        count_type: Optional[str] = None,
+        user_id: Optional[str] = "#{userId}",
+    ) -> VerifyFormByUserId:
+        return VerifyFormByUserId(
+            self.namespace_name,
+            self.mold_model_name,
+            index,
+            property_id_regex,
+            verify_type,
+            count,
+            slot_name,
+            count_type,
             user_id,
         )
 

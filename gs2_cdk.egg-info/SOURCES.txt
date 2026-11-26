@@ -258,6 +258,7 @@ src/gs2_cdk/formation/stamp_sheet/AddMoldCapacityByUserId.py
 src/gs2_cdk/formation/stamp_sheet/SetFormByUserId.py
 src/gs2_cdk/formation/stamp_sheet/SetMoldCapacityByUserId.py
 src/gs2_cdk/formation/stamp_sheet/SubMoldCapacityByUserId.py
+src/gs2_cdk/formation/stamp_sheet/VerifyFormByUserId.py
 src/gs2_cdk/formation/stamp_sheet/__init__.py
 src/gs2_cdk/freeze/__init__.py
 src/gs2_cdk/freeze/model/Microservice.py
