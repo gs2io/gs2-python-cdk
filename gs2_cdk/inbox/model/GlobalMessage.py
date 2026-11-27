@@ -15,6 +15,7 @@ from __future__ import annotations
 from typing import *
 from ...core.model import AcquireAction
 from .TimeSpan import TimeSpan
+from ...core.model import VerifyAction
 from .options.GlobalMessageOptions import GlobalMessageOptions
 
 
@@ -25,6 +26,7 @@ class GlobalMessage:
     expires_time_span: Optional[TimeSpan] = None
     expires_at: Optional[int] = None
     message_reception_period_event_id: Optional[str] = None
+    verify_actions: Optional[List[VerifyAction]] = None
 
     def __init__(
         self,
@@ -38,6 +40,7 @@ class GlobalMessage:
         self.expires_time_span = options.expires_time_span if options.expires_time_span else None
         self.expires_at = options.expires_at if options.expires_at else None
         self.message_reception_period_event_id = options.message_reception_period_event_id if options.message_reception_period_event_id else None
+        self.verify_actions = options.verify_actions if options.verify_actions else None
 
     def properties(
         self,
@@ -61,5 +64,11 @@ class GlobalMessage:
             properties["expiresAt"] = self.expires_at
         if self.message_reception_period_event_id is not None:
             properties["messageReceptionPeriodEventId"] = self.message_reception_period_event_id
+        if self.verify_actions is not None:
+            properties["verifyActions"] = [
+                v.properties(
+                )
+                for v in self.verify_actions
+            ]
 
         return properties
